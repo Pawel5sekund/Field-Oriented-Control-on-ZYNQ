@@ -213,3 +213,6 @@ IP_FOC_core/FOC_BLDC.gen/sources_1/ip/PID_DSP/hdl/xbip_pipe_v3_0_vh_rfs.vhd
 IP_FOC_core/FOC_BLDC.gen/sources_1/ip/PID_DSP/hdl/xbip_utils_v3_0_vh_rfs.vhd
 IP_FOC_core/FOC_BLDC.gen/sources_1/ip/PID_DSP/sim/PID_DSP.vhd
 IP_FOC_core/FOC_BLDC.gen/sources_1/ip/PID_DSP/synth/PID_DSP.vhd
+IP_FOC_core/FOC_BLDC.cache/wt/synthesis_details.wdf
+IP_FOC_core/FOC_BLDC.cache/wt/synthesis.wdf
+IP_FOC_core/FOC_BLDC.runs/.jobs/vrs_config_90.xml
