@@ -54,6 +54,8 @@ COMPONENT FOC_core
     port (
         CLK: in std_logic;
         --data input
+        EN                              : IN std_logic;
+        RES                             : IN std_logic;
         current_sensor: in std_logic_vector (11 downto 0);
         encoder: in std_logic_vector (1 downto 0);
         DIR: in std_logic;
@@ -93,10 +95,14 @@ end COMPONENT;
         signal PWM_CH_U: std_logic_vector (1 downto 0);
         signal PWM_CH_W: std_logic_vector (1 downto 0);
         signal PWM_CH_V: std_logic_vector (1 downto 0);
+        signal EN: std_logic;
+        signal RES: std_logic;
     
 begin
 FOC_test: FOC_core
     PORT MAP(
+        EN  => EN,
+        RES => RES,
         CLK => CLK,
         --data input
         current_sensor=>current_sensor,
@@ -131,8 +137,11 @@ stepper: process
 
 begin
 
-    wait for 20us;
+    wait for 30us;
     report "start sequence ended";
+
+    EN <= '1';
+    RES <= '1';
 
 --    DIR <= '0';
 --    wait for 100ns;

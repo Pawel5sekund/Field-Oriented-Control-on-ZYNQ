@@ -257,9 +257,10 @@ BEGIN
               PID_sel <= PID_sel;
               IF (EN = '0' AND RES = '1') THEN
                 operation_selector := - 1;
+              ELSIF (EN = '0') THEN
+                operation_selector := 62;
               ELSIF (operation_selector = 63) THEN
                 operation_selector := 0;
-
                 IF (dposition > (position_histeresis - 1)) OR (dposition <- (position_histeresis - 1)) THEN
                   current_setpoint <= current_setpoint_move;
                 ELSE

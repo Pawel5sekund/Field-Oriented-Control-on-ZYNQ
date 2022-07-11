@@ -1,2 +1,0 @@
-#!/bin/bash
-sudo apt-get install python-six python-xdg python-gi python-dbus python python-enum34 python-cryptography python-crypto python-keyrings.alt python-cffi-backend python-ipaddress python-pkg-resources python-all python-secretstorage python-dev python-setuptools python-keyring python-idna python-wheel python-pip python-asn1crypto python-all-dev
