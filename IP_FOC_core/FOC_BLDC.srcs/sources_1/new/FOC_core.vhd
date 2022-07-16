@@ -1,8 +1,10 @@
 LIBRARY ieee;
 LIBRARY FOC_lib;
+
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 USE FOC_lib.FOC_types.ALL;
+
 ENTITY FOC_core IS
   GENERIC (
     STEP_scale          : integer := 16;
@@ -279,7 +281,6 @@ BEGIN
         ----------------------------------------------------------------------------------------------------------------------
 
         PWM : PROCESS IS
-
           VARIABLE CNT               : integer RANGE 0 TO PWM_period;
           VARIABLE var_PWM_register  : type_PWM_register (2 DOWNTO 0);
           VARIABLE sign_PWM_register : std_logic_vector (var_PWM_register'RANGE);
