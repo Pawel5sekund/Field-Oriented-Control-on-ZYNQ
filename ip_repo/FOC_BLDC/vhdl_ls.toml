@@ -1,0 +1,10 @@
+# File names are either absolute or relative to the parent folder of the
+# vhdl_ls.toml file and supports glob-style patterns.
+[libraries]
+foc_lib.files = [
+  'FOC_BLDC.srcs/**/*.vhd',
+]
+lib1.files = [
+  'pkg1.vhd',
+  'tb_ent.vhd',
+]

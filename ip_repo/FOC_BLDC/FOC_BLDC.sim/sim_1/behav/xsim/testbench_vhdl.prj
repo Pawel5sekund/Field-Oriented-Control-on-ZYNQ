@@ -1,0 +1,18 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../FOC_BLDC.gen/sources_1/ip/PID_DSP/sim/PID_DSP.vhd" \
+"../../../../FOC_BLDC.gen/sources_1/ip/MULTIPLY_DSP/sim/MULTIPLY_DSP.vhd" \
+
+vhdl FOC_lib  \
+"../../../../FOC_BLDC.srcs/sources_1/new/FOC_types.vhd" \
+
+vhdl2008 xil_defaultlib  \
+"../../../../FOC_BLDC.srcs/sources_1/new/FOC_core.vhd" \
+"../../../../FOC_BLDC.srcs/sources_1/new/FOC_position_checker.vhd" \
+"../../../../FOC_BLDC.srcs/sources_1/new/FOC_set_PWM_reg.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../FOC_BLDC.srcs/sim_1/new/testbench.vhd" \
+
+# Do not sort compile order
+nosort

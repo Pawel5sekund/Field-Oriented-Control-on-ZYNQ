@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Sat Jul  2 22:48:23 2022
+# Process ID: 2797
+# Current directory: /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1
+# Command line: vivado -log PID_DSP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source PID_DSP.tcl
+# Log file: /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/PID_DSP.vds
+# Journal file: /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/vivado.jou
+# Running On: LAPTOP-QKPB5NLF, OS: Linux, CPU Frequency: 3193.883 MHz, CPU Physical cores: 16, Host memory: 12896 MB
+#-----------------------------------------------------------
+source PID_DSP.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1'.)
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/pawel5sekund/VivadoProjects/motorcontrollerzynqvivado/ip_repo'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/status_LED_controller_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2022.1/data/ip'.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP PID_DSP, cache-ID = 0cfe5a925721f7d9.
+INFO: [Common 17-206] Exiting Vivado at Sat Jul  2 22:48:32 2022...

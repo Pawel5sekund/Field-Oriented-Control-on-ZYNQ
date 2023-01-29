@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Apr 19 13:52:16 2021
+# Process ID: 10744
+# Current directory: D:/MotorControllerZynqVivado/ip_repo/FOC_BLDC
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1812 D:\MotorControllerZynqVivado\ip_repo\FOC_BLDC\FOC_BLDC.xpr
+# Log file: D:/MotorControllerZynqVivado/ip_repo/FOC_BLDC/vivado.log
+# Journal file: D:/MotorControllerZynqVivado/ip_repo/FOC_BLDC\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/MotorControllerZynqVivado/ip_repo/FOC_BLDC/FOC_BLDC.xpr
+set work_directory [get_property DIRECTORY [current_project]] ; cd $work_directory ; puts -nonewline "Changing Directory to " ; pwd
+set work_directory [get_property DIRECTORY [current_project]] ; cd $work_directory ; puts -nonewline "Changing Directory to " ; pwd
