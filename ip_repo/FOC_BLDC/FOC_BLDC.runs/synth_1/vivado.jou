@@ -2,12 +2,12 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Fri Jan  6 20:58:49 2023
-# Process ID: 6857
+# Start of session at: Sun Jan 29 21:53:08 2023
+# Process ID: 13223
 # Current directory: /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1
 # Command line: vivado -log FOC_core.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FOC_core.tcl
 # Log file: /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/FOC_core.vds
 # Journal file: /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/vivado.jou
-# Running On: LAPTOP-QKPB5NLF, OS: Linux, CPU Frequency: 3194.004 MHz, CPU Physical cores: 16, Host memory: 12890 MB
+# Running On: LAPTOP-QKPB5NLF, OS: Linux, CPU Frequency: 3194.008 MHz, CPU Physical cores: 16, Host memory: 12890 MB
 #-----------------------------------------------------------
 source FOC_core.tcl -notrace

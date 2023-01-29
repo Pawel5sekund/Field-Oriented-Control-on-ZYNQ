@@ -2,13 +2,13 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Fri Jan  6 20:58:49 2023
-# Process ID: 6857
+# Start of session at: Sun Jan 29 21:53:08 2023
+# Process ID: 13223
 # Current directory: /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1
 # Command line: vivado -log FOC_core.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FOC_core.tcl
 # Log file: /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/FOC_core.vds
 # Journal file: /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/vivado.jou
-# Running On: LAPTOP-QKPB5NLF, OS: Linux, CPU Frequency: 3194.004 MHz, CPU Physical cores: 16, Host memory: 12890 MB
+# Running On: LAPTOP-QKPB5NLF, OS: Linux, CPU Frequency: 3194.008 MHz, CPU Physical cores: 16, Host memory: 12890 MB
 #-----------------------------------------------------------
 source FOC_core.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -28,48 +28,52 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 6874
+INFO: [Synth 8-7075] Helper process launched with PID 13263
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2635.148 ; gain = 0.000 ; free physical = 7169 ; free virtual = 12835
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2634.148 ; gain = 0.000 ; free physical = 6764 ; free virtual = 12643
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'foc_core' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:47]
+INFO: [Synth 8-638] synthesizing module 'foc_core' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:46]
 	Parameter step_scale bound to: 16 - type: integer 
 	Parameter full_rotate_pulses bound to: 4095 - type: integer 
-INFO: [Synth 8-3491] module 'FOC_position_checker' declared at '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_position_checker.vhd:4' bound to instance 'position_checker' of component 'foc_position_checker' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:110]
+INFO: [Synth 8-3491] module 'FOC_position_checker' declared at '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_position_checker.vhd:4' bound to instance 'position_checker' of component 'foc_position_checker' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:109]
 INFO: [Synth 8-638] synthesizing module 'FOC_position_checker' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_position_checker.vhd:22]
 	Parameter STEP_scale bound to: 16 - type: integer 
 	Parameter full_rotate_pulses bound to: 4095 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'FOC_position_checker' (0#1708) [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_position_checker.vhd:22]
 	Parameter position_histeresis bound to: 8 - type: integer 
 	Parameter full_rotate_pulses bound to: 4095 - type: integer 
-INFO: [Synth 8-3491] module 'FOC_set_PWM_reg' declared at '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_set_PWM_reg.vhd:13' bound to instance 'set_pwm_reg' of component 'foc_set_pwm_reg' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:133]
+INFO: [Synth 8-3491] module 'FOC_set_PWM_reg' declared at '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_set_PWM_reg.vhd:13' bound to instance 'set_pwm_reg' of component 'foc_set_pwm_reg' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:132]
 INFO: [Synth 8-638] synthesizing module 'FOC_set_PWM_reg' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_set_PWM_reg.vhd:27]
 	Parameter position_histeresis bound to: 8 - type: integer 
 	Parameter full_rotate_pulses bound to: 4095 - type: integer 
-INFO: [Synth 8-3491] module 'BRAM_SIN' declared at '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-6857-LAPTOP-QKPB5NLF/realtime/BRAM_SIN_stub.vhdl:5' bound to instance 'sin_data' of component 'BRAM_SIN' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_set_PWM_reg.vhd:53]
-INFO: [Synth 8-638] synthesizing module 'BRAM_SIN' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-6857-LAPTOP-QKPB5NLF/realtime/BRAM_SIN_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'MULTIPLY_DSP' declared at '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-6857-LAPTOP-QKPB5NLF/realtime/MULTIPLY_DSP_stub.vhdl:5' bound to instance 'sin_multiply' of component 'MULTIPLY_DSP' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_set_PWM_reg.vhd:60]
-INFO: [Synth 8-638] synthesizing module 'MULTIPLY_DSP' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-6857-LAPTOP-QKPB5NLF/realtime/MULTIPLY_DSP_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'BRAM_SIN' declared at '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-13223-LAPTOP-QKPB5NLF/realtime/BRAM_SIN_stub.vhdl:5' bound to instance 'sin_data' of component 'BRAM_SIN' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_set_PWM_reg.vhd:53]
+INFO: [Synth 8-638] synthesizing module 'BRAM_SIN' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-13223-LAPTOP-QKPB5NLF/realtime/BRAM_SIN_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'MULTIPLY_DSP' declared at '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-13223-LAPTOP-QKPB5NLF/realtime/MULTIPLY_DSP_stub.vhdl:5' bound to instance 'sin_multiply' of component 'MULTIPLY_DSP' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_set_PWM_reg.vhd:60]
+INFO: [Synth 8-638] synthesizing module 'MULTIPLY_DSP' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-13223-LAPTOP-QKPB5NLF/realtime/MULTIPLY_DSP_stub.vhdl:15]
 INFO: [Synth 8-256] done synthesizing module 'FOC_set_PWM_reg' (0#1708) [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_set_PWM_reg.vhd:27]
-INFO: [Synth 8-3491] module 'PID_DSP' declared at '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-6857-LAPTOP-QKPB5NLF/realtime/PID_DSP_stub.vhdl:5' bound to instance 'pid_calc_dsp' of component 'pid_dsp' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:150]
-INFO: [Synth 8-638] synthesizing module 'PID_DSP' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-6857-LAPTOP-QKPB5NLF/realtime/PID_DSP_stub.vhdl:18]
-INFO: [Synth 8-256] done synthesizing module 'foc_core' (0#1708) [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:47]
+INFO: [Synth 8-3491] module 'PID_DSP' declared at '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-13223-LAPTOP-QKPB5NLF/realtime/PID_DSP_stub.vhdl:5' bound to instance 'pid_calc_dsp' of component 'pid_dsp' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:149]
+INFO: [Synth 8-638] synthesizing module 'PID_DSP' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-13223-LAPTOP-QKPB5NLF/realtime/PID_DSP_stub.vhdl:18]
+WARNING: [Synth 8-5639] ignoring null variable initialization [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:229]
+WARNING: [Synth 8-5639] ignoring null variable initialization [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:229]
+WARNING: [Synth 8-5639] ignoring null variable initialization [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:229]
+WARNING: [Synth 8-5639] ignoring null variable initialization [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:229]
+INFO: [Synth 8-256] done synthesizing module 'foc_core' (0#1708) [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:46]
 WARNING: [Synth 8-6014] Unused sequential element position_reg was removed.  [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_position_checker.vhd:68]
 WARNING: [Synth 8-6014] Unused sequential element dposition_reg was removed.  [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_position_checker.vhd:71]
 WARNING: [Synth 8-7129] Port position_calibration[15] in module FOC_position_checker is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2635.148 ; gain = 0.000 ; free physical = 8152 ; free virtual = 13819
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2634.148 ; gain = 0.000 ; free physical = 7757 ; free virtual = 13637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2635.148 ; gain = 0.000 ; free physical = 8157 ; free virtual = 13823
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2634.148 ; gain = 0.000 ; free physical = 7757 ; free virtual = 13636
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2635.148 ; gain = 0.000 ; free physical = 8157 ; free virtual = 13823
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2634.148 ; gain = 0.000 ; free physical = 7757 ; free virtual = 13636
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2635.148 ; gain = 0.000 ; free physical = 8150 ; free virtual = 13817
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2634.148 ; gain = 0.000 ; free physical = 7749 ; free virtual = 13628
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -84,23 +88,23 @@ Parsing XDC File [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FO
 Finished Parsing XDC File [/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/constrs_1/new/firstconstraints.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2699.176 ; gain = 0.000 ; free physical = 7990 ; free virtual = 13656
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2698.176 ; gain = 0.000 ; free physical = 7593 ; free virtual = 13472
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2699.176 ; gain = 0.000 ; free physical = 7990 ; free virtual = 13656
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2698.176 ; gain = 0.000 ; free physical = 7593 ; free virtual = 13472
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'pid_calc_dsp' at clock pin 'CLK' is different from the actual clock period '5.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'set_pwm_reg/sin_data' at clock pin 'clka' is different from the actual clock period '5.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'set_pwm_reg/sin_multiply' at clock pin 'CLK' is different from the actual clock period '5.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2699.176 ; gain = 64.027 ; free physical = 8125 ; free virtual = 13792
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2698.176 ; gain = 64.027 ; free physical = 7720 ; free virtual = 13599
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2699.176 ; gain = 64.027 ; free physical = 8125 ; free virtual = 13792
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2698.176 ; gain = 64.027 ; free physical = 7720 ; free virtual = 13600
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -109,7 +113,7 @@ Applied set_property KEEP_HIERARCHY = SOFT for set_pwm_reg/sin_data. (constraint
 Applied set_property KEEP_HIERARCHY = SOFT for pid_calc_dsp. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for set_pwm_reg/sin_multiply. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2699.176 ; gain = 64.027 ; free physical = 8125 ; free virtual = 13792
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2698.176 ; gain = 64.027 ; free physical = 7723 ; free virtual = 13602
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'set_PWM_reg.index_reg' in module 'FOC_set_PWM_reg'
 ---------------------------------------------------------------------------------------------------
@@ -121,7 +125,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'set_PWM_reg.index_reg' in m
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'set_PWM_reg.index_reg' using encoding 'one-hot' in module 'FOC_set_PWM_reg'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2699.176 ; gain = 64.027 ; free physical = 8116 ; free virtual = 13784
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2698.176 ; gain = 64.027 ; free physical = 7714 ; free virtual = 13594
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -181,25 +185,25 @@ Start Cross Boundary and Area Optimization
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 WARNING: [Synth 8-7129] Port position_calibration[15] in module foc_core is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2699.176 ; gain = 64.027 ; free physical = 8096 ; free virtual = 13768
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2698.176 ; gain = 64.027 ; free physical = 7694 ; free virtual = 13579
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2699.176 ; gain = 64.027 ; free physical = 7977 ; free virtual = 13649
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2698.176 ; gain = 64.027 ; free physical = 7578 ; free virtual = 13463
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2699.176 ; gain = 64.027 ; free physical = 7972 ; free virtual = 13645
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2698.176 ; gain = 64.027 ; free physical = 7574 ; free virtual = 13459
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2699.176 ; gain = 64.027 ; free physical = 7970 ; free virtual = 13642
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2698.176 ; gain = 64.027 ; free physical = 7575 ; free virtual = 13459
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -217,37 +221,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2699.176 ; gain = 64.027 ; free physical = 7972 ; free virtual = 13644
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2698.176 ; gain = 64.027 ; free physical = 7574 ; free virtual = 13459
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2699.176 ; gain = 64.027 ; free physical = 7972 ; free virtual = 13644
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2698.176 ; gain = 64.027 ; free physical = 7574 ; free virtual = 13459
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2699.176 ; gain = 64.027 ; free physical = 7972 ; free virtual = 13644
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2698.176 ; gain = 64.027 ; free physical = 7574 ; free virtual = 13459
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2699.176 ; gain = 64.027 ; free physical = 7972 ; free virtual = 13644
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2698.176 ; gain = 64.027 ; free physical = 7574 ; free virtual = 13459
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2699.176 ; gain = 64.027 ; free physical = 7972 ; free virtual = 13644
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2698.176 ; gain = 64.027 ; free physical = 7574 ; free virtual = 13459
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2699.176 ; gain = 64.027 ; free physical = 7972 ; free virtual = 13644
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2698.176 ; gain = 64.027 ; free physical = 7574 ; free virtual = 13459
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -272,38 +276,38 @@ Report Cell Usage:
 |4     |BUFG              |     1|
 |5     |CARRY4            |    91|
 |6     |LUT1              |   114|
-|7     |LUT2              |   229|
-|8     |LUT3              |   138|
-|9     |LUT4              |    94|
-|10    |LUT5              |   148|
-|11    |LUT6              |    41|
+|7     |LUT2              |   209|
+|8     |LUT3              |   153|
+|9     |LUT4              |   116|
+|10    |LUT5              |   119|
+|11    |LUT6              |    37|
 |12    |MUXF7             |    14|
-|13    |FDRE              |   508|
-|14    |FDSE              |    14|
+|13    |FDRE              |   509|
+|14    |FDSE              |    13|
 |15    |IBUF              |   101|
 |16    |OBUF              |    34|
 +------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2699.176 ; gain = 64.027 ; free physical = 7972 ; free virtual = 13644
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2698.176 ; gain = 64.027 ; free physical = 7574 ; free virtual = 13459
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2699.176 ; gain = 0.000 ; free physical = 8025 ; free virtual = 13698
-Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2699.176 ; gain = 64.027 ; free physical = 8025 ; free virtual = 13698
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2698.176 ; gain = 0.000 ; free physical = 7626 ; free virtual = 13511
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2698.176 ; gain = 64.027 ; free physical = 7626 ; free virtual = 13510
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2699.176 ; gain = 0.000 ; free physical = 8117 ; free virtual = 13789
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2698.176 ; gain = 0.000 ; free physical = 7720 ; free virtual = 13605
 INFO: [Netlist 29-17] Analyzing 105 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2699.176 ; gain = 0.000 ; free physical = 8059 ; free virtual = 13732
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2698.176 ; gain = 0.000 ; free physical = 7662 ; free virtual = 13547
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 8ac12c73
+Synth Design complete, checksum: ecfa0429
 INFO: [Common 17-83] Releasing license: Synthesis
-33 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
+33 Infos, 16 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:24 . Memory (MB): peak = 2699.176 ; gain = 64.031 ; free physical = 8154 ; free virtual = 13827
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:28 . Memory (MB): peak = 2698.176 ; gain = 64.031 ; free physical = 7751 ; free virtual = 13636
 INFO: [Common 17-1381] The checkpoint '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/FOC_core.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file FOC_core_utilization_synth.rpt -pb FOC_core_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jan  6 20:59:19 2023...
+INFO: [Common 17-206] Exiting Vivado at Sun Jan 29 21:53:43 2023...

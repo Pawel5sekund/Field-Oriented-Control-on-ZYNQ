@@ -2910,7 +2910,7 @@
      "name": "/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd",
      "__class__": "Path"
     },
-    "mtime": 1675018694.3330026,
+    "mtime": 1675025579.2429512,
     "flags": {
      "source_specific": [],
      "single": [],
@@ -9695,7 +9695,7 @@
      "name": "/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_types.vhd",
      "__class__": "Path"
     },
-    "mtime": 1675021795.4129794,
+    "mtime": 1675025444.9729521,
     "flags": {
      "source_specific": [],
      "single": [],
@@ -19201,6 +19201,10 @@
     "__class__": "Path"
    },
    {
+    "name": "/tmp/tmpkkutcvek.vhd",
+    "__class__": "Path"
+   },
+   {
     "name": "/tmp/tmpq4z55yeg.vhd",
     "__class__": "Path"
    },
@@ -19462,6 +19466,10 @@
    },
    {
     "name": "/tmp/tmp7e9qm5ww.vhd",
+    "__class__": "Path"
+   },
+   {
+    "name": "/tmp/tmp6a37ltni.vhd",
     "__class__": "Path"
    },
    {
@@ -20014,6 +20022,10 @@
    },
    {
     "name": "/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_set_PWM_reg.vhd",
+    "__class__": "Path"
+   },
+   {
+    "name": "/tmp/tmp1ynr8kwt.vhd",
     "__class__": "Path"
    },
    {

@@ -237,8 +237,8 @@ BEGIN
               pid_sel <= "11";
               pid_b   <= VECTOR_0(pid_b'left DOWNTO pid_b'right);
               pid_a   <= STD_LOGIC_VECTOR(resize(last_p_p, pid_a'left+last_p_p'right, pid_a'right+last_p_p'right));
-              pid_d   <= STD_LOGIC_VECTOR(resize(mulByBits(last_i_p, BITS_TP+1), pid_d'left+last_i_p'right, pid_d'right+last_i_p'right)); 
-              pid_c   <= STD_LOGIC_VECTOR(resize(divByBits(last_d_p, BITS_TP+1), pid_c'left+last_d_p'right, pid_c'right+last_d_p'right));
+              pid_d   <= STD_LOGIC_VECTOR(resize(mulByBits(last_i_p, (BITS_TP+1)), pid_d'left+last_i_p'right, pid_d'right+last_i_p'right)); 
+              pid_c   <= STD_LOGIC_VECTOR(resize(divByBits(last_d_p, (BITS_TP+1)), pid_c'left+last_d_p'right, pid_c'right+last_d_p'right));
               operation_selector := 37;
 
             WHEN 48 =>

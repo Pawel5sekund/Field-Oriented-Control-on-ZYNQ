@@ -70,7 +70,7 @@ function vecToSfixed (
   ) return sfixed IS
     variable value: sfixed (A'left downto A'right);
     variable temp_vector: sfixed(A'left-A'right downto 0);
-    variable VECTOR_0 : sfixed (B downto 0) := to_sfixed(0, B, 0); 
+    variable VECTOR_0 : sfixed (B-1 downto 0) := to_sfixed(0, B-1, 0); 
   begin
     if B < 0 then
       return mulByBits(A, -B);
@@ -85,7 +85,7 @@ function vecToSfixed (
   ) return sfixed IS
     variable value: sfixed (A'left downto A'right);
     variable temp_vector: sfixed(A'left-A'right downto 0);
-    variable VECTOR_0 : sfixed (B downto 0) := to_sfixed(0, B, 0); 
+    variable VECTOR_0 : sfixed (B-1 downto 0) := to_sfixed(0, B-1, 0); 
   begin
     if B < 0 then
       return divByBits(A, -B);
