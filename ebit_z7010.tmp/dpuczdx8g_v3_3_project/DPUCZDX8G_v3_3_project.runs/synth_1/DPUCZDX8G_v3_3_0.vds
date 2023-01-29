@@ -1,0 +1,57 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sat May 22 15:07:24 2021
+# Process ID: 7796
+# Current directory: d:/ebit_z7010-master/ebit_z7010.tmp/dpuczdx8g_v3_3_project/DPUCZDX8G_v3_3_project.runs/synth_1
+# Command line: vivado.exe -log DPUCZDX8G_v3_3_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source DPUCZDX8G_v3_3_0.tcl
+# Log file: d:/ebit_z7010-master/ebit_z7010.tmp/dpuczdx8g_v3_3_project/DPUCZDX8G_v3_3_project.runs/synth_1/DPUCZDX8G_v3_3_0.vds
+# Journal file: d:/ebit_z7010-master/ebit_z7010.tmp/dpuczdx8g_v3_3_project/DPUCZDX8G_v3_3_project.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source DPUCZDX8G_v3_3_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/ebit_z7010-master/ip_repo/DPUCZDX8G_v3_3_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/ebit_z7010-master/ip_repo/LED_controller'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2020.1/data/ip'.
+update_ip_catalog: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1013.434 ; gain = 0.000
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is d:/ebit_z7010-master/ebit_z7010.tmp/dpuczdx8g_v3_3_project/DPUCZDX8G_v3_3_project.cache/ip 
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/ebit_z7010-master/ip_repo/DPUCZDX8G_v3_3_0/hdl/DPUCZDX8G_v3_3_0_vl_dpu.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/ebit_z7010-master/ip_repo/DPUCZDX8G_v3_3_0/hdl/DPUCZDX8G_v3_3_0_vl_sfm.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/ebit_z7010-master/ip_repo/DPUCZDX8G_v3_3_0/hdl/DPUCZDX8G_v3_3_0_vl_top.sv:]
+Command: synth_design -top DPUCZDX8G_v3_3_0 -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 11396
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:26 ; elapsed = 00:00:41 . Memory (MB): peak = 1013.434 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'DSP48E1' [D:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:12464]
+INFO: [Synth 8-6155] done synthesizing module 'DSP48E1' (14#1) [D:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:12464]
+INFO: [Synth 8-6157] synthesizing module 'SRL16E' [D:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:78059]
+INFO: [Synth 8-6155] done synthesizing module 'SRL16E' (51#1) [D:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:78059]
+INFO: [Synth 8-6157] synthesizing module 'DSP48E1__parameterized0' [D:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:12464]
+INFO: [Synth 8-6155] done synthesizing module 'DSP48E1__parameterized0' (61#1) [D:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:12464]
+INFO: [Synth 8-6157] synthesizing module 'DSP48E1__parameterized1' [D:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:12464]
+INFO: [Synth 8-6155] done synthesizing module 'DSP48E1__parameterized1' (62#1) [D:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:12464]
+INFO: [Synth 8-6157] synthesizing module 'DSP48E1__parameterized2' [D:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:12464]
+INFO: [Synth 8-6155] done synthesizing module 'DSP48E1__parameterized2' (67#1) [D:/Xilinx/Vivado/2020.1/scripts/rt/data/unisim_comp.v:12464]
+ERROR: [Synth 8-5809] Error generated from encrypted envelope. [d:/ebit_z7010-master/ip_repo/DPUCZDX8G_v3_3_0/hdl/DPUCZDX8G_v3_3_0_vl_sfm.sv:1744]
+ERROR: [Synth 8-5809] Error generated from encrypted envelope. [d:/ebit_z7010-master/ip_repo/DPUCZDX8G_v3_3_0/hdl/DPUCZDX8G_v3_3_0_vl_sfm.sv:1724]
+ERROR: [Synth 8-5809] Error generated from encrypted envelope. [d:/ebit_z7010-master/ip_repo/DPUCZDX8G_v3_3_0/hdl/DPUCZDX8G_v3_3_0_vl_sfm.sv:1349]
+ERROR: [Synth 8-5809] Error generated from encrypted envelope. [d:/ebit_z7010-master/ip_repo/DPUCZDX8G_v3_3_0/hdl/DPUCZDX8G_v3_3_0_vl_sfm.sv:1991]
+ERROR: [Synth 8-5809] Error generated from encrypted envelope. [d:/ebit_z7010-master/ip_repo/DPUCZDX8G_v3_3_0/hdl/DPUCZDX8G_v3_3_0_vl_top.sv:66]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:01:43 ; elapsed = 00:02:03 . Memory (MB): peak = 1230.313 ; gain = 216.879
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+20 Infos, 4 Warnings, 0 Critical Warnings and 6 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Sat May 22 15:10:45 2021...

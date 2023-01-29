@@ -1,0 +1,211 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun May 16 10:43:46 2021
+# Process ID: 11892
+# Current directory: D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.runs/synth_1
+# Command line: vivado.exe -log LED_controller_v1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source LED_controller_v1_0.tcl
+# Log file: D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.runs/synth_1/LED_controller_v1_0.vds
+# Journal file: D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source LED_controller_v1_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/ebit_z7010-master/ip_repo/led_controller'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2020.1/data/ip'.
+Command: synth_design -top LED_controller_v1_0 -part xc7z010iclg400-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010i'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010i'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 11024
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 998.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'LED_controller_v1_0' [D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.srcs/sources_1/imports/hdl/LED_controller_v1_0.vhd:51]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'LED_controller_v1_0_S00_AXI' declared at 'D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.srcs/sources_1/imports/hdl/LED_controller_v1_0_S00_AXI.vhd:5' bound to instance 'LED_controller_v1_0_S00_AXI_inst' of component 'LED_controller_v1_0_S00_AXI' [D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.srcs/sources_1/imports/hdl/LED_controller_v1_0.vhd:90]
+INFO: [Synth 8-638] synthesizing module 'LED_controller_v1_0_S00_AXI' [D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.srcs/sources_1/imports/hdl/LED_controller_v1_0_S00_AXI.vhd:88]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-226] default block is never used [D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.srcs/sources_1/imports/hdl/LED_controller_v1_0_S00_AXI.vhd:236]
+INFO: [Synth 8-226] default block is never used [D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.srcs/sources_1/imports/hdl/LED_controller_v1_0_S00_AXI.vhd:366]
+INFO: [Synth 8-638] synthesizing module 'counter_ON_OFF' [D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.srcs/sources_1/imports/hdl/counter_ON_OFF.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'counter_ON_OFF' (1#1) [D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.srcs/sources_1/imports/hdl/counter_ON_OFF.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'LED_controller_v1_0_S00_AXI' (2#1) [D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.srcs/sources_1/imports/hdl/LED_controller_v1_0_S00_AXI.vhd:88]
+INFO: [Synth 8-256] done synthesizing module 'LED_controller_v1_0' (3#1) [D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.srcs/sources_1/imports/hdl/LED_controller_v1_0.vhd:51]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 998.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 998.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010iclg400-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 998.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010iclg400-1L
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 998.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 7     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 12    
+	   4 Input   32 Bit        Muxes := 5     
+	   2 Input    1 Bit        Muxes := 11    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:01:00 . Memory (MB): peak = 998.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:01:00 . Memory (MB): peak = 998.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:49 ; elapsed = 00:01:01 . Memory (MB): peak = 998.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:19 ; elapsed = 00:01:31 . Memory (MB): peak = 998.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:19 ; elapsed = 00:01:31 . Memory (MB): peak = 998.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:19 ; elapsed = 00:01:31 . Memory (MB): peak = 998.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:19 ; elapsed = 00:01:31 . Memory (MB): peak = 998.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:19 ; elapsed = 00:01:31 . Memory (MB): peak = 998.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:19 ; elapsed = 00:01:31 . Memory (MB): peak = 998.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |    32|
+|3     |LUT1   |     1|
+|4     |LUT2   |     1|
+|5     |LUT3   |     3|
+|6     |LUT4   |   150|
+|7     |LUT6   |    98|
+|8     |FDRE   |   233|
+|9     |FDSE   |     3|
+|10    |IBUF   |    48|
+|11    |OBUF   |    43|
++------+-------+------+
+
+Report Instance Areas: 
++------+-----------------------------------+----------------------------+------+
+|      |Instance                           |Module                      |Cells |
++------+-----------------------------------+----------------------------+------+
+|1     |top                                |                            |   614|
+|2     |  LED_controller_v1_0_S00_AXI_inst |LED_controller_v1_0_S00_AXI |   521|
+|3     |    counter_ON_OFF_inst            |counter_ON_OFF              |   294|
++------+-----------------------------------+----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:19 ; elapsed = 00:01:31 . Memory (MB): peak = 998.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:19 ; elapsed = 00:01:31 . Memory (MB): peak = 998.023 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:01:19 ; elapsed = 00:01:31 . Memory (MB): peak = 998.023 ; gain = 0.000
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.052 . Memory (MB): peak = 998.023 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 32 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 998.023 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+24 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:33 ; elapsed = 00:01:51 . Memory (MB): peak = 998.023 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.runs/synth_1/LED_controller_v1_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file LED_controller_v1_0_utilization_synth.rpt -pb LED_controller_v1_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun May 16 10:45:56 2021...

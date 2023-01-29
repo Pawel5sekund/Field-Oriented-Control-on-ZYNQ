@@ -1,2 +1,0 @@
-BRAM_SIN.v,verilog,xil_defaultlib,../../../../FOC_BLDC.gen/BRAM_SIN/ip/BRAM_SIN/sim/BRAM_SIN.v,
-glbl.v,Verilog,xil_defaultlib,glbl.v

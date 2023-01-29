@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Mon Oct 31 18:24:30 2022
+# Process ID: 3019
+# Current directory: /home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.runs/impl_1
+# Command line: vivado -log ebit_z7010_top_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source ebit_z7010_top_wrapper.tcl -notrace
+# Log file: /home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.runs/impl_1/ebit_z7010_top_wrapper.vdi
+# Journal file: /home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.runs/impl_1/vivado.jou
+# Running On: LAPTOP-QKPB5NLF, OS: Linux, CPU Frequency: 3193.852 MHz, CPU Physical cores: 16, Host memory: 12890 MB
+#-----------------------------------------------------------
+source ebit_z7010_top_wrapper.tcl -notrace

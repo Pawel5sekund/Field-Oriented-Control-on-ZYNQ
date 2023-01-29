@@ -1,0 +1,92 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun May 23 11:15:52 2021
+# Process ID: 6828
+# Current directory: D:/ebit_z7010-master
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5044 D:\ebit_z7010-master\ebit_z7010.xpr
+# Log file: D:/ebit_z7010-master/vivado.log
+# Journal file: D:/ebit_z7010-master\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/ebit_z7010-master/ebit_z7010.xpr
+report_ip_status -name ip_status 
+update_compile_order -fileset sources_1
+upgrade_ip [get_ips  {ebit_z7010_top_axi_intc_0_0 ebit_z7010_top_ps7_0_axi_periph_0 ebit_z7010_top_xlconcat_0_2}] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips {ebit_z7010_top_axi_intc_0_0 ebit_z7010_top_ps7_0_axi_periph_0 ebit_z7010_top_xlconcat_0_2}] -no_script -sync -force -quiet
+set_property  ip_repo_paths  {d:/ebit_z7010-master/ip_repo/LED_controller D:/ebit_z7010-master/ip_repo/DPUCZDX8G_v3_3_0} [current_project]
+update_ip_catalog
+open_bd_design {D:/ebit_z7010-master/ebit_z7010.srcs/sources_1/bd/ebit_z7010_top/ebit_z7010_top.bd}
+create_bd_cell -type ip -vlnv xilinx.com:ip:DPUCZDX8G:3.3 DPUCZDX8G_0
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK0 (50 MHz)} Master {/DPUCZDX8G_0/DPU0_M_AXI_DATA0} Slave {/axi_intc_0/s_axi} ddr_seg {Auto} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins DPUCZDX8G_0/DPU0_M_AXI_DATA0]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK0 (50 MHz)} Master {/DPUCZDX8G_0/DPU0_M_AXI_DATA1} Slave {/axi_intc_0/s_axi} ddr_seg {Auto} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins DPUCZDX8G_0/DPU0_M_AXI_DATA1]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_xbar {/processing_system7_0/FCLK_CLK0 (50 MHz)} Master {/DPUCZDX8G_0/DPU0_M_AXI_INSTR} Slave {/axi_intc_0/s_axi} ddr_seg {Auto} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins DPUCZDX8G_0/DPU0_M_AXI_INSTR]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (50 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins DPUCZDX8G_0/dpu_2x_clk]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (50 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/DPUCZDX8G_0/S_AXI} ddr_seg {Auto} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins DPUCZDX8G_0/S_AXI]
+endgroup
+regenerate_bd_layout
+connect_bd_net [get_bd_pins axi_intc_0/intr] [get_bd_pins DPUCZDX8G_0/dpu_interrupt]
+regenerate_bd_layout
+save_bd_design
+reset_run synth_1
+reset_run ebit_z7010_top_DPUCZDX8G_0_1_synth_1
+reset_run ebit_z7010_top_processing_system7_0_0_synth_1
+reset_run ebit_z7010_top_rst_ps7_0_50M_0_synth_1
+reset_run ebit_z7010_top_debug_bridge_0_2_synth_1
+reset_run ebit_z7010_top_debug_bridge_0_3_synth_1
+reset_run ebit_z7010_top_LED_controller_0_0_synth_1
+reset_run ebit_z7010_top_ila_1_0_synth_1
+reset_run bd_5c2e_lut_buffer_0_synth_1
+reset_run bd_9cef_bs_mux_0_synth_1
+reset_run bd_9cef_axi_jtag_0_synth_1
+reset_run bd_9cef_bsip_0_synth_1
+reset_run bd_9cef_bs_switch_1_0_synth_1
+reset_run bd_9cef_bs_switch_2_synth_1
+reset_run bd_5c2e_xsdbm_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+reset_run ebit_z7010_top_DPUCZDX8G_0_0_synth_1
+startgroup
+set_property -dict [list CONFIG.ARCH_PP {4} CONFIG.ARCH_ICP {8} CONFIG.ARCH_OCP {8} CONFIG.CONV_LEAKYRELU {0} CONFIG.DWCV_PARALLEL {2} CONFIG.DNNDK_PRINT {Number of DPU Cores:1;Arch of DPU:B512;RAM Usage:Low;Channel Augmentation:Enabled;DepthWiseConv:Enabled;AveragePool:Enabled;ReLU Type:ReLU + ReLU6;Number of SFM cores:0;S-AXI Clock Mode:Independent;dpu_2x Clock Gating:Disabled;DSP48 Maximal Cascade Length:1;DSP48 Usage:High;Ultra-RAM Use per DPU:0;Enable timestamp auto-update:Enabled;Target Version:1.4.1;AXI Protocol:AXI3;S-AXI Data Width:32;M-AXI GP Data Width:32;M-AXI HP Data Width (DPU):64;M-AXI HP Data Width (SFM):128;M-AXI ID Width:2;DSP Slice Count:110;Ultra-RAM Count:0.0;Block-RAM Count:73.5} CONFIG.ARCH {512} CONFIG.CONV_DSP_NUM {96} CONFIG.DWCV_DSP_NUM {12} CONFIG.CONV_RELU_ADDON {2} CONFIG.BANK_IMG_N {8} CONFIG.BANK_WGT_N {9} CONFIG.BBANK_IMG_N {8} CONFIG.BBANK_WGT_N {9} CONFIG.SUM_DSP_NUM {110} CONFIG.SUM_BRAM_N {73.5}] [get_bd_cells DPUCZDX8G_0]
+endgroup
+save_bd_design
+reset_run synth_1
+reset_run bd_9cef_bs_switch_1_0_synth_1
+reset_run ebit_z7010_top_DPUCZDX8G_0_1_synth_1
+reset_run ebit_z7010_top_auto_ds_3_synth_1
+reset_run ebit_z7010_top_auto_ds_1_synth_1
+reset_run ebit_z7010_top_auto_pc_2_synth_1
+reset_run ebit_z7010_top_auto_us_1_synth_1
+reset_run ebit_z7010_top_auto_pc_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+reset_run synth_1
+reset_run ebit_z7010_top_debug_bridge_0_2_synth_1
+reset_run ebit_z7010_top_auto_ds_3_synth_1
+reset_run ebit_z7010_top_auto_pc_0_synth_1
+reset_run ebit_z7010_top_auto_pc_2_synth_1
+reset_run ebit_z7010_top_auto_us_1_synth_1
+reset_run ebit_z7010_top_auto_ds_1_synth_1
+reset_run bd_9cef_bs_switch_1_0_synth_1
+reset_run ebit_z7010_top_DPUCZDX8G_0_0_synth_1
+startgroup
+set_property -dict [list CONFIG.LOAD_AUGM {0} CONFIG.POOL_AVERAGE {0} CONFIG.DWCV_RELU6 {0} CONFIG.DWCV_PARALLEL {0} CONFIG.DNNDK_PRINT {Number of DPU Cores:1;Arch of DPU:B512;RAM Usage:Low;Channel Augmentation:Disabled;DepthWiseConv:Disabled;AveragePool:Disabled;ReLU Type:ReLU + ReLU6;Number of SFM cores:0;S-AXI Clock Mode:Independent;dpu_2x Clock Gating:Disabled;DSP48 Maximal Cascade Length:1;DSP48 Usage:High;Ultra-RAM Use per DPU:0;Enable timestamp auto-update:Enabled;Target Version:1.4.1;AXI Protocol:AXI3;S-AXI Data Width:32;M-AXI GP Data Width:32;M-AXI HP Data Width (DPU):64;M-AXI HP Data Width (SFM):128;M-AXI ID Width:2;DSP Slice Count:98;Ultra-RAM Count:0.0;Block-RAM Count:69.5} CONFIG.DWCV_DSP_NUM {0} CONFIG.DWCV_ENA {0} CONFIG.BANK_WGT_N {8} CONFIG.BBANK_WGT_N {8} CONFIG.SUM_DSP_NUM {98} CONFIG.SUM_BRAM_N {69.5}] [get_bd_cells DPUCZDX8G_0]
+endgroup
+save_bd_design
+reset_run ebit_z7010_top_DPUCZDX8G_0_1_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+reset_run ebit_z7010_top_DPUCZDX8G_0_0_synth_1
+delete_bd_objs [get_bd_intf_nets DPUCZDX8G_0_DPU0_M_AXI_DATA0] [get_bd_intf_nets ps7_0_axi_periph_M03_AXI] [get_bd_intf_nets DPUCZDX8G_0_DPU0_M_AXI_DATA1] [get_bd_intf_nets DPUCZDX8G_0_DPU0_M_AXI_INSTR] [get_bd_nets DPUCZDX8G_0_dpu_interrupt] [get_bd_cells DPUCZDX8G_0]
+startgroup
+set_property -dict [list CONFIG.NUM_SI {1} CONFIG.NUM_MI {3}] [get_bd_cells ps7_0_axi_periph]
+endgroup
+regenerate_bd_layout
+save_bd_design
+reset_run synth_1
+reset_run ebit_z7010_top_DPUCZDX8G_0_1_synth_1
+reset_run ebit_z7010_top_xbar_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1

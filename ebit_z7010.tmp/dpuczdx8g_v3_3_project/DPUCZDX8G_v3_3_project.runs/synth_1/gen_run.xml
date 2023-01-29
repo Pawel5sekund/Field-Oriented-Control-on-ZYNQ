@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1621688829">
+  <File Type="PA-TCL" Name="DPUCZDX8G_v3_3_0.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="DPUCZDX8G_v3_3_0_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="DPUCZDX8G_v3_3_0_reports.tcl"/>
+  <File Type="RDS-RDS" Name="DPUCZDX8G_v3_3_0.vds"/>
+  <File Type="RDS-UTIL" Name="DPUCZDX8G_v3_3_0_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="DPUCZDX8G_v3_3_0_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="DPUCZDX8G_v3_3_0.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="DPUCZDX8G_v3_3_0_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="DPUCZDX8G_v3_3_0_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../ip_repo/DPUCZDX8G_v3_3_0/xci/sfm/fp_exp/fp_exp.xci">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../ip_repo/DPUCZDX8G_v3_3_0/xci/sfm/fp_div/fp_div.xci">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../ip_repo/DPUCZDX8G_v3_3_0/xci/sfm/fp_convert/fp_convert.xci">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../ip_repo/DPUCZDX8G_v3_3_0/xci/sfm/fp_add/fp_add.xci">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../ip_repo/DPUCZDX8G_v3_3_0/xci/sfm/fp_acc/fp_acc.xci">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../ip_repo/DPUCZDX8G_v3_3_0/ttcl/timing_clocks_xdc.ttcl">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="ProcessingOrder" Val="LATE"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../ip_repo/DPUCZDX8G_v3_3_0/inc/function.vh">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../ip_repo/DPUCZDX8G_v3_3_0/inc/arch_def.vh">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../ip_repo/DPUCZDX8G_v3_3_0/inc/arch_para.vh">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../ip_repo/DPUCZDX8G_v3_3_0/hdl/DPUCZDX8G_v3_3_0_vl_dpu.sv">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../ip_repo/DPUCZDX8G_v3_3_0/hdl/DPUCZDX8G_v3_3_0_vl_sfm.sv">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../ip_repo/DPUCZDX8G_v3_3_0/ttcl/fingerprint_json.ttcl">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../ip_repo/DPUCZDX8G_v3_3_0/hdl/DPUCZDX8G_v3_3_0_vl_top.sv">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../ip_repo/DPUCZDX8G_v3_3_0/ttcl/timing_impl_clocks_xdc.ttcl">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="ProcessingOrder" Val="LATE"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../ip_repo/DPUCZDX8G_v3_3_0/component.xml">
+      <FileInfo SFType="IPXACT"/>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="DPUCZDX8G_v3_3_0"/>
+      <Option Name="TopRTLFile" Val="$PPRDIR/../../ip_repo/DPUCZDX8G_v3_3_0/hdl/DPUCZDX8G_v3_3_0_vl_top.sv"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

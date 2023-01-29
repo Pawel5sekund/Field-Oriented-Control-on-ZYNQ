@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun May 16 10:43:46 2021
+# Process ID: 11892
+# Current directory: D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.runs/synth_1
+# Command line: vivado.exe -log LED_controller_v1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source LED_controller_v1_0.tcl
+# Log file: D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.runs/synth_1/LED_controller_v1_0.vds
+# Journal file: D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source LED_controller_v1_0.tcl -notrace

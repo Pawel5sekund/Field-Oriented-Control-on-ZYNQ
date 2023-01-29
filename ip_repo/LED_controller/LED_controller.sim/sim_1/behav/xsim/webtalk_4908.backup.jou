@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun May 16 22:03:31 2021
+# Process ID: 4908
+# Current directory: D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.sim/sim_1/behav/xsim/xsim.dir/testbench_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source D:/ebit_z7010-master/ip_repo/LED_controller/LED_controller.sim/sim_1/behav/xsim/xsim.dir/testbench_behav/webtalk/xsim_webtalk.tcl -notrace

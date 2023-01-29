@@ -1,1 +1,0 @@
-MULTIPLY_DSP.vhd,vhdl,xil_defaultlib,../../../../FOC_BLDC.gen/sources_1/ip/MULTIPLY_DSP/sim/MULTIPLY_DSP.vhd,

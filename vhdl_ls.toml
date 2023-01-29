@@ -1,9 +1,0 @@
-# File names are either absolute or relative to the parent folder of the
-# vhdl_ls.toml file and supports glob-style patterns.
-[libraries]
-FOC_lib.files = [
-  'IP_FOC_core/FOC_BLDC.srcs/sources_1/new/FOC_lib/*.vhd'
-]
-xil_defaultlib.files = [
-  'IP_FOC_core/FOC_BLDC.srcs/sources_1/new/*.vhd'
-]

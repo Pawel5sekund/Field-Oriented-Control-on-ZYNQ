@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sat May 22 15:07:24 2021
+# Process ID: 7796
+# Current directory: d:/ebit_z7010-master/ebit_z7010.tmp/dpuczdx8g_v3_3_project/DPUCZDX8G_v3_3_project.runs/synth_1
+# Command line: vivado.exe -log DPUCZDX8G_v3_3_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source DPUCZDX8G_v3_3_0.tcl
+# Log file: d:/ebit_z7010-master/ebit_z7010.tmp/dpuczdx8g_v3_3_project/DPUCZDX8G_v3_3_project.runs/synth_1/DPUCZDX8G_v3_3_0.vds
+# Journal file: d:/ebit_z7010-master/ebit_z7010.tmp/dpuczdx8g_v3_3_project/DPUCZDX8G_v3_3_project.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source DPUCZDX8G_v3_3_0.tcl -notrace
