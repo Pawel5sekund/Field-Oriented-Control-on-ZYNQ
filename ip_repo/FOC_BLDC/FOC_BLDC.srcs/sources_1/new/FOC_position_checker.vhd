@@ -1,79 +1,80 @@
-LIBRARY IEEE;
-USE IEEE.STD_LOGIC_1164.ALL;
-USE IEEE.NUMERIC_STD.ALL;
-ENTITY FOC_position_checker IS
+-- vhdl-linter-disable port-declaration
+-- vhdl-linter-disable type-resolved
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+entity FOC_position_checker is
   --  Port ( );
-  GENERIC (
+  generic (
     STEP_scale         : integer := 16;
     full_rotate_pulses : integer := 4095
-  );
-  PORT (
-    CLK                             : IN std_logic;
-    encoder                         : IN std_logic_vector (1 DOWNTO 0);
-    STEP                            : IN std_logic;
-    position_calibration            : IN std_logic_vector (15 DOWNTO 0);
-    position_calibration_SET_signal : IN std_logic;
-    position                        : OUT signed (14 DOWNTO 0) := (OTHERS => '0');
-    dposition                       : OUT signed (12 DOWNTO 0) := (OTHERS => '0');
-    DIR                             : IN std_logic             := '0'
-  );
-END FOC_position_checker;
+    );
+  port (
+    CLK                             : in  std_logic;
+    encoder                         : in  std_logic_vector (1 downto 0);
+    STEP                            : in  std_logic;
+    position_calibration            : in  std_logic_vector (15 downto 0);
+    position_calibration_SET_signal : in  std_logic;
+    position                        : out signed (14 downto 0) := (others => '0');
+    dposition                       : out signed (12 downto 0) := (others => '0');
+    DIR                             : in  std_logic            := '0'
+    );
+end FOC_position_checker;
 
-ARCHITECTURE Behavioral OF FOC_position_checker IS
+architecture Behavioral of FOC_position_checker is
 
-BEGIN
-  position_checker : PROCESS IS
-    VARIABLE last_encoder                         : std_logic_vector (1 DOWNTO 0) := "00";
-    VARIABLE last_STEP                            : std_logic                     := '0';
-    VARIABLE var_position                         : signed(position'RANGE)        := (OTHERS => '0');
-    VARIABLE var_dposition                        : signed(dposition'RANGE)       := (OTHERS => '0');
-    VARIABLE last_position_calibration_SET_signal : std_logic                     := '0';
-  BEGIN
+begin
+  position_checker : process is
+    variable last_encoder  : std_logic_vector (1 downto 0) := "00";
+    variable last_STEP     : std_logic                     := '0';
+    variable var_position  : signed(position'range)        := (others => '0');
+    variable var_dposition : signed(dposition'range)       := (others => '0');
+  begin
 
-    WAIT UNTIL rising_edge(CLK);
+    wait until rising_edge(CLK);
 
-    CASE (std_logic_vector(last_encoder XOR encoder) & encoder) IS
-        --do przodu
-      WHEN "1010" | "1001" | "0111" | "0100" =>
+    case (std_logic_vector(last_encoder xor encoder) & encoder) is
+      --do przodu
+      when "1010" | "1001" | "0111" | "0100" =>
         var_position  := var_position + 1;
         var_dposition := var_dposition - 1;
-        --do tylu
-      WHEN "0110" | "0101" | "1011" | "1000" =>
+      --do tylu
+      when "0110" | "0101" | "1011" | "1000" =>
         var_position  := var_position - 1;
         var_dposition := var_dposition + 1;
-      WHEN OTHERS =>
-        --nop()
-    END CASE;
+      when others =>
+    --nop()
+    end case;
 
-    CASE std_logic_vector'(std_logic(last_STEP XOR STEP) & STEP & DIR) IS
-      WHEN "110" =>
+    case std_logic_vector'(std_logic(last_STEP xor STEP) & STEP & DIR) is
+      when "110" =>
         var_dposition := var_dposition - STEP_scale;
-      WHEN "111" =>
+      when "111" =>
         var_dposition := var_dposition + STEP_scale;
-      WHEN OTHERS =>
-        --nop()
-    END CASE;
+      when others =>
+    --nop()
+    end case;
 
-    IF (var_position > (full_rotate_pulses - 1)) THEN
+    if (var_position > (full_rotate_pulses - 1)) then
       var_position := var_position - full_rotate_pulses;
-    ELSIF (var_position < 0) THEN
+    elsif (var_position < 0) then
       var_position := var_position + full_rotate_pulses;
-    END IF;
-    
-    IF ((position_calibration_SET_signal XOR last_position_calibration_SET_signal) AND position_calibration_SET_signal) = '1' THEN
-      --position <= signed(position_calibration(14 downto 0));
-      var_position  := signed(position_calibration(14 DOWNTO 0));
-      var_dposition := (OTHERS => '0');
-    ELSE
-      position <= var_position;
-    END IF;
+    end if;
 
-    dposition <= var_dposition;
+    if (position_calibration_SET_signal = '1') then
+      --position <= signed(position_calibration(14 downto 0));
+      var_position  := signed(position_calibration(14 downto 0));
+      var_dposition := (others => '0');
+    else
+      position <= var_position;
+    end if;
+
+    dposition    <= var_dposition;
     last_encoder := encoder;
     last_STEP    := STEP;
 
     dposition <= var_dposition;
     position  <= var_position;
-  END PROCESS position_checker;
+  end process position_checker;
 
-END Behavioral;
+end Behavioral;

@@ -1,3 +1,5 @@
+-- vhdl-linter-disable port-declaration
+-- vhdl-linter-disable type-resolved
 LIBRARY IEEE;
 LIBRARY FOC_lib;
 USE IEEE.STD_LOGIC_1164.ALL;
@@ -20,7 +22,7 @@ ENTITY FOC_set_PWM_reg IS
     position     : IN signed (14 DOWNTO 0)              := (OTHERS => '0');
     dposition    : IN signed (12 DOWNTO 0)              := (OTHERS => '0');
     PID_out      : IN std_logic_vector (17 DOWNTO 0)    := (OTHERS => '0');
-    PWM_register : INOUT type_PWM_register (2 DOWNTO 0) := (OTHERS => (OTHERS => '0'))
+    PWM_register : OUT type_PWM_register (2 DOWNTO 0) := (OTHERS => (OTHERS => '0'))
   );
 END FOC_set_PWM_reg;
 
