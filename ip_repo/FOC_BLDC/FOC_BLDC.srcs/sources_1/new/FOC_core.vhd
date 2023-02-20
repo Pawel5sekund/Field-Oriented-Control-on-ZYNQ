@@ -350,7 +350,6 @@ begin
             pwm_ch_v(0) <= (not std_logic(sign_pwm_register(2))) and var_output_current_limitter;
         end if;
 
-
     end process pwm;
 
 end architecture behavioral;
