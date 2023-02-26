@@ -1,3 +1,5 @@
+-- vhdl-linter-disable type-resolved
+-- vhdl-linter-disable unused
 LIBRARY IEEE;
 
 USE IEEE.STD_LOGIC_1164.ALL;
@@ -28,6 +30,10 @@ PACKAGE FOC_types IS
       A : sfixed;
       B : INTEGER
     ) return sfixed;
+
+    function unToSigned (
+      arg                     : unsigned     
+    ) return signed;
 
 END FOC_types;
 
@@ -93,5 +99,14 @@ function vecToSfixed (
     value := A(A'left) & (A(A'left-1 downto A'right+B)) & VECTOR_0;
     return value;
   end function mulByBits;
+
+      function unToSigned (
+      arg                     : unsigned     
+    ) return signed is
+      variable result: signed(arg'left+1 downto arg'right);
+    begin
+      result := resize(signed(std_logic_vector'("0" & arg)), arg'left+1 - arg'right);
+      return result;
+    end function unToSigned;
 
 END PACKAGE BODY FOC_types;

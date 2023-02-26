@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Sun Feb 26 23:53:14 2023
+# Process ID: 2771
+# Current directory: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/XADC_to_reg/XADC_to_reg.runs/synth_1
+# Command line: vivado -log CORE.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source CORE.tcl
+# Log file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/XADC_to_reg/XADC_to_reg.runs/synth_1/CORE.vds
+# Journal file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/XADC_to_reg/XADC_to_reg.runs/synth_1/vivado.jou
+# Running On: LAPTOP-QKPB5NLF, OS: Linux, CPU Frequency: 3194.001 MHz, CPU Physical cores: 16, Host memory: 8015 MB
+#-----------------------------------------------------------
+source CORE.tcl -notrace

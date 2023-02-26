@@ -14,17 +14,17 @@ entity foc_core is
         position_histeresis : integer              := 8;
         pwm_period          : integer              := 2047;
         full_rotate_pulses  : integer              := 4095;
-        max_p_pid           : SFIXED(10 downto -8) := to_sfixed(1023, 10, -8);
-        max_i_pid           : SFIXED(10 downto -8) := to_sfixed(1023, 10, -8);
-        max_d_pid           : SFIXED(10 downto -8) := to_sfixed(1023, 10, -8);
-        max_pid_pid         : SFIXED(10 downto -8) := to_sfixed(2047, 10, -8);
+        max_p_pid           : SFIXED(12 downto -8) := to_sfixed(pwm_period, 12, -8);
+        max_i_pid           : SFIXED(12 downto -8) := to_sfixed(pwm_period, 12, -8);
+        max_d_pid           : SFIXED(12 downto -8) := to_sfixed(pwm_period, 12, -8);
+        max_pid_pid         : SFIXED(12 downto -8) := to_sfixed(pwm_period, 12, -8);
         sampling_time       : real                 := 0.000000064  --64ns
         );
     --  Port ( );
     port (
         -- data input
         en                              : in  std_logic;
-        res                             : in  std_logic;
+        n_res                           : in  std_logic;
         CLK                             : in  std_logic;
         current_sensor                  : in  std_logic_vector(11 downto 0);
         encoder                         : in  std_logic_vector(1 downto 0);
@@ -81,25 +81,25 @@ architecture behavioral of foc_core is
             full_rotate_pulses  : integer
             );
         port (
-            clk          : in    std_logic;
-            position     : in    signed (14 downto 0);
-            dposition    : in    signed (12 downto 0);
-            pid_out      : in    std_logic_vector(17 downto 0);
+            clk          : in  std_logic;
+            position     : in  signed (14 downto 0);
+            dposition    : in  signed (12 downto 0);
+            pid_out      : in  std_logic_vector(17 downto 0);
             pwm_register : out type_PWM_register (2 downto 0)
             );
     end component;
 
-    signal position         : signed (14 downto 0);
-    signal dposition        : signed (12 downto 0);
-    signal pid_sel          : std_logic_vector(1 downto 0);
-    signal pid_a            : std_logic_vector(17 downto 0);
-    signal pid_b            : std_logic_vector(17 downto 0);
-    signal pid_c            : std_logic_vector(47 downto 0);
-    signal pid_d            : std_logic_vector(17 downto 0);
-    signal pid_p            : std_logic_vector(47 downto 0);
-    signal pid_out          : std_logic_vector(17 downto 0);
+    signal position         : signed (14 downto 0)          := (others => '0');
+    signal dposition        : signed (12 downto 0)          := (others => '0');
+    signal pid_sel          : std_logic_vector(1 downto 0)  := (others => '0');
+    signal pid_a            : std_logic_vector(17 downto 0) := (others => '0');
+    signal pid_b            : std_logic_vector(17 downto 0) := (others => '0');
+    signal pid_c            : std_logic_vector(47 downto 0) := (others => '0');
+    signal pid_d            : std_logic_vector(17 downto 0) := (others => '0');
+    signal pid_p            : std_logic_vector(47 downto 0) := (others => '0');
+    signal pid_out          : std_logic_vector(17 downto 0) := (others => '0');
     signal pwm_register     : type_PWM_register (2 downto 0);
-    signal current_setpoint : std_logic_vector(11 downto 0);
+    signal current_setpoint : std_logic_vector(11 downto 0) := (others => '0');
 
 begin
 
@@ -160,16 +160,15 @@ begin
             );
 
     pid : process is
-
-        variable operation_selector : integer range 63 downto -1     := - 1;
+        variable operation_selector : integer range 63 downto -1            := - 1;
         variable error              : signed (17 downto 0);
         variable last_error         : signed (17 downto 0);
-        variable last_p_p           : SFIXED((48+kp'left-1) downto kp'left);
-        variable last_i_p           : SFIXED((48+ki'left-1) downto ki'left);
-        variable last_d_p           : SFIXED((48+kd'left-1) downto kd'left);
-        constant VECTOR_0           : std_logic_vector (47 downto 0) := (others => '0');
-        --CONSTANT SAMPLING_CYCLES : INTEGER := sampling_time/cycle_time;
-        constant BITS_TP            : integer                        := clog2(sampling_time);
+        variable last_p_p           : SFIXED((47+kp'right) downto kp'right) := (others => '0');
+        variable last_i_p           : SFIXED((47+ki'right) downto ki'right) := (others => '0');
+        variable last_d_p           : SFIXED((47+kd'right) downto kd'right) := (others => '0');
+        --constant SIGNIFICANT_BITS : integer := kp'length + current_sensor'right;
+        constant VECTOR_0           : std_logic_vector (47 downto 0)        := (others => '0');
+        constant BITS_TP            : integer                               := clog2(sampling_time);
     begin
 
         wait until rising_edge(clk);
@@ -183,11 +182,13 @@ begin
                 last_i_p   := (others => '0');
                 last_d_p   := (others => '0');
 
-                operation_selector := 0;
+                if (en = '1') then
+                    operation_selector := 0;
+                end if;
 
             when 0 =>
 
-                error   := resize(signed(std_logic_vector'("0" & current_setpoint)) - signed(std_logic_vector'("0" & current_sensor)), error'length);
+                error   := resize(unToSigned(current_setpoint) - unToSigned(current_sensor), error'length);
                 pid_sel <= "00";
                 pid_d   <= std_logic_vector(error);
                 pid_a   <= std_logic_vector(last_error);
@@ -198,9 +199,9 @@ begin
 
             when 12 =>
 
-                if (vecToSfixed(pid_p, kp'right) < -max_p_pid) then
+                if (divByBits(vecToSfixed(pid_p, kp'right), 1) < -max_p_pid) then
                     last_p_p := resize(-max_p_pid, last_p_p'left, last_p_p'right);
-                elsif (vecToSfixed(pid_p, kp'right) > max_p_pid) then
+                elsif (divByBits(vecToSfixed(pid_p, kp'right), 1) > max_p_pid) then
                     last_p_p := resize(max_p_pid, last_p_p'left, last_p_p'right);
                 else
                     last_p_p := vecToSfixed(pid_p, kp'right);
@@ -213,9 +214,9 @@ begin
 
             when 24 =>
 
-                if (vecToSfixed(pid_p, ki'right) < -max_i_pid) then
+                if (mulByBits(vecToSfixed(pid_p, ki'right), BITS_TP+1) < -max_i_pid) then
                     last_i_p := resize(-max_i_pid, last_p_p'left, last_p_p'right);
-                elsif (vecToSfixed(pid_p, ki'right) > max_i_pid) then
+                elsif (mulByBits(vecToSfixed(pid_p, ki'right), BITS_TP+1) > max_i_pid) then
                     last_i_p := resize(max_i_pid, last_p_p'left, last_p_p'right);
                 else
                     last_i_p := vecToSfixed(pid_p, ki'right);
@@ -228,29 +229,29 @@ begin
 
             when 36 =>
 
-                if (vecToSfixed(pid_p, kd'right) < -max_p_pid) then
+                if (divByBits(vecToSfixed(pid_p, kd'right), BITS_TP+1) < -max_p_pid) then
                     last_d_p := resize(-max_d_pid, last_p_p'left, last_p_p'right);
-                elsif (vecToSfixed(pid_p, kd'right) > max_d_pid) then
+                elsif (divByBits(vecToSfixed(pid_p, kd'right), BITS_TP+1) > max_d_pid) then
                     last_d_p := resize(max_d_pid, last_p_p'left, last_p_p'right);
                 else
                     last_d_p := vecToSfixed(pid_p, kd'right);
                 end if;
 
                 pid_sel            <= "11";
-                pid_b              <= VECTOR_0(pid_b'left downto pid_b'right);
-                pid_a              <= std_logic_vector(resize(last_p_p, pid_a'left+last_p_p'right, pid_a'right+last_p_p'right));
-                pid_d              <= std_logic_vector(resize(mulByBits(last_i_p, (BITS_TP+1)), pid_d'left+last_i_p'right, pid_d'right+last_i_p'right));
-                pid_c              <= std_logic_vector(resize(divByBits(last_d_p, (BITS_TP+1)), pid_c'left+last_d_p'right, pid_c'right+last_d_p'right));
+                pid_b              <= VECTOR_0(pid_b'left downto pid_b'right+1) & "1";  --send 1
+                pid_a              <= std_logic_vector(resize(divByBits(last_p_p, 1), max_p_pid'left, pid_a'left-max_p_pid'left));
+                pid_d              <= std_logic_vector(resize(mulByBits(last_d_p, (BITS_TP+1)), max_d_pid'left, pid_d'left-max_d_pid'left));
+                pid_c              <= std_logic_vector(resize(divByBits(last_i_p, (BITS_TP+1)), max_i_pid'left, pid_c'left-max_i_pid'left));
                 operation_selector := 37;
 
             when 48 =>
 
                 if (vecToSfixed(pid_p, kp'right) < 0) then
                     pid_out <= std_logic_vector(to_SIGNED(0, pid_out'length));
-                elsif (to_sfixed(std_ulogic_vector(pid_p), pid_p'length+max_p_pid'right-1, max_p_pid'right) > max_pid_pid) then
-                    pid_out <= std_logic_vector(to_SIGNED(max_pid_pid, pid_out'length - 6)) & "000000";
+                elsif (vecToSfixed(pid_p, kp'right) > max_pid_pid) then
+                    pid_out <= std_logic_vector(resize(max_pid_pid, pid_out'length+max_pid_pid'right-1, max_p_pid'right));
                 else
-                    pid_out <= pid_p(18 downto 1);
+                    pid_out <= std_logic_vector(resize(vecToSfixed(pid_p, kp'right), pid_out'length+max_pid_pid'right-1, max_p_pid'right));
                 end if;
 
                 last_error         := error;
@@ -264,7 +265,7 @@ begin
                 pid_d   <= pid_d;
                 pid_sel <= pid_sel;
 
-                if (en = '0' and res = '1') then
+                if (en = '0' and n_res = '0') then
                     operation_selector := - 1;
                 elsif (operation_selector = 63) then
                     operation_selector := 0;
@@ -291,8 +292,9 @@ begin
         variable cnt                         : integer range 0 to pwm_period;
         variable var_pwm_register            : type_PWM_register (2 downto 0);
         variable sign_pwm_register           : std_logic_vector(var_pwm_register'range);
-        variable var_pwm_maximum_register    : unsigned (11 downto 0);
+        variable var_pwm_current_register    : unsigned (12 downto 0);
         variable var_output_current_limitter : std_logic;
+        constant PWM_PERIOD_BITS             : integer := clog2(real(pwm_period));
 
     begin
 
@@ -310,44 +312,44 @@ begin
 
         end case;
 
-        sign_pwm_register(0) := pwm_register(0)(12);
-        sign_pwm_register(1) := pwm_register(0)(12);
-        sign_pwm_register(2) := pwm_register(0)(12);
+        sign_pwm_register(0) := pwm_register(0)(pwm_register(0)'left);
+        sign_pwm_register(1) := pwm_register(1)(pwm_register(1)'left);
+        sign_pwm_register(2) := pwm_register(2)(pwm_register(2)'left);
 
         var_pwm_register(0) := abs(pwm_register(0));
         var_pwm_register(1) := abs(pwm_register(1));
         var_pwm_register(2) := abs(pwm_register(2));
 
-        var_pwm_maximum_register := unsigned(PID_out(17 downto 6));
+        var_pwm_current_register := unsigned(PID_out(pid_out'left-1 downto pid_out'left-1-PWM_PERIOD_BITS));
 
-        if (cnt > var_pwm_maximum_register) then
+        if (cnt > var_pwm_current_register) then
             var_output_current_limitter := '0';
         else
             var_output_current_limitter := '1';
         end if;
 
         if (cnt > var_pwm_register(0)) then
-            pwm_ch_u(0) <= std_logic(sign_pwm_register(0)) and var_output_current_limitter;
-            pwm_ch_u(1) <= (not std_logic(sign_pwm_register(0))) and var_output_current_limitter;
+            pwm_ch_u(0) <= std_logic(sign_pwm_register(0)) and var_output_current_limitter and en;
+            pwm_ch_u(1) <= (not std_logic(sign_pwm_register(0))) and var_output_current_limitter and en;
         else
-            pwm_ch_u(1) <= std_logic(sign_pwm_register(0)) and var_output_current_limitter;
-            pwm_ch_u(0) <= (not std_logic(sign_pwm_register(0))) and var_output_current_limitter;
+            pwm_ch_u(1) <= std_logic(sign_pwm_register(0)) and var_output_current_limitter and en;
+            pwm_ch_u(0) <= (not std_logic(sign_pwm_register(0))) and var_output_current_limitter and en;
         end if;
 
         if (cnt > var_pwm_register(1)) then
-            pwm_ch_w(0) <= std_logic(sign_pwm_register(1)) and var_output_current_limitter;
-            pwm_ch_w(1) <= (not std_logic(sign_pwm_register(1))) and var_output_current_limitter;
+            pwm_ch_w(0) <= std_logic(sign_pwm_register(1)) and var_output_current_limitter and en;
+            pwm_ch_w(1) <= (not std_logic(sign_pwm_register(1))) and var_output_current_limitter and en;
         else
-            pwm_ch_w(1) <= std_logic(sign_pwm_register(1)) and var_output_current_limitter;
-            pwm_ch_w(0) <= (not std_logic(sign_pwm_register(1))) and var_output_current_limitter;
+            pwm_ch_w(1) <= std_logic(sign_pwm_register(1)) and var_output_current_limitter and en;
+            pwm_ch_w(0) <= (not std_logic(sign_pwm_register(1))) and var_output_current_limitter and en;
         end if;
 
         if (cnt > var_pwm_register(2)) then
-            pwm_ch_v(0) <= std_logic(sign_pwm_register(2)) and var_output_current_limitter;
-            pwm_ch_v(1) <= (not std_logic(sign_pwm_register(2))) and var_output_current_limitter;
+            pwm_ch_v(0) <= std_logic(sign_pwm_register(2)) and var_output_current_limitter and en;
+            pwm_ch_v(1) <= (not std_logic(sign_pwm_register(2))) and var_output_current_limitter and en;
         else
-            pwm_ch_v(1) <= std_logic(sign_pwm_register(2)) and var_output_current_limitter;
-            pwm_ch_v(0) <= (not std_logic(sign_pwm_register(2))) and var_output_current_limitter;
+            pwm_ch_v(1) <= std_logic(sign_pwm_register(2)) and var_output_current_limitter and en;
+            pwm_ch_v(0) <= (not std_logic(sign_pwm_register(2))) and var_output_current_limitter and en;
         end if;
 
     end process pwm;
