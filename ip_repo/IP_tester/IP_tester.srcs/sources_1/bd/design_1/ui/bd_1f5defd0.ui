@@ -1,0 +1,25 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.22339",
+   "Default View_TopLeft":"-312,-92",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace inst xadc_wiz_0 -pg 1 -lvl 2 -x 50 -y 130 -defaultsOSRD
+preplace inst sim_clk_gen_0 -pg 1 -lvl 1 -x -270 -y 550 -defaultsOSRD
+preplace inst CORE_0 -pg 1 -lvl 3 -x 460 -y 110 -defaultsOSRD
+preplace netloc CORE_0_daddr_out 1 1 3 -140 430 NJ 430 620
+preplace netloc CORE_0_den_out 1 1 3 -130 440 NJ 440 610
+preplace netloc CORE_0_do_out 1 1 3 -120 450 NJ 450 600
+preplace netloc CORE_0_dwe_out 1 1 3 -110 460 NJ 460 590
+preplace netloc Net 1 1 2 -160 470 210
+preplace netloc xadc_wiz_0_do_out 1 1 2 -160 -180 220J
+preplace netloc xadc_wiz_0_drdy_out 1 1 2 -150 -170 200J
+levelinfo -pg 1 -400 -270 50 460 640
+pagesize -pg 1 -db -bbox -sgen -400 -190 640 640
+"
+}
+{
+   "da_board_cnt":"1",
+   "da_clkrst_cnt":"1"
+}

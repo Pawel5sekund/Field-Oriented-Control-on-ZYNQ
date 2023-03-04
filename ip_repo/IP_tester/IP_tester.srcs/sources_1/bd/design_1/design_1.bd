@@ -1,0 +1,306 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7z010clg400-1",
+      "gen_directory": "../../../../IP_tester.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "None",
+      "tool_version": "2022.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "xadc_wiz_0": "",
+      "sim_clk_gen_0": "",
+      "CORE_0": ""
+    },
+    "components": {
+      "xadc_wiz_0": {
+        "vlnv": "xilinx.com:ip:xadc_wiz:3.3",
+        "xci_name": "design_1_xadc_wiz_0_0",
+        "xci_path": "ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0.xci",
+        "inst_hier_path": "xadc_wiz_0",
+        "parameters": {
+          "ADC_OFFSET_AND_GAIN_CALIBRATION": {
+            "value": "false"
+          },
+          "AVERAGE_ENABLE_VAUXP0_VAUXN0": {
+            "value": "true"
+          },
+          "AVERAGE_ENABLE_VAUXP10_VAUXN10": {
+            "value": "true"
+          },
+          "AVERAGE_ENABLE_VAUXP11_VAUXN11": {
+            "value": "true"
+          },
+          "AVERAGE_ENABLE_VAUXP12_VAUXN12": {
+            "value": "true"
+          },
+          "AVERAGE_ENABLE_VAUXP13_VAUXN13": {
+            "value": "true"
+          },
+          "AVERAGE_ENABLE_VAUXP14_VAUXN14": {
+            "value": "true"
+          },
+          "AVERAGE_ENABLE_VAUXP15_VAUXN15": {
+            "value": "true"
+          },
+          "AVERAGE_ENABLE_VAUXP1_VAUXN1": {
+            "value": "true"
+          },
+          "AVERAGE_ENABLE_VAUXP2_VAUXN2": {
+            "value": "true"
+          },
+          "AVERAGE_ENABLE_VAUXP3_VAUXN3": {
+            "value": "true"
+          },
+          "AVERAGE_ENABLE_VAUXP4_VAUXN4": {
+            "value": "true"
+          },
+          "AVERAGE_ENABLE_VAUXP5_VAUXN5": {
+            "value": "true"
+          },
+          "AVERAGE_ENABLE_VAUXP6_VAUXN6": {
+            "value": "true"
+          },
+          "AVERAGE_ENABLE_VAUXP7_VAUXN7": {
+            "value": "true"
+          },
+          "AVERAGE_ENABLE_VAUXP8_VAUXN8": {
+            "value": "true"
+          },
+          "AVERAGE_ENABLE_VAUXP9_VAUXN9": {
+            "value": "true"
+          },
+          "BIPOLAR_VAUXP0_VAUXN0": {
+            "value": "false"
+          },
+          "BIPOLAR_VAUXP10_VAUXN10": {
+            "value": "false"
+          },
+          "BIPOLAR_VAUXP11_VAUXN11": {
+            "value": "false"
+          },
+          "BIPOLAR_VAUXP12_VAUXN12": {
+            "value": "false"
+          },
+          "BIPOLAR_VAUXP13_VAUXN13": {
+            "value": "false"
+          },
+          "BIPOLAR_VAUXP14_VAUXN14": {
+            "value": "false"
+          },
+          "BIPOLAR_VAUXP15_VAUXN15": {
+            "value": "false"
+          },
+          "BIPOLAR_VAUXP1_VAUXN1": {
+            "value": "false"
+          },
+          "BIPOLAR_VAUXP2_VAUXN2": {
+            "value": "false"
+          },
+          "BIPOLAR_VAUXP3_VAUXN3": {
+            "value": "false"
+          },
+          "BIPOLAR_VAUXP4_VAUXN4": {
+            "value": "false"
+          },
+          "BIPOLAR_VAUXP5_VAUXN5": {
+            "value": "false"
+          },
+          "BIPOLAR_VAUXP6_VAUXN6": {
+            "value": "false"
+          },
+          "BIPOLAR_VAUXP7_VAUXN7": {
+            "value": "false"
+          },
+          "BIPOLAR_VAUXP8_VAUXN8": {
+            "value": "false"
+          },
+          "BIPOLAR_VAUXP9_VAUXN9": {
+            "value": "false"
+          },
+          "CHANNEL_AVERAGING": {
+            "value": "256"
+          },
+          "CHANNEL_ENABLE_VAUXP0_VAUXN0": {
+            "value": "true"
+          },
+          "CHANNEL_ENABLE_VAUXP10_VAUXN10": {
+            "value": "true"
+          },
+          "CHANNEL_ENABLE_VAUXP11_VAUXN11": {
+            "value": "true"
+          },
+          "CHANNEL_ENABLE_VAUXP12_VAUXN12": {
+            "value": "true"
+          },
+          "CHANNEL_ENABLE_VAUXP13_VAUXN13": {
+            "value": "true"
+          },
+          "CHANNEL_ENABLE_VAUXP14_VAUXN14": {
+            "value": "true"
+          },
+          "CHANNEL_ENABLE_VAUXP15_VAUXN15": {
+            "value": "true"
+          },
+          "CHANNEL_ENABLE_VAUXP1_VAUXN1": {
+            "value": "true"
+          },
+          "CHANNEL_ENABLE_VAUXP2_VAUXN2": {
+            "value": "true"
+          },
+          "CHANNEL_ENABLE_VAUXP3_VAUXN3": {
+            "value": "true"
+          },
+          "CHANNEL_ENABLE_VAUXP4_VAUXN4": {
+            "value": "true"
+          },
+          "CHANNEL_ENABLE_VAUXP5_VAUXN5": {
+            "value": "true"
+          },
+          "CHANNEL_ENABLE_VAUXP6_VAUXN6": {
+            "value": "true"
+          },
+          "CHANNEL_ENABLE_VAUXP7_VAUXN7": {
+            "value": "true"
+          },
+          "CHANNEL_ENABLE_VAUXP8_VAUXN8": {
+            "value": "true"
+          },
+          "CHANNEL_ENABLE_VAUXP9_VAUXN9": {
+            "value": "true"
+          },
+          "CHANNEL_ENABLE_VP_VN": {
+            "value": "false"
+          },
+          "ENABLE_AXI4STREAM": {
+            "value": "false"
+          },
+          "ENABLE_CALIBRATION_AVERAGING": {
+            "value": "false"
+          },
+          "ENABLE_RESET": {
+            "value": "false"
+          },
+          "ENABLE_VCCDDRO_ALARM": {
+            "value": "false"
+          },
+          "ENABLE_VCCPAUX_ALARM": {
+            "value": "false"
+          },
+          "ENABLE_VCCPINT_ALARM": {
+            "value": "false"
+          },
+          "EXTERNAL_MUX_CHANNEL": {
+            "value": "VP_VN"
+          },
+          "INTERFACE_SELECTION": {
+            "value": "ENABLE_DRP"
+          },
+          "OT_ALARM": {
+            "value": "false"
+          },
+          "SENSOR_OFFSET_AND_GAIN_CALIBRATION": {
+            "value": "false"
+          },
+          "SEQUENCER_MODE": {
+            "value": "Continuous"
+          },
+          "SIM_FILE_NAME": {
+            "value": "design"
+          },
+          "SIM_FILE_REL_PATH": {
+            "value": "/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/IP_tester/IP_tester.ip_user_files/ip/xadc_wiz_0"
+          },
+          "SIM_FILE_SEL": {
+            "value": "Relative_path"
+          },
+          "SINGLE_CHANNEL_SELECTION": {
+            "value": "TEMPERATURE"
+          },
+          "USER_TEMP_ALARM": {
+            "value": "false"
+          },
+          "VCCAUX_ALARM": {
+            "value": "false"
+          },
+          "VCCINT_ALARM": {
+            "value": "false"
+          },
+          "XADC_STARUP_SELECTION": {
+            "value": "channel_sequencer"
+          }
+        }
+      },
+      "sim_clk_gen_0": {
+        "vlnv": "xilinx.com:ip:sim_clk_gen:1.0",
+        "xci_name": "design_1_sim_clk_gen_0_0",
+        "xci_path": "ip/design_1_sim_clk_gen_0_0/design_1_sim_clk_gen_0_0.xci",
+        "inst_hier_path": "sim_clk_gen_0",
+        "parameters": {
+          "RESET_POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      },
+      "CORE_0": {
+        "vlnv": "xilinx.com:user:CORE:1.0",
+        "xci_name": "design_1_CORE_0_0",
+        "xci_path": "ip/design_1_CORE_0_0/design_1_CORE_0_0.xci",
+        "inst_hier_path": "CORE_0",
+        "parameters": {
+          "regAddrStart": {
+            "value": "15"
+          }
+        }
+      }
+    },
+    "nets": {
+      "CORE_0_daddr_out": {
+        "ports": [
+          "CORE_0/daddr_out",
+          "xadc_wiz_0/daddr_in"
+        ]
+      },
+      "CORE_0_den_out": {
+        "ports": [
+          "CORE_0/den_out",
+          "xadc_wiz_0/den_in"
+        ]
+      },
+      "CORE_0_do_out": {
+        "ports": [
+          "CORE_0/do_out",
+          "xadc_wiz_0/di_in"
+        ]
+      },
+      "CORE_0_dwe_out": {
+        "ports": [
+          "CORE_0/dwe_out",
+          "xadc_wiz_0/dwe_in"
+        ]
+      },
+      "Net": {
+        "ports": [
+          "sim_clk_gen_0/clk",
+          "xadc_wiz_0/dclk_in",
+          "CORE_0/CLK"
+        ]
+      },
+      "xadc_wiz_0_do_out": {
+        "ports": [
+          "xadc_wiz_0/do_out",
+          "CORE_0/di_in"
+        ]
+      },
+      "xadc_wiz_0_drdy_out": {
+        "ports": [
+          "xadc_wiz_0/drdy_out",
+          "CORE_0/drdy_in"
+        ]
+      }
+    }
+  }
+}

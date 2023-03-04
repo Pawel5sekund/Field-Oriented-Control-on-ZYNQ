@@ -80,6 +80,8 @@ set_property webtalk.parent_dir /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Con
 set_property parent.project_path /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/XADC_to_reg/XADC_to_reg.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
+set_property ip_repo_paths /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/XADC_to_reg [current_project]
+update_ip_catalog
 set_property ip_output_repo /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/XADC_to_reg/XADC_to_reg.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
@@ -95,6 +97,8 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/XADC_to_reg/XADC_to_reg.srcs/utils_1/imports/synth_1/CORE.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
