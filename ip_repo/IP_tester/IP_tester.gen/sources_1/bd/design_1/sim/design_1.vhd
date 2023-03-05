@@ -1,7 +1,7 @@
 --Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
---Date        : Sat Mar  4 22:50:25 2023
+--Date        : Sat Mar  4 22:57:05 2023
 --Host        : LAPTOP-QKPB5NLF running 64-bit Ubuntu 18.04.2 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1

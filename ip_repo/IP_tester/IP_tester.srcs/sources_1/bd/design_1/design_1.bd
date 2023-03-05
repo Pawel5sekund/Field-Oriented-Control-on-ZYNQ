@@ -22,6 +22,9 @@
         "xci_path": "ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0.xci",
         "inst_hier_path": "xadc_wiz_0",
         "parameters": {
+          "ADC_CONVERSION_RATE": {
+            "value": "1000"
+          },
           "ADC_OFFSET_AND_GAIN_CALIBRATION": {
             "value": "false"
           },
@@ -122,7 +125,7 @@
             "value": "false"
           },
           "CHANNEL_AVERAGING": {
-            "value": "256"
+            "value": "16"
           },
           "CHANNEL_ENABLE_VAUXP0_VAUXN0": {
             "value": "true"
@@ -174,6 +177,9 @@
           },
           "CHANNEL_ENABLE_VP_VN": {
             "value": "false"
+          },
+          "DCLK_FREQUENCY": {
+            "value": "100"
           },
           "ENABLE_AXI4STREAM": {
             "value": "false"
