@@ -13,7 +13,7 @@ entity FOC_position_checker is
     CLK                             : in  std_logic;
     encoder                         : in  std_logic_vector (1 downto 0);
     STEP                            : in  std_logic;
-    position_calibration            : in  std_logic_vector (15 downto 0);
+    position_calibration            : in  signed (14 downto 0);
     position_calibration_SET_signal : in  std_logic;
     position                        : out signed (14 downto 0) := (others => '0');
     dposition                       : out signed (12 downto 0) := (others => '0');
@@ -63,7 +63,7 @@ begin
 
     if (position_calibration_SET_signal = '1') then
       --position <= signed(position_calibration(14 downto 0));
-      var_position  := signed(position_calibration(14 downto 0));
+      var_position  := position_calibration;
       var_dposition := (others => '0');
     else
       position <= var_position;

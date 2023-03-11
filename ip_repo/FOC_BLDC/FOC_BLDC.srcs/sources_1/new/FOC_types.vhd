@@ -105,7 +105,7 @@ function vecToSfixed (
     ) return signed is
       variable result: signed(arg'left+1 downto arg'right);
     begin
-      result := resize(signed(std_logic_vector'("0" & arg)), arg'left+1 - arg'right);
+      result := resize(signed(std_logic_vector'("0" & std_logic_vector(arg))), result'length);
       return result;
     end function unToSigned;
 

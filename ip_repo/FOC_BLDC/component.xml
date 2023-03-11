@@ -183,7 +183,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>POLARITY</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.S_AXI_ARESETN.POLARITY" spirit:choiceRef="choice_list_74b5137e">ACTIVE_LOW</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S_AXI_ARESETN.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -230,7 +230,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>6a69856b</spirit:value>
+            <spirit:value>d82bc0ce</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -252,7 +252,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>031d1aad</spirit:value>
+            <spirit:value>bcd155c9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -645,7 +645,7 @@
   </spirit:model>
   <spirit:choices>
     <spirit:choice>
-      <spirit:name>choice_list_74b5137e</spirit:name>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
       <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
       <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
     </spirit:choice>
@@ -698,7 +698,7 @@
       <spirit:file>
         <spirit:name>FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_3f3e7967</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_3fce6236</spirit:userFileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
@@ -837,13 +837,13 @@
       <xilinx:xpmLibraries>
         <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2023-03-05T18:11:52Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>3</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2023-03-06T21:16:11Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2022.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="9bc77d61"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="b9bbf8b3"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="2531710e"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="078e2a0a"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="1cf4e537"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="cd9ec9b5"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="3a87d35e"/>
