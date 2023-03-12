@@ -26,7 +26,7 @@ use IEEE.STD_LOGIC_1164.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -35,8 +35,13 @@ use IEEE.STD_LOGIC_1164.all;
 
 entity FOC_top is
     generic (
+        --start AXI4
         C_S_AXI_DATA_WIDTH : integer := 32;
-        C_S_AXI_ADDR_WIDTH : integer := 4
+        C_S_AXI_ADDR_WIDTH : integer := 4;
+        --end AXI4
+        --start XADC comm
+        addrXADC           : integer := 0
+     --end XADC comm
         );
     port (
         --start AXI4
@@ -60,17 +65,22 @@ entity FOC_top is
         S_AXI_RDATA   : out std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
         S_AXI_RRESP   : out std_logic_vector(1 downto 0);
         S_AXI_RVALID  : out std_logic;
-        S_AXI_RREADY  : in  std_logic
-     --end AXI4
+        S_AXI_RREADY  : in  std_logic;
+        --end AXI4
+        --start XADC communication
+        addrRegXADC   : in  std_logic_vector(6 downto 0)  := (others => '0');
+        dataRegXADC   : in  std_logic_vector(15 downto 0) := (others => '0')
+     --end XADC communication
         );
 end FOC_top;
 
 architecture Behavioral of FOC_top is
 
-    signal sig_slv_reg0 : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
-    signal sig_slv_reg1 : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
-    signal sig_slv_reg2 : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
-    signal sig_slv_reg3 : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal sig_slv_reg0  : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal sig_slv_reg1  : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal sig_slv_reg2  : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal sig_slv_reg3  : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal resultRegXADC : std_logic_vector(15 downto 0);
 
     component FOC_AXI4Lite_Slave is
         generic (
@@ -106,6 +116,18 @@ architecture Behavioral of FOC_top is
             );
     end component FOC_AXI4Lite_Slave;
 
+    component FOC_regXADC is
+        generic(
+            addr : integer
+            );
+        port (
+--        CLK           : in  std_logic;
+            addrRegXADC   : in    std_logic_vector(6 downto 0)  := (others => '0');
+            dataRegXADC   : in    std_logic_vector(15 downto 0) := (others => '0');
+            resultRegXADC : inout std_logic_vector(15 downto 0)
+            );
+    end component;
+
 begin
 
     main_AXI4 : FOC_AXI4Lite_Slave
@@ -140,6 +162,17 @@ begin
             S_AXI_RVALID  => s_axi_rvalid,
             S_AXI_RREADY  => s_axi_rready
             );
+
+    main_regXADC : FOC_regXADC
+        generic map (
+            addr => addrXADC
+            )
+        port map (
+            addrRegXADC   => addrRegXADC,
+            dataRegXADC   => dataRegXADC,
+            resultRegXADC => resultRegXADC
+            );
+
 
 
 end Behavioral;

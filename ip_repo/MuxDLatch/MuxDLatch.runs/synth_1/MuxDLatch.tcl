@@ -84,7 +84,7 @@ set_property ip_output_repo /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_vhdl -library xil_defaultlib /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/MuxDLatch/MuxDLatch.srcs/sources_1/new/MuxDLatch.vhd
+read_vhdl -vhdl2008 -library xil_defaultlib /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/MuxDLatch/MuxDLatch.srcs/sources_1/new/MuxDLatch.vhd
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -98,6 +98,8 @@ read_xdc /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/Mu
 set_property used_in_implementation false [get_files /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/MuxDLatch/MuxDLatch.srcs/constrs_1/new/constraints.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/MuxDLatch/MuxDLatch.srcs/utils_1/imports/synth_1/MuxDLatch.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
