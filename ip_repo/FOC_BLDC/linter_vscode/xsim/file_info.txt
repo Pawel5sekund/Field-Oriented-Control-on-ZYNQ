@@ -1,9 +1,0 @@
-PID_DSP.vhd,vhdl,xil_defaultlib,../../FOC_BLDC.gen/sources_1/ip/PID_DSP/sim/PID_DSP.vhd,
-MULTIPLY_DSP.vhd,vhdl,xil_defaultlib,../../FOC_BLDC.gen/sources_1/ip/MULTIPLY_DSP/sim/MULTIPLY_DSP.vhd,
-BRAM_SIN.v,verilog,xil_defaultlib,../../FOC_BLDC.gen/BRAM_SIN/ip/BRAM_SIN/sim/BRAM_SIN.v,
-FOC_types.vhd,vhdl,FOC_lib,../../FOC_BLDC.srcs/sources_1/new/FOC_types.vhd,
-FOC_core.vhd,vhdl 2008,xil_defaultlib,../../FOC_BLDC.srcs/sources_1/new/FOC_core.vhd,
-FOC_position_checker.vhd,vhdl 2008,xil_defaultlib,../../FOC_BLDC.srcs/sources_1/new/FOC_position_checker.vhd,
-FOC_set_PWM_reg.vhd,vhdl 2008,xil_defaultlib,../../FOC_BLDC.srcs/sources_1/new/FOC_set_PWM_reg.vhd,
-testbench.vhd,vhdl,xil_defaultlib,../../FOC_BLDC.srcs/sim_1/new/testbench.vhd,
-glbl.v,Verilog,xil_defaultlib,glbl.v

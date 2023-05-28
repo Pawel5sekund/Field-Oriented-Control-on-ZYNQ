@@ -64,13 +64,15 @@ entity MuxDLatch is
         data14     : in  std_logic_vector (7 downto 0) := (others => '0');
         data15     : in  std_logic_vector (7 downto 0) := (others => '0');
         dataOut    : out std_logic_vector (7 downto 0) := (others => '0');
-        muxAddress : out std_logic_vector(3 downto 0)  := (others => '0');
+        muxAddress : out std_logic_vector (3 downto 0) := (others => '0');
         muxOut     : out std_logic                     := '0'
         );
 end MuxDLatch;
 
 architecture Behavioral of MuxDLatch is
     signal dataArray : arrayReg(15 downto 0);
+    signal priorytetizationArray : STD_LOGIC_VECTOR (dataArray'range) := (others => '0');
+    signal updatePriorytetizationArray : STD_LOGIC_VECTOR (dataArray'range) := (others => '0');
 begin
 
     dataArray(0)  <= data0;
@@ -93,6 +95,7 @@ begin
     process is
         variable operationSelector : integer := 0;
         variable dataAddress       : integer := 0;
+        variable priorytetizationBase : integer := 0; 
     begin
 
         wait until rising_edge(CLK);
@@ -100,20 +103,28 @@ begin
         case operationSelector is
 
             when 0 =>
-                muxOut            <= '0';
+                muxOut            <= '0'; --disable "update" PIN on D-Latch by MUX
+                for i in dataArray'left to priorytetizationBase loop
+                    if(priorytetizationArray(i) = '1') then
+                        dataAddress := i; --select address to be update based on which one changed 
+                        updatePriorytetizationArray <= (i => '1', others => '0'); --only one during cycle is updated
+                        exit when i >= priorytetizationBase; --removing starvation of the chenages XDDD
+                    end if;
+                end loop;
+                priorytetizationBase := priorytetizationBase+1;
+                if priorytetizationBase >= amount then
+                    priorytetizationBase := 0;
+                end if;
+                
                 operationSelector := operationSelector+1;
 
             when waitCLK =>
-                dataOut           <= dataArray(dataAddress);
-                muxAddress        <= std_logic_vector(to_unsigned(dataAddress, muxAddress'length));
+                dataOut           <= dataArray(dataAddress); --write data to BUS for D-Latches
+                muxAddress        <= std_logic_vector(to_unsigned(dataAddress, muxAddress'length)); --write address to MUX to select the proper D-Latch for updating value
                 operationSelector := operationSelector+1;
 
             when 2*waitCLK =>
-                muxOut      <= '1';
-                dataAddress := dataAddress+1;
-                if dataAddress >= amount then
-                    dataAddress := 0;
-                end if;
+                muxOut      <= '1'; --enable "update" PIN on selected D-Latch by MUX
                 operationSelector := operationSelector+1;
 
                 if waitCLK = 1 then
@@ -130,5 +141,21 @@ begin
 
     end process;
 
+    prioritetization: process is
+        variable lastDataArray : arrayReg(dataArray'range);
+    begin
+        wait until rising_edge(CLK);
+
+        for i in dataArray'range loop
+            if (lastDataArray(i) != dataArray (i)) then --look for array with changes in it
+                priorytetizationArray(i) <= '1'; --set their priorytetization bit
+            elsif (updatePriorytetizationArray(i) = '1') then --look for updated values
+                priorytetizationArray(i) <= '0'; --reset their priorytetization bit
+            end if;            
+
+            lastDataArray(i) := dataArray(i);
+
+        end loop;
+    end process prioritetization;
 
 end Behavioral;

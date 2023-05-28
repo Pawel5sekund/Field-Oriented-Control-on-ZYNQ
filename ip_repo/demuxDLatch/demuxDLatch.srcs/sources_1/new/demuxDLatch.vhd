@@ -65,7 +65,7 @@ entity demuxDLatch is
         data14     : out std_logic_vector (7 downto 0) := (others => '0');
         data15     : out std_logic_vector (7 downto 0) := (others => '0');
         dataIn     : in  std_logic_vector (7 downto 0) := (others => '0');
-        muxAddress : out std_logic_vector(3 downto 0)  := (others => '0');
+        muxAddress : out std_logic_vector (3 downto 0) := (others => '0');
         muxOut     : out std_logic                     := '1'
         );
 end demuxDLatch;
