@@ -37,18 +37,24 @@ use foc_lib.foc_types.all;
 
 entity PID is
     generic (
-        sampling_time       : real                             := 0.000000064;  --64ns
-        fracBits            : integer                          := 8;
-        intBits             : integer                          := 17-fracBits
-    );
-  Port ( 
-    en                              : in  std_logic;
-    n_res                           : in  std_logic;
-    CLK                             : in  std_logic;
-    kp                              : in  UFIXED (intBits downto -fracBits);
-    ki                              : in  UFIXED (intBits downto -fracBits);
-    kd                              : in  UFIXED (intBits downto -fracBits)
-  );
+        sampling_time : real    := 0.000000064;  --64ns
+        fracBits      : integer := 8;
+        intBits       : integer := 17-fracBits;
+        max_p_pid     : SFIXED(intBits downto -fracBits);
+        max_i_pid     : SFIXED(intBits downto -fracBits);
+        max_d_pid     : SFIXED(intBits downto -fracBits);
+        max_pid_pid   : SFIXED(intBits downto -fracBits)
+        );
+    port (
+        en       : in std_logic;
+        n_res    : in std_logic;
+        CLK      : in std_logic;
+        kp       : in UFIXED (intBits downto -fracBits);
+        ki       : in UFIXED (intBits downto -fracBits);
+        kd       : in UFIXED (intBits downto -fracBits);
+        setpoint : in sfixed (0 downto -11);
+        reading  : in sfixed (0 downto -11)
+        );
 end PID;
 
 
@@ -66,13 +72,13 @@ architecture Behavioral of PID is
             );
     end component;
 
-    signal pid_sel          : std_logic_vector(1 downto 0)  := (others => '0');
-    signal pid_a            : std_logic_vector(17 downto 0) := (others => '0');
-    signal pid_b            : std_logic_vector(17 downto 0) := (others => '0');
-    signal pid_c            : std_logic_vector(47 downto 0) := (others => '0');
-    signal pid_d            : std_logic_vector(17 downto 0) := (others => '0');
-    signal pid_p            : std_logic_vector(47 downto 0) := (others => '0');
-    signal pid_out          : std_logic_vector(17 downto 0) := (others => '0');
+    signal pid_sel : std_logic_vector(1 downto 0)  := (others => '0');
+    signal pid_a   : std_logic_vector(17 downto 0) := (others => '0');
+    signal pid_b   : std_logic_vector(17 downto 0) := (others => '0');
+    signal pid_c   : std_logic_vector(47 downto 0) := (others => '0');
+    signal pid_d   : std_logic_vector(17 downto 0) := (others => '0');
+    signal pid_p   : std_logic_vector(47 downto 0) := (others => '0');
+    signal pid_out : std_logic_vector(17 downto 0) := (others => '0');
 begin
 
     pid_calc_dsp : component pid_dsp
@@ -114,7 +120,7 @@ begin
 
             when 0 =>
 
-                error   := resize(unToSigned(current_setpoint) - unToSigned(current_sensor), error'length);
+                error   := resize(unToSigned(setpoint) - unToSigned(reading), error'length);
                 pid_sel <= "00";
                 pid_d   <= std_logic_vector(error);
                 pid_a   <= std_logic_vector(lastError);
@@ -195,12 +201,6 @@ begin
                     operationSelector := - 1;
                 elsif (operationSelector = 63) then
                     operationSelector := 0;
-
-                    if ((dposition > (position_histeresis - 1)) or (dposition < - (position_histeresis - 1))) then
-                        current_setpoint <= current_setpoint_move;
-                    else
-                        current_setpoint <= (others => '0');
-                    end if;
                 else
                     operationSelector := operationSelector + 1;
                 end if;
