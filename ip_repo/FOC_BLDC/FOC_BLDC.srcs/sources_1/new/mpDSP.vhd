@@ -29,8 +29,7 @@ use foc_lib.foc_types.all;
 entity mpDSP is
     generic (
         amount     : integer := 8;
-        waitCycles : integer := 3;
-        repeatCC   : integer := 8  --repeating CC after X full calculation cycles
+        waitCycles : integer := 3
         );
     port (
         CLK   : in  std_logic;
@@ -44,7 +43,7 @@ end mpDSP;
 
 architecture Behavioral of mpDSP is
 
-    component mpDSP_DSP_macro is
+    component mpDSP_DSP_macro is        --(A+D)*B+C
         port (
             CLK      : in  std_logic;
             CE       : in  std_logic;
@@ -59,36 +58,17 @@ architecture Behavioral of mpDSP is
     end component;
 
     --DSP's signals
-    signal CE                : std_logic                      := '0';
-    signal SCLR              : std_logic                      := '0';
-    signal A                 : std_logic_vector (17 downto 0) := (others => '0');
-    signal B                 : std_logic_vector (17 downto 0) := (others => '0');
-    signal C                 : std_logic_vector (47 downto 0) := (others => '0');
-    signal D                 : std_logic_vector (17 downto 0) := (others => '0');
-    signal P                 : std_logic_vector (47 downto 0) := (others => '0');
-    signal CARRYOUT          : std_logic;
-    --cycles calculator
-    signal CE_CC             : std_logic                      := '0';
-    signal SCLR_CC           : std_logic                      := '0';
-    signal A_CC              : std_logic_vector (17 downto 0) := (others => '0');
-    signal B_CC              : std_logic_vector (17 downto 0) := (others => '0');
-    signal C_CC              : std_logic_vector (47 downto 0) := (others => '0');
-    signal D_CC              : std_logic_vector (17 downto 0) := (others => '0');
-    --main calulation process
-    signal CE_MCP            : std_logic                      := '0';
-    signal SCLR_MCP          : std_logic                      := '0';
-    signal A_MCP             : std_logic_vector (17 downto 0) := (others => '0');
-    signal B_MCP             : std_logic_vector (17 downto 0) := (others => '0');
-    signal C_MCP             : std_logic_vector (47 downto 0) := (others => '0');
-    signal D_MCP             : std_logic_vector (17 downto 0) := (others => '0');
+    signal CE               : std_logic                      := '0';
+    signal SCLR             : std_logic                      := '0';
+    signal A                : std_logic_vector (17 downto 0) := (others => '0');
+    signal B                : std_logic_vector (17 downto 0) := (others => '0');
+    signal C                : std_logic_vector (47 downto 0) := (others => '0');
+    signal D                : std_logic_vector (17 downto 0) := (others => '0');
+    signal P                : std_logic_vector (47 downto 0) := (others => '0');
+    signal CARRYOUT         : std_logic;
     --other signals
-    signal calculationCycles : integer                        := 0;
-    signal EN_Calculations   : std_logic                      := '0';
-    signal TRIG_calcCycles   : std_logic                      := '1';
-    signal stateMCPCalcs : integer := 0;
-    signal stateMCPWaits : integer := 0;
-    --signal TRIG_END_calcCycles   : std_logic                      := '0';
-    constant halfWaitCycles  : integer                        := waitCycles/2;
+    --constants
+    constant halfWaitCycles : integer                        := waitCycles/2;
 begin
 
     DSP : mpDSP_DSP_macro
@@ -103,141 +83,74 @@ begin
             CARRYOUT => CARRYOUT,
             P        => P
             );
-
-    MCPStateDecoder: process
-        variable cycleCounter        : integer   := 0;
-        variable waitCycleCounter    : integer   := 0;
-    begin
-        wait until RISING_EDGE(CLK);
-        case EN_Calculations is
-            when '1' =>
-                if waitCycleCounter = waitCycles then
-                    stateMCPWaits <= 1;
-                    waitCycleCounter := 0;
-                else
-                    stateMCPWaits <= 0;
-                    waitCycleCounter := waitCycleCounter + 1;
-                end if;
-
-                if cycleCounter = (calculationCycles+waitCycles+halfWaitCycles) then
-                    stateMCPCalcs <= 1;
-                    cycleCounter := cycleCounter + 1;
-                elsif cycleCounter = (calculationCycles+2*waitCycles) then
-                    cycleCounter := 0;
-                    stateMCPCalcs <= 2;
-                else
-                    stateMCPCalcs <= 0;
-                end if;
-
-            when '0' =>
-        end case;
-    end process;
-
-    MCP : process
-        variable dataNumberSend      : integer   := 0;
-        variable dataNumberReceive   : integer   := 0;
-        variable repeatCCCounter     : integer   := 0;
-        variable lastEN_Calculations : std_logic := '0';
+    process
+        variable operationSelector        : integer range 0 to 2                := 0;
+        variable sendCyclesCounter        : integer range 0 to 15               := 0;
+        variable receiveCyclesCounter     : integer range -halfWaitCycles to 15 := 0;
+        variable regSelectorSend          : integer range 0 to amount           := 0;
+        variable regSelectorReceive       : integer range 0 to amount           := 0;
+        variable startReceivingResults    : std_logic                           := '0';
     begin
         wait until RISING_EDGE(CLK);
 
-        if ((lastEN_Calculations xor EN_Calculations) and EN_Calculations) = '1' then
-            TRIG_calcCycles <= '0';
-        end if;
-        lastEN_Calculations := EN_Calculations;
+        case operationSelector is
+            when 0 =>  --overwritting start values of DSP and waiting for end of it
+                CE   <= '1';
+                SCLR <= '0';
+                A    <= std_logic_vector(to_signed(0, A'length));
+                B    <= std_logic_vector(to_signed(1, B'length));
+                C    <= std_logic_vector(to_signed(2, C'length));
+                D    <= std_logic_vector(to_signed(3, D'length));
+                if P = std_logic_vector(to_signed(5, P'length)) then
+                    operationSelector := 1;
+                end if;
+            when 1 =>  --first result of calculation with known value will trigger the start of receiving values after every wait cycles
+                CE   <= '1';
+                SCLR <= '0';
+                A    <= std_logic_vector(to_signed(1, A'length));
+                B    <= std_logic_vector(to_signed(2, B'length));
+                C    <= std_logic_vector(to_signed(3, C'length));
+                D    <= std_logic_vector(to_signed(4, D'length));
+                operationSelector := 2;
+            when 2 =>                   --finally make some calcs
+                CE   <= '1';
+                SCLR <= '0';
+                A    <= A_reg(regSelectorSend);  --send selected data from queue
+                B    <= B_reg(regSelectorSend);
+                C    <= C_reg(regSelectorSend);
+                D    <= D_reg(regSelectorSend);
 
-        case EN_Calculations is
-            when '1' =>
-                case stateMCPWaits is  --send data and wait to be sure that it'll be transfered to DSP registers (pipelining)
-                    when 1 =>
-                        dataNumberSend := dataNumberSend + 1;
-                        if dataNumberSend = amount then
-                            dataNumberSend := 0;
-                        end if;                       
-                    when 0 =>
-                        CE_MCP   <= '1';
-                        SCLR_MCP <= '0';
-                        A_MCP    <= A_reg(dataNumberSend);
-                        B_MCP    <= B_reg(dataNumberSend);
-                        C_MCP    <= C_reg(dataNumberSend);
-                        D_MCP    <= D_reg(dataNumberSend);
-                    when others =>
-                        --do nothing
-                end case;
+                if sendCyclesCounter = waitCycles then  --wait for specified amount of cycles to be sure, that the the A, B, C, D will land in DSP's registers
+                    sendCyclesCounter := 0;
+                    regSelectorSend   := regSelectorSend + 1;
+                    if regSelectorSend = amount then
+                        regSelectorSend := 0;
+                    end if;
+                else
+                    sendCyclesCounter := sendCyclesCounter + 1;
+                end if;
 
-                case stateMCPCalcs is
-                    when 1 =>
-                        P_Reg(dataNumberReceive) <= P;
-                    when 2 =>
-                        dataNumberReceive := dataNumberReceive + 1;
-                        if dataNumberReceive = amount then
-                            dataNumberReceive := 0;
-                            repeatCCCounter   := repeatCCCounter + 1;
-                            if repeatCCCounter = repeatCC then
-                                repeatCCCounter := 0;
-                                TRIG_calcCycles <= '1';
+                if P = std_logic_vector(to_signed(13, P'length)) then  --this is the trigger to start receiving values
+                    startReceivingResults := '1';
+                    receiveCyclesCounter  := -halfWaitCycles; --put minus half amount of wait cycles to make some offset between appearing and reading the result
+                end if;
+
+                case startReceivingResults is --don't work without trigger
+                    when '1' =>
+                        if receiveCyclesCounter = waitCycles then --wait for the same amount time, which was waiting during sending registers
+                            receiveCyclesCounter      := 0;
+                            P_reg(regSelectorReceive) <= P;
+                            regSelectorReceive        := regSelectorReceive + 1;
+                            if regSelectorReceive = amount then
+                                regSelectorReceive := 0;
                             end if;
-                        end if;
-                    when others =>
-                        --do nothing
-                end case;
-
-            when '0' =>
-        --do nothing, turned off
-        end case;
-    end process MCP;
-
-    CC : process
-        variable cycleCounter : integer := -1;
-    begin
-        wait until RISING_EDGE(CLK);
-
-        case TRIG_calcCycles is
-            when '0' =>
-            --doNothing, turned off
-            when '1' =>
-                case cycleCounter is
-                    when -3 | -2 | -1 =>
-                        CE_CC        <= '1';
-                        SCLR_CC      <= '1';
-                        cycleCounter := cycleCounter + 1;
-                    when others =>
-                        CE_CC   <= '1';
-                        SCLR_CC <= '0';
-                        A_CC    <= std_logic_vector(to_signed(1, A_CC'length));  --send int 1
-                        B_CC    <= std_logic_vector(to_signed(1, B_CC'length));  --send int 1
-                        C_CC    <= std_logic_vector(to_signed(1, C_CC'length));  --send int 1
-                        D_CC    <= std_logic_vector(to_signed(1, D_CC'length));  --send int 1
-
-                        cycleCounter := cycleCounter + 1;
-                        if signed(P) = to_signed(2, P'length) then  --the result should be (A+D)*B+C = (1+1)*1+1 = 2
-                            calculationCycles <= cycleCounter;
-                            EN_Calculations   <= '1';
-                        --TRIG_END_calcCycles <= '1';
                         else
-                            EN_Calculations <= '0';
+                            receiveCyclesCounter := receiveCyclesCounter + 1;
                         end if;
+                    when '0' =>
+                        --do nothing, turned off
                 end case;
         end case;
-    end process CC;
 
-    --DSP multiplexing between MCP and CC
-    A <= A_CC when EN_Calculations = '0' else
-         A_MCP when EN_Calculations = '1';
-
-    B <= B_CC when EN_Calculations = '0' else
-         B_MCP when EN_Calculations = '1';
-
-    C <= C_CC when EN_Calculations = '0' else
-         C_MCP when EN_Calculations = '1';
-
-    D <= D_CC when EN_Calculations = '0' else
-         D_MCP when EN_Calculations = '1';
-
-    CE <= CE_CC when EN_Calculations = '0' else
-          CE_MCP when EN_Calculations = '1';
-
-    SCLR <= SCLR_CC when EN_Calculations = '0' else
-            SCLR_MCP when EN_Calculations = '1';
-
+    end process;
 end Behavioral;

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date         : Tue Jun 27 09:18:59 2023
+| Date         : Tue Jun 27 19:37:29 2023
 | Host         : LAPTOP-QKPB5NLF running 64-bit Ubuntu 18.04.2 LTS
 | Command      : report_utilization -file mpDSP_utilization_synth.rpt -pb mpDSP_utilization_synth.pb
 | Design       : mpDSP
@@ -31,11 +31,11 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |  593 |     0 |          0 |     17600 |  3.37 |
-|   LUT as Logic          |  593 |     0 |          0 |     17600 |  3.37 |
+| Slice LUTs*             |  230 |     0 |          0 |     17600 |  1.31 |
+|   LUT as Logic          |  230 |     0 |          0 |     17600 |  1.31 |
 |   LUT as Memory         |    0 |     0 |          0 |      6000 |  0.00 |
-| Slice Registers         |  769 |     0 |          0 |     35200 |  2.18 |
-|   Register as Flip Flop |  769 |     0 |          0 |     35200 |  2.18 |
+| Slice Registers         |  308 |     0 |          0 |     35200 |  0.88 |
+|   Register as Flip Flop |  308 |     0 |          0 |     35200 |  0.88 |
 |   Register as Latch     |    0 |     0 |          0 |     35200 |  0.00 |
 | F7 Muxes                |    0 |     0 |          0 |      8800 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |      4400 |  0.00 |
@@ -58,7 +58,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 769   |          Yes |       Reset |            - |
+| 308   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -88,24 +88,24 @@ Table of Contents
 4. IO and GT Specific
 ---------------------
 
-+-----------------------------+------+-------+------------+-----------+---------+
-|          Site Type          | Used | Fixed | Prohibited | Available |  Util%  |
-+-----------------------------+------+-------+------------+-----------+---------+
-| Bonded IOB                  | 1351 |     0 |          0 |       100 | 1351.00 |
-| Bonded IPADs                |    0 |     0 |          0 |         2 |    0.00 |
-| Bonded IOPADs               |    0 |     0 |          0 |       130 |    0.00 |
-| PHY_CONTROL                 |    0 |     0 |          0 |         2 |    0.00 |
-| PHASER_REF                  |    0 |     0 |          0 |         2 |    0.00 |
-| OUT_FIFO                    |    0 |     0 |          0 |         8 |    0.00 |
-| IN_FIFO                     |    0 |     0 |          0 |         8 |    0.00 |
-| IDELAYCTRL                  |    0 |     0 |          0 |         2 |    0.00 |
-| IBUFDS                      |    0 |     0 |          0 |        96 |    0.00 |
-| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |          0 |         8 |    0.00 |
-| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |          0 |         8 |    0.00 |
-| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |          0 |       100 |    0.00 |
-| ILOGIC                      |    0 |     0 |          0 |       100 |    0.00 |
-| OLOGIC                      |    0 |     0 |          0 |       100 |    0.00 |
-+-----------------------------+------+-------+------------+-----------+---------+
++-----------------------------+------+-------+------------+-----------+--------+
+|          Site Type          | Used | Fixed | Prohibited | Available |  Util% |
++-----------------------------+------+-------+------------+-----------+--------+
+| Bonded IOB                  |  601 |     0 |          0 |       100 | 601.00 |
+| Bonded IPADs                |    0 |     0 |          0 |         2 |   0.00 |
+| Bonded IOPADs               |    0 |     0 |          0 |       130 |   0.00 |
+| PHY_CONTROL                 |    0 |     0 |          0 |         2 |   0.00 |
+| PHASER_REF                  |    0 |     0 |          0 |         2 |   0.00 |
+| OUT_FIFO                    |    0 |     0 |          0 |         8 |   0.00 |
+| IN_FIFO                     |    0 |     0 |          0 |         8 |   0.00 |
+| IDELAYCTRL                  |    0 |     0 |          0 |         2 |   0.00 |
+| IBUFDS                      |    0 |     0 |          0 |        96 |   0.00 |
+| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |          0 |         8 |   0.00 |
+| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |          0 |         8 |   0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |          0 |       100 |   0.00 |
+| ILOGIC                      |    0 |     0 |          0 |       100 |   0.00 |
+| OLOGIC                      |    0 |     0 |          0 |       100 |   0.00 |
++-----------------------------+------+-------+------------+-----------+--------+
 
 
 5. Clocking
@@ -147,16 +147,14 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| IBUF     |  919 |                  IO |
-| FDRE     |  769 |        Flop & Latch |
-| OBUF     |  432 |                  IO |
-| LUT6     |  244 |                 LUT |
-| LUT5     |  205 |                 LUT |
-| LUT2     |  139 |                 LUT |
-| CARRY4   |  102 |          CarryLogic |
-| LUT4     |   46 |                 LUT |
-| LUT3     |   13 |                 LUT |
-| LUT1     |    7 |                 LUT |
+| IBUF     |  409 |                  IO |
+| FDRE     |  308 |        Flop & Latch |
+| OBUF     |  192 |                  IO |
+| LUT6     |  111 |                 LUT |
+| LUT5     |  105 |                 LUT |
+| LUT4     |   17 |                 LUT |
+| LUT3     |    3 |                 LUT |
+| LUT2     |    1 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
