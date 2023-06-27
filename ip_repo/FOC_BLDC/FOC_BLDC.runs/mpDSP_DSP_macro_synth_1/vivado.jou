@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Sat Jun 24 22:44:18 2023
+# Process ID: 2925
+# Current directory: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/mpDSP_DSP_macro_synth_1
+# Command line: vivado -log mpDSP_DSP_macro.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mpDSP_DSP_macro.tcl
+# Log file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/mpDSP_DSP_macro_synth_1/mpDSP_DSP_macro.vds
+# Journal file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/mpDSP_DSP_macro_synth_1/vivado.jou
+# Running On: LAPTOP-QKPB5NLF, OS: Linux, CPU Frequency: 3193.853 MHz, CPU Physical cores: 16, Host memory: 8015 MB
+#-----------------------------------------------------------
+source mpDSP_DSP_macro.tcl -notrace

@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/PID_DSP.tcl"
+  variable script "/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/PID_DSP.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,6 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "PID_DSP_synth_1" START { ROLLUP_AUTO }
+set_msg_config  -id {Board 49-26}  -suppress 
+set_msg_config  -id {IP_Flow 19-3656}  -string {{WARNING: [IP_Flow 19-3656] If you move the project, the path for repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1'.)}}  -suppress 
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -79,24 +81,25 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.cache/wt [current_project]
-set_property parent.project_path /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.xpr [current_project]
-set_property XPM_LIBRARIES XPM_MEMORY [current_project]
+set_property webtalk.parent_dir /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.cache/wt [current_project]
+set_property parent.project_path /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property ip_repo_paths {
-  /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC
-  /home/pawel5sekund/VivadoProjects/motorcontrollerzynqvivado/ip_repo
-  /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_1.0
-  /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/status_LED_controller_1.0
+  /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/TEMPORARY/myip_1.0
+  /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC
+  /mnt/d/Xilinx/Projects/Vivado/motorcontrollerzynqvivado/ip_repo
+  /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_1.0
+  /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/status_LED_controller_1.0
+  /home/pawel
 } [current_project]
 update_ip_catalog
-set_property ip_output_repo /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.cache/ip [current_project]
+set_property ip_output_repo /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/ip/PID_DSP/PID_DSP.xci
-set_property used_in_implementation false [get_files -all /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_ooc.xdc]
+read_ip -quiet /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/ip/PID_DSP/PID_DSP.xci
+set_property used_in_implementation false [get_files -all /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -112,7 +115,7 @@ set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 OPTRACE "Configure IP Cache" START { }
 
-set cacheID [config_ip_cache -export -no_bom  -dir /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1 -new_name PID_DSP -ip [get_ips PID_DSP]]
+set cacheID [config_ip_cache -export -no_bom  -dir /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1 -new_name PID_DSP -ip [get_ips PID_DSP]]
 
 OPTRACE "Configure IP Cache" END { }
 if { $cacheID == "" } {
@@ -167,32 +170,32 @@ create_report "PID_DSP_synth_1_synth_report_utilization_0" "report_utilization -
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/PID_DSP.dcp /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP.dcp
+  file copy -force /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/PID_DSP.dcp /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_stub.v
+  write_verilog -force -mode synth_stub /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_stub.vhdl
+  write_vhdl -force -mode synth_stub /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_sim_netlist.v
+  write_verilog -force -mode funcsim /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -202,47 +205,47 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/PID_DSP.dcp /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP.dcp
+  file copy -force /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/PID_DSP.dcp /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/PID_DSP_stub.v /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_stub.v
+  file rename -force /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/PID_DSP_stub.v /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/PID_DSP_stub.vhdl /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_stub.vhdl
+  file rename -force /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/PID_DSP_stub.vhdl /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/PID_DSP_sim_netlist.v /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_sim_netlist.v
+  file rename -force /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/PID_DSP_sim_netlist.v /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/PID_DSP_sim_netlist.vhdl /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_sim_netlist.vhdl
+  file rename -force /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/PID_DSP_sim_netlist.vhdl /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 }; # end if cacheID 
 
-if {[file isdir /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.ip_user_files/ip/PID_DSP]} {
+if {[file isdir /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.ip_user_files/ip/PID_DSP]} {
   catch { 
-    file copy -force /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_stub.v /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.ip_user_files/ip/PID_DSP
+    file copy -force /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_stub.v /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.ip_user_files/ip/PID_DSP
   }
 }
 
-if {[file isdir /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.ip_user_files/ip/PID_DSP]} {
+if {[file isdir /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.ip_user_files/ip/PID_DSP]} {
   catch { 
-    file copy -force /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_stub.vhdl /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.ip_user_files/ip/PID_DSP
+    file copy -force /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/PID_DSP_stub.vhdl /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.ip_user_files/ip/PID_DSP
   }
 }
 file delete __synthesis_is_running__

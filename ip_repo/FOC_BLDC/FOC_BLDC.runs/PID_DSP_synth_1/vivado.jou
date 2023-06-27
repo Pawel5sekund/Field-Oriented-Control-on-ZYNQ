@@ -2,12 +2,12 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Sat Jul  2 22:48:23 2022
-# Process ID: 2797
-# Current directory: /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1
+# Start of session at: Thu Jun  8 22:45:54 2023
+# Process ID: 815
+# Current directory: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1
 # Command line: vivado -log PID_DSP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source PID_DSP.tcl
-# Log file: /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/PID_DSP.vds
-# Journal file: /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/vivado.jou
-# Running On: LAPTOP-QKPB5NLF, OS: Linux, CPU Frequency: 3193.883 MHz, CPU Physical cores: 16, Host memory: 12896 MB
+# Log file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/PID_DSP.vds
+# Journal file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/PID_DSP_synth_1/vivado.jou
+# Running On: LAPTOP-QKPB5NLF, OS: Linux, CPU Frequency: 3194.001 MHz, CPU Physical cores: 16, Host memory: 8015 MB
 #-----------------------------------------------------------
 source PID_DSP.tcl -notrace

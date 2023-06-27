@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="PID_DSP_synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1656794901">
+<GenRun Id="PID_DSP_synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1686257151">
+  <File Type="RDS-DCP" Name="PID_DSP.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="PID_DSP_utilization_synth.pb"/>
   <File Type="PA-TCL" Name="PID_DSP.tcl"/>
+  <File Type="RDS-UTIL" Name="PID_DSP_utilization_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="PID_DSP_reports.tcl"/>
   <File Type="RDS-RDS" Name="PID_DSP.vds"/>
-  <File Type="RDS-DCP" Name="PID_DSP.dcp"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/PID_DSP">
     <File Path="$PSRCDIR/sources_1/ip/PID_DSP/PID_DSP.xci">
       <FileInfo>

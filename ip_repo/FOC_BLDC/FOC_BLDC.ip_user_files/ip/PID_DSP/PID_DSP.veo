@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2022 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2023 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -55,13 +55,14 @@
 
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 PID_DSP your_instance_name (
-  .CLK(CLK),  // input wire CLK
-  .SEL(SEL),  // input wire [1 : 0] SEL
-  .A(A),      // input wire [17 : 0] A
-  .B(B),      // input wire [17 : 0] B
-  .C(C),      // input wire [47 : 0] C
-  .D(D),      // input wire [17 : 0] D
-  .P(P)      // output wire [47 : 0] P
+  .CLK(CLK),            // input wire CLK
+  .SEL(SEL),            // input wire [1 : 0] SEL
+  .A(A),                // input wire [17 : 0] A
+  .B(B),                // input wire [17 : 0] B
+  .C(C),                // input wire [47 : 0] C
+  .D(D),                // input wire [17 : 0] D
+  .CARRYOUT(CARRYOUT),  // output wire CARRYOUT
+  .P(P)                // output wire [47 : 0] P
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

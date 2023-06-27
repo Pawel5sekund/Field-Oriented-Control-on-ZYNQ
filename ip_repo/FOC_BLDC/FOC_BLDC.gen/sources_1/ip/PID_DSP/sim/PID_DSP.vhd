@@ -1,4 +1,4 @@
--- (c) Copyright 1995-2022 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1995-2023 Xilinx, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
@@ -64,6 +64,7 @@ ENTITY PID_DSP IS
     B : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
     C : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
     D : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
+    CARRYOUT : OUT STD_LOGIC;
     P : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
   );
 END PID_DSP;
@@ -197,6 +198,8 @@ ARCHITECTURE PID_DSP_arch OF PID_DSP IS
   ATTRIBUTE X_INTERFACE_INFO OF B: SIGNAL IS "xilinx.com:signal:data:1.0 b_intf DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF C: SIGNAL IS "XIL_INTERFACENAME c_intf, LAYERED_METADATA undef";
   ATTRIBUTE X_INTERFACE_INFO OF C: SIGNAL IS "xilinx.com:signal:data:1.0 c_intf DATA";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF CARRYOUT: SIGNAL IS "XIL_INTERFACENAME carryout_intf, LAYERED_METADATA undef";
+  ATTRIBUTE X_INTERFACE_INFO OF CARRYOUT: SIGNAL IS "xilinx.com:signal:data:1.0 carryout_intf DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF CLK: SIGNAL IS "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF p_intf:pcout_intf:carrycascout_intf:carryout_intf:bcout_intf:acout_intf:concat_intf:d_intf:c_intf:b_intf:a_intf:bcin_intf:acin_intf:pcin_intf:carryin_intf:carrycascin_intf:sel_intf, ASSOCIATED_RESET SCLR:SCLRD:SCLRA:SCLRB:SCLRCONCAT:SCLRC:SCLRM:SCLRP:SCLRSEL, ASSOCIATED_CLKEN CE:CED:CED1:CED2:CED3:CEA:CEA1:CEA2:CEA3:CEA4:CEB:CEB1:CEB2:CEB3:CEB4:CECONCAT:CECONCAT3:CECONCAT4:CECONCAT5:CEC:CEC1:CEC2:CEC3:CEC4:CEC5:CEM:CEP:CESEL:CESEL1:CESEL2:CESEL3:CESEL" & 
 "4:CESEL5, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF CLK: SIGNAL IS "xilinx.com:signal:clock:1.0 clk_intf CLK";
@@ -254,7 +257,7 @@ BEGIN
       C_HAS_ACOUT => 0,
       C_HAS_BCOUT => 0,
       C_HAS_CARRYCASCOUT => 0,
-      C_HAS_CARRYOUT => 0,
+      C_HAS_CARRYOUT => 1,
       C_HAS_PCOUT => 0,
       C_CONSTANT_1 => 1,
       C_LATENCY => -1,
@@ -277,6 +280,7 @@ BEGIN
       C => C,
       D => D,
       CONCAT => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 48)),
+      CARRYOUT => CARRYOUT,
       P => P,
       CED => '1',
       CED1 => '1',

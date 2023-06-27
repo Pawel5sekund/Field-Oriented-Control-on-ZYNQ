@@ -1,9 +1,3 @@
--makelib xcelium_lib/xpm -sv \
-  "/tools/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
--endlib
--makelib xcelium_lib/xpm \
-  "/tools/Xilinx/Vivado/2022.1/data/ip/xpm/xpm_VCOMP.vhd" \
--endlib
 -makelib xcelium_lib/xbip_dsp48_wrapper_v3_0_4 \
   "../../../ipstatic/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd" \
 -endlib
@@ -18,8 +12,5 @@
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../../FOC_BLDC.gen/sources_1/ip/PID_DSP/sim/PID_DSP.vhd" \
--endlib
--makelib xcelium_lib/xil_defaultlib \
-  glbl.v
 -endlib
 

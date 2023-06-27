@@ -1,4 +1,4 @@
--- (c) Copyright 1995-2022 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1995-2023 Xilinx, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
@@ -58,6 +58,7 @@ COMPONENT PID_DSP
     B : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
     C : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
     D : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
+    CARRYOUT : OUT STD_LOGIC;
     P : OUT STD_LOGIC_VECTOR(47 DOWNTO 0) 
   );
 END COMPONENT;
@@ -75,6 +76,7 @@ your_instance_name : PID_DSP
     B => B,
     C => C,
     D => D,
+    CARRYOUT => CARRYOUT,
     P => P
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ---------

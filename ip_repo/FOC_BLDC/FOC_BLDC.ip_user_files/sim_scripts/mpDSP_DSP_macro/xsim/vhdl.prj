@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/sim/mpDSP_DSP_macro.vhd" \
+
+nosort
