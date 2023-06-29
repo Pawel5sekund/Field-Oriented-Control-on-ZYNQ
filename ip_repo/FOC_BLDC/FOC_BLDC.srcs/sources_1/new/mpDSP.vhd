@@ -84,71 +84,72 @@ begin
             P        => P
             );
     process
-        variable operationSelector        : integer range 0 to 2                := 0;
-        variable sendCyclesCounter        : integer range 0 to 15               := 0;
-        variable receiveCyclesCounter     : integer range -halfWaitCycles to 15 := 0;
-        variable regSelectorSend          : integer range 0 to amount           := 0;
-        variable regSelectorReceive       : integer range 0 to amount           := 0;
-        variable startReceivingResults    : std_logic                           := '0';
+        variable operationSelector     : integer range 0 to 2      := 0;
+        variable cyclesCounterSend     : integer range 0 to 15     := 0;
+        variable cyclesCounterReceive  : integer range 0 to 15     := 0;
+        variable regSelectorSend       : integer range 0 to amount := 0;
+        variable regSelectorReceive    : integer range 0 to amount := 0;
+        variable startReceivingResults : std_logic                 := '0';
+        variable firstReceiveCycle     : std_logic                 := '0';
     begin
         wait until RISING_EDGE(CLK);
 
         case operationSelector is
-            when 0 =>  --overwritting start values of DSP and waiting for end of it
-                CE   <= '1';
-                SCLR <= '0';
-                A    <= std_logic_vector(to_signed(0, A'length));
-                B    <= std_logic_vector(to_signed(1, B'length));
-                C    <= std_logic_vector(to_signed(2, C'length));
-                D    <= std_logic_vector(to_signed(3, D'length));
-                if P = std_logic_vector(to_signed(5, P'length)) then
-                    operationSelector := 1;
-                end if;
+            when 0 =>                   --reset of DSP
+                CE                <= '1';
+                SCLR              <= '1';
+                A                 <= std_logic_vector(to_signed(0, A'length));
+                B                 <= std_logic_vector(to_signed(0, B'length));
+                C                 <= std_logic_vector(to_signed(0, C'length));
+                D                 <= std_logic_vector(to_signed(0, D'length));
+                operationSelector := 1;
             when 1 =>  --first result of calculation with known value will trigger the start of receiving values after every wait cycles
-                CE   <= '1';
-                SCLR <= '0';
-                A    <= std_logic_vector(to_signed(1, A'length));
-                B    <= std_logic_vector(to_signed(2, B'length));
-                C    <= std_logic_vector(to_signed(3, C'length));
-                D    <= std_logic_vector(to_signed(4, D'length));
+                CE                <= '1';
+                SCLR              <= '0';
+                A                 <= std_logic_vector(to_signed(1, A'length));
+                B                 <= std_logic_vector(to_signed(2, B'length));
+                C                 <= std_logic_vector(to_signed(3, C'length));
+                D                 <= std_logic_vector(to_signed(4, D'length));
                 operationSelector := 2;
             when 2 =>                   --finally make some calcs
                 CE   <= '1';
                 SCLR <= '0';
-                A    <= A_reg(regSelectorSend);  --send selected data from queue
-                B    <= B_reg(regSelectorSend);
-                C    <= C_reg(regSelectorSend);
-                D    <= D_reg(regSelectorSend);
 
-                if sendCyclesCounter = waitCycles then  --wait for specified amount of cycles to be sure, that the the A, B, C, D will land in DSP's registers
-                    sendCyclesCounter := 0;
-                    regSelectorSend   := regSelectorSend + 1;
-                    if regSelectorSend = amount then
-                        regSelectorSend := 0;
-                    end if;
-                else
-                    sendCyclesCounter := sendCyclesCounter + 1;
-                end if;
+                case cyclesCounterSend is
+                    when waitCycles =>
+                        cyclesCounterSend := 0;
+                        regSelectorSend   := regSelectorSend + 1;
+                        if regSelectorSend = amount then
+                            regSelectorSend := 0;
+                        end if;
+                    when others =>
+                        A                 <= A_reg(regSelectorSend);  --send selected data from queue
+                        B                 <= B_reg(regSelectorSend);
+                        C                 <= C_reg(regSelectorSend);
+                        D                 <= D_reg(regSelectorSend);
+                        cyclesCounterSend := cyclesCounterSend + 1;
+                end case;
 
                 if P = std_logic_vector(to_signed(13, P'length)) then  --this is the trigger to start receiving values
                     startReceivingResults := '1';
-                    receiveCyclesCounter  := -halfWaitCycles; --put minus half amount of wait cycles to make some offset between appearing and reading the result
+                    firstReceiveCycle     := '1';  --on the first cycle in the receive register (P) in DSP is dummy-data, which is used in this section for starting normal receiving algorythm, but this is not the result from calculation, so the first receive need to be omitted
                 end if;
 
-                case startReceivingResults is --don't work without trigger
-                    when '1' =>
-                        if receiveCyclesCounter = waitCycles then --wait for the same amount time, which was waiting during sending registers
-                            receiveCyclesCounter      := 0;
-                            P_reg(regSelectorReceive) <= P;
-                            regSelectorReceive        := regSelectorReceive + 1;
-                            if regSelectorReceive = amount then
-                                regSelectorReceive := 0;
-                            end if;
-                        else
-                            receiveCyclesCounter := receiveCyclesCounter + 1;
-                        end if;
-                    when '0' =>
-                        --do nothing, turned off
+                case cyclesCounterReceive is
+                    when halfWaitCycles =>
+                        case startReceivingResults xor firstReceiveCycle is  --don't work without trigger and during first read time
+                            when '1' =>
+                                P_reg(regSelectorReceive) <= P;
+                                regSelectorReceive        := regSelectorReceive + 1;
+                                if regSelectorReceive = amount then
+                                    regSelectorReceive := 0;
+                                end if;
+                            when '0' =>
+                                firstReceiveCycle := '0';  --do nothing, turned off, but when it's first cycle - overwrite the first-cycle-flag
+                        end case;
+                        cyclesCounterReceive := cyclesCounterReceive + 1;
+                    when others =>
+                        cyclesCounterReceive := cyclesCounterReceive + 1;
                 end case;
         end case;
 
