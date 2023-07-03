@@ -33,11 +33,11 @@ entity mpDSP is
         );
     port (
         CLK   : in  std_logic;
-        A_reg : in  typeABD_DSPregisters (amount downto 0);
-        B_reg : in  typeABD_DSPregisters (amount downto 0);
-        D_reg : in  typeABD_DSPregisters (amount downto 0);
-        C_reg : in  typeC_DSPregisters (amount downto 0);
-        P_reg : out typeC_DSPregisters (amount downto 0)
+        A_reg : in  typeABD_DSPregisters (amount-1 downto 0);
+        B_reg : in  typeABD_DSPregisters (amount-1 downto 0);
+        D_reg : in  typeABD_DSPregisters (amount-1 downto 0);
+        C_reg : in  typeC_DSPregisters (amount-1 downto 0);
+        P_reg : out typeC_DSPregisters (amount-1 downto 0)
         );
 end mpDSP;
 
@@ -96,13 +96,15 @@ begin
 
         case operationSelector is
             when 0 =>                   --reset of DSP
-                CE                <= '1';
-                SCLR              <= '1';
-                A                 <= std_logic_vector(to_signed(0, A'length));
-                B                 <= std_logic_vector(to_signed(0, B'length));
-                C                 <= std_logic_vector(to_signed(0, C'length));
-                D                 <= std_logic_vector(to_signed(0, D'length));
-                operationSelector := 1;
+                CE   <= '1';
+                SCLR <= '0';
+                A    <= std_logic_vector(to_signed(5, A'length));
+                B    <= std_logic_vector(to_signed(10, B'length));
+                C    <= std_logic_vector(to_signed(15, C'length));
+                D    <= std_logic_vector(to_signed(20, D'length));
+                if P = std_logic_vector(to_signed(265, P'length)) then
+                    operationSelector := 1;
+                end if;
             when 1 =>  --first result of calculation with known value will trigger the start of receiving values after every wait cycles
                 CE                <= '1';
                 SCLR              <= '0';
@@ -130,26 +132,27 @@ begin
                         cyclesCounterSend := cyclesCounterSend + 1;
                 end case;
 
-                if P = std_logic_vector(to_signed(13, P'length)) then  --this is the trigger to start receiving values
-                    startReceivingResults := '1';
-                    firstReceiveCycle     := '1';  --on the first cycle in the receive register (P) in DSP is dummy-data, which is used in this section for starting normal receiving algorythm, but this is not the result from calculation, so the first receive need to be omitted
-                end if;
-
-                case cyclesCounterReceive is
-                    when halfWaitCycles =>
-                        case startReceivingResults xor firstReceiveCycle is  --don't work without trigger and during first read time
-                            when '1' =>
+                case startReceivingResults xor firstReceiveCycle is  --don't work without trigger and during first read time
+                    when '1' =>
+                        case cyclesCounterReceive is
+                            when waitCycles =>
+                                cyclesCounterReceive := 0;
+                            when halfWaitCycles =>
                                 P_reg(regSelectorReceive) <= P;
                                 regSelectorReceive        := regSelectorReceive + 1;
                                 if regSelectorReceive = amount then
                                     regSelectorReceive := 0;
                                 end if;
-                            when '0' =>
-                                firstReceiveCycle := '0';  --do nothing, turned off, but when it's first cycle - overwrite the first-cycle-flag
+                                cyclesCounterReceive := cyclesCounterReceive + 1;
+                            when others =>
+                                cyclesCounterReceive := cyclesCounterReceive + 1;
                         end case;
-                        cyclesCounterReceive := cyclesCounterReceive + 1;
-                    when others =>
-                        cyclesCounterReceive := cyclesCounterReceive + 1;
+                    when '0' =>
+                        firstReceiveCycle := '0';  --do nothing, turned off, but when it's first cycle - overwrite the first-cycle-flag
+                        if P = std_logic_vector(to_signed(13, P'length)) then  --this is the trigger to start receiving values
+                            startReceivingResults := '1';
+                            firstReceiveCycle     := '1';  --on the first cycle in the receive register (P) in DSP is dummy-data, which is used in this section for starting normal receiving algorythm, but this is not the result from calculation, so the first receive need to be omitted
+                        end if;
                 end case;
         end case;
 

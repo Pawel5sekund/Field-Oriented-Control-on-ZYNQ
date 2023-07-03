@@ -1,0 +1,15 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/sim/mpDSP_DSP_macro.vhd" \
+
+vhdl2008 FOC_lib  \
+"../../../../FOC_BLDC.srcs/sources_1/new/FOC_types.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../FOC_BLDC.srcs/sources_1/new/mpDSP.vhd" \
+
+vhdl2008 xil_defaultlib  \
+"../../../../FOC_BLDC.srcs/sources_1/new/mpDSP_testbench.vhd" \
+
+# Do not sort compile order
+nosort

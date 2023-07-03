@@ -2,11 +2,8 @@
 2020.2
 Apr 18 2022
 15:53:03
-/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/BRAM_SIN/ip/BRAM_SIN/sim/BRAM_SIN.v,1676811321,verilog,,,,BRAM_SIN,,,,,,,,
-/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/MULTIPLY_DSP/sim/MULTIPLY_DSP.vhd,1676811321,vhdl,,,,multiply_dsp,,,,,,,,
-/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/PID_DSP/sim/PID_DSP.vhd,1676811321,vhdl,,,,pid_dsp,,,,,,,,
-/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.sim/sim_1/behav/xsim/glbl.v,1676811322,verilog,,,,glbl,,,,,,,,
-/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sim_1/new/testbench.vhd,1677366806,vhdl2008,,,,testbench,,,,,,,,
-/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd,1677368573,vhdl2008,,,,foc_core,,,,,,,,
-/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_position_checker.vhd,1676924285,vhdl2008,,,,foc_position_checker,,,,,,,,
-/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_set_PWM_reg.vhd,1676924366,vhdl2008,,,,foc_set_pwm_reg,,,,,,,,
+/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/BRAM_SIN/ip/BRAM_SIN/sim/BRAM_SIN.v,1688303083,verilog,,,,BRAM_SIN,,,,,,,,
+/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/sim/mpDSP_DSP_macro.vhd,1687639444,vhdl,,,,mpdsp_dsp_macro,,,,,,,,
+/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.sim/sim_1/behav/xsim/glbl.v,1649976174,verilog,,,,glbl,,,,,,,,
+/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd,1688313746,vhdl,,,,mpdsp,,,,,,,,
+/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/mpDSP_testbench.vhd,1688314028,vhdl2008,,,,mpdsp_testbench,,,,,,,,
