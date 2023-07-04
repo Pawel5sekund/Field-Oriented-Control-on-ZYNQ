@@ -46,167 +46,138 @@ entity PID is
         max_pid_pid   : SFIXED(intBits downto -fracBits)
         );
     port (
-        en       : in std_logic;
-        n_res    : in std_logic;
-        CLK      : in std_logic;
-        kp       : in UFIXED (intBits downto -fracBits);
-        ki       : in UFIXED (intBits downto -fracBits);
-        kd       : in UFIXED (intBits downto -fracBits);
-        setpoint : in sfixed (0 downto -11);
-        reading  : in sfixed (0 downto -11)
+        en       : in  std_logic;
+        n_res    : in  std_logic;
+        CLK      : in  std_logic;
+        kp       : in  UFIXED (intBits downto -fracBits);
+        ki       : in  UFIXED (intBits downto -fracBits);
+        kd       : in  UFIXED (intBits downto -fracBits);
+        setpoint : in  sfixed (0 downto -11);
+        reading  : in  sfixed (0 downto -11);
+        pid_out  : out std_logic_vector(17 downto 0) := (others => '0')
         );
 end PID;
 
-
-
 architecture Behavioral of PID is
-    component pid_dsp is
+    component mpDSP is
+        generic (
+            amount     : integer := 8;
+            waitCycles : integer := 3
+            );
         port (
-            clk : in  std_logic;
-            sel : in  std_logic_vector(1 downto 0);
-            a   : in  std_logic_vector(17 downto 0);
-            b   : in  std_logic_vector(17 downto 0);
-            c   : in  std_logic_vector(47 downto 0);
-            d   : in  std_logic_vector(17 downto 0);
-            p   : out std_logic_vector(47 downto 0)
+            CLK   : in  std_logic;
+            A_reg : in  typeABD_DSPregisters (amount-1 downto 0);
+            B_reg : in  typeABD_DSPregisters (amount-1 downto 0);
+            D_reg : in  typeABD_DSPregisters (amount-1 downto 0);
+            C_reg : in  typeC_DSPregisters (amount-1 downto 0);
+            P_reg : out typeC_DSPregisters (amount-1 downto 0)
             );
     end component;
 
-    signal pid_sel : std_logic_vector(1 downto 0)  := (others => '0');
-    signal pid_a   : std_logic_vector(17 downto 0) := (others => '0');
-    signal pid_b   : std_logic_vector(17 downto 0) := (others => '0');
-    signal pid_c   : std_logic_vector(47 downto 0) := (others => '0');
-    signal pid_d   : std_logic_vector(17 downto 0) := (others => '0');
-    signal pid_p   : std_logic_vector(47 downto 0) := (others => '0');
-    signal pid_out : std_logic_vector(17 downto 0) := (others => '0');
+    constant amountDSP : integer                                     := 3;
+    signal A_reg       : typeABD_DSPregisters (amountDSP-1 downto 0) := (others => (others => '0'));
+    signal B_reg       : typeABD_DSPregisters (amountDSP-1 downto 0) := (others => (others => '0'));
+    signal D_reg       : typeABD_DSPregisters (amountDSP-1 downto 0) := (others => (others => '0'));
+    signal C_reg       : typeC_DSPregisters (amountDSP-1 downto 0)   := (others => (others => '0'));
+    signal P_reg       : typeC_DSPregisters (amountDSP-1 downto 0)   := (others => (others => '0'));
 begin
-
-    pid_calc_dsp : component pid_dsp
-        port map(
-            clk => CLK,
-            sel => pid_sel,
-            a   => pid_a,
-            b   => pid_b,
-            c   => pid_c,
-            d   => pid_d,
-            p   => pid_p
+    DSP : mpDSP
+        generic map (
+            amount     => 8,
+            waitCycles => 3
+            )
+        port map (
+            CLK   => CLK,
+            A_reg => A_reg,
+            B_reg => B_reg,
+            D_reg => D_reg,
+            C_reg => C_reg,
+            P_reg => P_reg
             );
 
-    pid : process is
-        variable operationSelector : integer range 63 downto -1                     := - 1;
-        variable error             : signed (17 downto 0);
-        variable lastError         : signed (17 downto 0);
-        variable last_P_P          : SFIXED((pid_p'left-fracBits) downto -fracBits) := (others => '0');
-        variable last_I_P          : SFIXED((pid_p'left-fracBits) downto -fracBits) := (others => '0');
-        variable last_D_P          : SFIXED((pid_p'left-fracBits) downto -fracBits) := (others => '0');
-        constant VECTOR_0          : std_logic_vector (47 downto 0)                 := (others => '0');
-        constant BITS_TP           : integer                                        := clog2(sampling_time);
+    PID_mpDSP : process
+        variable error             : sfixed (17 downto 0)                   := (others => '0');
+        variable lastError         : sfixed (17 downto 0)                   := (others => '0');
+        variable operationSelector : integer range 63 downto -1             := 0;
+        variable last_P_P          : SFIXED((47-fracBits) downto -fracBits) := (others => '0');
+        variable last_I_P          : SFIXED((47-fracBits) downto -fracBits) := (others => '0');
+        variable last_D_P          : SFIXED((47-fracBits) downto -fracBits) := (others => '0');
+        constant VECTOR_0          : std_logic_vector (47 downto 0)         := (others => '0');
+        constant BITS_TP           : integer                                := clog2(sampling_time);
     begin
-
-        wait until rising_edge(CLK);
-
+        wait until RISING_EDGE(CLK);
         case operationSelector is
-
-            when -1 =>
-
-                lastError := (others => '0');
-                last_P_P  := (others => '0');
-                last_I_P  := (others => '0');
-                last_D_P  := (others => '0');
-
-                if (en = '1') then
-                    operationSelector := 0;
-                end if;
-
             when 0 =>
+                error := resize(unToSigned(setpoint) - unToSigned(reading), error'length);  --calc error
 
-                error   := resize(unToSigned(setpoint) - unToSigned(reading), error'length);
-                pid_sel <= "00";
-                pid_d   <= std_logic_vector(error);
-                pid_a   <= std_logic_vector(lastError);
-                pid_b   <= std_logic_vector(kp);
-                pid_c   <= VECTOR_0;
-
-                operationSelector := 1;
-
-            when 12 =>
-
-                if (divByBits(vecToSfixed(pid_p, -fracBits), 1) < -max_p_pid) then
+                if (divByBits(vecToSfixed(P_reg(0), -fracBits), 1) < -max_p_pid) then  --check result od P
                     last_P_P := resize(-max_p_pid, last_P_P'left, last_P_P'right);
-                elsif (divByBits(vecToSfixed(pid_p, -fracBits), 1) > max_p_pid) then
+                elsif (divByBits(vecToSfixed(P_reg(0), -fracBits), 1) > max_p_pid) then
                     last_P_P := resize(max_p_pid, last_P_P'left, last_P_P'right);
                 else
-                    last_P_P := vecToSfixed(pid_p, -fracBits);
+                    last_P_P := vecToSfixed(P_reg(0), -fracBits);
                 end if;
 
-                pid_sel           <= "01";
-                pid_b             <= std_logic_vector(ki);
-                pid_c             <= std_logic_vector(last_I_P);
-                operationSelector := 13;
-
-            when 24 =>
-
-                if (mulByBits(vecToSfixed(pid_p, -fracBits), BITS_TP+1) < -max_i_pid) then
+                if (mulByBits(vecToSfixed(P_reg(1), -fracBits), BITS_TP+1) < -max_i_pid) then  --check result of I
                     last_I_P := resize(-max_i_pid, last_I_P'left, last_I_P'right);
-                elsif (mulByBits(vecToSfixed(pid_p, -fracBits), BITS_TP+1) > max_i_pid) then
+                elsif (mulByBits(vecToSfixed(P_reg(1), -fracBits), BITS_TP+1) > max_i_pid) then
                     last_I_P := resize(max_i_pid, last_I_P'left, last_I_P'right);
                 else
-                    last_I_P := vecToSfixed(pid_p, -fracBits);
+                    last_I_P := vecToSfixed(P_reg(1), -fracBits);
                 end if;
 
-                pid_sel           <= "10";
-                pid_b             <= std_logic_vector(kd);
-                pid_c             <= std_logic_vector(last_D_P);
-                operationSelector := 25;
-
-            when 36 =>
-
-                if (divByBits(vecToSfixed(pid_p, -fracBits), BITS_TP+1) < -max_p_pid) then
+                if (divByBits(vecToSfixed(P_reg(2), -fracBits), BITS_TP+1) < -max_p_pid) then  --check result of D
                     last_D_P := resize(-max_d_pid, last_D_P'left, last_D_P'right);
-                elsif (divByBits(vecToSfixed(pid_p, -fracBits), BITS_TP+1) > max_d_pid) then
+                elsif (divByBits(vecToSfixed(P_reg(2), -fracBits), BITS_TP+1) > max_d_pid) then
                     last_D_P := resize(max_d_pid, last_D_P'left, last_D_P'right);
                 else
-                    last_D_P := vecToSfixed(pid_p, -fracBits);
+                    last_D_P := vecToSfixed(P_reg(2), -fracBits);
                 end if;
 
-                pid_sel           <= "11";
-                pid_b             <= std_logic_vector(to_unsigned(1, pid_b'length));  --send 1
-                pid_a             <= std_logic_vector(resize(divByBits(last_P_P, 1), intBits, -fracBits));  --make a function for this sfixedToVec
-                pid_d             <= std_logic_vector(resize(mulByBits(last_D_P, (BITS_TP+1)), intBits, -fracBits));
-                pid_c             <= (intBits+fracBits downto 0 => std_logic_vector(resize(divByBits(last_I_P, (BITS_TP+1)), intBits, -fracBits)), others => '0');  --"dot" in wrong place
-                operationSelector := 37;
-
-            when 48 =>
-
-                if (vecToSfixed(pid_p, fracBits) < 0) then
+                if (vecToSfixed(P_reg(3), fracBits) < 0) then  --check result of the output of PID
                     pid_out <= std_logic_vector(to_SIGNED(0, pid_out'length));
-                elsif (vecToSfixed(pid_p, fracBits) > max_pid_pid) then
+                elsif (vecToSfixed(P_reg(3), fracBits) > max_pid_pid) then
                     pid_out <= std_logic_vector(resize(max_pid_pid, intBits, -fracBits));
                 else
-                    pid_out <= std_logic_vector(resize(vecToSfixed(pid_p, fracBits), intBits, -fracBits));
+                    pid_out <= std_logic_vector(resize(vecToSfixed(P_reg(3), fracBits), intBits, -fracBits));
                 end if;
 
-                lastError         := error;
-                operationSelector := 49;
+                operationSelector := 1;
+            when 1 =>
+                A_reg(0) <= std_logic_vector(error);  --P
+                B_reg(0) <= std_logic_vector(kp);
+                C_reg(0) <= VECTOR_0;
+                D_reg(0) <= std_logic_vector(lastError);
 
+                A_reg(1) <= std_logic_vector(error);  --I
+                B_reg(1) <= std_logic_vector(ki);
+                C_reg(1) <= std_logic_vector(last_I_P);
+                D_reg(1) <= std_logic_vector(lastError);
+
+
+                A_reg(2) <= std_logic_vector(error);  --D
+                B_reg(2) <= std_logic_vector(kd);
+                C_reg(2) <= std_logic_vector(last_D_P);
+                D_reg(2) <= std_logic_vector(-lastError);
+
+                A_reg(3) <= std_logic_vector(resize(divByBits(last_P_P, 1), intBits, -fracBits));
+                B_reg(3) <= std_logic_vector(to_unsigned(1, 18));  --send 1
+                C_reg(3) <= (intBits+fracBits downto 0 => std_logic_vector(resize(divByBits(last_I_P, (BITS_TP+1)), intBits, -fracBits)), others => '0');  --"dot" in wrong place
+                D_reg(3) <= std_logic_vector(resize(mulByBits(last_D_P, (BITS_TP+1)), intBits, -fracBits));
+
+                operationSelector := 2;
+            when 2 =>
+                lastError := error;
+
+                operationSelector := 3;
             when others =>
-
-                pid_a   <= pid_a;
-                pid_b   <= pid_b;
-                pid_c   <= pid_c;
-                pid_d   <= pid_d;
-                pid_sel <= pid_sel;
-
                 if (en = '0' and n_res = '0') then
                     operationSelector := - 1;
-                elsif (operationSelector = 63) then
+                elsif (operationSelector = BITS_TP) then
                     operationSelector := 0;
                 else
                     operationSelector := operationSelector + 1;
                 end if;
-
         end case;
-
-    end process pid;
-
+    end process;
 end Behavioral;
