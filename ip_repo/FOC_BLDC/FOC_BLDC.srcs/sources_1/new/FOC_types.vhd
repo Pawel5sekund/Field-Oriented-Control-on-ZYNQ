@@ -10,9 +10,11 @@ use ieee.math_real.all;
 PACKAGE FOC_types IS
 
     TYPE type_PWM_register IS ARRAY (INTEGER RANGE <>) OF signed (12 DOWNTO 0);
+    TYPE type_3x12b_signed IS ARRAY (INTEGER RANGE <>) OF signed (12 DOWNTO 0);
     type typeABD_DSPregisters is ARRAY (INTEGER RANGE <>) OF STD_LOGIC_VECTOR (17 downto 0);
     type typeC_DSPregisters is ARRAY (INTEGER RANGE <>) OF STD_LOGIC_VECTOR (47 downto 0);
     type typeP_DSPregisters is ARRAY (INTEGER RANGE <>) OF STD_LOGIC_VECTOR (47 downto 0);
+    type scalingParametersArray is ARRAY (INTEGER RANGE <>) OF SFIXED (1 downto -16);
 
     function vecToSfixed (
       arg                     : STD_LOGIC_VECTOR;   

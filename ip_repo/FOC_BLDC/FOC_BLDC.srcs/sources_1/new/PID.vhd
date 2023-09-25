@@ -39,7 +39,7 @@ entity PID is
     generic (
         sampling_time : real    := 0.000000064;  --64ns
         fracBits      : integer := 8;
-        intBits       : integer := 17-fracBits;
+        intBits       : integer := 9;
         max_p_pid     : SFIXED(intBits downto -fracBits);
         max_i_pid     : SFIXED(intBits downto -fracBits);
         max_d_pid     : SFIXED(intBits downto -fracBits);
@@ -52,9 +52,9 @@ entity PID is
         kp       : in  UFIXED (intBits downto -fracBits);
         ki       : in  UFIXED (intBits downto -fracBits);
         kd       : in  UFIXED (intBits downto -fracBits);
-        setpoint : in  sfixed (0 downto -11);
-        reading  : in  sfixed (0 downto -11);
-        pid_out  : out std_logic_vector(17 downto 0) := (others => '0')
+        setpoint : in  sfixed (1 downto -11);
+        reading  : in  sfixed (1 downto -11);
+        pid_out  : out sfixed (1 downto -16) := (others => '0')
         );
 end PID;
 
@@ -83,7 +83,7 @@ architecture Behavioral of PID is
 begin
     DSP : mpDSP
         generic map (
-            amount     => 8,
+            amount     => 4,
             waitCycles => 3
             )
         port map (
@@ -96,7 +96,7 @@ begin
             );
 
     PID_mpDSP : process
-        variable error             : sfixed (17 downto 0)                   := (others => '0');
+        variable error             : sfixed (setpoint'range)                := (others => '0');
         variable lastError         : sfixed (17 downto 0)                   := (others => '0');
         variable operationSelector : integer range 63 downto -1             := 0;
         variable last_P_P          : SFIXED((47-fracBits) downto -fracBits) := (others => '0');
@@ -108,7 +108,7 @@ begin
         wait until RISING_EDGE(CLK);
         case operationSelector is
             when 0 =>
-                error := resize(unToSigned(setpoint) - unToSigned(reading), error'length);  --calc error
+                error := setpoint - reading;  --calc error
 
                 if (divByBits(vecToSfixed(P_reg(0), -fracBits), 1) < -max_p_pid) then  --check result od P
                     last_P_P := resize(-max_p_pid, last_P_P'left, last_P_P'right);
@@ -135,35 +135,34 @@ begin
                 end if;
 
                 if (vecToSfixed(P_reg(3), fracBits) < 0) then  --check result of the output of PID
-                    pid_out <= std_logic_vector(to_SIGNED(0, pid_out'length));
+                    pid_out <= to_sfixed(0, pid_out'left, pid_out'right);
                 elsif (vecToSfixed(P_reg(3), fracBits) > max_pid_pid) then
-                    pid_out <= std_logic_vector(resize(max_pid_pid, intBits, -fracBits));
+                    pid_out <= resize(max_pid_pid, intBits, -fracBits);
                 else
-                    pid_out <= std_logic_vector(resize(vecToSfixed(P_reg(3), fracBits), intBits, -fracBits));
+                    pid_out <= resize(vecToSfixed(P_reg(3), fracBits), intBits, -fracBits);
                 end if;
 
                 operationSelector := 1;
             when 1 =>
-                A_reg(0) <= std_logic_vector(error);  --P
-                B_reg(0) <= std_logic_vector(kp);
-                C_reg(0) <= VECTOR_0;
-                D_reg(0) <= std_logic_vector(lastError);
+                A_reg(0)(13 downto 0) <= std_logic_vector(error);  --P
+                B_reg(0)              <= std_logic_vector(kp);
+                C_reg(0)              <= VECTOR_0;
+                D_reg(0)              <= std_logic_vector(lastError);
 
-                A_reg(1) <= std_logic_vector(error);  --I
-                B_reg(1) <= std_logic_vector(ki);
-                C_reg(1) <= std_logic_vector(last_I_P);
-                D_reg(1) <= std_logic_vector(lastError);
+                A_reg(1)(13 downto 0) <= std_logic_vector(error);  --I
+                B_reg(1)              <= std_logic_vector(ki);
+                C_reg(1)              <= std_logic_vector(last_I_P);
+                D_reg(1)              <= std_logic_vector(lastError);
 
+                A_reg(2)(13 downto 0) <= std_logic_vector(error);  --D
+                B_reg(2)              <= std_logic_vector(kd);
+                C_reg(2)              <= std_logic_vector(last_D_P);
+                D_reg(2)              <= std_logic_vector(-lastError);
 
-                A_reg(2) <= std_logic_vector(error);  --D
-                B_reg(2) <= std_logic_vector(kd);
-                C_reg(2) <= std_logic_vector(last_D_P);
-                D_reg(2) <= std_logic_vector(-lastError);
-
-                A_reg(3) <= std_logic_vector(resize(divByBits(last_P_P, 1), intBits, -fracBits));
-                B_reg(3) <= std_logic_vector(to_unsigned(1, 18));  --send 1
-                C_reg(3) <= (intBits+fracBits downto 0 => std_logic_vector(resize(divByBits(last_I_P, (BITS_TP+1)), intBits, -fracBits)), others => '0');  --"dot" in wrong place
-                D_reg(3) <= std_logic_vector(resize(mulByBits(last_D_P, (BITS_TP+1)), intBits, -fracBits));
+                A_reg(3)(13 downto 0) <= std_logic_vector(resize(divByBits(last_P_P, 1), intBits, -fracBits));
+                B_reg(3)              <= std_logic_vector(to_unsigned(1, 18));  --send 1
+                C_reg(3)              <= (intBits+fracBits downto 0 => std_logic_vector(resize(divByBits(last_I_P, (BITS_TP+1)), intBits, -fracBits)), others => '0');  --"dot" in wrong place
+                D_reg(3)              <= std_logic_vector(resize(mulByBits(last_D_P, (BITS_TP+1)), intBits, -fracBits));
 
                 operationSelector := 2;
             when 2 =>
