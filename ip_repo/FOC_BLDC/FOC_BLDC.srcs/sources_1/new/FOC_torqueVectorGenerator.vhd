@@ -59,9 +59,9 @@ architecture Behavioral of FOC_torqueVectorGenerator is
     constant halfSinusPhase                      : signed (17 downto 0)                                      := fullSinusPhase/2;
     constant poleShiftSinusPhase                 : signed (17 downto 0)                                      := fullSinusPhase/3;
     constant movePhaseShift                      : signed (17 downto 0)                                      := fullSinusPhase/4;  --1/4 of the sinus phase, which is the most efficient phase offset for torque
-    signal buffer_A_reg_phaseSelectionHandler    : typeABD_DSPregisters (2 downto 0);
-    signal buffer_A_reg_scalingParametersHandler : typeABD_DSPregisters (amountScalingParameters-1 downto 0);
-    signal buffer_B_reg_scalingParametersHandler : typeABD_DSPregisters (amountScalingParameters-1 downto 0);
+    signal buffer_phaseSelectionHandler_A_reg    : typeABD_DSPregisters (2 downto 0);
+    signal buffer_scalingParametersHandler_A_reg : typeABD_DSPregisters (amountScalingParameters-1 downto 0);
+    signal buffer_scalingParametersHandler_B_reg : typeABD_DSPregisters (amountScalingParameters-1 downto 0);
 begin
 
     calcProcessing : mpDSP
@@ -96,13 +96,13 @@ begin
         B_reg(1) <= std_logic_vector(movePhaseShift);
         C_reg(1) <= P_reg(0);
         --buffers from processes
-        A_reg(2) <= buffer_A_reg_phaseSelectionHandler(0);
-        A_reg(3) <= buffer_A_reg_phaseSelectionHandler(1);
-        A_reg(4) <= buffer_A_reg_phaseSelectionHandler(2);
+        A_reg(2) <= buffer_phaseSelectionHandler_A_reg(0);
+        A_reg(3) <= buffer_phaseSelectionHandler_A_reg(1);
+        A_reg(4) <= buffer_phaseSelectionHandler_A_reg(2);
 
         for i in 0 to amountScalingParameters-1 loop
-            A_reg(i+offsetDSP_scalingParametersHandler) <= buffer_A_reg_scalingParametersHandler(i);
-            B_reg(i+offsetDSP_scalingParametersHandler) <= buffer_B_reg_scalingParametersHandler(i);
+            A_reg(i+offsetDSP_scalingParametersHandler) <= buffer_scalingParametersHandler_A_reg(i);
+            B_reg(i+offsetDSP_scalingParametersHandler) <= buffer_scalingParametersHandler_B_reg(i);
         end loop;
         --multiply sine value from BRAM by scaling parameters (e.g. PID regulator for current regulation)
         B_reg(2)     <= multipliedParamaters;
@@ -128,7 +128,7 @@ begin
         case operationIndex is
 
             when 0 =>
-                buffer_A_reg_phaseSelectionHandler(poleIndex) <= signSine & "00000" & douta;  --copy readed data from BRAM to DSP
+                buffer_phaseSelectionHandler_A_reg(poleIndex) <= signSine & "00000" & douta;  --copy readed data from BRAM to DSP
 
                 vec0Position := signed(P_reg(1)(47) & P_reg(1)(34 downto 18));  --extracting data, where (17 downto 0) is 18 bits of fractional, 47 is bit-sign and we are only interested in 17 bits of integer value
 
@@ -176,16 +176,16 @@ begin
         wait until RISING_EDGE(CLK);
 
         if amountScalingParameters > 1 then
-            buffer_A_reg_scalingParametersHandler(offsetDSP) <= std_logic_vector(scalingParameters(0));
-            buffer_B_reg_scalingParametersHandler(offsetDSP) <= std_logic_vector(scalingParameters(1));
+            buffer_scalingParametersHandler_A_reg(offsetDSP) <= std_logic_vector(scalingParameters(0));
+            buffer_scalingParametersHandler_B_reg(offsetDSP) <= std_logic_vector(scalingParameters(1));
             for i in 2 to amountScalingParameters-1 loop
-                buffer_A_reg_scalingParametersHandler(i) <= std_logic_vector(scalingParameters(i));
-                buffer_B_reg_scalingParametersHandler(i) <= std_logic_vector(P_reg(i+2-1)(47) & P_reg(i+2-1)(34 downto 18));
+                buffer_scalingParametersHandler_A_reg(i) <= std_logic_vector(scalingParameters(i));
+                buffer_scalingParametersHandler_B_reg(i) <= std_logic_vector(P_reg(i+2-1)(47) & P_reg(i+2-1)(34 downto 18));
             end loop;
             multipliedParamaters <= P_reg(amountScalingParameters-1+offsetDSP)(47) & P_reg(amountScalingParameters-1+offsetDSP)(34 downto 18);
         elsif amountScalingParameters = 1 then
-            buffer_A_reg_scalingParametersHandler(0) <= std_logic_vector(scalingParameters(0));
-            buffer_B_reg_scalingParametersHandler(0) <= std_logic_vector(to_signed(1, 18));
+            buffer_scalingParametersHandler_A_reg(0) <= std_logic_vector(scalingParameters(0));
+            buffer_scalingParametersHandler_B_reg(0) <= std_logic_vector(to_signed(1, 18));
             multipliedParamaters                             <= P_reg(offsetDSP)(47) & P_reg(offsetDSP)(34 downto 18);
         else
             multipliedParamaters <= std_logic_vector(to_sfixed(1.0, 0, -17));

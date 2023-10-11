@@ -42,29 +42,29 @@ end PID_testbench;
 architecture Behavioral of PID_testbench is
 
     component PID is
-        generic (
-            sampling_time : real    := 0.000000064;  --64ns
-            fracBits      : integer := 8;
-            intBits       : integer := 17-fracBits;
-            max_p_pid     : SFIXED(intBits downto -fracBits);
-            max_i_pid     : SFIXED(intBits downto -fracBits);
-            max_d_pid     : SFIXED(intBits downto -fracBits);
-            max_pid_pid   : SFIXED(intBits downto -fracBits)
-            );
-        port (
-            en       : in  std_logic;
-            n_res    : in  std_logic;
-            CLK      : in  std_logic;
-            kp       : in  UFIXED (intBits downto -fracBits);
-            ki       : in  UFIXED (intBits downto -fracBits);
-            kd       : in  UFIXED (intBits downto -fracBits);
-            setpoint : in  sfixed (0 downto -11);
-            reading  : in  sfixed (0 downto -11);
-            pid_out  : out sfixed (0 downto -17) := (others => '0')
-            );
+    generic (
+        --sampling_time : real                             := 0.000000064;  --64ns
+        fracBits      : integer                          := 17;
+        intBits       : integer                          := 0;
+        max_p_pid     : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        max_i_pid     : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        max_d_pid     : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        max_pid_pid   : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17)
+        );
+    port (
+        en       : in  std_logic;
+        n_res    : in  std_logic;
+        CLK      : in  std_logic;
+        kp       : in  UFIXED (0 downto -17);
+        ki       : in  UFIXED (0 downto -17);
+        kd       : in  UFIXED (0 downto -17);
+        setpoint : in  sfixed (0 downto -17);
+        reading  : in  sfixed (0 downto -17);
+        pid_out  : out sfixed (0 downto -17) := (others => '0')
+        );
     end component;
 
-    constant fracBits : integer               := 8;
+    constant fracBits : integer               := 17;
     constant intBits  : integer               := 17-fracBits;
     signal en         : std_logic;
     signal n_res      : std_logic;
@@ -72,21 +72,21 @@ architecture Behavioral of PID_testbench is
     signal kp         : UFIXED (intBits downto -fracBits);
     signal ki         : UFIXED (intBits downto -fracBits);
     signal kd         : UFIXED (intBits downto -fracBits);
-    signal setpoint   : sfixed (0 downto -11);
-    signal reading    : sfixed (0 downto -11);
+    signal setpoint   : sfixed (0 downto -17);
+    signal reading    : sfixed (0 downto -17);
     signal pid_out    : sfixed (0 downto -17) := (others => '0');
 
 begin
 
     PID_inst : PID
         generic map(
-            sampling_time => 0.000000064,
-            fracBits      => 8,
-            intBits       => 17-fracBits,
-            max_p_pid     => to_sfixed(1.0, 0, 17),
-            max_i_pid     => to_sfixed(1.0, 0, 17),
-            max_d_pid     => to_sfixed(1.0, 0, 17),
-            max_pid_pid   => to_sfixed(1.0, 0, 17)
+            --sampling_time => 0.000000064,
+            fracBits      => 17,
+            intBits       => 0,
+            max_p_pid     => to_sfixed(0.999, 0, -17),
+            max_i_pid     => to_sfixed(0.999, 0, -17),
+            max_d_pid     => to_sfixed(0.999, 0, -17),
+            max_pid_pid   => to_sfixed(0.999, 0, -17)
             )
         port map(
             en       => en,
@@ -110,12 +110,12 @@ begin
         end loop;
     end process CLK_process;
 
-    data_send : process
+    --data_send : process
 
-    begin
-        wait until RISING_EDGE(CLK);
+    --begin
+    --    wait until RISING_EDGE(CLK);
 
-    end process;
+    --end process;
 
 
 end Behavioral;

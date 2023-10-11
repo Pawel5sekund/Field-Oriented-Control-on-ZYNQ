@@ -1,10 +1,10 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-// Date        : Sat Jun 24 22:46:41 2023
+// Date        : Sat Jun 24 22:46:31 2023
 // Host        : LAPTOP-QKPB5NLF running 64-bit Ubuntu 18.04.2 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top mpDSP_DSP_macro -prefix
+//               mpDSP_DSP_macro_ mpDSP_DSP_macro_stub.v
 // Design      : mpDSP_DSP_macro
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1
