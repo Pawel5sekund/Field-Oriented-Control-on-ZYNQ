@@ -1,24 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 06/24/2023 04:38:54 PM
--- Design Name: 
--- Module Name: mpDSP - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 library foc_lib;
 use IEEE.STD_LOGIC_1164.all;
@@ -37,7 +16,8 @@ entity mpDSP is
         B_reg : in  typeABD_DSPregisters (amount-1 downto 0);
         D_reg : in  typeABD_DSPregisters (amount-1 downto 0);
         C_reg : in  typeC_DSPregisters (amount-1 downto 0);
-        P_reg : out typeC_DSPregisters (amount-1 downto 0)
+        P_reg : out typeC_DSPregisters (amount-1 downto 0);
+        RDY : out std_logic
         );
 end mpDSP;
 
@@ -98,6 +78,8 @@ begin
             when 0 =>                   --reset of DSP
                 CE   <= '1';
                 SCLR <= '0';
+                RDY <= '0';
+                P_reg <= (others => (others=>'0')); 
                 A    <= std_logic_vector(to_signed(5, A'length));
                 B    <= std_logic_vector(to_signed(10, B'length));
                 C    <= std_logic_vector(to_signed(15, C'length));
@@ -142,6 +124,7 @@ begin
                                 regSelectorReceive        := regSelectorReceive + 1;
                                 if regSelectorReceive = amount then
                                     regSelectorReceive := 0;
+                                    RDY <= '1'; --set Ready bit when the first calculations ends
                                 end if;
                                 cyclesCounterReceive := cyclesCounterReceive + 1;
                             when others =>

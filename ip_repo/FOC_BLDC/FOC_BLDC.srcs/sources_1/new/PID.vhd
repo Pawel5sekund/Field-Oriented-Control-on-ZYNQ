@@ -41,17 +41,21 @@ entity PID is
         fracBits      : integer                          := 17;
         intBits       : integer                          := 0;
         max_p_pid     : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        min_p_pid     : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
         max_i_pid     : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        min_i_pid     : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
         max_d_pid     : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-        max_pid_pid   : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17)
+        min_d_pid     : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
+        max_pid_pid   : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        min_pid_pid   : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17)
         );
     port (
         en       : in  std_logic;
         n_res    : in  std_logic;
         CLK      : in  std_logic;
-        kp       : in  UFIXED (0 downto -17);
-        ki       : in  UFIXED (0 downto -17);
-        kd       : in  UFIXED (0 downto -17);
+        kp       : in  sfixed (0 downto -17);
+        ki       : in  sfixed (0 downto -17);
+        kd       : in  sfixed (0 downto -17);
         setpoint : in  sfixed (0 downto -17);
         reading  : in  sfixed (0 downto -17);
         pid_out  : out sfixed (0 downto -17) := (others => '0')
@@ -70,7 +74,8 @@ architecture Behavioral of PID is
             B_reg : in  typeABD_DSPregisters (amount-1 downto 0);
             D_reg : in  typeABD_DSPregisters (amount-1 downto 0);
             C_reg : in  typeC_DSPregisters (amount-1 downto 0);
-            P_reg : out typeC_DSPregisters (amount-1 downto 0)
+            P_reg : out typeC_DSPregisters (amount-1 downto 0);
+            RDY : out std_logic
             );
     end component;
 
@@ -81,6 +86,7 @@ architecture Behavioral of PID is
     signal D_reg       : typeABD_DSPregisters (amountDSP-1 downto 0) := (others => (others => '0'));
     signal C_reg       : typeC_DSPregisters (amountDSP-1 downto 0)   := (others => (others => '0'));
     signal P_reg       : typeC_DSPregisters (amountDSP-1 downto 0)   := (others => (others => '0'));
+    signal RDY : std_logic;
 begin
     DSP_instance : mpDSP
         generic map (
@@ -93,49 +99,50 @@ begin
             B_reg => B_reg,
             D_reg => D_reg,
             C_reg => C_reg,
-            P_reg => P_reg
+            P_reg => P_reg,
+            RDY => RDY
             );
 
     PID_mpDSP : process
         variable error             : sfixed (setpoint'range)                := (others => '0');
         variable lastError         : sfixed (0 downto -17)                  := (others => '0');
-        variable operationSelector : integer range 63 downto -1             := 0;
-        variable last_P_P          : SFIXED((47-fracBits) downto -fracBits) := (others => '0');
-        variable last_I_P          : SFIXED((47-fracBits) downto -fracBits) := (others => '0');
-        variable last_D_P          : SFIXED((47-fracBits) downto -fracBits) := (others => '0');
+        variable operationSelector : integer range 63 downto -1             := -1;
+        variable last_P_P          : SFIXED((47+reading'right+kp'right) downto (reading'right+kp'right)) := (others => '0');
+        variable last_I_P          : SFIXED((47+reading'right+ki'right) downto (reading'right+ki'right)) := (others => '0');
+        variable last_D_P          : SFIXED((47+reading'right+kd'right) downto (reading'right+kd'right)) := (others => '0');
         constant VECTOR_0          : std_logic_vector (47 downto 0)         := (others => '0');
-        constant BITS_TP           : integer                                := clog2(sampling_time);
+        constant BITS_TP           : integer                                := -clog2(sampling_time);
     begin
         wait until RISING_EDGE(CLK);
         case operationSelector is
             when 0 =>
                 error := resize(setpoint - reading, error'left, error'right);  --calc error
 
-                if (divByBits(vecToSfixed(P_reg(0), -fracBits), 1) < -max_p_pid) then  --check result of P
-                    last_P_P := resize(-max_p_pid, last_P_P'left, last_P_P'right);
-                elsif (divByBits(vecToSfixed(P_reg(0), -fracBits), 1) > max_p_pid) then
-                    last_P_P := resize(max_p_pid, last_P_P'left, last_P_P'right);
+                if (divByBits(vecToSfixed(P_reg(0), last_P_P'right), 1) < min_p_pid) then  --check result of P
+                    last_P_P := mulByBits(resize(-max_p_pid, last_P_P'left, last_P_P'right), 1);
+                elsif (divByBits(vecToSfixed(P_reg(0), last_P_P'right), 1) > max_p_pid) then
+                    last_P_P := mulByBits(resize(max_p_pid, last_P_P'left, last_P_P'right), 1);
                 else
-                    last_P_P := vecToSfixed(P_reg(0), -fracBits);
-                end if;
---ERRORS IN THIS SECTION!!!! NULL VARIABLES!!!
-                if (mulByBits(vecToSfixed(P_reg(1), -fracBits), BITS_TP+1) < -max_i_pid) then  --check result of I
-                    last_I_P := resize(-max_i_pid, last_I_P'left, last_I_P'right);
-                elsif (mulByBits(vecToSfixed(P_reg(1), -fracBits), BITS_TP+1) > max_i_pid) then
-                    last_I_P := resize(max_i_pid, last_I_P'left, last_I_P'right);
-                else
-                    last_I_P := vecToSfixed(P_reg(1), -fracBits);
+                    last_P_P := vecToSfixed(P_reg(0), last_P_P'right);
                 end if;
 
-                if (divByBits(vecToSfixed(P_reg(2), -fracBits), BITS_TP+1) < -max_p_pid) then  --check result of D
-                    last_D_P := resize(-max_d_pid, last_D_P'left, last_D_P'right);
-                elsif (divByBits(vecToSfixed(P_reg(2), -fracBits), BITS_TP+1) > max_d_pid) then
-                    last_D_P := resize(max_d_pid, last_D_P'left, last_D_P'right);
+                if (divByBits(vecToSfixed(P_reg(1), last_I_P'right), BITS_TP+1) < min_i_pid) then  --check result of I
+                    last_I_P := mulByBits(resize(-max_i_pid, last_I_P'left, last_I_P'right), BITS_TP+1);
+                elsif (divByBits(vecToSfixed(P_reg(1), last_I_P'right), BITS_TP+1) > max_i_pid) then
+                    last_I_P := mulByBits(resize(max_i_pid, last_I_P'left, last_I_P'right), BITS_TP+1);
                 else
-                    last_D_P := vecToSfixed(P_reg(2), -fracBits);
+                    last_I_P := vecToSfixed(P_reg(1), last_I_P'right);
                 end if;
 
-                if (vecToSfixed(P_reg(3), -fracBits) < 0) then  --check result of the output of PID
+                if (mulByBits(vecToSfixed(P_reg(2), last_D_P'right), BITS_TP+1) < min_p_pid) then  --check result of D
+                    last_D_P := divByBits(resize(-max_d_pid, last_D_P'left, last_D_P'right), BITS_TP+1);
+                elsif (mulByBits(vecToSfixed(P_reg(2), last_D_P'right), BITS_TP+1) > max_d_pid) then
+                    last_D_P := divByBits(resize(max_d_pid, last_D_P'left, last_D_P'right), BITS_TP+1);
+                else
+                    last_D_P := vecToSfixed(P_reg(2), last_D_P'right);
+                end if;
+
+                if (vecToSfixed(P_reg(3), -fracBits) < min_pid_pid) then  --check result of the output of PID
                     pid_out <= to_sfixed(0, pid_out'left, pid_out'right);
                 elsif (vecToSfixed(P_reg(3), -fracBits) > max_pid_pid) then
                     pid_out <= resize(max_pid_pid, intBits, -fracBits);
@@ -160,10 +167,10 @@ begin
                 C_reg(2) <= std_logic_vector(last_D_P);
                 D_reg(2) <= std_logic_vector(resize(-lastError, lastError'left, lastError'right));
 
-                A_reg(3) <= std_logic_vector(resize(divByBits(last_P_P, 1), intBits, -fracBits));
+                A_reg(3) <= std_logic_vector(resize(divByBits(last_P_P, 1), kp'left, kp'right));
                 B_reg(3) <= std_logic_vector(to_unsigned(1, 18));  --send 1
-                C_reg(3) <= std_logic_vector(resize(divByBits(last_I_P, (BITS_TP+1)), C_reg(3)'left-fracBits, -fracBits)); --"dot" in wrong place
-                D_reg(3) <= std_logic_vector(resize(mulByBits(last_D_P, (BITS_TP+1)), intBits, -fracBits));
+                C_reg(3) <= std_logic_vector(resize(divByBits(last_I_P, BITS_TP+1), C_reg(3)'left+ki'right, ki'right)); 
+                D_reg(3) <= std_logic_vector(resize(mulByBits(last_D_P, BITS_TP+1), kd'left, kd'right));
 
                 operationSelector := 2;
             when 2 =>
@@ -171,12 +178,12 @@ begin
 
                 operationSelector := 3;
             when others =>
-                if (en = '0' and n_res = '0') then
-                    operationSelector := - 1;
-                elsif (operationSelector = BITS_TP) then
+                if (operationSelector = BITS_TP) then
                     operationSelector := 0;
+                elsif (en = '1' and n_res = '1' and RDY = '1') then
+                    operationSelector := operationSelector + 1; 
                 else
-                    operationSelector := operationSelector + 1;
+                    operationSelector := -1;
                 end if;
         end case;
     end process PID_mpDSP;

@@ -47,7 +47,7 @@ function vecToSfixed (
   arg                     : STD_LOGIC_VECTOR;   
   constant fractional    : INTEGER := 0  
 ) return sfixed is
-    variable result : sfixed (arg'left+fractional downto fractional);
+    variable result : sfixed (arg'left+fractional downto fractional) := (others => '0');
   begin  -- function to_fixed
     result := to_sfixed(STD_ULOGIC_VECTOR(arg), arg'left+fractional, fractional);
     return result;

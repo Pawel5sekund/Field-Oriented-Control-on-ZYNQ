@@ -9,7 +9,6 @@ use ieee.fixed_pkg.all;
 entity FOC_torqueVectorGenerator is
     generic(
         amountScalingParameters : integer               := 1;
-        maxPositionValue        : integer               := 4095;
         positionScaler          : sfixed (0 downto -17) := resize(to_sfixed(1.0/1024.0, 0, -17), 0, -17)  --1/(encoder pulses per electrical rotationn
         );
     port (
@@ -56,7 +55,7 @@ architecture Behavioral of FOC_torqueVectorGenerator is
     signal multipliedParamaters                  : std_logic_vector (17 downto 0)                            := (others => '0');
     --constant scaleFactor         : unsigned (17 downto 0)                                  := ((maxPositionValue+1)/(2048*2));
     constant fullSinusPhase                      : signed(17 downto 0)                                       := to_signed(4095, 18);
-    constant halfSinusPhase                      : signed (17 downto 0)                                      := fullSinusPhase/2;
+    --constant halfSinusPhase                      : signed (17 downto 0)                                      := fullSinusPhase/2;
     constant poleShiftSinusPhase                 : signed (17 downto 0)                                      := fullSinusPhase/3;
     constant movePhaseShift                      : signed (17 downto 0)                                      := fullSinusPhase/4;  --1/4 of the sinus phase, which is the most efficient phase offset for torque
     signal buffer_phaseSelectionHandler_A_reg    : typeABD_DSPregisters (2 downto 0);
@@ -116,9 +115,7 @@ begin
     end process;
 
     phaseSelectionHandler : process
-        variable phase          : unsigned (10 downto 0);
         variable vec0Position   : signed (17 downto 0);
-        variable vecPosition    : signed (17 downto 0);
         variable poleIndex      : integer range 2 downto 0 := 0;
         variable signSine       : std_logic                := '0';
         variable operationIndex : integer range 2 downto 0 := 0;
