@@ -10,17 +10,21 @@ use ieee.fixed_pkg.all;
 
 entity FOC_core is
     generic (
-        sampling_time       : real                             := 0.000000064;  --64ns
-        step_scale          : integer                          := 16;
-        position_histeresis : integer                          := 8;
-        pwm_period          : integer                          := 2047;
-        full_rotate_pulses  : integer                          := 4095;
-        fracBits            : integer                          := 8;
-        intBits             : integer                          := 17-fracBits;
-        max_p_pid           : SFIXED(intBits downto -fracBits) := to_sfixed(pwm_period, intBits, -fracBits);
-        max_i_pid           : SFIXED(intBits downto -fracBits) := to_sfixed(pwm_period, intBits, -fracBits);
-        max_d_pid           : SFIXED(intBits downto -fracBits) := to_sfixed(pwm_period, intBits, -fracBits);
-        max_pid_pid         : SFIXED(intBits downto -fracBits) := to_sfixed(pwm_period, intBits, -fracBits)
+        sampling_time       : real                 := 0.000000064;    --64ns
+        step_scale          : integer              := 16;
+        position_histeresis : integer              := 8;
+        pwm_period          : integer              := 2047;
+        full_rotate_pulses  : integer              := 4095;
+        fracBits            : integer              := 8;
+        intBits             : integer              := 17-fracBits;
+        max_p_pid           : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        min_p_pid           : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
+        max_i_pid           : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        min_i_pid           : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
+        max_d_pid           : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        min_d_pid           : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
+        max_pid_pid         : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        min_pid_pid         : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17)
         );
     --  Port ( );
     port (
@@ -28,13 +32,13 @@ entity FOC_core is
         en                              : in  std_logic;
         n_res                           : in  std_logic;
         CLK                             : in  std_logic;
-        current_sensor                  : in  sfixed(1 downto -11);
+        currentSensorReading                  : in  sfixed(0 downto -17);
         encoder                         : in  std_logic_vector(1 downto 0);
         dir                             : in  std_logic;
         step                            : in  std_logic;
-        kp                              : in  UFIXED (intBits downto -fracBits);
-        ki                              : in  UFIXED (intBits downto -fracBits);
-        kd                              : in  UFIXED (intBits downto -fracBits);
+        kp                              : in  sFIXED (intBits downto -fracBits);
+        ki                              : in  sFIXED (intBits downto -fracBits);
+        kd                              : in  sFIXED (intBits downto -fracBits);
         current_setpoint_move           : in  sfixed (1 downto -11);  --tbd change to unsigned
         position_calibration            : in  signed (14 downto 0);
         position_calibration_set_signal : in  std_logic;
@@ -51,23 +55,27 @@ architecture behavioral of FOC_core is
 
     component PID is
         generic (
-            sampling_time : real    := 0.000000064;  --64ns
-            fracBits      : integer := 8;
-            intBits       : integer := 17-fracBits;
-            max_p_pid     : SFIXED(intBits downto -fracBits);
-            max_i_pid     : SFIXED(intBits downto -fracBits);
-            max_d_pid     : SFIXED(intBits downto -fracBits);
-            max_pid_pid   : SFIXED(intBits downto -fracBits)
+            --sampling_time : real                             := 0.000000064;  --64ns
+            fracBits    : integer              := 17;
+            intBits     : integer              := 0;
+            max_p_pid   : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+            min_p_pid   : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
+            max_i_pid   : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+            min_i_pid   : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
+            max_d_pid   : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+            min_d_pid   : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
+            max_pid_pid : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+            min_pid_pid : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17)
             );
         port (
             en       : in  std_logic;
             n_res    : in  std_logic;
             CLK      : in  std_logic;
-            kp       : in  UFIXED (intBits downto -fracBits);
-            ki       : in  UFIXED (intBits downto -fracBits);
-            kd       : in  UFIXED (intBits downto -fracBits);
-            setpoint : in  sfixed (0 downto -11);
-            reading  : in  sfixed (0 downto -11);
+            kp       : in  sfixed (0 downto -17);
+            ki       : in  sfixed (0 downto -17);
+            kd       : in  sfixed (0 downto -17);
+            setpoint : in  sfixed (0 downto -17);
+            reading  : in  sfixed (0 downto -17);
             pid_out  : out sfixed (0 downto -17) := (others => '0')
             );
     end component;
@@ -102,6 +110,20 @@ architecture behavioral of FOC_core is
             pwm_register : out type_PWM_register (2 downto 0)
             );
     end component;
+    
+    component FOC_torqueVectorGenerator is
+        generic(
+            amountScalingParameters : integer               := 1;
+            positionScaler          : sfixed (0 downto -17) := resize(to_sfixed(1.0/1024.0, 0, -17), 0, -17)  --1/(encoder pulses per electrical rotationn
+            );
+        port (
+            CLK               : in  std_logic;
+            position          : in  signed (17 downto 0);
+            vectorPosition    : in  sfixed (0 downto -17);
+            scalingParameters : in  scalingParametersArray (amountScalingParameters-1 downto 0);
+            PWMOutput         : out type_PWM_register(2 downto 0)
+            );
+    end component;
 
     signal position         : signed (14 downto 0)           := (others => '0');
     signal dposition        : signed (12 downto 0)           := (others => '0');
@@ -111,9 +133,11 @@ architecture behavioral of FOC_core is
     signal pid_c            : std_logic_vector (47 downto 0) := (others => '0');
     signal pid_d            : std_logic_vector (17 downto 0) := (others => '0');
     signal pid_p            : std_logic_vector (47 downto 0) := (others => '0');
-    signal pid_out          : sfixed (1 downto -11) := (others => '0');
+    signal pid_out          : sfixed (0 downto -17)          := (others => '0');
     signal PWMRegister      : type_PWM_register (2 downto 0);
     signal current_setpoint : sfixed (1 downto -11)          := (others => '0');
+    signal vectorPosition    : sfixed (0 downto -17);
+    signal scalingParameters :  scalingParametersArray (0 downto 0);
 
 begin
 
@@ -145,30 +169,33 @@ begin
     ----------------------------------------------------------------------------------------------------------------------
     ----------------------------------------------------------------------------------------------------------------------
 
-    set_pwm_reg : component foc_set_pwm_reg
+    torqueVectorGenerator : component FOC_torqueVectorGenerator
         generic map(
-            position_histeresis => position_histeresis,
-            full_rotate_pulses  => full_rotate_pulses
+            amountScalingParameters => 1,
+            positionScaler  => resize(to_sfixed(1.0/1024.0, 0, -17), 0, -17)
             )
         port map(
-            clk          => CLK,
+            CLK          => CLK,
             position     => position,
-            dposition    => dposition,
-            pid_out      => pid_out,
-            pwm_register => PWMRegister
+            vectorPosition    => vectorPosition,
+            scalingParameters      => scalingParameters,
+            PWMOutput => PWMRegister
             );
-
     ----------------------------------------------------------------------------------------------------------------------
     ----------------------------------------------------------------------------------------------------------------------
     ----------------------------------------------------------------------------------------------------------------------
 
     PID_current : component PID
         generic map (
-            sampling_time => 0.000000064,  --64ns
-            max_p_pid     => max_p_pid,
-            max_i_pid     => max_i_pid,
-            max_d_pid     => max_d_pid,
-            max_pid_pid   => max_p_pid
+            --sampling_time => 0.000000064,  --64ns
+            max_p_pid   => max_p_pid,
+            max_i_pid   => max_i_pid,
+            max_d_pid   => max_d_pid,
+            max_pid_pid => max_p_pid,
+            min_p_pid   => min_p_pid,
+            min_i_pid   => min_i_pid,
+            min_d_pid   => min_d_pid,
+            min_pid_pid => min_pid_pid
             )
         port map (
             en       => en,
@@ -178,7 +205,7 @@ begin
             ki       => ki,
             kd       => kd,
             setpoint => current_setpoint,
-            reading  => current_sensor,
+            reading  => currentSensorReading,
             pid_out  => pid_out
             );
 
@@ -220,7 +247,7 @@ begin
         varPWMRegister(1) := abs(PWMRegister(1));
         varPWMRegister(2) := abs(PWMRegister(2));
 
-        varPWMCurrentRegulatorRegister := resize(signed(std_logic_vector(PID_out)), varPWMCurrentRegulatorRegister'length);
+        --varPWMCurrentRegulatorRegister := resize(signed(std_logic_vector(PID_out(0 downto -12)))), varPWMCurrentRegulatorRegister'length);
 
         if (CNT > varPWMCurrentRegulatorRegister) then
             varOutPWMCurrentRegulator := '0';

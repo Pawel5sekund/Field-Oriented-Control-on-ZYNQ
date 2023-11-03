@@ -1,0 +1,97 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Fri Nov  3 15:00:15 2023
+| Host         : LAPTOP-QKPB5NLF running 64-bit Ubuntu 18.04.2 LTS
+| Command      : report_control_sets -verbose -file FOC_torqueVectorGenerator_control_sets_placed.rpt
+| Design       : FOC_torqueVectorGenerator
+| Device       : xc7z010
+------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    19 |
+|    Minimum number of control sets                        |    19 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    60 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    19 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     6 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     7 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             221 |           49 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |             181 |           41 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             186 |           48 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+-------------------------------------------------------------+------------------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                        Enable Signal                        |                Set/Reset Signal                | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+-------------------------------------------------------------+------------------------------------------------+------------------+----------------+--------------+
+|  CLK_IBUF_BUFG | calcProcessing/A[17]_i_2_n_0                                | calcProcessing/B[3]_i_1_n_0                    |                1 |              1 |         1.00 |
+|  CLK_IBUF_BUFG | calcProcessing/cyclesCounterSend                            |                                                |                2 |              4 |         2.00 |
+|  CLK_IBUF_BUFG | calcProcessing/A[17]_i_2_n_0                                | calcProcessing/A[0]_i_1_n_0                    |                1 |              4 |         4.00 |
+|  CLK_IBUF_BUFG | calcProcessing/A[17]_i_2_n_0                                | calcProcessing/A[17]_i_1_n_0                   |                2 |              6 |         3.00 |
+|  CLK_IBUF_BUFG | calcProcessing/A[17]_i_2_n_0                                | calcProcessing/B[17]_i_1_n_0                   |                1 |              8 |         8.00 |
+|  CLK_IBUF_BUFG | FSM_onehot_phaseSelectionHandler.operationIndex_reg_n_0_[1] |                                                |                3 |             11 |         3.67 |
+|  CLK_IBUF_BUFG | calcProcessing/P_reg[2][47]_i_2_n_0                         | calcProcessing/P_reg[2][47]_i_1_n_0            |                4 |             13 |         3.25 |
+|  CLK_IBUF_BUFG | calcProcessing/P_reg[3][47]_i_2_n_0                         | calcProcessing/P_reg[3][47]_i_1_n_0            |                4 |             13 |         3.25 |
+|  CLK_IBUF_BUFG | calcProcessing/P_reg[4][47]_i_2_n_0                         | calcProcessing/P_reg[4][47]_i_1_n_0            |                4 |             13 |         3.25 |
+|  CLK_IBUF_BUFG | buffer_phaseSelectionHandler_A_reg[0]                       |                                                |                4 |             13 |         3.25 |
+|  CLK_IBUF_BUFG | buffer_phaseSelectionHandler_A_reg_reg[1]0                  |                                                |                4 |             13 |         3.25 |
+|  CLK_IBUF_BUFG | buffer_phaseSelectionHandler_A_reg_reg[2]0                  |                                                |                4 |             13 |         3.25 |
+|  CLK_IBUF_BUFG | phaseSelectionHandler.vec0Position[17]_i_2_n_0              | phaseSelectionHandler.vec0Position[17]_i_1_n_0 |                8 |             18 |         2.25 |
+|  CLK_IBUF_BUFG | calcProcessing/P_reg[1][47]_i_2_n_0                         | calcProcessing/P_reg[1][47]_i_1_n_0            |                6 |             18 |         3.00 |
+|  CLK_IBUF_BUFG | calcProcessing/A[17]_i_2_n_0                                |                                                |                9 |             23 |         2.56 |
+|  CLK_IBUF_BUFG | calcProcessing/A[17]_i_2_n_0                                | calcProcessing/C[47]_i_1_n_0                   |                6 |             44 |         7.33 |
+|  CLK_IBUF_BUFG | calcProcessing/P_reg[0][47]_i_2_n_0                         | calcProcessing/P_reg[0][47]_i_1_n_0            |               11 |             48 |         4.36 |
+|  CLK_IBUF_BUFG | calcProcessing/CE                                           |                                                |               15 |            104 |         6.93 |
+|  CLK_IBUF_BUFG |                                                             |                                                |               49 |            221 |         4.51 |
++----------------+-------------------------------------------------------------+------------------------------------------------+------------------+----------------+--------------+
+
+

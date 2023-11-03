@@ -119,7 +119,7 @@ begin
                 error := resize(setpoint - reading, error'left, error'right);  --calc error
 
                 if (divByBits(vecToSfixed(P_reg(0), last_P_P'right), 1) < min_p_pid) then  --check result of P
-                    last_P_P := mulByBits(resize(-max_p_pid, last_P_P'left, last_P_P'right), 1);
+                    last_P_P := mulByBits(resize(min_p_pid, last_P_P'left, last_P_P'right), 1);
                 elsif (divByBits(vecToSfixed(P_reg(0), last_P_P'right), 1) > max_p_pid) then
                     last_P_P := mulByBits(resize(max_p_pid, last_P_P'left, last_P_P'right), 1);
                 else
@@ -127,15 +127,15 @@ begin
                 end if;
 
                 if (divByBits(vecToSfixed(P_reg(1), last_I_P'right), BITS_TP+1) < min_i_pid) then  --check result of I
-                    last_I_P := mulByBits(resize(-max_i_pid, last_I_P'left, last_I_P'right), BITS_TP+1);
+                    last_I_P := mulByBits(resize(min_i_pid, last_I_P'left, last_I_P'right), BITS_TP+1);
                 elsif (divByBits(vecToSfixed(P_reg(1), last_I_P'right), BITS_TP+1) > max_i_pid) then
                     last_I_P := mulByBits(resize(max_i_pid, last_I_P'left, last_I_P'right), BITS_TP+1);
                 else
                     last_I_P := vecToSfixed(P_reg(1), last_I_P'right);
                 end if;
 
-                if (mulByBits(vecToSfixed(P_reg(2), last_D_P'right), BITS_TP+1) < min_p_pid) then  --check result of D
-                    last_D_P := divByBits(resize(-max_d_pid, last_D_P'left, last_D_P'right), BITS_TP+1);
+                if (mulByBits(vecToSfixed(P_reg(2), last_D_P'right), BITS_TP+1) < min_d_pid) then  --check result of D
+                    last_D_P := divByBits(resize(min_d_pid, last_D_P'left, last_D_P'right), BITS_TP+1);
                 elsif (mulByBits(vecToSfixed(P_reg(2), last_D_P'right), BITS_TP+1) > max_d_pid) then
                     last_D_P := divByBits(resize(max_d_pid, last_D_P'left, last_D_P'right), BITS_TP+1);
                 else
@@ -143,11 +143,11 @@ begin
                 end if;
 
                 if (vecToSfixed(P_reg(3), -fracBits) < min_pid_pid) then  --check result of the output of PID
-                    pid_out <= to_sfixed(0, pid_out'left, pid_out'right);
+                    pid_out <= resize(min_pid_pid, pid_out'left, pid_out'right);
                 elsif (vecToSfixed(P_reg(3), -fracBits) > max_pid_pid) then
-                    pid_out <= resize(max_pid_pid, intBits, -fracBits);
+                    pid_out <= resize(max_pid_pid, pid_out'left, pid_out'right);
                 else
-                    pid_out <= resize(vecToSfixed(P_reg(3), -fracBits), intBits, -fracBits);
+                    pid_out <= resize(vecToSfixed(P_reg(3), -pid_out'right), pid_out'left, pid_out'right);
                 end if;
 
                 operationSelector := 1;

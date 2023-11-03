@@ -70,6 +70,10 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "BRAM_SIN_synth_1" START { ROLLUP_AUTO }
+set_msg_config  -id {Board 49-26}  -suppress 
+set_msg_config  -id {IP_Flow 19-3656}  -string {{WARNING: [IP_Flow 19-3656] If you move the project, the path for repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1'.)}}  -suppress 
+set_msg_config  -id {IP_Flow 19-3656}  -suppress 
+set_msg_config  -id {IP_Flow 19-2248}  -suppress 
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -86,9 +90,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property ip_repo_paths {
   /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC
-  /mnt/d/Xilinx/Projects/Vivado/motorcontrollerzynqvivado/ip_repo
-  /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_1.0
-  /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/status_LED_controller_1.0
+  /home/pawel
 } [current_project]
 update_ip_catalog
 set_property ip_output_repo /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.cache/ip [current_project]

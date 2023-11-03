@@ -14,7 +14,7 @@ PACKAGE FOC_types IS
     type typeABD_DSPregisters is ARRAY (INTEGER RANGE <>) OF STD_LOGIC_VECTOR (17 downto 0);
     type typeC_DSPregisters is ARRAY (INTEGER RANGE <>) OF STD_LOGIC_VECTOR (47 downto 0);
     type typeP_DSPregisters is ARRAY (INTEGER RANGE <>) OF STD_LOGIC_VECTOR (47 downto 0);
-    type scalingParametersArray is ARRAY (INTEGER RANGE <>) OF SFIXED (1 downto -16);
+    type scalingParametersArray is ARRAY (INTEGER RANGE <>) OF SFIXED (0 downto -17);
 
     function vecToSfixed (
       arg                     : STD_LOGIC_VECTOR;   
