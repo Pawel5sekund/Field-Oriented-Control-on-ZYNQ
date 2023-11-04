@@ -12,6 +12,7 @@ entity FOC_3levelHisteresis is
         triggerMinus: in sfixed(0 downto 17);
         outputPlus: in sfixed(0 downto 17);
         outputMinus: in sfixed(0 downto 17);
+        outputMid: in sfixed(0 downto 17);
         reading: in sfixed(0 downto 17);
         setpoint: in sfixed(0 downto 17);
         output: out sfixed(0 downto 17)
@@ -31,7 +32,7 @@ begin
         elsif error < triggerMinus then
             output := outputMinus;
         else
-            output := (others => '0');
+            output := outputMid;
         end if;
 
     end process;
