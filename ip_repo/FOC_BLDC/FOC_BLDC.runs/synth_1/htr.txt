@@ -6,4 +6,4 @@
 # Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 #
 
-vivado -log FOC_torqueVectorGenerator.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source FOC_torqueVectorGenerator.tcl
+vivado -log FOC_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source FOC_top.tcl

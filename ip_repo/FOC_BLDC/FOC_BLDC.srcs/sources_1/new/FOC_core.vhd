@@ -13,7 +13,7 @@ entity FOC_core is
         sampling_time       : real                 := 0.000000064;    --64ns
         step_scale          : integer              := 16;
         position_histeresis : integer              := 8;
-        pwm_period          : integer              := 2047;
+        pwm_period          : integer              := 4095;
         full_rotate_pulses  : integer              := 4095;
         fracBits            : integer              := 8;
         intBits             : integer              := 17-fracBits;
@@ -32,14 +32,14 @@ entity FOC_core is
         en                              : in  std_logic;
         n_res                           : in  std_logic;
         CLK                             : in  std_logic;
-        currentSensorReading                  : in  sfixed(0 downto -17);
+        currentSensorReading            : in  sfixed(0 downto -17);
         encoder                         : in  std_logic_vector(1 downto 0);
         dir                             : in  std_logic;
         step                            : in  std_logic;
         kp                              : in  sFIXED (intBits downto -fracBits);
         ki                              : in  sFIXED (intBits downto -fracBits);
         kd                              : in  sFIXED (intBits downto -fracBits);
-        current_setpoint_move           : in  sfixed (1 downto -11);  --tbd change to unsigned
+        current_setpoint_move           : in  sfixed (0 downto -17);  --tbd change to unsigned
         position_calibration            : in  signed (14 downto 0);
         position_calibration_set_signal : in  std_logic;
         -- data output
@@ -97,20 +97,6 @@ architecture behavioral of FOC_core is
             );
     end component;
 
-    component foc_set_pwm_reg is
-        generic (
-            position_histeresis : integer;
-            full_rotate_pulses  : integer
-            );
-        port (
-            clk          : in  std_logic;
-            position     : in  signed (14 downto 0);
-            dposition    : in  signed (12 downto 0);
-            pid_out      : in  std_logic_vector(17 downto 0);
-            pwm_register : out type_PWM_register (2 downto 0)
-            );
-    end component;
-    
     component FOC_torqueVectorGenerator is
         generic(
             amountScalingParameters : integer               := 1;
@@ -125,19 +111,58 @@ architecture behavioral of FOC_core is
             );
     end component;
 
-    signal position         : signed (14 downto 0)           := (others => '0');
-    signal dposition        : signed (12 downto 0)           := (others => '0');
-    signal pid_sel          : std_logic_vector (1 downto 0)  := (others => '0');
-    signal pid_a            : std_logic_vector (17 downto 0) := (others => '0');
-    signal pid_b            : std_logic_vector (17 downto 0) := (others => '0');
-    signal pid_c            : std_logic_vector (47 downto 0) := (others => '0');
-    signal pid_d            : std_logic_vector (17 downto 0) := (others => '0');
-    signal pid_p            : std_logic_vector (47 downto 0) := (others => '0');
-    signal pid_out          : sfixed (0 downto -17)          := (others => '0');
-    signal PWMRegister      : type_PWM_register (2 downto 0);
-    signal current_setpoint : sfixed (1 downto -11)          := (others => '0');
-    signal vectorPosition    : sfixed (0 downto -17);
-    signal scalingParameters :  scalingParametersArray (0 downto 0);
+    component FOC_3levelSwitching is
+        port(
+            CLK          : in  std_logic;
+            triggerPlus  : in  sfixed(0 downto -17);
+            triggerMinus : in  sfixed(0 downto -17);
+            outputPlus   : in  sfixed(0 downto -17);
+            outputMinus  : in  sfixed(0 downto -17);
+            outputMid    : in  sfixed(0 downto -17);
+            reading      : in  sfixed(0 downto -17);
+            setpoint     : in  sfixed(0 downto -17);
+            output       : out sfixed(0 downto -17)
+            );
+    end component;
+
+    component PWM is
+        generic (
+            PWMPeriod : integer := pwm_period
+            );
+        port (
+            CLK           : in  std_logic;
+            electricBrake : in  std_logic;
+            PWMValues     : in  type_PWM_register(2 downto 0);
+            PWM_CH_U      : out std_logic_vector(1 downto 0);
+            PWM_CH_W      : out std_logic_vector(1 downto 0);
+            PWM_CH_V      : out std_logic_vector(1 downto 0)
+            );
+    end component;
+
+    signal position                                            : signed (14 downto 0)           := (others => '0');
+    signal dposition                                           : signed (12 downto 0)           := (others => '0');
+    signal pid_sel                                             : std_logic_vector (1 downto 0)  := (others => '0');
+    signal pid_a                                               : std_logic_vector (17 downto 0) := (others => '0');
+    signal pid_b                                               : std_logic_vector (17 downto 0) := (others => '0');
+    signal pid_c                                               : std_logic_vector (47 downto 0) := (others => '0');
+    signal pid_d                                               : std_logic_vector (17 downto 0) := (others => '0');
+    signal pid_p                                               : std_logic_vector (47 downto 0) := (others => '0');
+    signal pid_out                                             : sfixed (0 downto -17)          := (others => '0');
+    signal PWMRegister                                         : type_PWM_register (2 downto 0);
+    signal current_setpoint                                    : sfixed (0 downto -17)          := (others => '0');
+    signal vectorPosition                                      : sfixed (0 downto -17);
+    signal scalingParameters                                   : scalingParametersArray (0 downto 0);
+    signal positional_3levelSwitching_triggerPlus              : sfixed (0 downto -17);
+    signal positional_3levelSwitching_triggerMinus             : sfixed (0 downto -17);
+    signal positional_3levelSwitching_reading                  : sfixed (0 downto -17);
+    signal electricBrake_sfixed : sfixed (0 downto -17);
+    signal electricBrake : std_logic;
+    constant positional_3levelSwitching_setpoint               : sfixed (0 downto -17)          := to_sfixed(0.0, 0, -17);
+    constant positional_3levelSwitching_outputMid              : sfixed (0 downto -17)          := to_sfixed(0.0, 0, -17);
+    constant torqueVectorGenerator_3levelSwitching_outputPlus  : sfixed (0 downto -17)          := to_sfixed(1.0, 0, -17);
+    constant torqueVectorGenerator_3levelSwitching_outputMid   : sfixed (0 downto -17)          := to_sfixed(0.0, 0, -17);
+    constant torqueVectorGenerator_3levelSwitching_outputMinus : sfixed (0 downto -17)          := to_sfixed(-1.0, 0, -17);
+
 
 begin
 
@@ -172,14 +197,27 @@ begin
     torqueVectorGenerator : component FOC_torqueVectorGenerator
         generic map(
             amountScalingParameters => 1,
-            positionScaler  => resize(to_sfixed(1.0/1024.0, 0, -17), 0, -17)
+            positionScaler          => resize(to_sfixed(1.0/1024.0, 0, -17), 0, -17)
             )
         port map(
-            CLK          => CLK,
-            position     => position,
+            CLK               => CLK,
+            position          => resize(position, 18),
             vectorPosition    => vectorPosition,
-            scalingParameters      => scalingParameters,
-            PWMOutput => PWMRegister
+            scalingParameters => scalingParameters,
+            PWMOutput         => PWMRegister
+            );
+
+    torqueVectorGenerator_3levelSwitching : component FOC_3levelSwitching
+        port map(
+            CLK          => CLK,
+            triggerPlus  => positional_3levelSwitching_triggerPlus,
+            triggerMinus => positional_3levelSwitching_triggerMinus,
+            outputPlus   => torqueVectorGenerator_3levelSwitching_outputPlus,
+            outputMinus  => torqueVectorGenerator_3levelSwitching_outputMinus,
+            outputMid    => torqueVectorGenerator_3levelSwitching_outputMid,
+            reading      => positional_3levelSwitching_reading,
+            setpoint     => positional_3levelSwitching_setpoint,
+            output       => vectorPosition
             );
     ----------------------------------------------------------------------------------------------------------------------
     ----------------------------------------------------------------------------------------------------------------------
@@ -206,79 +244,56 @@ begin
             kd       => kd,
             setpoint => current_setpoint,
             reading  => currentSensorReading,
-            pid_out  => pid_out
+            pid_out  => scalingParameters(0)
+            );
+
+    positional_3levelSwitching_reading      <= vecToSfixed(std_logic_vector(resize(dposition, 18)), -17);
+    positional_3levelSwitching_triggerPlus  <= vecToSfixed(std_logic_vector(to_signed(position_histeresis, 18)), -17);
+    positional_3levelSwitching_triggerMinus <= vecToSfixed(std_logic_vector(to_signed(-position_histeresis, 18)), -17);
+
+    PID_3levelSwitching : component FOC_3levelSwitching
+        port map(
+            CLK          => CLK,
+            triggerPlus  => positional_3levelSwitching_triggerPlus,
+            triggerMinus => positional_3levelSwitching_triggerMinus,
+            outputPlus   => current_setpoint_move,
+            outputMinus  => current_setpoint_move,
+            outputMid    => positional_3levelSwitching_outputMid,
+            reading      => positional_3levelSwitching_reading,
+            setpoint     => positional_3levelSwitching_setpoint,
+            output       => current_setpoint
             );
 
     ----------------------------------------------------------------------------------------------------------------------
     ----------------------------------------------------------------------------------------------------------------------
     ----------------------------------------------------------------------------------------------------------------------
 
-    pwm : process is
+    PWM_FOC : component PWM
+        generic map (
+            PWMPeriod => pwm_period
+            )
+        port map (
+            CLK           => CLK,
+            electricBrake => electricBrake,
+            PWMValues     => PWMRegister,
+            PWM_CH_U      => PWM_CH_U,
+            PWM_CH_W      => PWM_CH_W,
+            PWM_CH_V      => PWM_CH_V
+            );
 
-        variable CNT                            : integer range 0 to pwm_period;
-        variable CNT_DIR                        : integer := 1;
-        variable varPWMRegister                 : type_PWM_register (2 downto 0);
-        variable signPWMRegister                : std_logic_vector(varPWMRegister'range);
-        variable varPWMCurrentRegulatorRegister : unsigned (12 downto 0);
-        variable varOutPWMCurrentRegulator      : std_logic;
+        PWM_FOC_3levelSwitching : component FOC_3levelSwitching
+        port map(
+            CLK          => CLK,
+            triggerPlus  => positional_3levelSwitching_triggerPlus,
+            triggerMinus => positional_3levelSwitching_triggerMinus,
+            outputPlus   => to_sfixed(1.0, 0, -17),
+            outputMinus  => to_sfixed(1.0, 0, -17),
+            outputMid    => to_sfixed(0.0, 0, -17),
+            reading      => positional_3levelSwitching_reading,
+            setpoint     => positional_3levelSwitching_setpoint,
+            output       => electricBrake_sfixed
+            );
 
-    begin
-
-        wait until rising_edge(CLK);
-
-        case CNT is
-
-            when pwm_period =>
-                CNT_DIR := -1;
-
-            when 0 =>
-                CNT_DIR := 1;
-
-            when others =>
-                CNT := CNT + CNT_DIR;
-
-        end case;
-
-        signPWMRegister(0) := PWMRegister(0)(PWMRegister(0)'left);
-        signPWMRegister(1) := PWMRegister(1)(PWMRegister(1)'left);
-        signPWMRegister(2) := PWMRegister(2)(PWMRegister(2)'left);
-
-        varPWMRegister(0) := abs(PWMRegister(0));
-        varPWMRegister(1) := abs(PWMRegister(1));
-        varPWMRegister(2) := abs(PWMRegister(2));
-
-        --varPWMCurrentRegulatorRegister := resize(signed(std_logic_vector(PID_out(0 downto -12)))), varPWMCurrentRegulatorRegister'length);
-
-        if (CNT > varPWMCurrentRegulatorRegister) then
-            varOutPWMCurrentRegulator := '0';
-        else
-            varOutPWMCurrentRegulator := '1';
-        end if;
-
-        if (CNT > varPWMRegister(0)) then
-            PWM_CH_U(0) <= std_logic(signPWMRegister(0)) and varOutPWMCurrentRegulator and en;
-            PWM_CH_U(1) <= (not std_logic(signPWMRegister(0))) and varOutPWMCurrentRegulator and en;
-        else
-            PWM_CH_U(1) <= std_logic(signPWMRegister(0)) and varOutPWMCurrentRegulator and en;
-            PWM_CH_U(0) <= (not std_logic(signPWMRegister(0))) and varOutPWMCurrentRegulator and en;
-        end if;
-
-        if (CNT > varPWMRegister(1)) then
-            PWM_CH_W(0) <= std_logic(signPWMRegister(1)) and varOutPWMCurrentRegulator and en;
-            PWM_CH_W(1) <= (not std_logic(signPWMRegister(1))) and varOutPWMCurrentRegulator and en;
-        else
-            PWM_CH_W(1) <= std_logic(signPWMRegister(1)) and varOutPWMCurrentRegulator and en;
-            PWM_CH_W(0) <= (not std_logic(signPWMRegister(1))) and varOutPWMCurrentRegulator and en;
-        end if;
-
-        if (CNT > varPWMRegister(2)) then
-            PWM_CH_V(0) <= std_logic(signPWMRegister(2)) and varOutPWMCurrentRegulator and en;
-            PWM_CH_V(1) <= (not std_logic(signPWMRegister(2))) and varOutPWMCurrentRegulator and en;
-        else
-            PWM_CH_V(1) <= std_logic(signPWMRegister(2)) and varOutPWMCurrentRegulator and en;
-            PWM_CH_V(0) <= (not std_logic(signPWMRegister(2))) and varOutPWMCurrentRegulator and en;
-        end if;
-
-    end process pwm;
+            electricBrake <= std_logic(or(std_logic_vector(electricBrake_sfixed)));
 
 end architecture behavioral;

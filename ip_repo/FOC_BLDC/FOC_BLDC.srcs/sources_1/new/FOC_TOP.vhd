@@ -1,7 +1,10 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.all;
+library ieee;
 
-use IEEE.NUMERIC_STD.ALL;
+library foc_lib;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use foc_lib.foc_types.all;
+use ieee.fixed_pkg.all;
 
 
 entity FOC_top is
@@ -40,18 +43,33 @@ entity FOC_top is
         --end AXI4
         --start XADC communication
         addrRegXADC   : in  std_logic_vector(6 downto 0)  := (others => '0');
-        dataRegXADC   : in  std_logic_vector(15 downto 0) := (others => '0')
-     --end XADC communication
+        dataRegXADC   : in  std_logic_vector(15 downto 0) := (others => '0');
+        --end XADC communication
+        --FOC
+        encoder       : in  std_logic_vector(1 downto 0);
+        step          : in  std_logic;
+        dir           : in  std_logic;
+        PWM_CH_U      : out std_logic_vector(1 downto 0);
+        PWM_CH_W      : out std_logic_vector(1 downto 0);
+        PWM_CH_V      : out std_logic_vector(1 downto 0)
+     --FOC end
         );
 end FOC_top;
 
 architecture Behavioral of FOC_top is
 
-    signal sig_slv_reg0  : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
-    signal sig_slv_reg1  : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
-    signal sig_slv_reg2  : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
-    signal sig_slv_reg3  : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
-    signal resultRegXADC : std_logic_vector(15 downto 0);
+    signal sig_slv_reg0         : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal sig_slv_reg1         : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal sig_slv_reg2         : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal sig_slv_reg3         : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal resultRegXADC        : std_logic_vector(15 downto 0);
+    constant valuesOutputAmount : integer                                         := 8;
+    constant valuesInputAmount  : integer                                         := 8;
+    signal outputValues         : valuesArrayAXI4 (valuesOutputAmount-1 downto 0);
+    signal inputValues          : valuesArrayAXI4 (valuesInputAmount-1 downto 0);
+    signal dposition_out        : signed(12 downto 0);
+    signal position_out         : signed (14 downto 0);
+    signal currentSensorReading_bitVector : STD_LOGIC_VECTOR(17 downto 0);
 
     component FOC_AXI4Lite_Slave is
         generic (
@@ -96,6 +114,68 @@ architecture Behavioral of FOC_top is
             addrRegXADC   : in    std_logic_vector(6 downto 0)  := (others => '0');
             dataRegXADC   : in    std_logic_vector(15 downto 0) := (others => '0');
             resultRegXADC : inout std_logic_vector(15 downto 0)
+            );
+    end component;
+
+    component FOC_AXI4RegistersHandler is
+        generic (
+            C_S_AXI_DATA_WIDTH : integer := 32;
+            -- Width of S_AXI address bus
+            C_S_AXI_ADDR_WIDTH : integer := 4;
+            valuesInputAmount  : integer := 16;
+            valuesOutputAmount : integer := 16
+            );
+        port (
+            CLK          : in  std_logic;
+            ext_slv_reg0 : in  std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);  --receive configuration
+            ext_slv_reg1 : in  std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);  --receive addres of the paramters, which need to be readen
+            ext_slv_reg2 : out std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);  --sends value, which are on the addr from reg1
+            ext_slv_reg3 : out std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);  --sends actual status of the regulator (e.g. errors)
+            inputValues  : out valuesArrayAXI4 (valuesInputAmount-1 downto 0);
+            outputValues : in  valuesArrayAXI4 (valuesOutputAmount-1 downto 0)
+            );
+    end component;
+
+    component FOC_core is
+        generic (
+            sampling_time       : real                 := 0.000000064;  --64ns
+            step_scale          : integer              := 16;
+            position_histeresis : integer              := 8;
+            pwm_period          : integer              := 4095;
+            full_rotate_pulses  : integer              := 4095;
+            fracBits            : integer              := 8;
+            intBits             : integer              := 17-fracBits;
+            max_p_pid           : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+            min_p_pid           : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
+            max_i_pid           : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+            min_i_pid           : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
+            max_d_pid           : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+            min_d_pid           : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
+            max_pid_pid         : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+            min_pid_pid         : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17)
+            );
+        --  Port ( );
+        port (
+            -- data input
+            en                              : in  std_logic;
+            n_res                           : in  std_logic;
+            CLK                             : in  std_logic;
+            currentSensorReading            : in  sfixed(0 downto -17);
+            encoder                         : in  std_logic_vector(1 downto 0);
+            dir                             : in  std_logic;
+            step                            : in  std_logic;
+            kp                              : in  sFIXED (intBits downto -fracBits);
+            ki                              : in  sFIXED (intBits downto -fracBits);
+            kd                              : in  sFIXED (intBits downto -fracBits);
+            current_setpoint_move           : in  sfixed (0 downto -17);  --tbd change to unsigned
+            position_calibration            : in  signed (14 downto 0);
+            position_calibration_set_signal : in  std_logic;
+            -- data output
+            dposition_out                   : out signed (12 downto 0);
+            position_out                    : out signed (14 downto 0);
+            PWM_CH_U                        : out std_logic_vector(1 downto 0);
+            PWM_CH_W                        : out std_logic_vector(1 downto 0);
+            PWM_CH_V                        : out std_logic_vector(1 downto 0)
             );
     end component;
 
@@ -144,6 +224,68 @@ begin
             resultRegXADC => resultRegXADC
             );
 
+    main_AXI4RegistersHandler : FOC_AXI4RegistersHandler
+        generic map (
+            C_S_AXI_DATA_WIDTH => 32,
+            -- Width of S_AXI address bus
+            C_S_AXI_ADDR_WIDTH => 4,
+            valuesInputAmount  => 8,
+            valuesOutputAmount => 8
+            )
+        port map (
+            CLK          => S_AXI_ACLK,
+            ext_slv_reg0 => sig_slv_reg0,  --receive configuration
+            ext_slv_reg1 => sig_slv_reg1,  --receive addres of the paramters, which need to be readen
+            ext_slv_reg2 => sig_slv_reg2,  --sends value, which are on the addr from reg1
+            ext_slv_reg3 => sig_slv_reg3,  --sends actual status of the regulator (e.g. errors)
+            inputValues  => inputValues,
+            outputValues => outputValues
+            );
+
+    FOC : FOC_core
+        generic map (
+            sampling_time       => 0.000000064,  --64ns
+            step_scale          => 16,
+            position_histeresis => 8,
+            pwm_period          => 4095,
+            full_rotate_pulses  => 4095,
+            fracBits            => 17,
+            intBits             => 0,
+            max_p_pid           => to_sfixed(0.9999, 0, -17),
+            min_p_pid           => to_sfixed(-0.9999, 0, -17),
+            max_i_pid           => to_sfixed(0.9999, 0, -17),
+            min_i_pid           => to_sfixed(-0.9999, 0, -17),
+            max_d_pid           => to_sfixed(0.9999, 0, -17),
+            min_d_pid           => to_sfixed(-0.9999, 0, -17),
+            max_pid_pid         => to_sfixed(0.9999, 0, -17),
+            min_pid_pid         => to_sfixed(0, 0, -17)
+            )
+        port map (
+            en                              => '1',
+            n_res                           => '1',
+            CLK                             => S_AXI_ACLK,
+            currentSensorReading            => vecToSfixed(currentSensorReading_bitVector, -17),
+            encoder                         => encoder,
+            dir                             => dir,
+            step                            => step,
+            kp                              => vecToSfixed(inputValues(1), -17),
+            ki                              => vecToSfixed(inputValues(2), -17),
+            kd                              => vecToSfixed(inputValues(3), -17),
+            current_setpoint_move           => vecToSfixed(inputValues(0), -17),
+            position_calibration            => signed(inputValues(4)(14 downto 0)),
+            position_calibration_set_signal => inputValues(5)(0),
+            -- data output
+            dposition_out                   => dposition_out,
+            position_out                    => position_out,
+            PWM_CH_U                        => PWM_CH_U,
+            PWM_CH_W                        => PWM_CH_W,
+            PWM_CH_V                        => PWM_CH_V
+            );
+
+    currentSensorReading_bitVector(15 downto 0) <= resultRegXADC;
+    currentSensorReading_bitVector(17 downto 16) <= "00";
+    outputValues(1)(12 downto 0) <= std_logic_vector(dposition_out);
+    outputValues(2)(14 downto 0) <= std_logic_vector(position_out);
 
 
 end Behavioral;

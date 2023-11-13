@@ -2,12 +2,12 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Thu Nov  2 22:15:40 2023
-# Process ID: 2224
+# Start of session at: Sun Nov 12 16:32:11 2023
+# Process ID: 925
 # Current directory: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1
-# Command line: vivado -log FOC_torqueVectorGenerator.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FOC_torqueVectorGenerator.tcl
-# Log file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/FOC_torqueVectorGenerator.vds
+# Command line: vivado -log FOC_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FOC_top.tcl
+# Log file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/FOC_top.vds
 # Journal file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/vivado.jou
-# Running On: LAPTOP-QKPB5NLF, OS: Linux, CPU Frequency: 3193.915 MHz, CPU Physical cores: 16, Host memory: 8015 MB
+# Running On: LAPTOP-PAWEL, OS: Linux, CPU Frequency: 3193.913 MHz, CPU Physical cores: 16, Host memory: 8015 MB
 #-----------------------------------------------------------
-source FOC_torqueVectorGenerator.tcl -notrace
+source FOC_top.tcl -notrace

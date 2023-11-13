@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1698959650">
-  <File Type="RDS-DCP" Name="FOC_torqueVectorGenerator.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="FOC_torqueVectorGenerator_utilization_synth.pb"/>
-  <File Type="PA-TCL" Name="FOC_torqueVectorGenerator.tcl"/>
-  <File Type="RDS-UTIL" Name="FOC_torqueVectorGenerator_utilization_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="FOC_torqueVectorGenerator_reports.tcl"/>
-  <File Type="RDS-RDS" Name="FOC_torqueVectorGenerator.vds"/>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1699803127">
+  <File Type="VDS-TIMINGSUMMARY" Name="FOC_top_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="FOC_top.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="FOC_top_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="FOC_top_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="FOC_top_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="FOC_top.vds"/>
+  <File Type="REPORTS-TCL" Name="FOC_top_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="FOC_top_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="FOC_top.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/FOC_types.vhd">
@@ -15,9 +18,48 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/mpDSP.vhd">
+    <File Path="$PSRCDIR/sources_1/new/FOC_3levelSwitching.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/FOC_AXI4RegistersHandler.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/FOC_PWM.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="FOC_lib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/FOC_AXI4Lite_Slave.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="FOC_lib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/FOC_core.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="ImportPath" Val="$PPRDIR/../edit_FOC_v1_0.srcs/sources_1/new/FOC_core.vhd"/>
+        <Attr Name="ImportTime" Val="1618499856"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/FOC_position_checker.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/FOC_regXADC.vhd">
+      <FileInfo SFType="VHDL2008">
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -32,52 +74,13 @@
     <File Path="$PSRCDIR/sources_1/new/PID.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="FOC_lib"/>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/FOC_position_checker.vhd">
-      <FileInfo SFType="VHDL2008">
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/FOC_set_PWM_reg.vhd">
-      <FileInfo SFType="VHDL2008">
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/FOC_core.vhd">
-      <FileInfo SFType="VHDL2008">
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../edit_FOC_v1_0.srcs/sources_1/new/FOC_core.vhd"/>
-        <Attr Name="ImportTime" Val="1618499856"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/FOC_AXI4Lite_Slave.vhd">
+    <File Path="$PSRCDIR/sources_1/new/mpDSP.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="FOC_lib"/>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/FOC_regXADC.vhd">
-      <FileInfo SFType="VHDL2008">
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/main_regAXI4.vhd">
-      <FileInfo SFType="VHDL2008">
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -85,6 +88,12 @@
     <File Path="$PSRCDIR/sources_1/new/FOC_TOP.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="FOC_lib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/main_regAXI4.vhd">
+      <FileInfo SFType="VHDL2008">
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -115,7 +124,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="FOC_torqueVectorGenerator"/>
+      <Option Name="TopModule" Val="FOC_top"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -141,6 +150,6 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="BRAM_SIN"/>
   <BlockFileSet Type="BlockSrcs" Name="mpDSP_DSP_macro"/>
+  <BlockFileSet Type="BlockSrcs" Name="BRAM_SIN"/>
 </GenRun>
