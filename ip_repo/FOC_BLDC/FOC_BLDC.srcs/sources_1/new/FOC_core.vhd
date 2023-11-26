@@ -286,9 +286,9 @@ begin
             CLK          => CLK,
             triggerPlus  => positional_3levelSwitching_triggerPlus,
             triggerMinus => positional_3levelSwitching_triggerMinus,
-            outputPlus   => to_sfixed(1.0, 0, -17),
-            outputMinus  => to_sfixed(1.0, 0, -17),
-            outputMid    => to_sfixed(0.0, 0, -17),
+            outputPlus   => to_sfixed(0.0, 0, -17),
+            outputMinus  => to_sfixed(0.0, 0, -17),
+            outputMid    => to_sfixed(1.0, 0, -17),
             reading      => positional_3levelSwitching_reading,
             setpoint     => positional_3levelSwitching_setpoint,
             output       => electricBrake_sfixed

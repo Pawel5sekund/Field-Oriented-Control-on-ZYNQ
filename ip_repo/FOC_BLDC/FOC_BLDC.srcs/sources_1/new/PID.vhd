@@ -50,7 +50,7 @@ architecture Behavioral of PID is
     end component;
 
     constant amountDSP : integer                                     := 4;
-    constant sampling_time : real                             := 0.000000064;  --64ns
+    constant sampling_time : real                             := 0.000000064;  --640ns
     signal A_reg       : typeABD_DSPregisters (amountDSP-1 downto 0) := (others => (others => '0'));
     signal B_reg       : typeABD_DSPregisters (amountDSP-1 downto 0) := (others => (others => '0'));
     signal D_reg       : typeABD_DSPregisters (amountDSP-1 downto 0) := (others => (others => '0'));
@@ -78,8 +78,8 @@ begin
         variable lastError         : sfixed (0 downto -17)                  := (others => '0');
         variable operationSelector : integer range 63 downto -1             := -1;
         variable last_P_P          : SFIXED((47+reading'right+kp'right) downto (reading'right+kp'right)) := (others => '0');
-        variable last_I_P          : SFIXED((47+reading'right+ki'right) downto (reading'right+ki'right)) := (others => '0');
-        variable last_D_P          : SFIXED((47+reading'right+kd'right) downto (reading'right+kd'right)) := (others => '0');
+        variable last_I_P          : SFIXED((95+reading'right+ki'right) downto (reading'right+ki'right)) := (others => '0');
+        variable last_D_P          : SFIXED((95+reading'right+kd'right) downto (reading'right+kd'right)) := (others => '0');
         constant VECTOR_0          : std_logic_vector (47 downto 0)         := (others => '0');
         constant BITS_TP           : integer                                := -clog2(sampling_time);
     begin
@@ -93,7 +93,7 @@ begin
                 elsif (divByBits(vecToSfixed(P_reg(0), last_P_P'right), 1) > max_p_pid) then
                     last_P_P := mulByBits(resize(max_p_pid, last_P_P'left, last_P_P'right), 1);
                 else
-                    last_P_P := vecToSfixed(P_reg(0), last_P_P'right);
+                    --last_P_P := vecToSfixed(P_reg(0), last_P_P'right); --do nothing
                 end if;
 
                 if (divByBits(vecToSfixed(P_reg(1), last_I_P'right), BITS_TP+1) < min_i_pid) then  --check result of I
@@ -101,7 +101,7 @@ begin
                 elsif (divByBits(vecToSfixed(P_reg(1), last_I_P'right), BITS_TP+1) > max_i_pid) then
                     last_I_P := mulByBits(resize(max_i_pid, last_I_P'left, last_I_P'right), BITS_TP+1);
                 else
-                    last_I_P := vecToSfixed(P_reg(1), last_I_P'right);
+                    --last_I_P := vecToSfixed(P_reg(1), last_I_P'right); --do nothing
                 end if;
 
                 if (mulByBits(vecToSfixed(P_reg(2), last_D_P'right), BITS_TP+1) < min_d_pid) then  --check result of D
@@ -109,7 +109,7 @@ begin
                 elsif (mulByBits(vecToSfixed(P_reg(2), last_D_P'right), BITS_TP+1) > max_d_pid) then
                     last_D_P := divByBits(resize(max_d_pid, last_D_P'left, last_D_P'right), BITS_TP+1);
                 else
-                    last_D_P := vecToSfixed(P_reg(2), last_D_P'right);
+                    --last_D_P := vecToSfixed(P_reg(2), last_D_P'right); --do nothing
                 end if;
 
                 if (vecToSfixed(P_reg(3), -fracBits) < min_pid_pid) then  --check result of the output of PID
@@ -117,7 +117,7 @@ begin
                 elsif (vecToSfixed(P_reg(3), -fracBits) > max_pid_pid) then
                     pid_out <= resize(max_pid_pid, pid_out'left, pid_out'right);
                 else
-                    pid_out <= resize(vecToSfixed(P_reg(3), -pid_out'right), pid_out'left, pid_out'right);
+                    pid_out <= resize(vecToSfixed(P_reg(3), pid_out'right), pid_out'left, pid_out'right);
                 end if;
 
                 operationSelector := 1;
@@ -129,28 +129,31 @@ begin
 
                 A_reg(1) <= std_logic_vector(error);  --I
                 B_reg(1) <= std_logic_vector(ki);
-                C_reg(1) <= std_logic_vector(last_I_P);
+                --C_reg(1) <= std_logic_vector(last_I_P);
                 D_reg(1) <= std_logic_vector(lastError);
 
                 A_reg(2) <= std_logic_vector(error);  --D
                 B_reg(2) <= std_logic_vector(kd);
-                C_reg(2) <= std_logic_vector(last_D_P);
+                --C_reg(2) <= std_logic_vector(last_D_P);
                 D_reg(2) <= std_logic_vector(resize(-lastError, lastError'left, lastError'right));
 
                 A_reg(3) <= std_logic_vector(resize(divByBits(last_P_P, 1), kp'left, kp'right));
                 B_reg(3) <= std_logic_vector(to_unsigned(1, 18));  --send 1
                 C_reg(3) <= std_logic_vector(resize(divByBits(last_I_P, BITS_TP+1), C_reg(3)'left+ki'right, ki'right)); 
-                D_reg(3) <= std_logic_vector(resize(mulByBits(last_D_P, BITS_TP+1), kd'left, kd'right));
+                D_reg(3) <= std_logic_vector(resize(mulByBits(last_D_P, BITS_TP-1), kd'left, kd'right));
 
                 operationSelector := 2;
             when 2 =>
+                last_I_P := resize(vecToSfixed(P_reg(1), last_I_P'right) + last_I_P, last_I_P'left, last_I_P'right);
+                last_D_P := resize(vecToSfixed(P_reg(2), last_D_P'right) - last_D_P, last_I_P'left, last_I_P'right);
+                last_P_P := vecToSfixed(P_reg(0), last_P_P'right);
                 lastError := error;
 
                 operationSelector := 3;
             when others =>
                 if (operationSelector = BITS_TP) then
                     operationSelector := 0;
-                elsif (en = '1' and n_res = '1' and RDY = '1') then
+                elsif (en = '1' and n_res = '0' and RDY = '1') then
                     operationSelector := operationSelector + 1; 
                 else
                     operationSelector := -1;

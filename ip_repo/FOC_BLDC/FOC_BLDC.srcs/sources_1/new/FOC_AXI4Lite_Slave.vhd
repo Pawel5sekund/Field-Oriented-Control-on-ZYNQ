@@ -254,7 +254,7 @@ begin
 								if (S_AXI_WSTRB(byte_index) = '1') then
 									-- Respective byte enables are asserted as per write strobes                   
 									-- slave registor 2
-									slv_reg2(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
+									--slv_reg2(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8); --CHECK
 								end if;
 							end loop;
 						when b"11" =>
@@ -262,7 +262,7 @@ begin
 								if (S_AXI_WSTRB(byte_index) = '1') then
 									-- Respective byte enables are asserted as per write strobes                   
 									-- slave registor 3
-									slv_reg3(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
+									--slv_reg3(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8); --CHECK
 								end if;
 							end loop;
 						when others =>

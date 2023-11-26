@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1699803127">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1701014846">
   <File Type="VDS-TIMINGSUMMARY" Name="FOC_top_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="FOC_top.dcp"/>
   <File Type="RDS-UTIL-PB" Name="FOC_top_utilization_synth.pb"/>
@@ -88,13 +88,6 @@
     <File Path="$PSRCDIR/sources_1/new/FOC_TOP.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="FOC_lib"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/main_regAXI4.vhd">
-      <FileInfo SFType="VHDL2008">
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>

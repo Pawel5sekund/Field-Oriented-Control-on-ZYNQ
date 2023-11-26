@@ -110,7 +110,7 @@ architecture Behavioral of FOC_top is
             addr : integer
             );
         port (
---        CLK           : in  std_logic;
+        CLK           : in  std_logic;
             addrRegXADC   : in    std_logic_vector(6 downto 0)  := (others => '0');
             dataRegXADC   : in    std_logic_vector(15 downto 0) := (others => '0');
             resultRegXADC : inout std_logic_vector(15 downto 0)
@@ -219,6 +219,7 @@ begin
             addr => addrXADC
             )
         port map (
+            CLK => S_AXI_ACLK,
             addrRegXADC   => addrRegXADC,
             dataRegXADC   => dataRegXADC,
             resultRegXADC => resultRegXADC
@@ -262,7 +263,7 @@ begin
             )
         port map (
             en                              => '1',
-            n_res                           => '1',
+            n_res                           => '0',
             CLK                             => S_AXI_ACLK,
             currentSensorReading            => vecToSfixed(currentSensorReading_bitVector, -17),
             encoder                         => encoder,

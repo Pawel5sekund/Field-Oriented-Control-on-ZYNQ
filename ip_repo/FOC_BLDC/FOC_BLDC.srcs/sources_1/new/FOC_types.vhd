@@ -87,8 +87,17 @@ function vecToSfixed (
       return mulByBits(A, -B);
     end if;
     temp_A := std_logic_vector(A);
-    temp_result(temp_A'left) := temp_A(temp_A'left); --store sign
     temp_result(temp_A'left-1-B downto temp_A'right) := temp_A(temp_A'left-1 downto temp_A'right+B); --shifting left B bits, but store the sign (the MSB)
+    case temp_A(temp_A'left) is
+        when '1' =>
+            temp_result(temp_result'left) := '1'; --store sign
+            temp_result(temp_result'left downto temp_A'left-B) := (others => '1');
+        when '0' =>
+        temp_result(temp_result'left) := '0'; --store sign
+        temp_result(temp_result'left downto temp_A'left-B) := (others => '0');
+        when others =>
+        --nop()
+    end case;
     value := vecToSfixed(temp_result, value'right);
     return value;
   end function divByBits;
@@ -105,8 +114,17 @@ function vecToSfixed (
       return divByBits(A, -B);
     end if;
     temp_A := std_logic_vector(A);
-    temp_result(temp_A'left) := temp_A(temp_A'left); --store sign
     temp_result(temp_A'left-1 downto temp_A'right+B) := temp_A(temp_A'left-1-B downto temp_A'right); --shifting left B bits, but store the sign (the MSB)
+    case temp_A(temp_A'left) is
+        when '1' =>
+            temp_result(temp_result'left) := '1'; --store sign
+            temp_result(temp_A'right+B-1 downto temp_result'right) := (others => '1');
+        when '0' =>
+            temp_result(temp_result'left) := '0'; --store sign
+            temp_result(temp_result'right+B-1 downto temp_result'right) := (others => '0');
+        when others =>
+        --nop()
+    end case;
     value := vecToSfixed(temp_result, value'right);
     return value;
   end function mulByBits;

@@ -8,7 +8,7 @@ use ieee.fixed_pkg.all;
 
 entity PWM is
     generic (
-        PWMPeriod : integer := 2047
+        PWMPeriod : integer := 4095
         );
     port (
         CLK           : in  std_logic;

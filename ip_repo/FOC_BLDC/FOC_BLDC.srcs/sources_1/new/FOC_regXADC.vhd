@@ -38,19 +38,28 @@ entity FOC_regXADC is
         addr : integer
         );
     port (
---        CLK           : in  std_logic;
+        CLK           : in  std_logic;
         addrRegXADC   : in  std_logic_vector(6 downto 0)  := (others => '0');
         dataRegXADC   : in  std_logic_vector(15 downto 0) := (others => '0');
-        resultRegXADC : inout std_logic_vector(15 downto 0)
+        resultRegXADC : out std_logic_vector(15 downto 0)
         );
 end FOC_regXADC;
 
 architecture Behavioral of FOC_regXADC is
 
 begin
+    process
+    begin
+        wait until RISING_EDGE(CLK);
 
-    with addrRegXADC select
-        resultRegXADC <= dataRegXADC when std_logic_vector(to_unsigned(addr, addrRegXADC'length)),
-        resultRegXADC                when others;
+        if std_logic_vector(to_unsigned(addr, addrRegXADC'length)) = addrRegXADC then
+            resultRegXADC <= dataRegXADC;
+        end if;
+
+    end process;
+
+    --with addrRegXADC select
+    --    resultRegXADC <= dataRegXADC when std_logic_vector(to_unsigned(addr, addrRegXADC'length)),
+    --    resultRegXADC                when others;
 
 end Behavioral;

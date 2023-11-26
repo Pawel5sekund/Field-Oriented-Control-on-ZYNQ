@@ -111,13 +111,13 @@ begin
         B_reg(3)     <= multipliedParamaters;
         B_reg(4)     <= multipliedParamaters;
         --add half of sine value to every result for PWM
-        D_reg(2) <= std_logic_vector(to_unsigned(2047, 18));
-        D_reg(3) <= std_logic_vector(to_unsigned(2047, 18));
-        D_reg(4) <= std_logic_vector(to_unsigned(2047, 18));
+        D_reg(2) <= std_logic_vector(to_unsigned(2048, 18));
+        D_reg(3) <= std_logic_vector(to_unsigned(2048, 18));
+        D_reg(4) <= std_logic_vector(to_unsigned(2048, 18));
         --read results from DSP
-        PWMOutput(0) <= signed(P_reg(2)(47) & P_reg(2)(29 downto 18)); --div by bits, because of scaling parameter, which includes 17 fractional bits and by 1 additional bit because of voltage standarization for PWM
-        PWMOutput(1) <= signed(P_reg(3)(47) & P_reg(3)(29 downto 18));
-        PWMOutput(2) <= signed(P_reg(4)(47) & P_reg(4)(29 downto 18));
+        PWMOutput(0) <= signed(P_reg(2)(47) & P_reg(2)(28 downto 17)); --div by bits, because of scaling parameter, which includes 17 fractional bits and by 1 additional bit because of voltage standarization for PWM
+        PWMOutput(1) <= signed(P_reg(3)(47) & P_reg(3)(28 downto 17));
+        PWMOutput(2) <= signed(P_reg(4)(47) & P_reg(4)(28 downto 17));
 
     end process;
 
@@ -146,7 +146,7 @@ begin
                         poleIndex    := 0;
                 end case;
 
-                operationIndex := 2;
+                operationIndex := 1;
 
             when 1 =>
                 signSine_last := signSine;
@@ -160,12 +160,15 @@ begin
                 elsif (vec0Position > (fullSinusPhase/2)) then
                     vec0Position := vec0Position - fullSinusPhase/2;
                     signSine     := '1';
+                elsif (vec0Position < 0) then
+                    vec0Position := vec0Position + fullSinusPhase/2;
+                    signSine := '1';
                 else
                     vec0Position := vec0Position;
                     signSine     := '0';
                 end if;
 
-                operationIndex := 0;
+                operationIndex := 2;
 
             when 2 =>
                 if signSine_last = '1' then
@@ -176,7 +179,7 @@ begin
 
                 addra <= std_logic_vector(vec0Position(addra'range));
 
-                operationIndex := 1;
+                operationIndex := 0;
 
         end case;
     end process phaseSelectionHandler;

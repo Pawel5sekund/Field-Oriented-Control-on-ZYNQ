@@ -66,7 +66,14 @@ begin
             --nop()
             end case;
           when others =>
-        --nop()
+            case std_logic_vector'(std_logic(last_STEP xor STEP) & STEP & DIR) is
+              when "110" =>
+                var_dposition := var_dposition - STEP_scale;
+              when "111" =>
+                var_dposition := var_dposition + STEP_scale;
+              when others =>
+            --nop()
+            end case;
         end case;
 
         operationSelector := 1;
@@ -84,6 +91,8 @@ begin
 
         last_encoder := encoder;
         last_STEP    := STEP;
+
+        operationSelector := 0;
       when -1 =>
         var_position  := position_calibration;
         var_dposition := (others => '0');

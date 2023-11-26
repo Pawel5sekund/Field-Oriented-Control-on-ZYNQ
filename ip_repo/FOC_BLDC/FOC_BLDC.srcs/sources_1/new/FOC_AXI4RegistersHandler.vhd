@@ -34,9 +34,10 @@ begin
     begin
         wait until RISING_EDGE(CLK);
         inAXIAddr                   := to_integer(unsigned(ext_slv_reg0(C_S_AXI_DATA_WIDTH-1 downto C_S_AXI_DATA_WIDTH-1-7)));
-        buff_inputValues(inAXIAddr) := ext_slv_reg0(17 downto 0);
+        --buff_inputValues(inAXIAddr) := ext_slv_reg0(17 downto 0);
 
-        inputValues <= buff_inputValues;
+        --inputValues <= buff_inputValues;
+        inputValues(inAXIAddr) <= ext_slv_reg0(17 downto 0);
     end process;
 
     outputs : process

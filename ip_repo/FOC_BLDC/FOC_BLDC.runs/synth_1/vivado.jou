@@ -2,8 +2,8 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Sun Nov 12 16:32:11 2023
-# Process ID: 925
+# Start of session at: Sun Nov 26 17:07:29 2023
+# Process ID: 6144
 # Current directory: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1
 # Command line: vivado -log FOC_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FOC_top.tcl
 # Log file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/FOC_top.vds
