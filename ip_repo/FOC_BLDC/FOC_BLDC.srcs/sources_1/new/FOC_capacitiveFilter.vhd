@@ -32,12 +32,25 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity FOC_capacitiveFilter is
+generic (
+    capacity: integer := 10
+);
+port (
+    CLK: in std_logic;
+    INPUT: in std_logic;
+    OUTPUT: out std_logic
+);
 --  Port ( );
 end FOC_capacitiveFilter;
 
 architecture Behavioral of FOC_capacitiveFilter is
 
 begin
+    process
+        variable CNT: integer range 0 to capacity*2 := 0;
+    begin
+
+    end process;
 
 
 end Behavioral;
