@@ -1,65 +1,75 @@
 -- vhdl-linter-disable type-resolved
 -- vhdl-linter-disable unused
-LIBRARY IEEE;
+library IEEE;
 
-USE IEEE.STD_LOGIC_1164.ALL;
-USE IEEE.NUMERIC_STD.ALL;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
 use ieee.fixed_pkg.all;
 use ieee.math_real.all;
 
-PACKAGE FOC_types IS
+package FOC_types is
 
-    TYPE type_PWM_register IS ARRAY (INTEGER RANGE <>) OF signed (12 DOWNTO 0);
-    TYPE type_3x12b_signed IS ARRAY (INTEGER RANGE <>) OF signed (12 DOWNTO 0);
-    type typeABD_DSPregisters is ARRAY (INTEGER RANGE <>) OF STD_LOGIC_VECTOR (17 downto 0);
-    type typeC_DSPregisters is ARRAY (INTEGER RANGE <>) OF STD_LOGIC_VECTOR (47 downto 0);
-    type typeP_DSPregisters is ARRAY (INTEGER RANGE <>) OF STD_LOGIC_VECTOR (47 downto 0);
-    type scalingParametersArray is ARRAY (INTEGER RANGE <>) OF SFIXED (0 downto -17);
-    type valuesArrayAXI4 is ARRAY (INTEGER range <>) of std_logic_vector (17 downto 0);
+  type type_PWM_register is array (integer range <>) of signed (12 downto 0);
+  type type_3x12b_signed is array (integer range <>) of signed (12 downto 0);
+  type typeABD_DSPregisters is array (integer range <>) of std_logic_vector (17 downto 0);
+  type typeC_DSPregisters is array (integer range <>) of std_logic_vector (47 downto 0);
+  type typeP_DSPregisters is array (integer range <>) of std_logic_vector (47 downto 0);
+  type scalingParametersArray is array (integer range <>) of SFIXED (0 downto -17);
+  type valuesArrayAXI4 is array (integer range <>) of std_logic_vector (17 downto 0);
 
-    function vecToSfixed (
-      arg                     : STD_LOGIC_VECTOR;   
-      constant fractional    : INTEGER := 0  
+  function vecToSfixed (
+    arg                 : std_logic_vector;
+    constant fractional : integer := 0
     ) return sfixed;
 
-    function clog2 (
-      A : REAL
-    ) return INTEGER;
+  function clog2 (
+    A : real
+    ) return integer;
 
-    function divByBits (
-      A : sfixed;
-      B : INTEGER
+  function divByBits (
+    A : sfixed;
+    B : integer
     ) return sfixed;
 
-    function mulByBits (
-      A : sfixed;
-      B : INTEGER
+  function mulByBits (
+    A : sfixed;
+    B : integer
     ) return sfixed;
 
-    function unToSigned (
-      arg                     : unsigned     
+  function unToSigned (
+    arg : unsigned
     ) return signed;
 
-END FOC_types;
+  procedure bigSumDSPHandler(
+    variable sumResult : inout std_logic_vector (93 downto 0);
+    signal C1_out      : out   std_logic_vector (47 downto 0);
+    signal C2_out      : out   std_logic_vector (47 downto 0);
+    signal B2_out      : out   std_logic_vector (17 downto 0);
+    signal A2_out      : out   std_logic_vector (17 downto 0);
+    signal P1_in       : in    std_logic_vector (47 downto 0);
+    signal P2_in       : in    std_logic_vector (47 downto 0)
+    );
 
-PACKAGE BODY FOC_types IS
+end FOC_types;
 
-function vecToSfixed (
-  arg                     : STD_LOGIC_VECTOR;   
-  constant fractional    : INTEGER := 0  
-) return sfixed is
+package body FOC_types is
+
+  function vecToSfixed (
+    arg                 : std_logic_vector;
+    constant fractional : integer := 0
+    ) return sfixed is
     variable result : sfixed (arg'left+fractional downto fractional) := (others => '0');
   begin  -- function to_fixed
-    result := to_sfixed(STD_ULOGIC_VECTOR(arg), arg'left+fractional, fractional);
+    result := to_sfixed(std_ulogic_vector(arg), arg'left+fractional, fractional);
     return result;
   end function vecToSfixed;
 
-  function clog2 (A : REAL) return INTEGER is
-    variable Y : REAL;
-    variable N : INTEGER := 0;
+  function clog2 (A : real) return integer is
+    variable Y : real;
+    variable N : integer := 0;
   begin
-    if  A = 1.0 or A = 0.0 then  -- trivial rejection and acceptance
-      return INTEGER(A);
+    if A = 1.0 or A = 0.0 then          -- trivial rejection and acceptance
+      return integer(A);
     end if;
     if A > 0.0 and A < 1.0 then
       return -(clog2(1.0/A));
@@ -70,33 +80,33 @@ function vecToSfixed (
       N := N + 1;
     end loop;
     if Y > 0.0 then
-      N := N + 1;  -- round up to the nearest log2
+      N := N + 1;                       -- round up to the nearest log2
     end if;
-   return N;
+    return N;
   end function clog2;
 
   function divByBits (
     A : sfixed;
-    B : INTEGER
-  ) return sfixed IS
-    variable value: sfixed (A'range);
-    variable temp_A: std_logic_vector(A'length-1 downto 0);
-    variable temp_result: std_logic_vector(A'length-1 downto 0) := (others => '0');
+    B : integer
+    ) return sfixed is
+    variable value       : sfixed (A'range);
+    variable temp_A      : std_logic_vector(A'length-1 downto 0);
+    variable temp_result : std_logic_vector(A'length-1 downto 0) := (others => '0');
   begin
     if B < 0 then
       return mulByBits(A, -B);
     end if;
-    temp_A := std_logic_vector(A);
-    temp_result(temp_A'left-1-B downto temp_A'right) := temp_A(temp_A'left-1 downto temp_A'right+B); --shifting left B bits, but store the sign (the MSB)
+    temp_A                                           := std_logic_vector(A);
+    temp_result(temp_A'left-1-B downto temp_A'right) := temp_A(temp_A'left-1 downto temp_A'right+B);  --shifting left B bits, but store the sign (the MSB)
     case temp_A(temp_A'left) is
-        when '1' =>
-            temp_result(temp_result'left) := '1'; --store sign
-            temp_result(temp_result'left downto temp_A'left-B) := (others => '1');
-        when '0' =>
-        temp_result(temp_result'left) := '0'; --store sign
+      when '1' =>
+        temp_result(temp_result'left)                      := '1';  --store sign
+        temp_result(temp_result'left downto temp_A'left-B) := (others => '1');
+      when '0' =>
+        temp_result(temp_result'left)                      := '0';  --store sign
         temp_result(temp_result'left downto temp_A'left-B) := (others => '0');
-        when others =>
-        --nop()
+      when others =>
+    --nop()
     end case;
     value := vecToSfixed(temp_result, value'right);
     return value;
@@ -104,38 +114,90 @@ function vecToSfixed (
 
   function mulByBits (
     A : sfixed;
-    B : INTEGER
-  ) return sfixed IS
-    variable value: sfixed (A'range);
-    variable temp_A: std_logic_vector(A'length-1 downto 0);
-    variable temp_result: std_logic_vector(A'length-1 downto 0) := (others => '0');
+    B : integer
+    ) return sfixed is
+    variable value       : sfixed (A'range);
+    variable temp_A      : std_logic_vector(A'length-1 downto 0);
+    variable temp_result : std_logic_vector(A'length-1 downto 0) := (others => '0');
   begin
     if B < 0 then
       return divByBits(A, -B);
     end if;
-    temp_A := std_logic_vector(A);
-    temp_result(temp_A'left-1 downto temp_A'right+B) := temp_A(temp_A'left-1-B downto temp_A'right); --shifting left B bits, but store the sign (the MSB)
+    temp_A                                           := std_logic_vector(A);
+    temp_result(temp_A'left-1 downto temp_A'right+B) := temp_A(temp_A'left-1-B downto temp_A'right);  --shifting left B bits, but store the sign (the MSB)
     case temp_A(temp_A'left) is
-        when '1' =>
-            temp_result(temp_result'left) := '1'; --store sign
-            temp_result(temp_A'right+B-1 downto temp_result'right) := (others => '1');
-        when '0' =>
-            temp_result(temp_result'left) := '0'; --store sign
-            temp_result(temp_result'right+B-1 downto temp_result'right) := (others => '0');
-        when others =>
-        --nop()
+      when '1' =>
+        temp_result(temp_result'left)                          := '1';  --store sign
+        temp_result(temp_A'right+B-1 downto temp_result'right) := (others => '1');
+      when '0' =>
+        temp_result(temp_result'left)                               := '0';  --store sign
+        temp_result(temp_result'right+B-1 downto temp_result'right) := (others => '0');
+      when others =>
+    --nop()
     end case;
     value := vecToSfixed(temp_result, value'right);
     return value;
   end function mulByBits;
 
-      function unToSigned (
-      arg                     : unsigned     
+  function unToSigned (
+    arg : unsigned
     ) return signed is
-      variable result: signed(arg'left+1 downto arg'right);
-    begin
-      result := resize(signed(std_logic_vector'("0" & std_logic_vector(arg))), result'length);
-      return result;
-    end function unToSigned;
+    variable result : signed(arg'left+1 downto arg'right);
+  begin
+    result := resize(signed(std_logic_vector'("0" & std_logic_vector(arg))), result'length);
+    return result;
+  end function unToSigned;
 
-END PACKAGE BODY FOC_types;
+  procedure bigSumDSPHandler(
+    variable sumResult : inout std_logic_vector (93 downto 0);
+    signal C1_out      : out   std_logic_vector (47 downto 0);
+    signal C2_out      : out   std_logic_vector (47 downto 0);
+    signal B2_out      : out   std_logic_vector (17 downto 0);
+    signal A2_out      : out   std_logic_vector (17 downto 0);
+    signal P1_in       : in    std_logic_vector (47 downto 0);
+    signal P2_in       : in    std_logic_vector (47 downto 0)
+    ) is
+  begin
+
+    sumResult(93 downto 46) := P2_in(47 downto 0);
+    sumResult(45 downto 0)  := P1_in(45 downto 0);
+
+    B2_out <= std_logic_vector(to_signed(1, 18));
+
+    case P2_in (47 downto 47) & P1_in(47 downto 46) is
+      when "001" =>
+        A2_out               <= std_logic_vector(to_signed(1, 18));
+        C1_out(45 downto 0)  <= sumResult(45 downto 0);
+        C1_out(47 downto 46) <= "00";
+      when "110" =>
+        A2_out               <= std_logic_vector(to_signed(-1, 18));
+        C1_out(45 downto 0)  <= sumResult(45 downto 0);
+        C1_out(47 downto 46) <= "11";
+      when "100" =>
+        A2_out               <= std_logic_vector(to_signed(2, 18));
+        C1_out(45 downto 0)  <= not sumResult(45 downto 0);
+        C1_out(47 downto 46) <= "11";
+      when "011" =>
+        A2_out               <= std_logic_vector(to_signed(-2, 18));
+        C1_out(45 downto 0)  <= not sumResult(45 downto 0);
+        C1_out(47 downto 46) <= "00";
+      when "101" =>
+        A2_out               <= std_logic_vector(to_signed(3, 18));
+        C1_out(45 downto 0)  <= not sumResult(45 downto 0);
+        C1_out(47 downto 46) <= "00";
+      when "010" =>
+        A2_out               <= std_logic_vector(to_signed(-3, 18));
+        C1_out(45 downto 0)  <= not sumResult(45 downto 0);
+        C1_out(47 downto 46) <= "00";
+      when others =>
+        A2_out               <= std_logic_vector(to_signed(0, 18));
+        C1_out(45 downto 0)  <= sumResult(45 downto 0);
+        C1_out(47) <= sumResult(93);
+        C1_out(46) <= sumResult(93);
+    end case;
+
+    C2_out(47 downto 0) <= sumResult(93 downto 46);
+
+  end procedure;
+
+end package body FOC_types;
