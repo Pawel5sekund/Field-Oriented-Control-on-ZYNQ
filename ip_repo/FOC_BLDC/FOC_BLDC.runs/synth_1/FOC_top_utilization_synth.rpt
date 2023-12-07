@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date         : Wed Dec  6 14:05:02 2023
+| Date         : Thu Dec  7 21:49:34 2023
 | Host         : LAPTOP-PAWEL running 64-bit Ubuntu 18.04.2 LTS
 | Command      : report_utilization -file FOC_top_utilization_synth.rpt -pb FOC_top_utilization_synth.pb
 | Design       : FOC_top
@@ -148,11 +148,11 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDRE     | 1487 |        Flop & Latch |
-| LUT6     |  396 |                 LUT |
+| LUT6     |  400 |                 LUT |
 | LUT2     |  387 |                 LUT |
 | LUT3     |  214 |                 LUT |
 | LUT4     |  190 |                 LUT |
-| LUT5     |  164 |                 LUT |
+| LUT5     |  160 |                 LUT |
 | CARRY4   |  138 |          CarryLogic |
 | LUT1     |  136 |                 LUT |
 | FDSE     |   98 |        Flop & Latch |

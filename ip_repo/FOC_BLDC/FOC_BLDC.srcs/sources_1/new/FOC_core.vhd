@@ -141,7 +141,8 @@ architecture behavioral of FOC_core is
 
     component FOC_capacitiveFilter is
         generic (
-            capacity : integer := 10
+            capacity   : integer := 10;
+            histeresis : integer := 4
             );
         port (
             CLK    : in  std_logic;
@@ -187,7 +188,8 @@ begin
 
     filteringSTEPSignal : FOC_capacitiveFilter
         generic map (
-            capacity => 10
+            capacity   => 10,
+            histeresis => 4
             )
         port map (
             CLK    => CLK,
@@ -197,7 +199,8 @@ begin
 
     filteringDIRSignal : FOC_capacitiveFilter
         generic map (
-            capacity => 10
+            capacity   => 10,
+            histeresis => 4
             )
         port map (
             CLK    => CLK,
@@ -207,7 +210,8 @@ begin
 
     filteringEncoder0Signal : FOC_capacitiveFilter
         generic map (
-            capacity => 10
+            capacity   => 10,
+            histeresis => 4
             )
         port map (
             CLK    => CLK,
@@ -217,7 +221,8 @@ begin
 
     filteringEncoder1PSignal : FOC_capacitiveFilter
         generic map (
-            capacity => 10
+            capacity   => 10,
+            histeresis => 4
             )
         port map (
             CLK    => CLK,
