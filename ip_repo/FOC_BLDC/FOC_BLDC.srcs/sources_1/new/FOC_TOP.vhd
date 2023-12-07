@@ -58,18 +58,18 @@ end FOC_top;
 
 architecture Behavioral of FOC_top is
 
-    signal sig_slv_reg0         : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
-    signal sig_slv_reg1         : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
-    signal sig_slv_reg2         : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
-    signal sig_slv_reg3         : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
-    signal resultRegXADC        : std_logic_vector(15 downto 0);
-    constant valuesOutputAmount : integer                                         := 8;
-    constant valuesInputAmount  : integer                                         := 8;
-    signal outputValues         : valuesArrayAXI4 (valuesOutputAmount-1 downto 0);
-    signal inputValues          : valuesArrayAXI4 (valuesInputAmount-1 downto 0);
-    signal dposition_out        : signed(12 downto 0);
-    signal position_out         : signed (14 downto 0);
-    signal currentSensorReading_bitVector : STD_LOGIC_VECTOR(17 downto 0);
+    signal sig_slv_reg0                   : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal sig_slv_reg1                   : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal sig_slv_reg2                   : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal sig_slv_reg3                   : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal resultRegXADC                  : std_logic_vector(15 downto 0);
+    constant valuesOutputAmount           : integer                                         := 8;
+    constant valuesInputAmount            : integer                                         := 8;
+    signal outputValues                   : valuesArrayAXI4 (valuesOutputAmount-1 downto 0);
+    signal inputValues                    : valuesArrayAXI4 (valuesInputAmount-1 downto 0);
+    signal dposition_out                  : signed(12 downto 0);
+    signal position_out                   : signed (14 downto 0);
+    signal currentSensorReading_bitVector : std_logic_vector(17 downto 0);
 
     component FOC_AXI4Lite_Slave is
         generic (
@@ -110,7 +110,7 @@ architecture Behavioral of FOC_top is
             addr : integer
             );
         port (
-        CLK           : in  std_logic;
+            CLK           : in    std_logic;
             addrRegXADC   : in    std_logic_vector(6 downto 0)  := (others => '0');
             dataRegXADC   : in    std_logic_vector(15 downto 0) := (others => '0');
             resultRegXADC : inout std_logic_vector(15 downto 0)
@@ -219,7 +219,7 @@ begin
             addr => addrXADC
             )
         port map (
-            CLK => S_AXI_ACLK,
+            CLK           => S_AXI_ACLK,
             addrRegXADC   => addrRegXADC,
             dataRegXADC   => dataRegXADC,
             resultRegXADC => resultRegXADC
@@ -283,10 +283,10 @@ begin
             PWM_CH_V                        => PWM_CH_V
             );
 
-    currentSensorReading_bitVector(15 downto 0) <= resultRegXADC;
+    currentSensorReading_bitVector(15 downto 0)  <= resultRegXADC;
     currentSensorReading_bitVector(17 downto 16) <= "00";
-    outputValues(1)(12 downto 0) <= std_logic_vector(dposition_out);
-    outputValues(2)(14 downto 0) <= std_logic_vector(position_out);
+    outputValues(1)(12 downto 0)                 <= std_logic_vector(dposition_out);
+    outputValues(2)(14 downto 0)                 <= std_logic_vector(position_out);
 
 
 end Behavioral;

@@ -129,11 +129,11 @@ begin
         wait for 1us;
         if once = 0 then
             for i in 0 to 10 loop
-                wait for 50ns;
+                wait for 20ns;
                 STEP <= '1';
                 DIR  <= '0';
 
-                wait for 50ns;
+                wait for 20ns;
                 STEP <= '0';
                 DIR  <= '0';
             end loop;

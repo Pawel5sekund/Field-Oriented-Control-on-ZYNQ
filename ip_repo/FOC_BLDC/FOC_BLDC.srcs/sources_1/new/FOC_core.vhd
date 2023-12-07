@@ -139,6 +139,17 @@ architecture behavioral of FOC_core is
             );
     end component;
 
+    component FOC_capacitiveFilter is
+        generic (
+            capacity : integer := 10
+            );
+        port (
+            CLK    : in  std_logic;
+            INPUT  : in  std_logic;
+            OUTPUT : out std_logic
+            );
+    end component;
+
     signal position                                            : signed (14 downto 0)           := (others => '0');
     signal dposition                                           : signed (12 downto 0)           := (others => '0');
     signal pid_sel                                             : std_logic_vector (1 downto 0)  := (others => '0');
@@ -155,16 +166,64 @@ architecture behavioral of FOC_core is
     signal positional_3levelSwitching_triggerPlus              : sfixed (0 downto -17);
     signal positional_3levelSwitching_triggerMinus             : sfixed (0 downto -17);
     signal positional_3levelSwitching_reading                  : sfixed (0 downto -17);
-    signal electricBrake_sfixed : sfixed (0 downto -17);
-    signal electricBrake : std_logic;
+    signal electricBrake_sfixed                                : sfixed (0 downto -17);
+    signal electricBrake                                       : std_logic;
     constant positional_3levelSwitching_setpoint               : sfixed (0 downto -17)          := to_sfixed(0.0, 0, -17);
     constant positional_3levelSwitching_outputMid              : sfixed (0 downto -17)          := to_sfixed(0.0, 0, -17);
     constant torqueVectorGenerator_3levelSwitching_outputPlus  : sfixed (0 downto -17)          := to_sfixed(1.0, 0, -17);
     constant torqueVectorGenerator_3levelSwitching_outputMid   : sfixed (0 downto -17)          := to_sfixed(0.0, 0, -17);
     constant torqueVectorGenerator_3levelSwitching_outputMinus : sfixed (0 downto -17)          := to_sfixed(-1.0, 0, -17);
+    signal filteredSTEP                                        : std_logic;
+    signal filteredDIR                                         : std_logic;
+    signal filteredEncoder                                     : std_logic_vector(1 downto 0);
 
 
 begin
+
+
+    ----------------------------------------------------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------------------------------------------
+
+    filteringSTEPSignal : FOC_capacitiveFilter
+        generic map (
+            capacity => 10
+            )
+        port map (
+            CLK    => CLK,
+            INPUT  => STEP,
+            OUTPUT => filteredSTEP
+            );
+
+    filteringDIRSignal : FOC_capacitiveFilter
+        generic map (
+            capacity => 10
+            )
+        port map (
+            CLK    => CLK,
+            INPUT  => DIR,
+            OUTPUT => filteredDIR
+            );
+
+    filteringEncoder0Signal : FOC_capacitiveFilter
+        generic map (
+            capacity => 10
+            )
+        port map (
+            CLK    => CLK,
+            INPUT  => encoder(0),
+            OUTPUT => filteredEncoder(0)
+            );
+
+    filteringEncoder1PSignal : FOC_capacitiveFilter
+        generic map (
+            capacity => 10
+            )
+        port map (
+            CLK    => CLK,
+            INPUT  => encoder(1),
+            OUTPUT => filteredEncoder(1)
+            );
 
 
     ----------------------------------------------------------------------------------------------------------------------
@@ -178,13 +237,13 @@ begin
             )
         port map(
             clk                             => CLK,
-            encoder                         => encoder,
+            encoder                         => filteredEncoder,
             position_calibration            => position_calibration,
             position_calibration_set_signal => position_calibration_set_signal,
             position                        => position,
             dposition                       => dposition,
-            step                            => step,
-            dir                             => dir
+            step                            => filteredSTEP,
+            dir                             => filteredDIR
             );
 
     position_out  <= position;
@@ -281,7 +340,7 @@ begin
             PWM_CH_V      => PWM_CH_V
             );
 
-        PWM_FOC_3levelSwitching : component FOC_3levelSwitching
+    PWM_FOC_3levelSwitching : component FOC_3levelSwitching
         port map(
             CLK          => CLK,
             triggerPlus  => positional_3levelSwitching_triggerPlus,
@@ -294,6 +353,6 @@ begin
             output       => electricBrake_sfixed
             );
 
-            electricBrake <= std_logic(or(std_logic_vector(electricBrake_sfixed)));
+    electricBrake <= std_logic(or(std_logic_vector(electricBrake_sfixed)));
 
 end architecture behavioral;
