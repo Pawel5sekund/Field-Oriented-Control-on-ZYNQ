@@ -5,6 +5,6 @@ Apr 18 2022
 /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_PWM.vhd,1700775953,vhdl,,,,pwm,,,,,,,,
 /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_capacitiveFilter.vhd,1701982014,vhdl,,,,foc_capacitivefilter,,,,,,,,
 /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_torqueVectorGenerator.vhd,1700780418,vhdl2008,,,,foc_torquevectorgenerator,,,,,,,,
-/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_types.vhd,1701612928,vhdl2008,/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sim_1/new/testbench_FOC_core.vhd,,,foc_types,,,,,,,,
+/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_types.vhd,1701612928,vhdl2008,/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd,,,foc_types,,,,,,,,
 /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd,1701597287,vhdl2008,,,,pid,,,,,,,,
 /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd,1697399650,vhdl2008,,,,mpdsp,,,,,,,,

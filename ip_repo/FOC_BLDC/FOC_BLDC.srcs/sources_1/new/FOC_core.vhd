@@ -151,6 +151,19 @@ architecture behavioral of FOC_core is
             );
     end component;
 
+    component FOC_deadTimeMOSFETsHandler is
+        generic (
+            deadTime : integer := 255
+            );
+        port(
+            CLK   : in  std_logic;
+            A_in  : in  std_logic;
+            B_in  : in  std_logic;
+            A_out : out std_logic;
+            B_out : out std_logic
+            );
+    end component;
+
     signal position                                            : signed (14 downto 0)           := (others => '0');
     signal dposition                                           : signed (12 downto 0)           := (others => '0');
     signal pid_sel                                             : std_logic_vector (1 downto 0)  := (others => '0');
@@ -177,7 +190,9 @@ architecture behavioral of FOC_core is
     signal filteredSTEP                                        : std_logic;
     signal filteredDIR                                         : std_logic;
     signal filteredEncoder                                     : std_logic_vector(1 downto 0);
-
+    signal noSafe_PWM_CH_U                                     : std_logic_vector(1 downto 0);
+    signal noSafe_PWM_CH_W                                     : std_logic_vector(1 downto 0);
+    signal noSafe_PWM_CH_V                                     : std_logic_vector(1 downto 0);
 
 begin
 
@@ -340,9 +355,9 @@ begin
             CLK           => CLK,
             electricBrake => electricBrake,
             PWMValues     => PWMRegister,
-            PWM_CH_U      => PWM_CH_U,
-            PWM_CH_W      => PWM_CH_W,
-            PWM_CH_V      => PWM_CH_V
+            PWM_CH_U      => noSafe_PWM_CH_U,
+            PWM_CH_W      => nosafe_PWM_CH_W,
+            PWM_CH_V      => noSafe_PWM_CH_V
             );
 
     PWM_FOC_3levelSwitching : component FOC_3levelSwitching
@@ -359,5 +374,42 @@ begin
             );
 
     electricBrake <= std_logic(or(std_logic_vector(electricBrake_sfixed)));
+
+    CH_U : FOC_deadTimeMOSFETsHandler
+        generic map (
+            deadTime => 50
+            )
+        port map(
+            CLK   => CLK,
+            A_in  => noSafe_PWM_CH_U(0),
+            B_in  => noSafe_PWM_CH_U(1),
+            A_out => PWM_CH_U(0),
+            B_out => PWM_CH_U(1)
+            );
+
+    CH_W : FOC_deadTimeMOSFETsHandler
+        generic map (
+            deadTime => 50
+            )
+        port map(
+            CLK   => CLK,
+            A_in  => noSafe_PWM_CH_W(0),
+            B_in  => noSafe_PWM_CH_W(1),
+            A_out => PWM_CH_W(0),
+            B_out => PWM_CH_W(1)
+            );
+
+    CH_V : FOC_deadTimeMOSFETsHandler
+        generic map (
+            deadTime => 50
+            )
+        port map(
+            CLK   => CLK,
+            A_in  => noSafe_PWM_CH_V(0),
+            B_in  => noSafe_PWM_CH_V(1),
+            A_out => PWM_CH_V(0),
+            B_out => PWM_CH_V(1)
+            );
+
 
 end architecture behavioral;

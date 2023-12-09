@@ -155,15 +155,15 @@ begin
     proc_current : process
 
     begin
-        inputValues(1)       <= std_logic_vector(to_sfixed(0.0, 0, -17)); --kp
-        inputValues(2)       <= std_logic_vector(to_sfixed(0.1, 0, -17)); --ki
+        inputValues(1)       <= std_logic_vector(to_sfixed(0.5, 0, -17)); --kp
+        inputValues(2)       <= std_logic_vector(to_sfixed(0.5, 0, -17)); --ki
         inputValues(3)       <= std_logic_vector(to_sfixed(0.0, 0, -17)); --kd
-        inputValues(0)       <= std_logic_vector(to_sfixed(0.0, 0, -17)); --setpoint
-        currentSensorReading <= to_sfixed(1.0, 0, -17);
-        wait for 9000us;
-        inputValues(0)       <= std_logic_vector(to_sfixed(1.0, 0, -17)); --setpoint
+        inputValues(0)       <= std_logic_vector(to_sfixed(0.5, 0, -17)); --setpoint
         currentSensorReading <= to_sfixed(0.0, 0, -17);
-        wait for 90000us;
+        wait for 9000us;
+        --inputValues(0)       <= std_logic_vector(to_sfixed(1.0, 0, -17)); --setpoint
+        --currentSensorReading <= to_sfixed(0.0, 0, -17);
+        --wait for 90000us;
     end process;
 
 
