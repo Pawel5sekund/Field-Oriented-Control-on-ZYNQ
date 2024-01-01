@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.runs/impl_1/ebit_z7010_top_wrapper.tcl"
+  variable script "/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/impl_1/ebit_z7010_top_wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -115,6 +115,10 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config  -id {Board 49-26}  -suppress 
+set_msg_config  -id {IP_Flow 19-3656}  -string {{WARNING: [IP_Flow 19-3656] If you move the project, the path for repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1'.)}}  -suppress 
+set_msg_config  -id {IP_Flow 19-3656}  -suppress 
+set_msg_config  -id {IP_Flow 19-2248}  -suppress 
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -122,34 +126,38 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 4
+  set_param chipscope.maxJobs 3
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z010clg400-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.cache/wt [current_project]
-  set_property parent.project_path /home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.xpr [current_project]
+  set_property webtalk.parent_dir /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.cache/wt [current_project]
+  set_property parent.project_path /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.xpr [current_project]
   set_property ip_repo_paths {
-  /home/pawel5sekund/VivadoProjects/ip_repo/FOC_1.0
-  /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/LED_controller
-  /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/DPUCZDX8G_v3_3_0
-  /home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC
+  /mnt/d/Xilinx/Projects/Vivado/ip_repo/myip_1.0
+  /mnt/d/Xilinx/Projects/Vivado/ip_repo/FOC_1.0
+  /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/LED_controller
+  /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/DPUCZDX8G_v3_3_0
+  /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC
 } [current_project]
   update_ip_catalog
-  set_property ip_output_repo /home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.cache/ip [current_project]
+  set_property ip_output_repo /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.runs/synth_1/ebit_z7010_top_wrapper.dcp
+  add_files -quiet /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/ebit_z7010_top_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files /home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.srcs/sources_1/bd/ebit_z7010_top/ebit_z7010_top.bd
+  add_files /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.srcs/sources_1/bd/ebit_z7010_top/ebit_z7010_top.bd
+  read_ip -quiet /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.srcs/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xci
+  read_ip -quiet /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.srcs/sources_1/ip/axi_gpio_0/axi_gpio_0.xci
+  read_ip -quiet /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.srcs/sources_1/ip/position/position.xci
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.srcs/constrs_1/new/ebit_z7010_top.xdc
+  read_xdc /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.srcs/constrs_1/new/ebit_z7010_top.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

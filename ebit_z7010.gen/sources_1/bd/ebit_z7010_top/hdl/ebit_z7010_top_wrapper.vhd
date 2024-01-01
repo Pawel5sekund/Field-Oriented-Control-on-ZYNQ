@@ -1,8 +1,8 @@
 --Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
---Date        : Mon Oct 31 18:18:02 2022
---Host        : LAPTOP-QKPB5NLF running 64-bit unknown
+--Date        : Mon Jan  1 15:59:25 2024
+--Host        : LAPTOP-PAWEL running 64-bit Ubuntu 18.04.2 LTS
 --Command     : generate_target ebit_z7010_top_wrapper.bd
 --Design      : ebit_z7010_top_wrapper
 --Purpose     : IP block netlist

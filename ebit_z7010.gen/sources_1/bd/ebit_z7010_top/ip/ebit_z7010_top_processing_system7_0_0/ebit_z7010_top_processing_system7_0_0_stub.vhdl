@@ -1,10 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
--- Date        : Mon Oct 31 18:21:39 2022
--- Host        : LAPTOP-QKPB5NLF running 64-bit unknown
+-- Date        : Thu Dec 21 07:17:46 2023
+-- Host        : LAPTOP-PAWEL running 64-bit Ubuntu 18.04.2 LTS
 -- Command     : write_vhdl -force -mode synth_stub
---               /home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/ebit_z7010_top_processing_system7_0_0_stub.vhdl
+--               /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/ebit_z7010_top_processing_system7_0_0_stub.vhdl
 -- Design      : ebit_z7010_top_processing_system7_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1

@@ -2,23 +2,23 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Mon Oct 31 18:18:45 2022
-# Process ID: 1672
-# Current directory: /home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.runs/ebit_z7010_top_processing_system7_0_0_synth_1
+# Start of session at: Thu Dec 21 07:14:19 2023
+# Process ID: 2700
+# Current directory: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/ebit_z7010_top_processing_system7_0_0_synth_1
 # Command line: vivado -log ebit_z7010_top_processing_system7_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ebit_z7010_top_processing_system7_0_0.tcl
-# Log file: /home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.runs/ebit_z7010_top_processing_system7_0_0_synth_1/ebit_z7010_top_processing_system7_0_0.vds
-# Journal file: /home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.runs/ebit_z7010_top_processing_system7_0_0_synth_1/vivado.jou
-# Running On: LAPTOP-QKPB5NLF, OS: Linux, CPU Frequency: 3193.852 MHz, CPU Physical cores: 16, Host memory: 12890 MB
+# Log file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/ebit_z7010_top_processing_system7_0_0_synth_1/ebit_z7010_top_processing_system7_0_0.vds
+# Journal file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/ebit_z7010_top_processing_system7_0_0_synth_1/vivado.jou
+# Running On: LAPTOP-PAWEL, OS: Linux, CPU Frequency: 3193.908 MHz, CPU Physical cores: 16, Host memory: 8015 MB
 #-----------------------------------------------------------
 source ebit_z7010_top_processing_system7_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:38 ; elapsed = 00:00:21 . Memory (MB): peak = 2687.148 ; gain = 67.949 ; free physical = 262 ; free virtual = 5838
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2704.961 ; gain = 2.016 ; free physical = 2600 ; free virtual = 6258
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/pawel5sekund/VivadoProjects/ip_repo/FOC_1.0'; Can't find the specified path.
-If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/LED_controller'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/DPUCZDX8G_v3_3_0'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/pawel5sekund/VivadoProjects/EBAZ4205/ip_repo/FOC_BLDC'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/mnt/d/Xilinx/Projects/Vivado/ip_repo/myip_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/LED_controller'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/DPUCZDX8G_v3_3_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2022.1/data/ip'.
+update_ip_catalog: Time (s): cpu = 00:00:00.93 ; elapsed = 00:00:59 . Memory (MB): peak = 2704.961 ; gain = 0.000 ; free physical = 110 ; free virtual = 2710
 Command: synth_design -top ebit_z7010_top_processing_system7_0_0 -part xc7z010clg400-1 -incremental_mode off -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
@@ -26,34 +26,34 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 1989
+INFO: [Synth 8-7075] Helper process launched with PID 3055
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 2729.777 ; gain = 0.000 ; free physical = 128 ; free virtual = 5013
+Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 2704.965 ; gain = 0.000 ; free physical = 97 ; free virtual = 1837
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'ebit_z7010_top_processing_system7_0_0' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:152]
+INFO: [Synth 8-6157] synthesizing module 'ebit_z7010_top_processing_system7_0_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:152]
 INFO: [Synth 8-6157] synthesizing module 'BUFG' [/tools/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.v:1082]
 INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [/tools/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.v:1082]
 INFO: [Synth 8-6157] synthesizing module 'BIBUF' [/tools/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.v:729]
 INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (0#1) [/tools/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.v:729]
 INFO: [Synth 8-6157] synthesizing module 'PS7' [/tools/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.v:89904]
 INFO: [Synth 8-6155] done synthesizing module 'PS7' (0#1) [/tools/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.v:89904]
-INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (0#1) [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:152]
-WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
-WARNING: [Synth 8-7071] port 'M_AXI_GP1_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
-WARNING: [Synth 8-7071] port 'S_AXI_GP0_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
-WARNING: [Synth 8-7071] port 'S_AXI_GP1_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
-WARNING: [Synth 8-7071] port 'S_AXI_ACP_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
-WARNING: [Synth 8-7071] port 'S_AXI_HP2_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
-WARNING: [Synth 8-7071] port 'S_AXI_HP3_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
-WARNING: [Synth 8-7071] port 'DMA0_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
-WARNING: [Synth 8-7071] port 'DMA1_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
-WARNING: [Synth 8-7071] port 'DMA2_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
-WARNING: [Synth 8-7071] port 'DMA3_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
-WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
-INFO: [Synth 8-6155] done synthesizing module 'ebit_z7010_top_processing_system7_0_0' (0#1) [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:152]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
+WARNING: [Synth 8-7071] port 'M_AXI_GP1_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
+WARNING: [Synth 8-7071] port 'S_AXI_GP0_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
+WARNING: [Synth 8-7071] port 'S_AXI_GP1_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
+WARNING: [Synth 8-7071] port 'S_AXI_ACP_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
+WARNING: [Synth 8-7071] port 'S_AXI_HP2_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
+WARNING: [Synth 8-7071] port 'S_AXI_HP3_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
+WARNING: [Synth 8-7071] port 'DMA0_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
+WARNING: [Synth 8-7071] port 'DMA1_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
+WARNING: [Synth 8-7071] port 'DMA2_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
+WARNING: [Synth 8-7071] port 'DMA3_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
+WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:370]
+INFO: [Synth 8-6155] done synthesizing module 'ebit_z7010_top_processing_system7_0_0' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/synth/ebit_z7010_top_processing_system7_0_0.v:53]
 WARNING: [Synth 8-7129] Port ENET1_GMII_COL in module processing_system7_v5_5_processing_system7 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ENET1_GMII_CRS in module processing_system7_v5_5_processing_system7 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ENET1_GMII_RX_DV in module processing_system7_v5_5_processing_system7 is either unconnected or has no load
@@ -122,55 +122,55 @@ WARNING: [Synth 8-7129] Port FTMD_TRACEIN_ATID[2] in module processing_system7_v
 WARNING: [Synth 8-7129] Port FTMD_TRACEIN_ATID[1] in module processing_system7_v5_5_processing_system7 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port FTMD_TRACEIN_ATID[0] in module processing_system7_v5_5_processing_system7 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 2729.777 ; gain = 0.000 ; free physical = 150 ; free virtual = 4256
+Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 2704.965 ; gain = 0.000 ; free physical = 1331 ; free virtual = 2869
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 2729.777 ; gain = 0.000 ; free physical = 145 ; free virtual = 4251
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 2704.965 ; gain = 0.000 ; free physical = 1369 ; free virtual = 2908
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 2729.777 ; gain = 0.000 ; free physical = 145 ; free virtual = 4251
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 2704.965 ; gain = 0.000 ; free physical = 1369 ; free virtual = 2908
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2729.777 ; gain = 0.000 ; free physical = 273 ; free virtual = 4389
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2704.965 ; gain = 0.000 ; free physical = 1383 ; free virtual = 2923
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/ebit_z7010_top_processing_system7_0_0.xdc] for cell 'inst'
-Finished Parsing XDC File [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/ebit_z7010_top_processing_system7_0_0.xdc] for cell 'inst'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/ebit_z7010_top_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/ebit_z7010_top_processing_system7_0_0_propImpl.xdc].
+Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/ebit_z7010_top_processing_system7_0_0.xdc] for cell 'inst'
+Finished Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/ebit_z7010_top_processing_system7_0_0.xdc] for cell 'inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_processing_system7_0_0/ebit_z7010_top_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/ebit_z7010_top_processing_system7_0_0_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/ebit_z7010_top_processing_system7_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.runs/ebit_z7010_top_processing_system7_0_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.runs/ebit_z7010_top_processing_system7_0_0_synth_1/dont_touch.xdc]
+Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/ebit_z7010_top_processing_system7_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/ebit_z7010_top_processing_system7_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2793.805 ; gain = 0.000 ; free physical = 6873 ; free virtual = 7254
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2768.992 ; gain = 0.000 ; free physical = 1052 ; free virtual = 2619
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.09 . Memory (MB): peak = 2793.805 ; gain = 0.000 ; free physical = 6899 ; free virtual = 7287
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2768.992 ; gain = 0.000 ; free physical = 1021 ; free virtual = 2588
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:36 ; elapsed = 00:01:25 . Memory (MB): peak = 2793.805 ; gain = 64.027 ; free physical = 6436 ; free virtual = 7367
+Finished Constraint Validation : Time (s): cpu = 00:00:35 ; elapsed = 00:00:51 . Memory (MB): peak = 2768.992 ; gain = 64.027 ; free physical = 1387 ; free virtual = 3015
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:36 ; elapsed = 00:01:25 . Memory (MB): peak = 2793.805 ; gain = 64.027 ; free physical = 6434 ; free virtual = 7366
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:35 ; elapsed = 00:00:51 . Memory (MB): peak = 2768.992 ; gain = 64.027 ; free physical = 1392 ; free virtual = 3019
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.runs/ebit_z7010_top_processing_system7_0_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/ebit_z7010_top_processing_system7_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:01:27 . Memory (MB): peak = 2793.805 ; gain = 64.027 ; free physical = 6413 ; free virtual = 7369
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:53 . Memory (MB): peak = 2768.992 ; gain = 64.027 ; free physical = 1456 ; free virtual = 3085
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:38 ; elapsed = 00:01:28 . Memory (MB): peak = 2793.805 ; gain = 64.027 ; free physical = 6416 ; free virtual = 7375
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:38 ; elapsed = 00:00:55 . Memory (MB): peak = 2768.992 ; gain = 64.027 ; free physical = 1429 ; free virtual = 3061
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -230,25 +230,25 @@ WARNING: [Synth 8-7129] Port FTMD_TRACEIN_DATA[30] in module processing_system7_
 WARNING: [Synth 8-7129] Port FTMD_TRACEIN_DATA[29] in module processing_system7_v5_5_processing_system7 is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:01:30 . Memory (MB): peak = 2793.805 ; gain = 64.027 ; free physical = 6279 ; free virtual = 7303
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:01:00 . Memory (MB): peak = 2768.992 ; gain = 64.027 ; free physical = 1377 ; free virtual = 3015
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:54 ; elapsed = 00:01:45 . Memory (MB): peak = 2793.805 ; gain = 64.027 ; free physical = 5245 ; free virtual = 6545
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:55 ; elapsed = 00:01:15 . Memory (MB): peak = 2768.992 ; gain = 64.027 ; free physical = 991 ; free virtual = 2656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:54 ; elapsed = 00:01:45 . Memory (MB): peak = 2793.805 ; gain = 64.027 ; free physical = 5211 ; free virtual = 6519
+Finished Timing Optimization : Time (s): cpu = 00:00:55 ; elapsed = 00:01:15 . Memory (MB): peak = 2768.992 ; gain = 64.027 ; free physical = 977 ; free virtual = 2642
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:54 ; elapsed = 00:01:45 . Memory (MB): peak = 2793.805 ; gain = 64.027 ; free physical = 5202 ; free virtual = 6514
+Finished Technology Mapping : Time (s): cpu = 00:00:55 ; elapsed = 00:01:15 . Memory (MB): peak = 2768.992 ; gain = 64.027 ; free physical = 972 ; free virtual = 2640
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -266,37 +266,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:03 ; elapsed = 00:01:54 . Memory (MB): peak = 2793.805 ; gain = 64.027 ; free physical = 4990 ; free virtual = 6506
+Finished IO Insertion : Time (s): cpu = 00:01:04 ; elapsed = 00:01:23 . Memory (MB): peak = 2768.992 ; gain = 64.027 ; free physical = 2194 ; free virtual = 4045
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:03 ; elapsed = 00:01:54 . Memory (MB): peak = 2793.805 ; gain = 64.027 ; free physical = 4991 ; free virtual = 6507
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:04 ; elapsed = 00:01:23 . Memory (MB): peak = 2768.992 ; gain = 64.027 ; free physical = 2196 ; free virtual = 4048
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:03 ; elapsed = 00:01:54 . Memory (MB): peak = 2793.805 ; gain = 64.027 ; free physical = 5009 ; free virtual = 6528
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:04 ; elapsed = 00:01:23 . Memory (MB): peak = 2768.992 ; gain = 64.027 ; free physical = 2198 ; free virtual = 4049
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:03 ; elapsed = 00:01:54 . Memory (MB): peak = 2793.805 ; gain = 64.027 ; free physical = 5008 ; free virtual = 6528
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:04 ; elapsed = 00:01:23 . Memory (MB): peak = 2768.992 ; gain = 64.027 ; free physical = 2203 ; free virtual = 4054
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:03 ; elapsed = 00:01:54 . Memory (MB): peak = 2793.805 ; gain = 64.027 ; free physical = 5010 ; free virtual = 6530
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:04 ; elapsed = 00:01:23 . Memory (MB): peak = 2768.992 ; gain = 64.027 ; free physical = 2205 ; free virtual = 4056
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:03 ; elapsed = 00:01:54 . Memory (MB): peak = 2793.805 ; gain = 64.027 ; free physical = 5010 ; free virtual = 6531
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:04 ; elapsed = 00:01:24 . Memory (MB): peak = 2768.992 ; gain = 64.027 ; free physical = 2201 ; free virtual = 4052
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -319,24 +319,25 @@ Report Cell Usage:
 |5     |FDRE  |    22|
 +------+------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:03 ; elapsed = 00:01:54 . Memory (MB): peak = 2793.805 ; gain = 64.027 ; free physical = 5012 ; free virtual = 6534
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:04 ; elapsed = 00:01:24 . Memory (MB): peak = 2768.992 ; gain = 64.027 ; free physical = 2198 ; free virtual = 4049
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 68 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:56 ; elapsed = 00:01:12 . Memory (MB): peak = 2793.805 ; gain = 0.000 ; free physical = 5365 ; free virtual = 6920
-Synthesis Optimization Complete : Time (s): cpu = 00:01:03 ; elapsed = 00:01:54 . Memory (MB): peak = 2793.805 ; gain = 64.027 ; free physical = 5365 ; free virtual = 6921
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:58 ; elapsed = 00:01:14 . Memory (MB): peak = 2768.992 ; gain = 0.000 ; free physical = 2260 ; free virtual = 4124
+Synthesis Optimization Complete : Time (s): cpu = 00:01:04 ; elapsed = 00:01:24 . Memory (MB): peak = 2768.992 ; gain = 64.027 ; free physical = 2338 ; free virtual = 4202
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2793.805 ; gain = 0.000 ; free physical = 5396 ; free virtual = 6964
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2768.992 ; gain = 0.000 ; free physical = 2405 ; free virtual = 4324
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2793.805 ; gain = 0.000 ; free physical = 5619 ; free virtual = 7227
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2768.992 ; gain = 0.000 ; free physical = 3227 ; free virtual = 5237
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 Synth Design complete, checksum: b239b7d3
 INFO: [Common 17-83] Releasing license: Synthesis
-30 Infos, 116 Warnings, 0 Critical Warnings and 0 Errors encountered.
+31 Infos, 115 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:30 ; elapsed = 00:02:10 . Memory (MB): peak = 2793.805 ; gain = 64.031 ; free physical = 5890 ; free virtual = 7510
-INFO: [Common 17-1381] The checkpoint '/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.runs/ebit_z7010_top_processing_system7_0_0_synth_1/ebit_z7010_top_processing_system7_0_0.dcp' has been generated.
+synth_design: Time (s): cpu = 00:01:30 ; elapsed = 00:01:42 . Memory (MB): peak = 2768.992 ; gain = 64.031 ; free physical = 3436 ; free virtual = 5453
+INFO: [Common 17-1381] The checkpoint '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/ebit_z7010_top_processing_system7_0_0_synth_1/ebit_z7010_top_processing_system7_0_0.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:00.6 ; elapsed = 00:00:08 . Memory (MB): peak = 2813.883 ; gain = 44.891 ; free physical = 2067 ; free virtual = 4186
 INFO: [runtcl-4] Executing : report_utilization -file ebit_z7010_top_processing_system7_0_0_utilization_synth.rpt -pb ebit_z7010_top_processing_system7_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Oct 31 18:21:39 2022...
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 21 07:17:49 2023...

@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Mon Jan  1 16:02:55 2024
+# Process ID: 6293
+# Current directory: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/position_synth_1
+# Command line: vivado -log position.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source position.tcl
+# Log file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/position_synth_1/position.vds
+# Journal file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/position_synth_1/vivado.jou
+# Running On: LAPTOP-PAWEL, OS: Linux, CPU Frequency: 3193.908 MHz, CPU Physical cores: 16, Host memory: 8015 MB
+#-----------------------------------------------------------
+source position.tcl -notrace

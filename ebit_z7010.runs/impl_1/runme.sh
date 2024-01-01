@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.runs/impl_1'
+HD_PWD='/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

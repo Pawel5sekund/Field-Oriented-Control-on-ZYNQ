@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../FOC_BLDC.gen/sources_1/ip/ILA_FOC_core/sim/ILA_FOC_core.vhd" \
+
+nosort

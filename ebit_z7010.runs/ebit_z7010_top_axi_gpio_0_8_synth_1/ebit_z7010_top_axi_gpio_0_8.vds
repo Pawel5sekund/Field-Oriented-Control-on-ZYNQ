@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Thu Dec 21 19:05:48 2023
+# Process ID: 4662
+# Current directory: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/ebit_z7010_top_axi_gpio_0_8_synth_1
+# Command line: vivado -log ebit_z7010_top_axi_gpio_0_8.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ebit_z7010_top_axi_gpio_0_8.tcl
+# Log file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/ebit_z7010_top_axi_gpio_0_8_synth_1/ebit_z7010_top_axi_gpio_0_8.vds
+# Journal file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/ebit_z7010_top_axi_gpio_0_8_synth_1/vivado.jou
+# Running On: LAPTOP-PAWEL, OS: Linux, CPU Frequency: 3193.908 MHz, CPU Physical cores: 16, Host memory: 8015 MB
+#-----------------------------------------------------------
+source ebit_z7010_top_axi_gpio_0_8.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2718.836 ; gain = 2.016 ; free physical = 125 ; free virtual = 2191
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/mnt/d/Xilinx/Projects/Vivado/ip_repo/myip_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/LED_controller'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/DPUCZDX8G_v3_3_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2022.1/data/ip'.
+update_ip_catalog: Time (s): cpu = 00:00:00.97 ; elapsed = 00:00:31 . Memory (MB): peak = 2718.836 ; gain = 0.000 ; free physical = 1783 ; free virtual = 3916
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP ebit_z7010_top_axi_gpio_0_8, cache-ID = 16e2bbf63fb6dff4.
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 21 19:06:47 2023...

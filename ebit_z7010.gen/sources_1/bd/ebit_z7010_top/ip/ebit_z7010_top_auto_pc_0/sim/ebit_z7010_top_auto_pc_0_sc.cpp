@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2022 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2024 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -62,7 +62,7 @@ ebit_z7010_top_auto_pc_0_sc::ebit_z7010_top_auto_pc_0_sc(const sc_core::sc_modul
   // initialize module
     xsc::common_cpp::properties model_param_props;
     model_param_props.addLong("C_M_AXI_PROTOCOL", "2");
-    model_param_props.addLong("C_S_AXI_PROTOCOL", "0");
+    model_param_props.addLong("C_S_AXI_PROTOCOL", "1");
     model_param_props.addLong("C_IGNORE_ID", "0");
     model_param_props.addLong("C_AXI_ID_WIDTH", "12");
     model_param_props.addLong("C_AXI_ADDR_WIDTH", "32");

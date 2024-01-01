@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1702122032">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1704120137">
   <File Type="VDS-TIMINGSUMMARY" Name="FOC_top_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="FOC_top.dcp"/>
   <File Type="RDS-UTIL-PB" Name="FOC_top_utilization_synth.pb"/>
@@ -111,9 +111,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/component.xml">
-      <FileInfo SFType="IPXACT"/>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/mpDSP_testbench.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="FOC_lib"/>
@@ -125,6 +122,17 @@
       <FileInfo SFType="VHDL2008">
         <Attr Name="Library" Val="FOC_lib"/>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/component.xml">
+      <FileInfo SFType="IPXACT"/>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/FOC_BLDC_model.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="FOC_lib"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -156,6 +164,7 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="ILA_FOC_core"/>
   <BlockFileSet Type="BlockSrcs" Name="mpDSP_DSP_macro"/>
   <BlockFileSet Type="BlockSrcs" Name="BRAM_SIN"/>
 </GenRun>

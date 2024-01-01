@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/pawel5sekund/VivadoProjects/EBAZ4205/ebit_z7010.srcs/constrs_1/new/ebit_z7010_top.xdc rfile:../../../ebit_z7010.srcs/constrs_1/new/ebit_z7010_top.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.srcs/constrs_1/new/ebit_z7010_top.xdc rfile:../../../ebit_z7010.srcs/constrs_1/new/ebit_z7010_top.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:14 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W13 [get_ports {LED_GREEN_OUT_0}]
 set_property src_info {type:XDC file:1 line:15 export:INPUT save:INPUT read:READ} [current_design]

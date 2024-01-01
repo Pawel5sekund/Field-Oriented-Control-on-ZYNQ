@@ -1,0 +1,2 @@
+ILA_FOC_core.vhd,vhdl,xil_defaultlib,../../../../FOC_BLDC.gen/sources_1/ip/ILA_FOC_core/sim/ILA_FOC_core.vhd,incdir="../../../../FOC_BLDC.gen/sources_1/ip/ILA_FOC_core/hdl/verilog"
+glbl.v,Verilog,xil_defaultlib,glbl.v
