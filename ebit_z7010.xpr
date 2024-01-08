@@ -100,11 +100,32 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_8/ebit_z7010_top_axi_gpio_0_8.xci">
+          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_8"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_7/ebit_z7010_top_axi_gpio_0_7.xci">
+          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_7"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_6/ebit_z7010_top_axi_gpio_0_6.xci">
+          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_6"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_5/ebit_z7010_top_axi_gpio_0_5.xci">
+          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_5"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_4/ebit_z7010_top_axi_gpio_0_4.xci">
+          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_4"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_3/ebit_z7010_top_axi_gpio_0_3.xci">
+          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_3"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_2/ebit_z7010_top_axi_gpio_0_2.xci">
+          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_2"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_1/ebit_z7010_top_axi_gpio_0_1.xci">
+          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_1"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_processing_system7_0_0/ebit_z7010_top_processing_system7_0_0.xci">
           <Proxy FileSetName="ebit_z7010_top_processing_system7_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_xbar_0/ebit_z7010_top_xbar_0.xci">
-          <Proxy FileSetName="ebit_z7010_top_xbar_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_rst_ps7_0_50M_0/ebit_z7010_top_rst_ps7_0_50M_0.xci">
           <Proxy FileSetName="ebit_z7010_top_rst_ps7_0_50M_0"/>
@@ -112,38 +133,26 @@
         <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_LED_controller_0_0/ebit_z7010_top_LED_controller_0_0.xci">
           <Proxy FileSetName="ebit_z7010_top_LED_controller_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_11/ebit_z7010_top_axi_gpio_0_11.xci">
-          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_11"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_10/ebit_z7010_top_axi_gpio_0_10.xci">
-          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_10"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_7/ebit_z7010_top_axi_gpio_0_7.xci">
-          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_7"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_3/ebit_z7010_top_axi_gpio_0_3.xci">
-          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_3"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_5/ebit_z7010_top_axi_gpio_0_5.xci">
-          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_5"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_6/ebit_z7010_top_axi_gpio_0_6.xci">
-          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_6"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_4/ebit_z7010_top_axi_gpio_0_4.xci">
-          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_4"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_2/ebit_z7010_top_axi_gpio_0_2.xci">
-          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_2"/>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_xbar_0/ebit_z7010_top_xbar_0.xci">
+          <Proxy FileSetName="ebit_z7010_top_xbar_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_FOC_top_0_0/ebit_z7010_top_FOC_top_0_0.xci">
           <Proxy FileSetName="ebit_z7010_top_FOC_top_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_8/ebit_z7010_top_axi_gpio_0_8.xci">
-          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_8"/>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_10/ebit_z7010_top_axi_gpio_0_10.xci">
+          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_10"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_1/ebit_z7010_top_axi_gpio_0_1.xci">
-          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_1"/>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_11/ebit_z7010_top_axi_gpio_0_11.xci">
+          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_11"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ip_1/bd_5d6e_bsip_0.xci">
+          <Proxy FileSetName="bd_5d6e_bsip_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_debug_bridge_0_0/ebit_z7010_top_debug_bridge_0_0.xci">
+          <Proxy FileSetName="ebit_z7010_top_debug_bridge_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ip_0/bd_5d6e_axi_jtag_0.xci">
+          <Proxy FileSetName="bd_5d6e_axi_jtag_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PGENDIR/sources_1/bd/ebit_z7010_top/hdl/ebit_z7010_top_wrapper.vhd">
@@ -324,6 +333,24 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="bd_5d6e_bsip_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/bd_5d6e_bsip_0" RelGenDir="$PGENDIR/bd_5d6e_bsip_0">
+      <Config>
+        <Option Name="TopModule" Val="bd_5d6e_bsip_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="ebit_z7010_top_debug_bridge_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ebit_z7010_top_debug_bridge_0_0" RelGenDir="$PGENDIR/ebit_z7010_top_debug_bridge_0_0">
+      <Config>
+        <Option Name="TopModule" Val="ebit_z7010_top_debug_bridge_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="bd_5d6e_axi_jtag_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/bd_5d6e_axi_jtag_0" RelGenDir="$PGENDIR/bd_5d6e_axi_jtag_0">
+      <Config>
+        <Option Name="TopModule" Val="bd_5d6e_axi_jtag_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
   </FileSets>
   <Simulators>
     <Simulator Name="XSim">
@@ -499,9 +526,7 @@
     </Run>
     <Run Id="ebit_z7010_top_axi_gpio_0_11_synth_1" Type="Ft3:Synth" SrcSet="ebit_z7010_top_axi_gpio_0_11" Part="xc7z010clg400-1" ConstrsSet="ebit_z7010_top_axi_gpio_0_11" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ebit_z7010_top_axi_gpio_0_11_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ebit_z7010_top_axi_gpio_0_11_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ebit_z7010_top_axi_gpio_0_11_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -511,9 +536,7 @@
     </Run>
     <Run Id="ebit_z7010_top_axi_gpio_0_10_synth_1" Type="Ft3:Synth" SrcSet="ebit_z7010_top_axi_gpio_0_10" Part="xc7z010clg400-1" ConstrsSet="ebit_z7010_top_axi_gpio_0_10" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ebit_z7010_top_axi_gpio_0_10_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ebit_z7010_top_axi_gpio_0_10_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ebit_z7010_top_axi_gpio_0_10_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -522,6 +545,26 @@
       <RQSFiles/>
     </Run>
     <Run Id="ebit_z7010_top_FOC_top_0_0_synth_1" Type="Ft3:Synth" SrcSet="ebit_z7010_top_FOC_top_0_0" Part="xc7z010clg400-1" ConstrsSet="ebit_z7010_top_FOC_top_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ebit_z7010_top_FOC_top_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ebit_z7010_top_FOC_top_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ebit_z7010_top_FOC_top_0_0_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2022"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="position_synth_1" Type="Ft3:Synth" SrcSet="position" Part="xc7z010clg400-1" ConstrsSet="position" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/position_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/position_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/position_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2022"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="bd_5d6e_bsip_0_synth_1" Type="Ft3:Synth" SrcSet="bd_5d6e_bsip_0" Part="xc7z010clg400-1" ConstrsSet="bd_5d6e_bsip_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_5d6e_bsip_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_5d6e_bsip_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_5d6e_bsip_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -533,7 +576,19 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="position_synth_1" Type="Ft3:Synth" SrcSet="position" Part="xc7z010clg400-1" ConstrsSet="position" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/position_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/position_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/position_synth_1">
+    <Run Id="ebit_z7010_top_debug_bridge_0_0_synth_1" Type="Ft3:Synth" SrcSet="ebit_z7010_top_debug_bridge_0_0" Part="xc7z010clg400-1" ConstrsSet="ebit_z7010_top_debug_bridge_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ebit_z7010_top_debug_bridge_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ebit_z7010_top_debug_bridge_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ebit_z7010_top_debug_bridge_0_0_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2022"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="bd_5d6e_axi_jtag_0_synth_1" Type="Ft3:Synth" SrcSet="bd_5d6e_axi_jtag_0" Part="xc7z010clg400-1" ConstrsSet="bd_5d6e_axi_jtag_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/bd_5d6e_axi_jtag_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_5d6e_axi_jtag_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_5d6e_axi_jtag_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -803,9 +858,7 @@
     </Run>
     <Run Id="ebit_z7010_top_axi_gpio_0_11_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="ebit_z7010_top_axi_gpio_0_11" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="ebit_z7010_top_axi_gpio_0_11_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ebit_z7010_top_axi_gpio_0_11_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ebit_z7010_top_axi_gpio_0_11_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -822,9 +875,7 @@
     </Run>
     <Run Id="ebit_z7010_top_axi_gpio_0_10_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="ebit_z7010_top_axi_gpio_0_10" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="ebit_z7010_top_axi_gpio_0_10_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ebit_z7010_top_axi_gpio_0_10_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ebit_z7010_top_axi_gpio_0_10_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -840,6 +891,40 @@
       <RQSFiles/>
     </Run>
     <Run Id="ebit_z7010_top_FOC_top_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="ebit_z7010_top_FOC_top_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="ebit_z7010_top_FOC_top_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ebit_z7010_top_FOC_top_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ebit_z7010_top_FOC_top_0_0_impl_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2022"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="position_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="position" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="position_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/position_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/position_impl_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2022"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="bd_5d6e_bsip_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="bd_5d6e_bsip_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_5d6e_bsip_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_5d6e_bsip_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_5d6e_bsip_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
           <Desc>Default settings for Implementation.</Desc>
@@ -858,7 +943,26 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="position_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="position" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="position_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/position_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/position_impl_1">
+    <Run Id="ebit_z7010_top_debug_bridge_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="ebit_z7010_top_debug_bridge_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="ebit_z7010_top_debug_bridge_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/ebit_z7010_top_debug_bridge_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/ebit_z7010_top_debug_bridge_0_0_impl_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2022"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="bd_5d6e_axi_jtag_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="bd_5d6e_axi_jtag_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="bd_5d6e_axi_jtag_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/bd_5d6e_axi_jtag_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/bd_5d6e_axi_jtag_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
           <Desc>Default settings for Implementation.</Desc>

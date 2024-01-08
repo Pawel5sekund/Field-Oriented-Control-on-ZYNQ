@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date             : Mon Jan  1 16:11:09 2024
+| Date             : Tue Jan  2 16:16:57 2024
 | Host             : LAPTOP-PAWEL running 64-bit Ubuntu 18.04.2 LTS
 | Command          : report_power -file ebit_z7010_top_wrapper_power_routed.rpt -pb ebit_z7010_top_wrapper_power_summary_routed.pb -rpx ebit_z7010_top_wrapper_power_routed.rpx
 | Design           : ebit_z7010_top_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.471        |
+| Total On-Chip Power (W)  | 1.461        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.348        |
+| Dynamic (W)              | 1.338        |
 | Device Static (W)        | 0.123        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 68.0         |
-| Junction Temperature (C) | 42.0         |
+| Max Ambient (C)          | 68.1         |
+| Junction Temperature (C) | 41.9         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,23 +52,23 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.016 |        6 |       --- |             --- |
-| Slice Logic              |     0.009 |    11345 |       --- |             --- |
-|   LUT as Logic           |     0.008 |     3711 |     17600 |           21.09 |
-|   Register               |    <0.001 |     5630 |     35200 |           15.99 |
+| Clocks                   |     0.016 |        7 |       --- |             --- |
+| Slice Logic              |     0.009 |    11409 |       --- |             --- |
+|   LUT as Logic           |     0.008 |     3732 |     17600 |           21.20 |
+|   Register               |    <0.001 |     5656 |     35200 |           16.07 |
 |   CARRY4                 |    <0.001 |      222 |      4400 |            5.05 |
 |   LUT as Shift Register  |    <0.001 |      194 |      6000 |            3.23 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
 |   LUT as Distributed RAM |    <0.001 |       24 |      6000 |            0.40 |
 |   F7/F8 Muxes            |    <0.001 |        2 |     17600 |            0.01 |
-|   Others                 |     0.000 |      591 |       --- |             --- |
-| Signals                  |     0.013 |     8508 |       --- |             --- |
-| Block RAM                |     0.019 |       17 |        60 |           28.33 |
+|   Others                 |     0.000 |      602 |       --- |             --- |
+| Signals                  |     0.012 |     8553 |       --- |             --- |
+| Block RAM                |     0.011 |       17 |        60 |           28.33 |
 | DSPs                     |     0.002 |        2 |        80 |            2.50 |
 | I/O                      |     0.007 |       16 |       100 |           16.00 |
 | PS7                      |     1.282 |        1 |       --- |             --- |
 | Static Power             |     0.123 |          |           |                 |
-| Total                    |     1.471 |          |           |                 |
+| Total                    |     1.461 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,7 +78,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.065 |       0.058 |      0.007 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.056 |       0.049 |      0.007 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.008 |       0.000 |      0.008 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -87,11 +87,11 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.003 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccpint   |       1.000 |     0.696 |       0.668 |      0.028 |       NA    | Unspecified | NA         |
+| Vccpint   |       1.000 |     0.695 |       0.668 |      0.028 |       NA    | Unspecified | NA         |
 | Vccpaux   |       1.800 |     0.036 |       0.026 |      0.010 |       NA    | Unspecified | NA         |
 | Vccpll    |       1.800 |     0.018 |       0.015 |      0.003 |       NA    | Unspecified | NA         |
 | Vcco_ddr  |       1.500 |     0.356 |       0.354 |      0.002 |       NA    | Unspecified | NA         |
@@ -138,14 +138,15 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------+
-| Clock                                                                                      | Domain                                                                                  | Constraint (ns) |
-+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------+
-| CLK                                                                                        | ebit_z7010_top_i/FOC_top_0/U0/FOC/ILA_main/U0/ila_core_inst/u_trig/U_TM/probe_data[140] |            10.0 |
-| clk_fpga_0                                                                                 | ebit_z7010_top_i/processing_system7_0/inst/FCLK_CLK0                                    |            10.0 |
-| clk_fpga_0                                                                                 | ebit_z7010_top_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]                       |            10.0 |
-| dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/TCK                       |            33.0 |
-+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------+
++-----------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------------+
+| Clock                                                                                               | Domain                                                                                        | Constraint (ns) |
++-----------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------------+
+| CLK                                                                                                 | ebit_z7010_top_i/FOC_top_0/U0/FOC/ILA_main/U0/ila_core_inst/u_trig/U_TM/probe_data[140]       |            10.0 |
+| clk_fpga_0                                                                                          | ebit_z7010_top_i/processing_system7_0/inst/FCLK_CLK0                                          |            10.0 |
+| clk_fpga_0                                                                                          | ebit_z7010_top_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]                             |            10.0 |
+| ebit_z7010_top_i/debug_bridge/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q                              | ebit_z7010_top_i/debug_bridge/U0/axi_jtag/inst/u_jtag_proc/tck                                |            80.0 |
+| ebit_z7010_top_i/debug_bridge/U0/bsip/U0/USE_SOFTBSCAN.U_BSCAN_TAP/U_BASETAP/U_TAP/UPDATEDR_O_reg/Q | ebit_z7010_top_i/debug_bridge/U0/bsip/U0/USE_SOFTBSCAN.U_BSCAN_TAP/U_BASETAP/U_TAP/UPDATEDR_O |            80.0 |
++-----------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -157,13 +158,13 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| ebit_z7010_top_wrapper   |     1.348 |
-|   dbg_hub                |     0.003 |
-|     inst                 |     0.003 |
-|       BSCANID.u_xsdbm_id |     0.003 |
-|   ebit_z7010_top_i       |     1.338 |
-|     FOC_top_0            |     0.043 |
-|       U0                 |     0.043 |
+| ebit_z7010_top_wrapper   |     1.338 |
+|   dbg_hub                |     0.002 |
+|     inst                 |     0.002 |
+|       BSCANID.u_xsdbm_id |     0.002 |
+|   ebit_z7010_top_i       |     1.329 |
+|     FOC_top_0            |     0.034 |
+|       U0                 |     0.034 |
 |     LED_controller_0     |     0.003 |
 |       U0                 |     0.003 |
 |     processing_system7_0 |     1.283 |

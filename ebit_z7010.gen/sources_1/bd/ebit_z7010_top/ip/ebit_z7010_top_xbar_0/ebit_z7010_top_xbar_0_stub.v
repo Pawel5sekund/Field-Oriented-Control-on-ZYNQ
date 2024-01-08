@@ -1,7 +1,7 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-// Date        : Mon Jan  1 16:02:55 2024
+// Date        : Tue Jan  2 15:55:48 2024
 // Host        : LAPTOP-PAWEL running 64-bit Ubuntu 18.04.2 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_xbar_0/ebit_z7010_top_xbar_0_stub.v
@@ -21,7 +21,7 @@ module ebit_z7010_top_xbar_0(aclk, aresetn, s_axi_awaddr, s_axi_awprot,
   m_axi_awprot, m_axi_awvalid, m_axi_awready, m_axi_wdata, m_axi_wstrb, m_axi_wvalid, 
   m_axi_wready, m_axi_bresp, m_axi_bvalid, m_axi_bready, m_axi_araddr, m_axi_arprot, 
   m_axi_arvalid, m_axi_arready, m_axi_rdata, m_axi_rresp, m_axi_rvalid, m_axi_rready)
-/* synthesis syn_black_box black_box_pad_pin="aclk,aresetn,s_axi_awaddr[31:0],s_axi_awprot[2:0],s_axi_awvalid[0:0],s_axi_awready[0:0],s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wvalid[0:0],s_axi_wready[0:0],s_axi_bresp[1:0],s_axi_bvalid[0:0],s_axi_bready[0:0],s_axi_araddr[31:0],s_axi_arprot[2:0],s_axi_arvalid[0:0],s_axi_arready[0:0],s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rvalid[0:0],s_axi_rready[0:0],m_axi_awaddr[415:0],m_axi_awprot[38:0],m_axi_awvalid[12:0],m_axi_awready[12:0],m_axi_wdata[415:0],m_axi_wstrb[51:0],m_axi_wvalid[12:0],m_axi_wready[12:0],m_axi_bresp[25:0],m_axi_bvalid[12:0],m_axi_bready[12:0],m_axi_araddr[415:0],m_axi_arprot[38:0],m_axi_arvalid[12:0],m_axi_arready[12:0],m_axi_rdata[415:0],m_axi_rresp[25:0],m_axi_rvalid[12:0],m_axi_rready[12:0]" */;
+/* synthesis syn_black_box black_box_pad_pin="aclk,aresetn,s_axi_awaddr[31:0],s_axi_awprot[2:0],s_axi_awvalid[0:0],s_axi_awready[0:0],s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wvalid[0:0],s_axi_wready[0:0],s_axi_bresp[1:0],s_axi_bvalid[0:0],s_axi_bready[0:0],s_axi_araddr[31:0],s_axi_arprot[2:0],s_axi_arvalid[0:0],s_axi_arready[0:0],s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rvalid[0:0],s_axi_rready[0:0],m_axi_awaddr[447:0],m_axi_awprot[41:0],m_axi_awvalid[13:0],m_axi_awready[13:0],m_axi_wdata[447:0],m_axi_wstrb[55:0],m_axi_wvalid[13:0],m_axi_wready[13:0],m_axi_bresp[27:0],m_axi_bvalid[13:0],m_axi_bready[13:0],m_axi_araddr[447:0],m_axi_arprot[41:0],m_axi_arvalid[13:0],m_axi_arready[13:0],m_axi_rdata[447:0],m_axi_rresp[27:0],m_axi_rvalid[13:0],m_axi_rready[13:0]" */;
   input aclk;
   input aresetn;
   input [31:0]s_axi_awaddr;
@@ -43,23 +43,23 @@ module ebit_z7010_top_xbar_0(aclk, aresetn, s_axi_awaddr, s_axi_awprot,
   output [1:0]s_axi_rresp;
   output [0:0]s_axi_rvalid;
   input [0:0]s_axi_rready;
-  output [415:0]m_axi_awaddr;
-  output [38:0]m_axi_awprot;
-  output [12:0]m_axi_awvalid;
-  input [12:0]m_axi_awready;
-  output [415:0]m_axi_wdata;
-  output [51:0]m_axi_wstrb;
-  output [12:0]m_axi_wvalid;
-  input [12:0]m_axi_wready;
-  input [25:0]m_axi_bresp;
-  input [12:0]m_axi_bvalid;
-  output [12:0]m_axi_bready;
-  output [415:0]m_axi_araddr;
-  output [38:0]m_axi_arprot;
-  output [12:0]m_axi_arvalid;
-  input [12:0]m_axi_arready;
-  input [415:0]m_axi_rdata;
-  input [25:0]m_axi_rresp;
-  input [12:0]m_axi_rvalid;
-  output [12:0]m_axi_rready;
+  output [447:0]m_axi_awaddr;
+  output [41:0]m_axi_awprot;
+  output [13:0]m_axi_awvalid;
+  input [13:0]m_axi_awready;
+  output [447:0]m_axi_wdata;
+  output [55:0]m_axi_wstrb;
+  output [13:0]m_axi_wvalid;
+  input [13:0]m_axi_wready;
+  input [27:0]m_axi_bresp;
+  input [13:0]m_axi_bvalid;
+  output [13:0]m_axi_bready;
+  output [447:0]m_axi_araddr;
+  output [41:0]m_axi_arprot;
+  output [13:0]m_axi_arvalid;
+  input [13:0]m_axi_arready;
+  input [447:0]m_axi_rdata;
+  input [27:0]m_axi_rresp;
+  input [13:0]m_axi_rvalid;
+  output [13:0]m_axi_rready;
 endmodule

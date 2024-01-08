@@ -51,7 +51,7 @@ begin
               when "111" =>
                 var_dposition := var_dposition - 1 + STEP_scale;
               when others =>
-            --nop()
+                var_dposition := var_dposition - 1;
             end case;
           --do tylu
           when "0110" | "0101" | "1011" | "1000" =>
@@ -63,7 +63,7 @@ begin
               when "111" =>
                 var_dposition := var_dposition + 1 + STEP_scale;
               when others =>
-            --nop()
+                var_dposition := var_dposition + 1;
             end case;
           when others =>
             case std_logic_vector'(std_logic(last_STEP xor STEP) & STEP & DIR) is
@@ -75,6 +75,9 @@ begin
             --nop()
             end case;
         end case;
+
+        last_encoder := encoder;
+        last_STEP    := STEP;
 
         operationSelector := 1;
       when 1 =>
@@ -88,9 +91,6 @@ begin
       when 2 =>
         dposition <= var_dposition;
         position  <= var_position;
-
-        last_encoder := encoder;
-        last_STEP    := STEP;
 
         operationSelector := 0;
       when -1 =>
