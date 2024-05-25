@@ -7,8 +7,7 @@
       "name": "ebit_z7010_top",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2022.1",
-      "validated": "true"
+      "tool_version": "2022.1"
     },
     "design_tree": {
       "processing_system7_0": "",
@@ -46,88 +45,24 @@
       "PWM_CH_W": "",
       "PWM_CH_V": "",
       "SIM_CLK_FOC": "",
-      "FOC_top_0": "",
-      "position": "",
-      "dposition": "",
-      "debug_bridge": ""
+      "debug_bridge": "",
+      "FOC_top_0": ""
     },
     "interface_ports": {
       "ddr": {
         "mode": "Master",
         "vlnv_bus_definition": "xilinx.com:interface:ddrx:1.0",
-        "vlnv": "xilinx.com:interface:ddrx_rtl:1.0",
-        "parameters": {
-          "AXI_ARBITRATION_SCHEME": {
-            "value": "TDM",
-            "value_src": "default"
-          },
-          "BURST_LENGTH": {
-            "value": "8",
-            "value_src": "default"
-          },
-          "CAN_DEBUG": {
-            "value": "false",
-            "value_src": "default"
-          },
-          "CAS_LATENCY": {
-            "value": "11",
-            "value_src": "default"
-          },
-          "CAS_WRITE_LATENCY": {
-            "value": "11",
-            "value_src": "default"
-          },
-          "CS_ENABLED": {
-            "value": "true",
-            "value_src": "default"
-          },
-          "DATA_MASK_ENABLED": {
-            "value": "true",
-            "value_src": "default"
-          },
-          "DATA_WIDTH": {
-            "value": "8",
-            "value_src": "default"
-          },
-          "MEMORY_TYPE": {
-            "value": "COMPONENTS",
-            "value_src": "default"
-          },
-          "MEM_ADDR_MAP": {
-            "value": "ROW_COLUMN_BANK",
-            "value_src": "default"
-          },
-          "SLOT": {
-            "value": "Single",
-            "value_src": "default"
-          },
-          "TIMEPERIOD_PS": {
-            "value": "1250",
-            "value_src": "default"
-          }
-        }
+        "vlnv": "xilinx.com:interface:ddrx_rtl:1.0"
       },
       "fixed_io": {
         "mode": "Master",
         "vlnv_bus_definition": "xilinx.com:display_processing_system7:fixedio:1.0",
-        "vlnv": "xilinx.com:display_processing_system7:fixedio_rtl:1.0",
-        "parameters": {
-          "CAN_DEBUG": {
-            "value": "false",
-            "value_src": "default"
-          }
-        }
+        "vlnv": "xilinx.com:display_processing_system7:fixedio_rtl:1.0"
       },
       "enet0_mdio": {
         "mode": "Master",
         "vlnv_bus_definition": "xilinx.com:interface:mdio:1.0",
-        "vlnv": "xilinx.com:interface:mdio_rtl:1.0",
-        "parameters": {
-          "CAN_DEBUG": {
-            "value": "false",
-            "value_src": "default"
-          }
-        }
+        "vlnv": "xilinx.com:interface:mdio_rtl:1.0"
       }
     },
     "ports": {
@@ -136,29 +71,7 @@
       },
       "enet0_mii_rx_clk": {
         "type": "clk",
-        "direction": "I",
-        "parameters": {
-          "CLK_DOMAIN": {
-            "value": "ebit_z7010_top_enet0_mii_rx_clk",
-            "value_src": "default"
-          },
-          "FREQ_HZ": {
-            "value": "100000000",
-            "value_src": "default"
-          },
-          "FREQ_TOLERANCE_HZ": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.0",
-            "value_src": "default"
-          }
-        }
+        "direction": "I"
       },
       "enet0_mii_tx_en": {
         "direction": "O",
@@ -167,29 +80,7 @@
       },
       "enet0_mii_tx_clk": {
         "type": "clk",
-        "direction": "I",
-        "parameters": {
-          "CLK_DOMAIN": {
-            "value": "ebit_z7010_top_enet0_mii_tx_clk",
-            "value_src": "default"
-          },
-          "FREQ_HZ": {
-            "value": "100000000",
-            "value_src": "default"
-          },
-          "FREQ_TOLERANCE_HZ": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.0",
-            "value_src": "default"
-          }
-        }
+        "direction": "I"
       },
       "enet0_mii_txd": {
         "direction": "O",
@@ -2748,47 +2639,6 @@
           }
         }
       },
-      "FOC_top_0": {
-        "vlnv": "xilinx.com:user:FOC_top:1.0",
-        "xci_name": "ebit_z7010_top_FOC_top_0_0",
-        "xci_path": "ip/ebit_z7010_top_FOC_top_0_0/ebit_z7010_top_FOC_top_0_0.xci",
-        "inst_hier_path": "FOC_top_0",
-        "interface_ports": {
-          "S_AXI": {
-            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
-            "mode": "Slave",
-            "memory_map_ref": "S_AXI"
-          }
-        }
-      },
-      "position": {
-        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
-        "xci_name": "ebit_z7010_top_axi_gpio_0_10",
-        "xci_path": "ip/ebit_z7010_top_axi_gpio_0_10/ebit_z7010_top_axi_gpio_0_10.xci",
-        "inst_hier_path": "position",
-        "parameters": {
-          "C_ALL_INPUTS": {
-            "value": "1"
-          },
-          "C_GPIO_WIDTH": {
-            "value": "14"
-          }
-        }
-      },
-      "dposition": {
-        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
-        "xci_name": "ebit_z7010_top_axi_gpio_0_11",
-        "xci_path": "ip/ebit_z7010_top_axi_gpio_0_11/ebit_z7010_top_axi_gpio_0_11.xci",
-        "inst_hier_path": "dposition",
-        "parameters": {
-          "C_ALL_INPUTS": {
-            "value": "1"
-          },
-          "C_GPIO_WIDTH": {
-            "value": "13"
-          }
-        }
-      },
       "debug_bridge": {
         "vlnv": "xilinx.com:ip:debug_bridge:3.0",
         "xci_name": "ebit_z7010_top_debug_bridge_0_0",
@@ -2825,7 +2675,7 @@
                   "width": "16",
                   "usage": "register",
                   "bank_blocks": {
-                    "REG;/axi_jtag/s_axi/reg0;xilinx.com:ip:axi_jtag:1.0;/axi_jtag;s_axi;NONE;NONE": {
+                    "REG;reg0;xilinx.com:ip:axi_jtag:1.0;axi_jtag;s_axi;NONE;NONE": {
                       "base_address": "0x0000",
                       "range": "64K",
                       "width": "16",
@@ -2835,6 +2685,19 @@
                 }
               }
             }
+          }
+        }
+      },
+      "FOC_top_0": {
+        "vlnv": "xilinx.com:user:FOC_top:1.0",
+        "xci_name": "ebit_z7010_top_FOC_top_0_0",
+        "xci_path": "ip/ebit_z7010_top_FOC_top_0_0/ebit_z7010_top_FOC_top_0_0.xci",
+        "inst_hier_path": "FOC_top_0",
+        "interface_ports": {
+          "S_AXI": {
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "mode": "Slave",
+            "memory_map_ref": "S_AXI"
           }
         }
       }
@@ -2862,12 +2725,6 @@
         "interface_ports": [
           "processing_system7_0/M_AXI_GP0",
           "ps7_0_axi_periph/S00_AXI"
-        ]
-      },
-      "ps7_0_axi_periph_M00_AXI": {
-        "interface_ports": [
-          "ps7_0_axi_periph/M00_AXI",
-          "dposition/S_AXI"
         ]
       },
       "ps7_0_axi_periph_M01_AXI": {
@@ -2936,12 +2793,6 @@
           "SIM_CLK_FOC/S_AXI"
         ]
       },
-      "ps7_0_axi_periph_M12_AXI": {
-        "interface_ports": [
-          "ps7_0_axi_periph/M12_AXI",
-          "position/S_AXI"
-        ]
-      },
       "ps7_0_axi_periph_M13_AXI": {
         "interface_ports": [
           "ps7_0_axi_periph/M13_AXI",
@@ -2953,7 +2804,7 @@
       "DIR_gpio_io_o": {
         "ports": [
           "DIR/gpio_io_o",
-          "FOC_top_0/dir"
+          "FOC_top_0/DIR"
         ]
       },
       "ENET0_GMII_RX_CLK_0_1": {
@@ -2998,18 +2849,6 @@
           "PWM_CH_W/gpio_io_i"
         ]
       },
-      "FOC_top_0_dposition": {
-        "ports": [
-          "FOC_top_0/dposition",
-          "dposition/gpio_io_i"
-        ]
-      },
-      "FOC_top_0_position": {
-        "ports": [
-          "FOC_top_0/position",
-          "position/gpio_io_i"
-        ]
-      },
       "In0_0_1": {
         "ports": [
           "enet0_mii_rxd",
@@ -3031,7 +2870,7 @@
       "STEP_gpio_io_o": {
         "ports": [
           "STEP/gpio_io_o",
-          "FOC_top_0/step"
+          "FOC_top_0/STEP"
         ]
       },
       "XADC_ADDR_gpio_io_o": {
@@ -3094,12 +2933,10 @@
           "ps7_0_axi_periph/M10_ACLK",
           "SIM_CLK_FOC/s_axi_aclk",
           "ps7_0_axi_periph/M11_ACLK",
-          "FOC_top_0/S_AXI_ACLK",
-          "dposition/s_axi_aclk",
-          "position/s_axi_aclk",
           "ps7_0_axi_periph/M12_ACLK",
           "debug_bridge/s_axi_aclk",
-          "ps7_0_axi_periph/M13_ACLK"
+          "ps7_0_axi_periph/M13_ACLK",
+          "FOC_top_0/S_AXI_ACLK"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -3135,11 +2972,9 @@
           "ps7_0_axi_periph/M10_ARESETN",
           "SIM_CLK_FOC/s_axi_aresetn",
           "ps7_0_axi_periph/M11_ARESETN",
-          "FOC_top_0/S_AXI_ARESETN",
-          "dposition/s_axi_aresetn",
-          "position/s_axi_aresetn",
           "ps7_0_axi_periph/M12_ARESETN",
-          "ps7_0_axi_periph/M13_ARESETN"
+          "ps7_0_axi_periph/M13_ARESETN",
+          "FOC_top_0/S_AXI_ARESETN"
         ]
       },
       "xlconcat_0_dout": {
@@ -3224,16 +3059,6 @@
               "SEG_debug_bridge_Reg0": {
                 "address_block": "/debug_bridge/S_AXI/Reg0",
                 "offset": "0x43C00000",
-                "range": "64K"
-              },
-              "SEG_dposition_Reg": {
-                "address_block": "/dposition/S_AXI/Reg",
-                "offset": "0x41290000",
-                "range": "64K"
-              },
-              "SEG_position_Reg": {
-                "address_block": "/position/S_AXI/Reg",
-                "offset": "0x412A0000",
                 "range": "64K"
               }
             }

@@ -10,27 +10,19 @@ use ieee.fixed_pkg.all;
 
 entity FOC_core is
     generic (
-        sampling_time       : real                 := 0.000000064;    --64ns
-        step_scale          : integer              := 16;
-        position_histeresis : integer              := 8;
-        pwm_period          : integer              := 4095;
-        full_rotate_pulses  : integer              := 4095;
-        fracBits            : integer              := 8;
-        intBits             : integer              := 17-fracBits;
-        max_p_pid           : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-        min_p_pid           : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
-        max_i_pid           : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-        min_i_pid           : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
-        max_d_pid           : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-        min_d_pid           : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
-        max_pid_pid         : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-        min_pid_pid         : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17)
+        sampling_time       : real    := 0.000000064;                 --64ns
+        step_scale          : integer := 16;
+        position_histeresis : integer := 8;
+        pwm_period          : integer := 4095;
+        full_rotate_pulses  : integer := 4095;
+        fracBits            : integer := 8;
+        intBits             : integer := 17-fracBits
         );
     --  Port ( );
     port (
         --TESTING PURPOSES
-        S_AXI_ACLK                       : in  std_logic;
-        -- data input
+        S_AXI_ACLK                      : in  std_logic;
+        -- signal input
         en                              : in  std_logic;
         n_res                           : in  std_logic;
         CLK                             : in  std_logic;
@@ -38,18 +30,34 @@ entity FOC_core is
         encoder                         : in  std_logic_vector(1 downto 0);
         dir                             : in  std_logic;
         step                            : in  std_logic;
-        kp                              : in  sFIXED (intBits downto -fracBits);
-        ki                              : in  sFIXED (intBits downto -fracBits);
-        kd                              : in  sFIXED (intBits downto -fracBits);
+        --positionController
         current_setpoint_move           : in  sfixed (0 downto -17);  --tbd change to unsigned
         position_calibration            : in  signed (14 downto 0);
         position_calibration_set_signal : in  std_logic;
-        -- data output
-        dposition_out                   : out signed (12 downto 0);
-        position_out                    : out signed (14 downto 0);
+        --PID
+        kp                              : in  sFIXED (intBits downto -fracBits);
+        ki                              : in  sFIXED (intBits downto -fracBits);
+        kd                              : in  sFIXED (intBits downto -fracBits);
+        max_p_pid                       : in  SFIXED(0 downto -17);
+        min_p_pid                       : in  SFIXED(0 downto -17);
+        max_i_pid                       : in  SFIXED(0 downto -17);
+        min_i_pid                       : in  SFIXED(0 downto -17);
+        max_d_pid                       : in  SFIXED(0 downto -17);
+        min_d_pid                       : in  SFIXED(0 downto -17);
+        max_pid_pid                     : in  SFIXED(0 downto -17);
+        min_pid_pid                     : in  SFIXED(0 downto -17);
+        --PWM
         PWM_CH_U                        : out std_logic_vector(1 downto 0);
         PWM_CH_W                        : out std_logic_vector(1 downto 0);
-        PWM_CH_V                        : out std_logic_vector(1 downto 0)
+        PWM_CH_V                        : out std_logic_vector(1 downto 0);
+        --DFT
+        DFT_PIDout                      : out sfixed (0 downto -17);
+        DFT_dPosition                   : out signed (12 downto 0);
+        DFT_position                    : out signed (14 downto 0);
+        DFT_electricBrake               : out std_logic;
+        DFT_PWMRegister                 : out type_PWM_register (2 downto 0);
+        DFT_PID_currentSetpointMove     : out sfixed (0 downto -17);
+        DFT_vectorPosition              : out sFIXED (0 downto -17)
         );
 end entity FOC_core;
 
@@ -58,27 +66,27 @@ architecture behavioral of FOC_core is
     component PID is
         generic (
             --sampling_time : real                             := 0.000000064;  --64ns
-            fracBits    : integer              := 17;
-            intBits     : integer              := 0;
-            max_p_pid   : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-            min_p_pid   : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
-            max_i_pid   : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-            min_i_pid   : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
-            max_d_pid   : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-            min_d_pid   : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
-            max_pid_pid : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-            min_pid_pid : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17)
+            fracBits : integer := 17;
+            intBits  : integer := 0
             );
         port (
-            en       : in  std_logic;
-            n_res    : in  std_logic;
-            CLK      : in  std_logic;
-            kp       : in  sfixed (0 downto -17);
-            ki       : in  sfixed (0 downto -17);
-            kd       : in  sfixed (0 downto -17);
-            setpoint : in  sfixed (0 downto -17);
-            reading  : in  sfixed (0 downto -17);
-            pid_out  : out sfixed (0 downto -17) := (others => '0')
+            en          : in  std_logic;
+            n_res       : in  std_logic;
+            CLK         : in  std_logic;
+            kp          : in  sfixed (0 downto -17);
+            ki          : in  sfixed (0 downto -17);
+            kd          : in  sfixed (0 downto -17);
+            max_p_pid   : in  SFIXED(0 downto -17);
+            min_p_pid   : in  SFIXED(0 downto -17);
+            max_i_pid   : in  SFIXED(0 downto -17);
+            min_i_pid   : in  SFIXED(0 downto -17);
+            max_d_pid   : in  SFIXED(0 downto -17);
+            min_d_pid   : in  SFIXED(0 downto -17);
+            max_pid_pid : in  SFIXED(0 downto -17);
+            min_pid_pid : in  SFIXED(0 downto -17);
+            setpoint    : in  sfixed (0 downto -17);
+            reading     : in  sfixed (0 downto -17);
+            pid_out     : out sfixed (0 downto -17) := (others => '0')
             );
     end component;
 
@@ -169,7 +177,7 @@ architecture behavioral of FOC_core is
     --TESTING PURPOSES
     component ILA_FOC_core is
         port (
-            clk : in std_logic;
+            clk     : in std_logic;
             probe0  : in std_logic_vector(12 downto 0);
             probe1  : in std_logic_vector(12 downto 0);
             probe2  : in std_logic_vector(12 downto 0);
@@ -191,7 +199,7 @@ architecture behavioral of FOC_core is
     --------------------------------------------------------
 
     signal position                                            : signed (14 downto 0)  := (others => '0');
-    signal dposition                                           : signed (12 downto 0)  := (others => '0');
+    signal dPosition                                           : signed (12 downto 0)  := (others => '0');
     signal PWMRegister                                         : type_PWM_register (2 downto 0);
     signal current_setpoint                                    : sfixed (0 downto -17) := (others => '0');
     signal vectorPosition                                      : sfixed (0 downto -17);
@@ -218,7 +226,7 @@ begin
     --TESTING PURPOSES
     ILA_main : ILA_FOC_core
         port map (
-            clk  => S_AXI_ACLK,
+            clk     => S_AXI_ACLK,
             probe0  => std_logic_vector(PWMRegister(0)),
             probe1  => std_logic_vector(PWMRegister(1)),
             probe2  => std_logic_vector(PWMRegister(2)),
@@ -302,13 +310,13 @@ begin
             position_calibration            => position_calibration,
             position_calibration_set_signal => position_calibration_set_signal,
             position                        => position,
-            dposition                       => dposition,
+            dposition                       => dPosition,
             step                            => filteredSTEP,
             dir                             => filteredDIR
             );
 
-    position_out  <= position;
-    dposition_out <= dposition;
+    DFT_position  <= position;
+    DFT_dPosition <= dPosition;
 
     ----------------------------------------------------------------------------------------------------------------------
     ----------------------------------------------------------------------------------------------------------------------
@@ -339,13 +347,25 @@ begin
             setpoint     => positional_3levelSwitching_setpoint,
             output       => vectorPosition
             );
+
+    DFT_vectorPosition <= vectorPosition;
     ----------------------------------------------------------------------------------------------------------------------
     ----------------------------------------------------------------------------------------------------------------------
     ----------------------------------------------------------------------------------------------------------------------
 
     PID_current : component PID
-        generic map (
-            --sampling_time => 0.000000064,  --64ns
+--        generic map (
+        --sampling_time => 0.000000064,  --64ns
+--            )
+        port map (
+            en          => en,
+            n_res       => n_res,
+            CLK         => CLK,
+            kp          => kp,
+            ki          => ki,
+            kd          => kd,
+            setpoint    => current_setpoint,
+            reading     => currentSensorReading,
             max_p_pid   => max_p_pid,
             max_i_pid   => max_i_pid,
             max_d_pid   => max_d_pid,
@@ -353,21 +373,13 @@ begin
             min_p_pid   => min_p_pid,
             min_i_pid   => min_i_pid,
             min_d_pid   => min_d_pid,
-            min_pid_pid => min_pid_pid
-            )
-        port map (
-            en       => en,
-            n_res    => n_res,
-            CLK      => CLK,
-            kp       => kp,
-            ki       => ki,
-            kd       => kd,
-            setpoint => current_setpoint,
-            reading  => currentSensorReading,
-            pid_out  => scalingParameters(0)
+            min_pid_pid => min_pid_pid,
+            pid_out     => scalingParameters(0)
             );
 
-    positional_3levelSwitching_reading <= vecToSfixed(std_logic_vector(resize(dposition, 18)), -17);
+    DFT_PIDout <= scalingParameters(0);
+
+    positional_3levelSwitching_reading <= vecToSfixed(std_logic_vector(resize(dPosition, 18)), -17);
 
     PID_3levelSwitching : component FOC_3levelSwitching
         port map(
@@ -381,6 +393,8 @@ begin
             setpoint     => positional_3levelSwitching_setpoint,
             output       => current_setpoint
             );
+
+    DFT_PID_currentSetpointMove <= current_setpoint;
 
     ----------------------------------------------------------------------------------------------------------------------
     ----------------------------------------------------------------------------------------------------------------------
@@ -399,6 +413,8 @@ begin
             PWM_CH_V      => noSafe_PWM_CH_V
             );
 
+    DFT_PWMRegister <= PWMRegister;
+
     PWM_FOC_3levelSwitching : component FOC_3levelSwitching
         port map(
             CLK          => CLK,
@@ -413,6 +429,8 @@ begin
             );
 
     electricBrake <= std_logic(or(std_logic_vector(electricBrake_sfixed)));
+
+    DFT_electricBrake <= electricBrake;
 
     CH_U : FOC_deadTimeMOSFETsHandler
         generic map (

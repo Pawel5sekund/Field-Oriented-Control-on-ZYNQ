@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date         : Tue Jan  2 16:04:35 2024
+| Date         : Mon Mar 18 20:28:36 2024
 | Host         : LAPTOP-PAWEL running 64-bit Ubuntu 18.04.2 LTS
 | Command      : report_utilization -file ebit_z7010_top_wrapper_utilization_synth.rpt -pb ebit_z7010_top_wrapper_utilization_synth.pb
 | Design       : ebit_z7010_top_wrapper
@@ -171,8 +171,6 @@ Table of Contents
 | ebit_z7010_top_axi_gpio_0_4           |    1 |
 | ebit_z7010_top_axi_gpio_0_3           |    1 |
 | ebit_z7010_top_axi_gpio_0_2           |    1 |
-| ebit_z7010_top_axi_gpio_0_11          |    1 |
-| ebit_z7010_top_axi_gpio_0_10          |    1 |
 | ebit_z7010_top_axi_gpio_0_1           |    1 |
 | ebit_z7010_top_auto_pc_0              |    1 |
 | ebit_z7010_top_LED_controller_0_0     |    1 |

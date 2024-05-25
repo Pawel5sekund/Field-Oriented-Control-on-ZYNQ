@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date         : Thu Dec 21 07:17:45 2023
+| Date         : Mon Mar 18 20:24:11 2024
 | Host         : LAPTOP-PAWEL running 64-bit Ubuntu 18.04.2 LTS
 | Command      : report_utilization -file ebit_z7010_top_processing_system7_0_0_utilization_synth.rpt -pb ebit_z7010_top_processing_system7_0_0_utilization_synth.pb
 | Design       : ebit_z7010_top_processing_system7_0_0

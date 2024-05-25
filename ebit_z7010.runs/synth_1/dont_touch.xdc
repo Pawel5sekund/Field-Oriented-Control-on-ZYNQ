@@ -57,17 +57,11 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ebit_z7010_
 # IP: bd/ebit_z7010_top/ip/ebit_z7010_top_axi_gpio_0_9/ebit_z7010_top_axi_gpio_0_9.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ebit_z7010_top_axi_gpio_0_9 || ORIG_REF_NAME==ebit_z7010_top_axi_gpio_0_9} -quiet] -quiet
 
-# IP: bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/ebit_z7010_top_FOC_top_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ebit_z7010_top_FOC_top_0_0 || ORIG_REF_NAME==ebit_z7010_top_FOC_top_0_0} -quiet] -quiet
-
-# IP: bd/ebit_z7010_top/ip/ebit_z7010_top_axi_gpio_0_10/ebit_z7010_top_axi_gpio_0_10.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ebit_z7010_top_axi_gpio_0_10 || ORIG_REF_NAME==ebit_z7010_top_axi_gpio_0_10} -quiet] -quiet
-
-# IP: bd/ebit_z7010_top/ip/ebit_z7010_top_axi_gpio_0_11/ebit_z7010_top_axi_gpio_0_11.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ebit_z7010_top_axi_gpio_0_11 || ORIG_REF_NAME==ebit_z7010_top_axi_gpio_0_11} -quiet] -quiet
-
 # IP: bd/ebit_z7010_top/ip/ebit_z7010_top_debug_bridge_0_0/ebit_z7010_top_debug_bridge_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ebit_z7010_top_debug_bridge_0_0 || ORIG_REF_NAME==ebit_z7010_top_debug_bridge_0_0} -quiet] -quiet
+
+# IP: bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/ebit_z7010_top_FOC_top_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ebit_z7010_top_FOC_top_0_0 || ORIG_REF_NAME==ebit_z7010_top_FOC_top_0_0} -quiet] -quiet
 
 # IP: bd/ebit_z7010_top/ip/ebit_z7010_top_auto_pc_0/ebit_z7010_top_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ebit_z7010_top_auto_pc_0 || ORIG_REF_NAME==ebit_z7010_top_auto_pc_0} -quiet] -quiet

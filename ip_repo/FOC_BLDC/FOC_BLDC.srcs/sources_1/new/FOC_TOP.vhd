@@ -12,10 +12,8 @@ entity FOC_top is
         --start AXI4
         C_S_AXI_DATA_WIDTH : integer := 32;
         C_S_AXI_ADDR_WIDTH : integer := 4;
-        --end AXI4
-        --start XADC comm
+        --XADC comm
         addrXADC           : integer := 0
-     --end XADC comm
         );
     port (
         --start AXI4
@@ -40,22 +38,17 @@ entity FOC_top is
         S_AXI_RRESP   : out std_logic_vector(1 downto 0);
         S_AXI_RVALID  : out std_logic;
         S_AXI_RREADY  : in  std_logic;
-        --end AXI4
-        --start XADC communication
+        --XADC communication
         addrRegXADC   : in  std_logic_vector(6 downto 0)  := (others => '0');
         dataRegXADC   : in  std_logic_vector(15 downto 0) := (others => '0');
-        --end XADC communication
-        --FOC
+        --FOC driving signals
         CLK           : in  std_logic;
         encoder       : in  std_logic_vector(1 downto 0);
-        step          : in  std_logic;
-        dir           : in  std_logic;
+        STEP          : in  std_logic;
+        DIR           : in  std_logic;
         PWM_CH_U      : out std_logic_vector(1 downto 0);
         PWM_CH_W      : out std_logic_vector(1 downto 0);
-        PWM_CH_V      : out std_logic_vector(1 downto 0);
-        dposition     : out std_logic_vector (12 downto 0);
-        position      : out std_logic_vector (14 downto 0)
-     --FOC end
+        PWM_CH_V      : out std_logic_vector(1 downto 0)
         );
 end FOC_top;
 
@@ -66,13 +59,19 @@ architecture Behavioral of FOC_top is
     signal sig_slv_reg2                   : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
     signal sig_slv_reg3                   : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
     signal resultRegXADC                  : std_logic_vector(15 downto 0);
-    constant valuesOutputAmount           : integer                                         := 8;
-    constant valuesInputAmount            : integer                                         := 8;
-    signal outputValues                   : valuesArrayAXI4 (valuesOutputAmount-1 downto 0);
-    signal inputValues                    : valuesArrayAXI4 (valuesInputAmount-1 downto 0);
-    signal dposition_out                  : signed(12 downto 0);
-    signal position_out                   : signed (14 downto 0);
+    constant valuesOutputAmount           : integer                                         := 10;
+    constant valuesInputAmount            : integer                                         := 10;
+    signal outputValues                   : valuesArrayAXI4 (valuesOutputAmount-1 downto 0) := (others => (others => '0'));
+    signal inputValues                    : valuesArrayAXI4 (valuesInputAmount-1 downto 0)  := (others => (others => '0'));
     signal currentSensorReading_bitVector : std_logic_vector(17 downto 0);
+    --DFT
+    signal DFT_PIDout                     : sfixed (0 downto -17);
+    signal DFT_dPosition                  : signed (12 downto 0);
+    signal DFT_position                   : signed (14 downto 0);
+    signal DFT_electricBrake              : std_logic;
+    signal DFT_PWMRegister                : type_PWM_register (2 downto 0);
+    signal DFT_PID_currentSetpointMove    : sfixed (0 downto -17);
+    signal DFT_vectorPosition             : sFIXED (0 downto -17);
 
     component FOC_AXI4Lite_Slave is
         generic (
@@ -141,27 +140,19 @@ architecture Behavioral of FOC_top is
 
     component FOC_core is
         generic (
-            sampling_time       : real                 := 0.000000064;  --64ns
-            step_scale          : integer              := 16;
-            position_histeresis : integer              := 8;
-            pwm_period          : integer              := 4095;
-            full_rotate_pulses  : integer              := 4095;
-            fracBits            : integer              := 8;
-            intBits             : integer              := 17-fracBits;
-            max_p_pid           : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-            min_p_pid           : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
-            max_i_pid           : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-            min_i_pid           : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
-            max_d_pid           : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-            min_d_pid           : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
-            max_pid_pid         : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-            min_pid_pid         : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17)
+            sampling_time       : real    := 0.000000064;  --64ns
+            step_scale          : integer := 16;
+            position_histeresis : integer := 8;
+            pwm_period          : integer := 4095;
+            full_rotate_pulses  : integer := 4095;
+            fracBits            : integer := 8;
+            intBits             : integer := 17-fracBits
             );
         --  Port ( );
         port (
             --TESTING PURPOSES
-            S_AXI_ACLK                       : in  std_logic;
-            -- data input
+            S_AXI_ACLK                      : in  std_logic;
+            -- signal input
             en                              : in  std_logic;
             n_res                           : in  std_logic;
             CLK                             : in  std_logic;
@@ -169,18 +160,34 @@ architecture Behavioral of FOC_top is
             encoder                         : in  std_logic_vector(1 downto 0);
             dir                             : in  std_logic;
             step                            : in  std_logic;
-            kp                              : in  sFIXED (intBits downto -fracBits);
-            ki                              : in  sFIXED (intBits downto -fracBits);
-            kd                              : in  sFIXED (intBits downto -fracBits);
+            --positionController
             current_setpoint_move           : in  sfixed (0 downto -17);  --tbd change to unsigned
             position_calibration            : in  signed (14 downto 0);
             position_calibration_set_signal : in  std_logic;
-            -- data output
-            dposition_out                   : out signed (12 downto 0);
-            position_out                    : out signed (14 downto 0);
+            --PID
+            kp                              : in  sFIXED (intBits downto -fracBits);
+            ki                              : in  sFIXED (intBits downto -fracBits);
+            kd                              : in  sFIXED (intBits downto -fracBits);
+            max_p_pid                       : in  SFIXED(0 downto -17);
+            min_p_pid                       : in  SFIXED(0 downto -17);
+            max_i_pid                       : in  SFIXED(0 downto -17);
+            min_i_pid                       : in  SFIXED(0 downto -17);
+            max_d_pid                       : in  SFIXED(0 downto -17);
+            min_d_pid                       : in  SFIXED(0 downto -17);
+            max_pid_pid                     : in  SFIXED(0 downto -17);
+            min_pid_pid                     : in  SFIXED(0 downto -17);
+            --PWM
             PWM_CH_U                        : out std_logic_vector(1 downto 0);
             PWM_CH_W                        : out std_logic_vector(1 downto 0);
-            PWM_CH_V                        : out std_logic_vector(1 downto 0)
+            PWM_CH_V                        : out std_logic_vector(1 downto 0);
+            --DFT
+            DFT_PIDout                      : out sfixed (0 downto -17);
+            DFT_dPosition                   : out signed (12 downto 0);
+            DFT_position                    : out signed (14 downto 0);
+            DFT_electricBrake               : out std_logic;
+            DFT_PWMRegister                 : out type_PWM_register (2 downto 0);
+            DFT_PID_currentSetpointMove     : out sfixed (0 downto -17);
+            DFT_vectorPosition              : out sFIXED (0 downto -17)
             );
     end component;
 
@@ -235,8 +242,8 @@ begin
             C_S_AXI_DATA_WIDTH => 32,
             -- Width of S_AXI address bus
             C_S_AXI_ADDR_WIDTH => 4,
-            valuesInputAmount  => 8,
-            valuesOutputAmount => 8
+            valuesInputAmount  => valuesInputAmount,
+            valuesOutputAmount => valuesOutputAmount
             )
         port map (
             CLK          => S_AXI_ACLK,
@@ -256,19 +263,13 @@ begin
             pwm_period          => 4095,
             full_rotate_pulses  => 4095,
             fracBits            => 17,
-            intBits             => 0,
-            max_p_pid           => to_sfixed(0.9999, 0, -17),
-            min_p_pid           => to_sfixed(-0.9999, 0, -17),
-            max_i_pid           => to_sfixed(0.9999, 0, -17),
-            min_i_pid           => to_sfixed(-0.9999, 0, -17),
-            max_d_pid           => to_sfixed(0.9999, 0, -17),
-            min_d_pid           => to_sfixed(-0.9999, 0, -17),
-            max_pid_pid         => to_sfixed(0.9999, 0, -17),
-            min_pid_pid         => to_sfixed(0, 0, -17)
+            intBits             => 0
             )
+        --  Port ( );
         port map (
             --TESTING PURPOSES
-            S_AXI_ACLK                       => S_AXI_ACLK,
+            S_AXI_ACLK                      => S_AXI_ACLK,
+            -- signal input
             en                              => '1',
             n_res                           => '0',
             CLK                             => CLK,
@@ -276,26 +277,49 @@ begin
             encoder                         => encoder,
             dir                             => dir,
             step                            => step,
-            kp                              => vecToSfixed(inputValues(1), -17),
-            ki                              => vecToSfixed(inputValues(2), -17),
-            kd                              => vecToSfixed(inputValues(3), -17),
+            --positionController
             current_setpoint_move           => vecToSfixed(inputValues(0), -17),
             position_calibration            => signed(inputValues(4)(14 downto 0)),
             position_calibration_set_signal => inputValues(5)(0),
-            -- data output
-            dposition_out                   => dposition_out,
-            position_out                    => position_out,
+            --PID
+            kp                              => vecToSfixed(inputValues(1), -17),
+            ki                              => vecToSfixed(inputValues(2), -17),
+            kd                              => vecToSfixed(inputValues(3), -17),
+            max_p_pid                       => to_sfixed(0.9999, 0, -17),
+            min_p_pid                       => to_sfixed(-0.9999, 0, -17),
+            max_i_pid                       => to_sfixed(0.9999, 0, -17),
+            min_i_pid                       => to_sfixed(-0.9999, 0, -17),
+            max_d_pid                       => to_sfixed(0.9999, 0, -17),
+            min_d_pid                       => to_sfixed(-0.9999, 0, -17),
+            max_pid_pid                     => to_sfixed(0.9999, 0, -17),
+            min_pid_pid                     => to_sfixed(0, 0, -17),
+            --PWM
             PWM_CH_U                        => PWM_CH_U,
             PWM_CH_W                        => PWM_CH_W,
-            PWM_CH_V                        => PWM_CH_V
+            PWM_CH_V                        => PWM_CH_V,
+            --DFT
+            DFT_PIDout                      => DFT_PIDout,
+            DFT_dPosition                   => DFT_dPosition,
+            DFT_position                    => DFT_position,
+            DFT_electricBrake               => DFT_electricBrake,
+            DFT_PWMRegister                 => DFT_PWMRegister,
+            DFT_PID_currentSetpointMove     => DFT_PID_currentSetpointMove,
+            DFT_vectorPosition              => DFT_vectorPosition
             );
 
-    position                                     <= std_logic_vector(position_out);
-    dposition                                    <= std_logic_vector(dposition_out);
     currentSensorReading_bitVector(15 downto 0)  <= resultRegXADC;
     currentSensorReading_bitVector(17 downto 16) <= "00";
-    outputValues(1)(12 downto 0)                 <= std_logic_vector(dposition_out);
-    outputValues(2)(14 downto 0)                 <= std_logic_vector(position_out);
+    --DFT assets
+    outputValues(0)(12 downto 0)                 <= std_logic_vector(DFT_dPosition);
+    outputValues(1)(14 downto 0)                 <= std_logic_vector(DFT_position);
+    outputValues(2)(17 downto 0)                 <= std_logic_vector(DFT_PIDout);
+    outputValues(3)(0 downto 0)                  <= (0 => DFT_electricBrake);
+    outputValues(4)(12 downto 0)                 <= std_logic_vector(DFT_PWMRegister(0));
+    outputValues(5)(12 downto 0)                 <= std_logic_vector(DFT_PWMRegister(1));
+    outputValues(6)(12 downto 0)                 <= std_logic_vector(DFT_PWMRegister(2));
+    outputValues(7)(17 downto 0)                 <= std_logic_vector(DFT_PID_currentSetpointMove);
+    outputValues(8)(17 downto 0)                 <= std_logic_vector(DFT_vectorPosition);
+
 
 
 end Behavioral;

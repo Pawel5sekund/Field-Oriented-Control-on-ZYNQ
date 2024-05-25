@@ -9,15 +9,7 @@ entity PID is
     generic (
         --sampling_time : real                             := 0.000000064;  --64ns
         fracBits    : integer              := 17;
-        intBits     : integer              := 0;
-        max_p_pid   : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-        min_p_pid   : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
-        max_i_pid   : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-        min_i_pid   : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
-        max_d_pid   : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-        min_d_pid   : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
-        max_pid_pid : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-        min_pid_pid : SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17)
+        intBits     : integer              := 0
         );
     port (
         en       : in  std_logic;
@@ -26,6 +18,14 @@ entity PID is
         kp       : in  sfixed (0 downto -17);
         ki       : in  sfixed (0 downto -17);
         kd       : in  sfixed (0 downto -17);
+        max_p_pid   : in SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        min_p_pid   : in SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
+        max_i_pid   : in SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        min_i_pid   : in SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
+        max_d_pid   : in SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        min_d_pid   : in SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
+        max_pid_pid : in SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        min_pid_pid : in SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
         setpoint : in  sfixed (0 downto -17);
         reading  : in  sfixed (0 downto -17);
         pid_out  : out sfixed (0 downto -17) := (others => '0')
