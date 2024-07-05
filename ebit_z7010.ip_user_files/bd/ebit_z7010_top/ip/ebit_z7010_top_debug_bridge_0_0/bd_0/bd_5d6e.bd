@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x66FA2586D6D68148",
+      "boundary_crc": "0x66FA2586048AC330",
       "design_src": "SBD",
       "device": "xc7z010clg400-1",
       "name": "bd_5d6e",
@@ -48,7 +48,7 @@
             "value_src": "auto"
           },
           "FREQ_HZ": {
-            "value": "1e+08",
+            "value": "100000000",
             "value_src": "user_prop"
           },
           "HAS_BRESP": {
@@ -173,7 +173,7 @@
             "value_src": "default_prop"
           },
           "FREQ_HZ": {
-            "value": "1e+08",
+            "value": "100000000",
             "value_src": "user_prop"
           },
           "FREQ_TOLERANCE_HZ": {

@@ -141,6 +141,7 @@ OPTRACE "set parameters" START { }
   /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/LED_controller
   /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/DPUCZDX8G_v3_3_0
   /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC
+  /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/project_1
 } [current_project]
   update_ip_catalog
   set_property ip_output_repo /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.cache/ip [current_project]

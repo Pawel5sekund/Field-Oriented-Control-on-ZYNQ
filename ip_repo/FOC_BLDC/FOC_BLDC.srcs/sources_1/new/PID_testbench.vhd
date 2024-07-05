@@ -45,11 +45,7 @@ architecture Behavioral of PID_testbench is
     generic (
         --sampling_time : real                             := 0.000000064;  --64ns
         fracBits      : integer                          := 17;
-        intBits       : integer                          := 0;
-        max_p_pid     : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-        max_i_pid     : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-        max_d_pid     : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
-        max_pid_pid   : SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17)
+        intBits       : integer                          := 0
         );
     port (
         en       : in  std_logic;
@@ -58,6 +54,14 @@ architecture Behavioral of PID_testbench is
         kp       : in  sfixed (0 downto -17);
         ki       : in  sfixed (0 downto -17);
         kd       : in  sfixed (0 downto -17);
+        max_p_pid   : in SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        min_p_pid   : in SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
+        max_i_pid   : in SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        min_i_pid   : in SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
+        max_d_pid   : in SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        min_d_pid   : in SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
+        max_pid_pid : in SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
+        min_pid_pid : in SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
         setpoint : in  sfixed (0 downto -17);
         reading  : in  sfixed (0 downto -17);
         pid_out  : out sfixed (0 downto -17) := (others => '0')
@@ -67,7 +71,7 @@ architecture Behavioral of PID_testbench is
     constant fracBits : integer               := 17;
     constant intBits  : integer               := 17-fracBits;
     signal en         : std_logic := '1';
-    signal n_res      : std_logic := '1';
+    signal n_res      : std_logic := '0';
     signal CLK        : std_logic;
     signal kp         : sfixed (intBits downto -fracBits);
     signal ki         : sfixed (intBits downto -fracBits);
@@ -82,11 +86,7 @@ begin
         generic map(
             --sampling_time => 0.000000064,
             fracBits      => 17,
-            intBits       => 0,
-            max_p_pid     => to_sfixed(0.999, 0, -17),
-            max_i_pid     => to_sfixed(0.999, 0, -17),
-            max_d_pid     => to_sfixed(0.999, 0, -17),
-            max_pid_pid   => to_sfixed(0.999, 0, -17)
+            intBits       => 0
             )
         port map(
             en       => en,
@@ -97,7 +97,15 @@ begin
             kd       => kd,
             setpoint => setpoint,
             reading  => reading,
-            pid_out  => pid_out
+            pid_out  => pid_out,
+            max_p_pid     => to_sfixed(0.99999, 0, -17),
+            max_i_pid     => to_sfixed(0.99999, 0, -17),
+            max_d_pid     => to_sfixed(0.99999, 0, -17),
+            max_pid_pid   => to_sfixed(0.99999, 0, -17),
+            min_p_pid     => to_sfixed(-0.99999, 0, -17),
+            min_i_pid     => to_sfixed(-0.99999, 0, -17),
+            min_d_pid     => to_sfixed(-0.99999, 0, -17),
+            min_pid_pid   => to_sfixed(0.0, 0, -17)
             );
 
     CLK_process : process
@@ -114,11 +122,11 @@ begin
 
     begin
         wait until RISING_EDGE(CLK);
-        kp <= to_sfixed(0.1, kp'left, kp'right);
-        ki <= to_sfixed(0.0, kp'left, kp'right);
-        kd <= to_sfixed(0.0, kp'left, kp'right);
-        setpoint <= to_sfixed(0.5, setpoint'left, setpoint'right);
-        reading <= to_sfixed(0.25, reading'left, reading'right);
+        kp <= to_sfixed(0.0, kp'left, kp'right);
+        ki <= to_sfixed(0.0, ki'left, ki'right);
+        kd <= to_sfixed(0.1, kd'left, kd'right);
+        setpoint <= to_sfixed(0.1, setpoint'left, setpoint'right);
+        reading <= to_sfixed(0.0, reading'left, reading'right);
     end process;
 
 

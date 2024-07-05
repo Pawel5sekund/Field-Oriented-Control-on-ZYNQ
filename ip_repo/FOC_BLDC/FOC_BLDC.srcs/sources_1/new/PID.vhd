@@ -75,13 +75,13 @@ begin
 
     PID_mpDSP : process
         variable error             : sfixed (setpoint'range)                                             := (others => '0');
-        variable lastError         : sfixed (0 downto -17)                                               := (others => '0');
+        variable lastError         : sfixed (setpoint'range)                                             := (others => '0');
         variable operationSelector : integer range 63 downto -1                                          := -1;
         variable last_P_P          : SFIXED((47+reading'right+kp'right) downto (reading'right+kp'right)) := (others => '0');
-        variable vec_last_I_p      : std_logic_vector(93 downto 0);
+        variable vec_last_I_p      : std_logic_vector(93 downto 0)  := (others => '0');
         variable last_I_P          : SFIXED((93+reading'right+ki'right) downto (reading'right+ki'right)) := (others => '0');
         variable last_D_P          : SFIXED((93+reading'right+kd'right) downto (reading'right+kd'right)) := (others => '0');
-        variable vec_last_D_p      : std_logic_vector(93 downto 0);
+        variable vec_last_D_p      : std_logic_vector(93 downto 0)  := (others => '0');
         constant VECTOR_0          : std_logic_vector (47 downto 0)                                      := (others => '0');
         constant BITS_TP           : integer                                                             := -clog2(sampling_time);
     begin
@@ -90,12 +90,10 @@ begin
             when 0 =>
                 error := resize(setpoint - reading, error'left, error'right);  --calc error
 
-                if (divByBits(vecToSfixed(P_reg(0), last_P_P'right), 1) < min_p_pid) then  --check result of P
+                if (divByBits(last_P_P, 1) < min_p_pid) then  --check result of P
                     last_P_P := mulByBits(resize(min_p_pid, last_P_P'left, last_P_P'right), 1);
-                elsif (divByBits(vecToSfixed(P_reg(0), last_P_P'right), 1) > max_p_pid) then
+                elsif (divByBits(last_P_P, 1) > max_p_pid) then
                     last_P_P := mulByBits(resize(max_p_pid, last_P_P'left, last_P_P'right), 1);
-                else
-                --last_P_P := vecToSfixed(P_reg(0), last_P_P'right); --do nothing
                 end if;
 
                 if (divByBits(last_I_P, BITS_TP+1) < min_i_pid) then  --check result of I
@@ -124,20 +122,21 @@ begin
                 B_reg(0) <= std_logic_vector(kp);
                 C_reg(0) <= VECTOR_0;
                 D_reg(0) <= std_logic_vector(lastError);
+                last_P_P := vecToSfixed(P_reg(0), last_P_P'right);
 
                 A_reg(1)                                                  <= std_logic_vector(error);  --I
                 B_reg(1)                                                  <= std_logic_vector(ki);
                 D_reg(1)                                                  <= std_logic_vector(lastError);
                 vec_last_I_p(vec_last_I_p'left downto vec_last_I_p'right) := std_logic_vector(last_I_P(last_I_P'left downto last_I_P'right));
-                bigSumDSPHandler(vec_last_I_P, C_reg(1), C_reg(2), B_reg(2), A_reg(2), P_reg(1), P_reg(2));
+                doubleSumDSPHandler(vec_last_I_P, C_reg(1), C_reg(2), B_reg(2), A_reg(2), P_reg(1), P_reg(2));
                 last_I_P                                                  := vecToSfixed(vec_last_I_p, last_I_P'right);
 
                 A_reg(3)                                                  <= std_logic_vector(error);  --D
                 B_reg(3)                                                  <= std_logic_vector(kd);
-                D_reg(3)                                                  <= std_logic_vector(resize(-lastError, lastError'left, lastError'right));
-                vec_last_D_p(vec_last_D_p'left downto vec_last_D_p'right) := std_logic_vector(last_D_P(last_D_P'left downto last_D_P'right));
-                bigSumDSPHandler(vec_last_D_P, C_reg(1), C_reg(2), B_reg(2), A_reg(2), P_reg(1), P_reg(2));
-                last_D_P                                                  := vecToSfixed(vec_last_D_p, last_D_P'right);
+                D_reg(3)                                                  <= std_logic_vector(-(signed(lastError)));
+                --vec_last_D_p(vec_last_D_p'left downto vec_last_D_p'right) := std_logic_vector(last_D_P(last_D_P'left downto last_D_P'right));
+                --bigSumDSPHandler(vec_last_D_P, C_reg(3), C_reg(4), B_reg(4), A_reg(4), P_reg(3), P_reg(4));
+                last_D_P                                                  := resize(vecToSfixed(P_reg(3), last_D_P'right), last_D_P'left, last_D_P'right);
 
                 A_reg(5) <= std_logic_vector(resize(divByBits(last_P_P, 1), kp'left, kp'right));
                 B_reg(5) <= std_logic_vector(to_unsigned(1, 18));  --send 1

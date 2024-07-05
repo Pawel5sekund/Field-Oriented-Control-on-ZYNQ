@@ -40,7 +40,7 @@ package FOC_types is
     arg : unsigned
     ) return signed;
 
-  procedure bigSumDSPHandler(
+  procedure doubleSumDSPHandler(
     variable sumResult : inout std_logic_vector (93 downto 0);
     signal C1_out      : out   std_logic_vector (47 downto 0);
     signal C2_out      : out   std_logic_vector (47 downto 0);
@@ -49,6 +49,24 @@ package FOC_types is
     signal P1_in       : in    std_logic_vector (47 downto 0);
     signal P2_in       : in    std_logic_vector (47 downto 0)
     );
+
+  procedure doubleMulDSPHandler(
+    variable mulResult : inout std_logic_vector (93 downto 0);
+    signal A_in        : in    std_logic_vector (34 downto 0);
+    signal B_in        : in    std_logic_vector (34 downto 0);
+    signal D_in        : in    std_logic_vector (34 downto 0);
+    signal C1_out      : out   std_logic_vector (47 downto 0);
+    signal C2_out      : out   std_logic_vector (47 downto 0);
+    signal B1_out      : out   std_logic_vector (17 downto 0);
+    signal B2_out      : out   std_logic_vector (17 downto 0);
+    signal A1_out      : out   std_logic_vector (17 downto 0);
+    signal A2_out      : out   std_logic_vector (17 downto 0);
+    signal D1_out      : out   std_logic_vector (17 downto 0);
+    signal D2_out      : out   std_logic_vector (17 downto 0);
+    signal P1_in       : in    std_logic_vector (47 downto 0);
+    signal P2_in       : in    std_logic_vector (47 downto 0)
+    );
+
 
 end FOC_types;
 
@@ -148,7 +166,7 @@ package body FOC_types is
     return result;
   end function unToSigned;
 
-  procedure bigSumDSPHandler(
+  procedure doubleSumDSPHandler(
     variable sumResult : inout std_logic_vector (93 downto 0);
     signal C1_out      : out   std_logic_vector (47 downto 0);
     signal C2_out      : out   std_logic_vector (47 downto 0);
@@ -190,10 +208,10 @@ package body FOC_types is
         C1_out(45 downto 0)  <= not sumResult(45 downto 0);
         C1_out(47 downto 46) <= "00";
       when others =>
-        A2_out               <= std_logic_vector(to_signed(0, 18));
-        C1_out(45 downto 0)  <= sumResult(45 downto 0);
-        C1_out(47) <= sumResult(93);
-        C1_out(46) <= sumResult(93);
+        A2_out              <= std_logic_vector(to_signed(0, 18));
+        C1_out(45 downto 0) <= sumResult(45 downto 0);
+        C1_out(47)          <= sumResult(93);
+        C1_out(46)          <= sumResult(93);
     end case;
 
     C2_out(47 downto 0) <= sumResult(93 downto 46);

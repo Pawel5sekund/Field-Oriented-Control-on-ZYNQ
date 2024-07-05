@@ -63,6 +63,9 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ebit_z7010_
 # IP: bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/ebit_z7010_top_FOC_top_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ebit_z7010_top_FOC_top_0_0 || ORIG_REF_NAME==ebit_z7010_top_FOC_top_0_0} -quiet] -quiet
 
+# IP: bd/ebit_z7010_top/ip/ebit_z7010_top_s00_data_fifo_0/ebit_z7010_top_s00_data_fifo_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ebit_z7010_top_s00_data_fifo_0 || ORIG_REF_NAME==ebit_z7010_top_s00_data_fifo_0} -quiet] -quiet
+
 # IP: bd/ebit_z7010_top/ip/ebit_z7010_top_auto_pc_0/ebit_z7010_top_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ebit_z7010_top_auto_pc_0 || ORIG_REF_NAME==ebit_z7010_top_auto_pc_0} -quiet] -quiet
 

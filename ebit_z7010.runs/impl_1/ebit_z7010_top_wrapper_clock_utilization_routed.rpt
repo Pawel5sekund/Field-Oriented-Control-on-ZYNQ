@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date         : Mon Mar 18 20:32:57 2024
+| Date         : Mon Jul  1 22:57:29 2024
 | Host         : LAPTOP-PAWEL running 64-bit Ubuntu 18.04.2 LTS
 | Command      : report_clock_utilization -file ebit_z7010_top_wrapper_clock_utilization_routed.rpt
 | Design       : ebit_z7010_top_wrapper
@@ -51,8 +51,8 @@ Table of Contents
 | Global Id | Source Id | Driver Type/Pin | Constraint | Site          | Clock Region | Load Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock                                                                  | Driver Pin                                                                     | Net                                                           |
 +-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+------------------------------------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------------------------------+
 | g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y0 | n/a          |                 4 |        3535 |               0 |       10.000 | clk_fpga_0                                                             | ebit_z7010_top_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O | ebit_z7010_top_i/processing_system7_0/inst/FCLK_CLK0          |
-| g1        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y3 | n/a          |                 3 |        1630 |               4 |              |                                                                        | ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o[0]_BUFG_inst/O           | ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o_BUFG[0] |
-| g2        | src2      | BUFG/O          | None       | BUFGCTRL_X0Y1 | n/a          |                 3 |         461 |               0 |       80.000 | ebit_z7010_top_i/debug_bridge/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_EXT_BSCAN_WITH_CORE.u_bufg_icon_tck/O   | dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i                        |
+| g1        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y3 | n/a          |                 3 |        1633 |               4 |              |                                                                        | ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o[0]_BUFG_inst/O           | ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o_BUFG[0] |
+| g2        | src2      | BUFG/O          | None       | BUFGCTRL_X0Y1 | n/a          |                 2 |         461 |               0 |       80.000 | ebit_z7010_top_i/debug_bridge/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_EXT_BSCAN_WITH_CORE.u_bufg_icon_tck/O   | dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i                        |
 | g3        | src2      | BUFG/O          | None       | BUFGCTRL_X0Y2 | n/a          |                 2 |          24 |               2 |       80.000 | ebit_z7010_top_i/debug_bridge/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q | ebit_z7010_top_i/debug_bridge/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O         | ebit_z7010_top_i/debug_bridge/U0/bsip/U0/tck                  |
 +-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+------------------------------------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count). Internal cell leaf pins are not counted
@@ -66,9 +66,9 @@ Table of Contents
 | Source Id | Global Id | Driver Type/Pin | Constraint | Site          | Clock Region | Clock Loads | Non-Clock Loads | Source Clock Period | Source Clock                                                           | Driver Pin                                                                  | Net                                                               |
 +-----------+-----------+-----------------+------------+---------------+--------------+-------------+-----------------+---------------------+------------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------+
 | src0      | g0        | PS7/FCLKCLK[0]  | PS7_X0Y0   | PS7_X0Y0      | X0Y1         |           1 |               0 |              10.000 | clk_fpga_0                                                             | ebit_z7010_top_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]                 | ebit_z7010_top_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0] |
-| src1      | g1        | FDRE/Q          | None       | SLICE_X16Y56  | X0Y1         |           1 |               0 |                     |                                                                        | ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/Q | ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o[0]          |
+| src1      | g1        | FDRE/Q          | None       | SLICE_X28Y55  | X1Y1         |           1 |               0 |                     |                                                                        | ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/Q | ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o[0]          |
 | src2      | g2        | BUFG/O          | None       | BUFGCTRL_X0Y2 | n/a          |          25 |               1 |              80.000 | ebit_z7010_top_i/debug_bridge/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q | ebit_z7010_top_i/debug_bridge/U0/bsip/U0/USE_SOFTBSCAN.U_TAP_TCKBUFG/O      | ebit_z7010_top_i/debug_bridge/U0/bsip/U0/tck                      |
-| src2      | g3        | FDRE/Q          | None       | SLICE_X21Y45  | X0Y0         |           1 |               0 |              80.000 | ebit_z7010_top_i/debug_bridge/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q | ebit_z7010_top_i/debug_bridge/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q      | ebit_z7010_top_i/debug_bridge/U0/axi_jtag/inst/u_jtag_proc/tck    |
+| src2      | g3        | FDRE/Q          | None       | SLICE_X22Y46  | X1Y0         |           1 |               0 |              80.000 | ebit_z7010_top_i/debug_bridge/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q | ebit_z7010_top_i/debug_bridge/U0/axi_jtag/inst/u_jtag_proc/tck_i_reg/Q      | ebit_z7010_top_i/debug_bridge/U0/axi_jtag/inst/u_jtag_proc/tck    |
 +-----------+-----------+-----------------+------------+---------------+--------------+-------------+-----------------+---------------------+------------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count). Internal cell leaf pins are not counted
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
@@ -82,10 +82,10 @@ Table of Contents
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
-| X0Y0              |    3 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 | 2625 |  1100 | 1119 |   400 |    0 |    20 |    7 |    10 |    1 |    20 |
-| X1Y0              |    4 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 2001 |  1100 |  703 |   350 |    0 |    40 |   10 |    20 |    1 |    20 |
-| X0Y1              |    2 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |  512 |  1100 |  192 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
-| X1Y1              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  202 |  1100 |   64 |   350 |    0 |    40 |    0 |    20 |    0 |    20 |
+| X0Y0              |    3 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 | 3119 |  1100 | 1190 |   400 |    0 |    20 |    5 |    10 |    2 |    20 |
+| X1Y0              |    4 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 1652 |  1100 |  643 |   350 |    0 |    40 |   12 |    20 |    0 |    20 |
+| X0Y1              |    1 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |  366 |  1100 |  167 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X1Y1              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  206 |  1100 |   73 |   350 |    0 |    40 |    0 |    20 |    0 |    20 |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 * Global Clock column represents track count; while other columns represents cell counts
 
@@ -97,7 +97,7 @@ All Modules
 +----+----+----+
 |    | X0 | X1 |
 +----+----+----+
-| Y1 |  2 |  2 |
+| Y1 |  1 |  2 |
 | Y0 |  3 |  4 |
 +----+----+----+
 
@@ -119,8 +119,8 @@ All Modules
 +----+-------+------+-----------------------+
 |    | X0    | X1   | HORIZONTAL PROG DELAY |
 +----+-------+------+-----------------------+
-| Y1 |   531 |  114 |                     0 |
-| Y0 |  1914 |  925 |                     0 |
+| Y1 |   385 |  207 |                     0 |
+| Y0 |  1910 |  982 |                     0 |
 +----+-------+------+-----------------------+
 
 
@@ -130,7 +130,7 @@ All Modules
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------------------------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                                                           |
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------------------------------+
-| g1        | BUFG/O          | n/a               |       |             |               |        1633 |        0 |              0 |        0 | ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o_BUFG[0] |
+| g1        | BUFG/O          | n/a               |       |             |               |        1636 |        0 |              0 |        0 | ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o_BUFG[0] |
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+---------------------------------------------------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -138,12 +138,12 @@ All Modules
 **** GT Loads column represents load cell count of GT types
 
 
-+----+------+------+-----------------------+
-|    | X0   | X1   | HORIZONTAL PROG DELAY |
-+----+------+------+-----------------------+
-| Y1 |    2 |    0 |                     0 |
-| Y0 |  866 |  765 |                     0 |
-+----+------+------+-----------------------+
++----+-------+------+-----------------------+
+|    | X0    | X1   | HORIZONTAL PROG DELAY |
++----+-------+------+-----------------------+
+| Y1 |     0 |    2 |                     0 |
+| Y0 |  1032 |  602 |                     0 |
++----+-------+------+-----------------------+
 
 
 8. Device Cell Placement Summary for Global Clock g2
@@ -160,12 +160,12 @@ All Modules
 **** GT Loads column represents load cell count of GT types
 
 
-+----+-----+------+-----------------------+
-|    | X0  | X1   | HORIZONTAL PROG DELAY |
-+----+-----+------+-----------------------+
-| Y1 |   0 |   89 |                     0 |
-| Y0 |  22 |  347 |                     0 |
-+----+-----+------+-----------------------+
++----+------+------+-----------------------+
+|    | X0   | X1   | HORIZONTAL PROG DELAY |
++----+------+------+-----------------------+
+| Y1 |    0 |    0 |                     - |
+| Y0 |  297 |  161 |                     0 |
++----+------+------+-----------------------+
 
 
 9. Device Cell Placement Summary for Global Clock g3
@@ -196,9 +196,9 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+---------------------------------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                           |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+---------------------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |        1914 |               0 | 1740 |         168 |    6 |   0 |  0 |    0 |   0 |       0 | ebit_z7010_top_i/processing_system7_0/inst/FCLK_CLK0          |
-| g1        | n/a   | BUFG/O          | None       |         865 |               1 |  863 |           1 |    1 |   1 |  0 |    0 |   0 |       0 | ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o_BUFG[0] |
-| g2        | n/a   | BUFG/O          | None       |          22 |               0 |   22 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i                        |
+| g0        | n/a   | BUFG/O          | None       |        1910 |               0 | 1793 |         113 |    4 |   0 |  0 |    0 |   0 |       0 | ebit_z7010_top_i/processing_system7_0/inst/FCLK_CLK0          |
+| g1        | n/a   | BUFG/O          | None       |        1032 |               0 | 1029 |           0 |    1 |   2 |  0 |    0 |   0 |       0 | ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o_BUFG[0] |
+| g2        | n/a   | BUFG/O          | None       |         297 |               0 |  297 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i                        |
 +-----------+-------+-----------------+------------+-------------+-----------------+------+-------------+------+-----+----+------+-----+---------+---------------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count). Internal cell leaf pins are not counted
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
@@ -211,9 +211,9 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+---------------------------------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                           |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+---------------------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |         925 |               0 | 867 |          48 |   10 |   0 |  0 |    0 |   0 |       0 | ebit_z7010_top_i/processing_system7_0/inst/FCLK_CLK0          |
-| g1        | n/a   | BUFG/O          | None       |         764 |               1 | 763 |           0 |    0 |   1 |  0 |    0 |   0 |       0 | ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o_BUFG[0] |
-| g2        | n/a   | BUFG/O          | None       |         347 |               0 | 347 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i                        |
+| g0        | n/a   | BUFG/O          | None       |         982 |               0 | 867 |         103 |   12 |   0 |  0 |    0 |   0 |       0 | ebit_z7010_top_i/processing_system7_0/inst/FCLK_CLK0          |
+| g1        | n/a   | BUFG/O          | None       |         600 |               2 | 600 |           1 |    0 |   0 |  0 |    0 |   0 |       0 | ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o_BUFG[0] |
+| g2        | n/a   | BUFG/O          | None       |         161 |               0 | 161 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i                        |
 | g3        | n/a   | BUFG/O          | None       |          24 |               1 |  24 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | ebit_z7010_top_i/debug_bridge/U0/bsip/U0/tck                  |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+---------------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count). Internal cell leaf pins are not counted
@@ -224,12 +224,11 @@ All Modules
 12. Clock Region Cell Placement per Global Clock: Region X0Y1
 -------------------------------------------------------------
 
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+---------------------------------------------------------------+
-| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                           |
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+---------------------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |         531 |               0 | 512 |          18 |    0 |   0 |  0 |    0 |   0 |       0 | ebit_z7010_top_i/processing_system7_0/inst/FCLK_CLK0          |
-| g1        | n/a   | BUFG/O          | None       |           0 |               2 |   0 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o_BUFG[0] |
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+---------------------------------------------------------------+
++-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+------------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                  |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+------------------------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |         385 |               0 | 366 |          18 |    0 |   0 |  0 |    0 |   0 |       0 | ebit_z7010_top_i/processing_system7_0/inst/FCLK_CLK0 |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count). Internal cell leaf pins are not counted
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
@@ -238,12 +237,12 @@ All Modules
 13. Clock Region Cell Placement per Global Clock: Region X1Y1
 -------------------------------------------------------------
 
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+------------------------------------------------------+
-| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                  |
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+------------------------------------------------------+
-| g0        | n/a   | BUFG/O          | None       |         114 |               0 | 113 |           1 |    0 |   0 |  0 |    0 |   0 |       0 | ebit_z7010_top_i/processing_system7_0/inst/FCLK_CLK0 |
-| g2        | n/a   | BUFG/O          | None       |          89 |               0 |  89 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i               |
-+-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+------------------------------------------------------+
++-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+---------------------------------------------------------------+
+| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                           |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+---------------------------------------------------------------+
+| g0        | n/a   | BUFG/O          | None       |         207 |               0 | 206 |           1 |    0 |   0 |  0 |    0 |   0 |       0 | ebit_z7010_top_i/processing_system7_0/inst/FCLK_CLK0          |
+| g1        | n/a   | BUFG/O          | None       |           0 |               2 |   0 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o_BUFG[0] |
++-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+---------------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count). Internal cell leaf pins are not counted
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
@@ -278,12 +277,12 @@ resize_pblock [get_pblocks {CLKAG_ebit_z7010_top_i/debug_bridge/U0/bsip/U0/tck}]
 #startgroup
 create_pblock {CLKAG_ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o_BUFG[0]}
 add_cells_to_pblock [get_pblocks  {CLKAG_ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o_BUFG[0]}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o_BUFG[0]"}]]]
-resize_pblock [get_pblocks {CLKAG_ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o_BUFG[0]}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+resize_pblock [get_pblocks {CLKAG_ebit_z7010_top_i/SIM_CLK_FOC/U0/gpio_core_1/gpio_io_o_BUFG[0]}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
 #endgroup
 
 # Clock net "dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i" driven by instance "dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_EXT_BSCAN_WITH_CORE.u_bufg_icon_tck" located at site "BUFGCTRL_X0Y1"
 #startgroup
 create_pblock {CLKAG_dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i}
 add_cells_to_pblock [get_pblocks  {CLKAG_dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i"}]]]
-resize_pblock [get_pblocks {CLKAG_dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+resize_pblock [get_pblocks {CLKAG_dbg_hub/inst/BSCANID.u_xsdbm_id/itck_i}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
 #endgroup
