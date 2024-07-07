@@ -2,27 +2,50 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Sun Oct  8 20:54:48 2023
-# Process ID: 16428
+# Start of session at: Sat Jul  6 14:41:48 2024
+# Process ID: 11037
 # Current directory: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/mpDSP_DSP_macro_synth_1
 # Command line: vivado -log mpDSP_DSP_macro.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mpDSP_DSP_macro.tcl
 # Log file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/mpDSP_DSP_macro_synth_1/mpDSP_DSP_macro.vds
 # Journal file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/mpDSP_DSP_macro_synth_1/vivado.jou
-# Running On: LAPTOP-QKPB5NLF, OS: Linux, CPU Frequency: 3193.913 MHz, CPU Physical cores: 16, Host memory: 8015 MB
+# Running On: LAPTOP-PAWEL, OS: Linux, CPU Frequency: 3193.930 MHz, CPU Physical cores: 16, Host memory: 8015 MB
 #-----------------------------------------------------------
 source mpDSP_DSP_macro.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/TEMPORARY/myip_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC'.
-WARNING: [IP_Flow 19-3656] If you move the project, the path for repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/mpDSP_DSP_macro_synth_1'.)
-WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/mnt/d/Xilinx/Projects/Vivado/motorcontrollerzynqvivado/ip_repo'; Can't find the specified path.
-If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
-WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_1.0'; Can't find the specified path.
-If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
-WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/status_LED_controller_1.0'; Can't find the specified path.
-If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'digilentinc.com:interface:tmds:1.0' found within IP repository '/home/pawel'.
+File in use: /home/pawel/Xilinx/PYNQ/boards/ip/if/tmds_v1_0/tmds.xml
+File ignored: /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/if/tmds_v1_0/tmds.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'digilentinc.com:interface:tmds_rtl:1.0' found within IP repository '/home/pawel'.
+File in use: /home/pawel/Xilinx/PYNQ/boards/ip/if/tmds_v1_0/tmds_rtl.xml
+File ignored: /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/if/tmds_v1_0/tmds_rtl.xml
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/pawel'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2022.1/data/ip'.
-update_ip_catalog: Time (s): cpu = 00:00:00.41 ; elapsed = 00:00:15 . Memory (MB): peak = 2718.836 ; gain = 0.000 ; free physical = 934 ; free virtual = 3236
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:interface_switch:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/interface_switch_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/interface_switch_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:trace_generator_controller:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/trace_generator_controller_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/trace_generator_controller_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'digilentinc.com:ip:axi_dynclk:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/axi_dynclk_v1_0' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/axi_dynclk_v1_0
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:debouncer:1.1'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/debouncer_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/debouncer_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:interface_slice:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/interface_slice_1.0' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/interface_slice_1.0
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'digilentinc.com:ip:dvi2rgb:1.7'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/dvi2rgb_v1_7' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/dvi2rgb_v1_7
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:audio_direct:1.1'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/audio_direct_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/audio_direct_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'digilentinc.com:ip:rgb2dvi:1.2'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/rgb2dvi_v1_2' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/rgb2dvi_v1_2
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:boolean_generator:1.1'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/boolean_generator_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/boolean_generator_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:pattern_controller:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/pattern_controller_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/pattern_controller_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:io_switch:1.1'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/io_switch_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/io_switch_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:mux_vector:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/mux_vector_1.0' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/mux_vector_1.0
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:audio_codec_ctrl:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/audio_codec_ctrl_v1.0' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/audio_codec_ctrl_v1.0
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:color_swap:1.1'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/color_swap_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/color_swap_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'user.org:user:address_remap:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/address_remap_1.0' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/address_remap_1.0
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:fsm_io_switch:1.1'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/fsm_io_switch_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/fsm_io_switch_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:gclk_generator:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/gclk_generator_1.0' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/gclk_generator_1.0
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:wire_distributor:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/wire_distributor_1.0' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/wire_distributor_1.0
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:fsm_controller:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/fsm_controller_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/fsm_controller_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:dff_en_reset_vector:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/dff_en_reset_vector_1.0' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/dff_en_reset_vector_1.0
+WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:interface:ps_pl_irq:1.0'. The one found in location '/home/pawel/Xilinx/petalinux/tools/xsct/data/versal/psxl/hiw/local_ip/psxl_v1_0/interfaces/ps_pl_irq/ps_pl_irq.xml' will take precedence over the same Interface in location '/tools/Xilinx/Vivado/2022.1/data/ip/xilinx/pspmc_v1_2/interfaces/ps_pl_irq/ps_pl_irq.xml'
+WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:user:acelite:1.0'. The one found in location '/home/pawel/Xilinx/petalinux/tools/xsct/data/versal/psxl/hiw/local_ip/psxl_v1_0/interfaces/acelite.xml' will take precedence over the same Interface in location '/tools/Xilinx/Vivado/2022.1/data/ip/xilinx/pspmc_v1_2/interfaces/acelite.xml'
+WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:interface:sem_emio:1.0'. The one found in location '/home/pawel/Xilinx/petalinux/tools/xsct/data/versal/psxl/hiw/local_ip/psxl_v1_0/interfaces/sem_emio_v1_0/sem_emio.xml' will take precedence over the same Interface in location '/tools/Xilinx/Vivado/2022.1/data/ip/xilinx/pspmc_v1_2/interfaces/sem_emio_v1_0/sem_emio.xml'
+WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:interface:adma:1.0'. The one found in location '/home/pawel/Xilinx/petalinux/tools/xsct/data/versal/psxl/hiw/local_ip/psxl_v1_0/interfaces/adma.xml' will take precedence over the same Interface in location '/tools/Xilinx/Vivado/2022.1/data/ip/xilinx/pspmc_v1_2/interfaces/adma.xml'
+WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:user:smmu:1.0'. The one found in location '/home/pawel/Xilinx/petalinux/tools/xsct/data/versal/psxl/hiw/local_ip/psxl_v1_0/interfaces/smmu.xml' will take precedence over the same Interface in location '/tools/Xilinx/Vivado/2022.1/data/ip/xilinx/pspmc_v1_2/interfaces/smmu.xml'
+update_ip_catalog: Time (s): cpu = 00:00:04 ; elapsed = 00:00:35 . Memory (MB): peak = 2740.777 ; gain = 0.000 ; free physical = 1045 ; free virtual = 19201
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP mpDSP_DSP_macro, cache-ID = 32a1ae2120dff8da.
-INFO: [Common 17-206] Exiting Vivado at Sun Oct  8 20:55:22 2023...
+INFO: [Common 17-206] Exiting Vivado at Sat Jul  6 14:42:38 2024...

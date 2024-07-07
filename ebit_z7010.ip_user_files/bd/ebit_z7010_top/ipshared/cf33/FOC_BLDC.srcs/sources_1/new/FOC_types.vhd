@@ -40,14 +40,38 @@ package FOC_types is
     arg : unsigned
     ) return signed;
 
-  procedure bigSumDSPHandler(
+  procedure doubleSumDSPHandler(
     variable sumResult : inout std_logic_vector (93 downto 0);
+    variable A_in      : in    std_logic_vector (17 downto 0);
+    variable B_in      : in    std_logic_vector (17 downto 0);
+    variable D_in      : in    std_logic_vector (17 downto 0);
     signal C1_out      : out   std_logic_vector (47 downto 0);
     signal C2_out      : out   std_logic_vector (47 downto 0);
+    signal B1_out      : out   std_logic_vector (17 downto 0);
     signal B2_out      : out   std_logic_vector (17 downto 0);
+    signal A1_out      : out   std_logic_vector (17 downto 0);
     signal A2_out      : out   std_logic_vector (17 downto 0);
+    signal D1_out      : out   std_logic_vector (17 downto 0);
+    signal D2_out      : out   std_logic_vector (17 downto 0);
     signal P1_in       : in    std_logic_vector (47 downto 0);
     signal P2_in       : in    std_logic_vector (47 downto 0)
+    );
+
+  procedure doubleMulDSPHandler(
+    variable mulResult : out std_logic_vector (64 downto 0);
+    variable A_in      : in  std_logic_vector (17 downto 0);
+    variable B_in      : in  std_logic_vector (34 downto 0);
+    variable D_in      : in  std_logic_vector (17 downto 0);
+    signal C1_out      : out std_logic_vector (47 downto 0);
+    signal C2_out      : out std_logic_vector (47 downto 0);
+    signal B1_out      : out std_logic_vector (17 downto 0);
+    signal B2_out      : out std_logic_vector (17 downto 0);
+    signal A1_out      : out std_logic_vector (17 downto 0);
+    signal A2_out      : out std_logic_vector (17 downto 0);
+    signal D1_out      : out std_logic_vector (17 downto 0);
+    signal D2_out      : out std_logic_vector (17 downto 0);
+    signal P1_in       : in  std_logic_vector (47 downto 0);
+    signal P2_in       : in  std_logic_vector (47 downto 0)
     );
 
 end FOC_types;
@@ -148,12 +172,19 @@ package body FOC_types is
     return result;
   end function unToSigned;
 
-  procedure bigSumDSPHandler(
+  procedure doubleSumDSPHandler(
     variable sumResult : inout std_logic_vector (93 downto 0);
+    variable A_in      : in    std_logic_vector (17 downto 0);
+    variable B_in      : in    std_logic_vector (17 downto 0);
+    variable D_in      : in    std_logic_vector (17 downto 0);
     signal C1_out      : out   std_logic_vector (47 downto 0);
     signal C2_out      : out   std_logic_vector (47 downto 0);
+    signal B1_out      : out   std_logic_vector (17 downto 0);
     signal B2_out      : out   std_logic_vector (17 downto 0);
+    signal A1_out      : out   std_logic_vector (17 downto 0);
     signal A2_out      : out   std_logic_vector (17 downto 0);
+    signal D1_out      : out   std_logic_vector (17 downto 0);
+    signal D2_out      : out   std_logic_vector (17 downto 0);
     signal P1_in       : in    std_logic_vector (47 downto 0);
     signal P2_in       : in    std_logic_vector (47 downto 0)
     ) is
@@ -163,6 +194,9 @@ package body FOC_types is
     sumResult(45 downto 0)  := P1_in(45 downto 0);
 
     B2_out <= std_logic_vector(to_signed(1, 18));
+    A1_out <= std_logic_vector(A_in);
+    B1_out <= std_logic_vector(B_in);
+    D1_out <= std_logic_vector(D_in);
 
     case P2_in (47 downto 47) & P1_in(47 downto 46) is
       when "001" =>
@@ -190,14 +224,49 @@ package body FOC_types is
         C1_out(45 downto 0)  <= not sumResult(45 downto 0);
         C1_out(47 downto 46) <= "00";
       when others =>
-        A2_out               <= std_logic_vector(to_signed(0, 18));
-        C1_out(45 downto 0)  <= sumResult(45 downto 0);
-        C1_out(47) <= sumResult(93);
-        C1_out(46) <= sumResult(93);
+        A2_out              <= std_logic_vector(to_signed(0, 18));
+        C1_out(45 downto 0) <= sumResult(45 downto 0);
+        C1_out(47)          <= sumResult(93);
+        C1_out(46)          <= sumResult(93);
     end case;
 
     C2_out(47 downto 0) <= sumResult(93 downto 46);
 
+  end procedure;
+
+  procedure doubleMulDSPHandler(
+    variable mulResult : out std_logic_vector (64 downto 0);
+    variable A_in      : in  std_logic_vector (17 downto 0);
+    variable B_in      : in  std_logic_vector (34 downto 0);
+    variable D_in      : in  std_logic_vector (17 downto 0);
+    signal C1_out      : out std_logic_vector (47 downto 0);
+    signal C2_out      : out std_logic_vector (47 downto 0);
+    signal B1_out      : out std_logic_vector (17 downto 0);
+    signal B2_out      : out std_logic_vector (17 downto 0);
+    signal A1_out      : out std_logic_vector (17 downto 0);
+    signal A2_out      : out std_logic_vector (17 downto 0);
+    signal D1_out      : out std_logic_vector (17 downto 0);
+    signal D2_out      : out std_logic_vector (17 downto 0);
+    signal P1_in       : in  std_logic_vector (47 downto 0);
+    signal P2_in       : in  std_logic_vector (47 downto 0)
+    ) is
+    constant VECTOR_0 : std_logic_vector (47 downto 0) := (others => '0');
+  begin
+    B2_out (17 downto 0) <= B_in(34 downto 17);
+    B1_out (17)          <= B_in(34);   --copy sign
+    B1_out (16 downto 0) <= B_in(16 downto 0);
+
+    A2_out <= A_in;
+    A1_out <= A_in;
+
+    D2_out <= D_in;
+    D1_out <= D_in;
+
+    C2_out (29 downto 0)  <= P1_in(46 downto 17);
+    C2_out (47 downto 30) <= (others => P1_in(47));  --copy sign and fill empty space with sign-relevant value
+
+    mulResult (16 downto 0)  := P1_in(16 downto 0);
+    mulResult (64 downto 17) := P2_in(47 downto 0);
   end procedure;
 
 end package body FOC_types;

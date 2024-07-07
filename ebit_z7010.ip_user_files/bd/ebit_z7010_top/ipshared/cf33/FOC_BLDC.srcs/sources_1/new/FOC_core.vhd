@@ -35,9 +35,9 @@ entity FOC_core is
         position_calibration            : in  signed (14 downto 0);
         position_calibration_set_signal : in  std_logic;
         --PID
-        kp                              : in  sFIXED (intBits downto -fracBits);
-        ki                              : in  sFIXED (intBits downto -fracBits);
-        kd                              : in  sFIXED (intBits downto -fracBits);
+        kp                              : in  sFIXED (12 downto -22);
+        ki                              : in  sFIXED (12 downto -22);
+        kd                              : in  sFIXED (12 downto -22);
         max_p_pid                       : in  SFIXED(0 downto -17);
         min_p_pid                       : in  SFIXED(0 downto -17);
         max_i_pid                       : in  SFIXED(0 downto -17);
@@ -73,9 +73,9 @@ architecture behavioral of FOC_core is
             en          : in  std_logic;
             n_res       : in  std_logic;
             CLK         : in  std_logic;
-            kp          : in  sfixed (0 downto -17);
-            ki          : in  sfixed (0 downto -17);
-            kd          : in  sfixed (0 downto -17);
+            kp          : in  sfixed (12 downto -22);
+            ki          : in  sfixed (12 downto -22);
+            kd          : in  sfixed (12 downto -22);
             max_p_pid   : in  SFIXED(0 downto -17);
             min_p_pid   : in  SFIXED(0 downto -17);
             max_i_pid   : in  SFIXED(0 downto -17);

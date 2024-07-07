@@ -72,6 +72,9 @@ architecture Behavioral of FOC_top is
     signal DFT_PWMRegister                : type_PWM_register (2 downto 0);
     signal DFT_PID_currentSetpointMove    : sfixed (0 downto -17);
     signal DFT_vectorPosition             : sFIXED (0 downto -17);
+    signal vec_kp                         : std_logic_vector(34 downto 0)                   := (others => '0');
+    signal vec_ki                         : std_logic_vector(34 downto 0)                   := (others => '0');
+    signal vec_kd                         : std_logic_vector(34 downto 0)                   := (others => '0');
 
     component FOC_AXI4Lite_Slave is
         generic (
@@ -165,9 +168,9 @@ architecture Behavioral of FOC_top is
             position_calibration            : in  signed (14 downto 0);
             position_calibration_set_signal : in  std_logic;
             --PID
-            kp                              : in  sFIXED (intBits downto -fracBits);
-            ki                              : in  sFIXED (intBits downto -fracBits);
-            kd                              : in  sFIXED (intBits downto -fracBits);
+            kp                              : in  sFIXED (12 downto -22);
+            ki                              : in  sFIXED (12 downto -22);
+            kd                              : in  sFIXED (12 downto -22);
             max_p_pid                       : in  SFIXED(0 downto -17);
             min_p_pid                       : in  SFIXED(0 downto -17);
             max_i_pid                       : in  SFIXED(0 downto -17);
@@ -255,6 +258,13 @@ begin
             outputValues => outputValues
             );
 
+    vec_kp (34 downto 17) <= inputValues(2)(17 downto 0);
+    vec_kp (16 downto 0)  <= inputValues(1)(16 downto 0);
+    vec_ki (34 downto 17) <= inputValues(4)(17 downto 0);
+    vec_ki (16 downto 0)  <= inputValues(3)(16 downto 0);
+    vec_kd (34 downto 17) <= inputValues(6)(17 downto 0);
+    vec_kd (16 downto 0)  <= inputValues(5)(16 downto 0);
+
     FOC : FOC_core
         generic map (
             sampling_time       => 0.000000064,  --64ns
@@ -279,12 +289,12 @@ begin
             step                            => step,
             --positionController
             current_setpoint_move           => vecToSfixed(inputValues(0), -17),
-            position_calibration            => signed(inputValues(4)(14 downto 0)),
-            position_calibration_set_signal => inputValues(5)(0),
+            position_calibration            => signed(inputValues(7)(14 downto 0)),
+            position_calibration_set_signal => inputValues(8)(0),
             --PID
-            kp                              => vecToSfixed(inputValues(1), -17),
-            ki                              => vecToSfixed(inputValues(2), -17),
-            kd                              => vecToSfixed(inputValues(3), -17),
+            kp                              => vecToSfixed(vec_kp, -22),
+            ki                              => vecToSfixed(vec_ki, -22),
+            kd                              => vecToSfixed(vec_kd, -22),
             max_p_pid                       => to_sfixed(0.9999, 0, -17),
             min_p_pid                       => to_sfixed(-0.9999, 0, -17),
             max_i_pid                       => to_sfixed(0.9999, 0, -17),

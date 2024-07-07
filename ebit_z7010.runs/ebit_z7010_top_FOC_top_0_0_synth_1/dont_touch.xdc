@@ -7,11 +7,11 @@
 # IP: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/FOC_BLDC.srcs/BRAM_SIN/ip/BRAM_SIN/BRAM_SIN.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==BRAM_SIN || ORIG_REF_NAME==BRAM_SIN} -quiet] -quiet
 
-# IP: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/FOC_BLDC.srcs/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mpDSP_DSP_macro || ORIG_REF_NAME==mpDSP_DSP_macro} -quiet] -quiet
-
 # IP: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/FOC_BLDC.srcs/sources_1/ip/ILA_FOC_core/ILA_FOC_core.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ILA_FOC_core || ORIG_REF_NAME==ILA_FOC_core} -quiet] -quiet
+
+# IP: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/FOC_BLDC.srcs/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mpDSP_DSP_macro || ORIG_REF_NAME==mpDSP_DSP_macro} -quiet] -quiet
 
 # XDC: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/FOC_BLDC.srcs/BRAM_SIN/ip/BRAM_SIN/BRAM_SIN_ooc.xdc
 
@@ -30,11 +30,11 @@ set_property KEEP_HIERARCHY SOFT [get_cells U0 -quiet] -quiet
 # IP: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/FOC_BLDC.srcs/BRAM_SIN/ip/BRAM_SIN/BRAM_SIN.xci
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==BRAM_SIN || ORIG_REF_NAME==BRAM_SIN} -quiet] -quiet
 
-# IP: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/FOC_BLDC.srcs/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro.xci
-#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mpDSP_DSP_macro || ORIG_REF_NAME==mpDSP_DSP_macro} -quiet] -quiet
-
 # IP: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/FOC_BLDC.srcs/sources_1/ip/ILA_FOC_core/ILA_FOC_core.xci
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ILA_FOC_core || ORIG_REF_NAME==ILA_FOC_core} -quiet] -quiet
+
+# IP: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/FOC_BLDC.srcs/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro.xci
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mpDSP_DSP_macro || ORIG_REF_NAME==mpDSP_DSP_macro} -quiet] -quiet
 
 # XDC: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/FOC_BLDC.srcs/BRAM_SIN/ip/BRAM_SIN/BRAM_SIN_ooc.xdc
 

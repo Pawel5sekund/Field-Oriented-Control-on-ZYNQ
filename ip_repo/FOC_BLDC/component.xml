@@ -269,7 +269,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>404fb652</spirit:value>
+            <spirit:value>0c79af4a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -294,7 +294,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ff97bbae</spirit:value>
+            <spirit:value>20a49fad</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -845,11 +845,11 @@
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>FOC_BLDC.srcs/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro.xci</spirit:name>
+        <spirit:name>FOC_BLDC.srcs/sources_1/ip/ILA_FOC_core/ILA_FOC_core.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>FOC_BLDC.srcs/sources_1/ip/ILA_FOC_core/ILA_FOC_core.xci</spirit:name>
+        <spirit:name>FOC_BLDC.srcs/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
@@ -914,7 +914,7 @@
       <spirit:file>
         <spirit:name>FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
-        <spirit:userFileType>CHECKSUM_3a493835</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_633cedc0</spirit:userFileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
@@ -959,11 +959,11 @@
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>FOC_BLDC.srcs/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro.xci</spirit:name>
+        <spirit:name>FOC_BLDC.srcs/sources_1/ip/ILA_FOC_core/ILA_FOC_core.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>FOC_BLDC.srcs/sources_1/ip/ILA_FOC_core/ILA_FOC_core.xci</spirit:name>
+        <spirit:name>FOC_BLDC.srcs/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
@@ -1107,14 +1107,14 @@
         <xilinx:xpmLibrary>XPM_CDC</xilinx:xpmLibrary>
         <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>14</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-07-01T20:32:59Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>15</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2024-07-06T19:17:55Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2022.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="9fe658d8"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="0879c9e7"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="9c880f5d"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="ea89347e"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="3caf565b"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="138c4234"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="7142978d"/>

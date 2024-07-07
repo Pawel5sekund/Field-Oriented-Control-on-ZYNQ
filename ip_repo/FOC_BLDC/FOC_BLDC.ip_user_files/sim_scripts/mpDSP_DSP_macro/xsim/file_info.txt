@@ -1,1 +1,2 @@
 mpDSP_DSP_macro.vhd,vhdl,xil_defaultlib,../../../../FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/sim/mpDSP_DSP_macro.vhd,
+glbl.v,Verilog,xil_defaultlib,glbl.v

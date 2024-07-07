@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -id {Board 49-26}  -suppress 
 set_msg_config  -id {IP_Flow 19-3656}  -string {{WARNING: [IP_Flow 19-3656] If you move the project, the path for repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1'.)}}  -suppress 
 set_msg_config  -id {IP_Flow 19-3656}  -suppress 
@@ -122,14 +123,14 @@ read_vhdl -vhdl2008 -library xil_defaultlib {
 read_ip -quiet /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/BRAM_SIN/ip/BRAM_SIN/BRAM_SIN.xci
 set_property used_in_implementation false [get_files -all /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/BRAM_SIN/ip/BRAM_SIN/BRAM_SIN_ooc.xdc]
 
-read_ip -quiet /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro.xci
-set_property used_in_implementation false [get_files -all /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro_ooc.xdc]
-
 read_ip -quiet /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/ip/ILA_FOC_core/ILA_FOC_core.xci
 set_property used_in_synthesis false [get_files -all /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/ILA_FOC_core/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/ILA_FOC_core/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/ILA_FOC_core/ila_v6_2/constraints/ila.xdc]
 set_property used_in_implementation false [get_files -all /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/ILA_FOC_core/ILA_FOC_core_ooc.xdc]
+
+read_ip -quiet /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro.xci
+set_property used_in_implementation false [get_files -all /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

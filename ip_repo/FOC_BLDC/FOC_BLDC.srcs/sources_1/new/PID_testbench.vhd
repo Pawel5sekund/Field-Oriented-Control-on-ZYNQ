@@ -51,9 +51,9 @@ architecture Behavioral of PID_testbench is
         en       : in  std_logic;
         n_res    : in  std_logic;
         CLK      : in  std_logic;
-        kp       : in  sfixed (0 downto -17);
-        ki       : in  sfixed (0 downto -17);
-        kd       : in  sfixed (0 downto -17);
+        kp       : in  sfixed (12 downto -22);
+        ki       : in  sfixed (12 downto -22);
+        kd       : in  sfixed (12 downto -22);
         max_p_pid   : in SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
         min_p_pid   : in SFIXED(0 downto -17) := to_sfixed(-0.9999, 0, -17);
         max_i_pid   : in SFIXED(0 downto -17) := to_sfixed(0.9999, 0, -17);
@@ -73,9 +73,9 @@ architecture Behavioral of PID_testbench is
     signal en         : std_logic := '1';
     signal n_res      : std_logic := '0';
     signal CLK        : std_logic;
-    signal kp         : sfixed (intBits downto -fracBits);
-    signal ki         : sfixed (intBits downto -fracBits);
-    signal kd         : sfixed (intBits downto -fracBits);
+    signal kp         : sfixed (12 downto -22);
+    signal ki         : sfixed (12 downto -22);
+    signal kd         : sfixed (12 downto -22);
     signal setpoint   : sfixed (0 downto -17);
     signal reading    : sfixed (0 downto -17);
     signal pid_out    : sfixed (0 downto -17) := (others => '0');
@@ -123,9 +123,9 @@ begin
     begin
         wait until RISING_EDGE(CLK);
         kp <= to_sfixed(0.0, kp'left, kp'right);
-        ki <= to_sfixed(0.0, ki'left, ki'right);
-        kd <= to_sfixed(0.1, kd'left, kd'right);
-        setpoint <= to_sfixed(0.1, setpoint'left, setpoint'right);
+        ki <= to_sfixed(2000.0, ki'left, ki'right);
+        kd <= to_sfixed(0.0, kd'left, kd'right);
+        setpoint <= to_sfixed(0.05, setpoint'left, setpoint'right);
         reading <= to_sfixed(0.0, reading'left, reading'right);
     end process;
 
