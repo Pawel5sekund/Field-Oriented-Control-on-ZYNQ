@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date         : Sat Jul  6 21:15:46 2024
+| Date         : Thu Jul 18 15:05:35 2024
 | Host         : LAPTOP-PAWEL running 64-bit Ubuntu 18.04.2 LTS
 | Command      : report_utilization -file FOC_top_utilization_synth.rpt -pb FOC_top_utilization_synth.pb
 | Design       : FOC_top
@@ -31,11 +31,11 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             | 1293 |     0 |          0 |     17600 |  7.35 |
-|   LUT as Logic          | 1293 |     0 |          0 |     17600 |  7.35 |
+| Slice LUTs*             | 2451 |     0 |          0 |     17600 | 13.93 |
+|   LUT as Logic          | 2451 |     0 |          0 |     17600 | 13.93 |
 |   LUT as Memory         |    0 |     0 |          0 |      6000 |  0.00 |
-| Slice Registers         | 2055 |     0 |          0 |     35200 |  5.84 |
-|   Register as Flip Flop | 2055 |     0 |          0 |     35200 |  5.84 |
+| Slice Registers         | 4113 |     0 |          0 |     35200 | 11.68 |
+|   Register as Flip Flop | 4113 |     0 |          0 |     35200 | 11.68 |
 |   Register as Latch     |    0 |     0 |          0 |     35200 |  0.00 |
 | F7 Muxes                |    0 |     0 |          0 |      8800 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |      4400 |  0.00 |
@@ -57,8 +57,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 117   |          Yes |         Set |            - |
-| 1938  |          Yes |       Reset |            - |
+| 185   |          Yes |         Set |            - |
+| 3928  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -147,15 +147,15 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 1938 |        Flop & Latch |
-| LUT6     |  455 |                 LUT |
-| LUT2     |  306 |                 LUT |
-| LUT4     |  282 |                 LUT |
-| LUT3     |  229 |                 LUT |
-| LUT5     |  172 |                 LUT |
-| LUT1     |  142 |                 LUT |
-| CARRY4   |  128 |          CarryLogic |
-| FDSE     |  117 |        Flop & Latch |
+| FDRE     | 3928 |        Flop & Latch |
+| LUT6     | 1112 |                 LUT |
+| LUT4     |  505 |                 LUT |
+| LUT3     |  403 |                 LUT |
+| LUT2     |  382 |                 LUT |
+| LUT5     |  295 |                 LUT |
+| LUT1     |  194 |                 LUT |
+| CARRY4   |  186 |          CarryLogic |
+| FDSE     |  185 |        Flop & Latch |
 | IBUF     |   75 |                  IO |
 | OBUF     |   47 |                  IO |
 | BUFG     |    2 |               Clock |
@@ -168,7 +168,7 @@ Table of Contents
 +-----------------+------+
 |     Ref Name    | Used |
 +-----------------+------+
-| mpDSP_DSP_macro |    2 |
+| mpDSP_DSP_macro |    4 |
 | ILA_FOC_core    |    1 |
 | BRAM_SIN        |    1 |
 +-----------------+------+

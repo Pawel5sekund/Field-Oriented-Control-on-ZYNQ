@@ -2,13 +2,13 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Sat Jul  6 21:14:34 2024
-# Process ID: 28417
+# Start of session at: Thu Jul 18 15:04:18 2024
+# Process ID: 11414
 # Current directory: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1
 # Command line: vivado -log FOC_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FOC_top.tcl
 # Log file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/FOC_top.vds
 # Journal file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/vivado.jou
-# Running On: LAPTOP-PAWEL, OS: Linux, CPU Frequency: 3193.930 MHz, CPU Physical cores: 16, Host memory: 8015 MB
+# Running On: LAPTOP-PAWEL, OS: Linux, CPU Frequency: 3193.919 MHz, CPU Physical cores: 16, Host memory: 8015 MB
 #-----------------------------------------------------------
 source FOC_top.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -46,7 +46,7 @@ WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:user:acelit
 WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:interface:sem_emio:1.0'. The one found in location '/home/pawel/Xilinx/petalinux/tools/xsct/data/versal/psxl/hiw/local_ip/psxl_v1_0/interfaces/sem_emio_v1_0/sem_emio.xml' will take precedence over the same Interface in location '/tools/Xilinx/Vivado/2022.1/data/ip/xilinx/pspmc_v1_2/interfaces/sem_emio_v1_0/sem_emio.xml'
 WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:interface:adma:1.0'. The one found in location '/home/pawel/Xilinx/petalinux/tools/xsct/data/versal/psxl/hiw/local_ip/psxl_v1_0/interfaces/adma.xml' will take precedence over the same Interface in location '/tools/Xilinx/Vivado/2022.1/data/ip/xilinx/pspmc_v1_2/interfaces/adma.xml'
 WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:user:smmu:1.0'. The one found in location '/home/pawel/Xilinx/petalinux/tools/xsct/data/versal/psxl/hiw/local_ip/psxl_v1_0/interfaces/smmu.xml' will take precedence over the same Interface in location '/tools/Xilinx/Vivado/2022.1/data/ip/xilinx/pspmc_v1_2/interfaces/smmu.xml'
-update_ip_catalog: Time (s): cpu = 00:00:03 ; elapsed = 00:00:20 . Memory (MB): peak = 2723.773 ; gain = 0.000 ; free physical = 1475 ; free virtual = 18038
+update_ip_catalog: Time (s): cpu = 00:00:03 ; elapsed = 00:00:19 . Memory (MB): peak = 2723.773 ; gain = 0.000 ; free physical = 2362 ; free virtual = 20624
 Command: synth_design -top FOC_top -part xc7z010clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
@@ -54,14 +54,14 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 28702
+INFO: [Synth 8-7075] Helper process launched with PID 11569
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2723.777 ; gain = 0.000 ; free physical = 341 ; free virtual = 16637
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2723.777 ; gain = 0.000 ; free physical = 415 ; free virtual = 18716
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'FOC_top' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd:55]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-3491] module 'FOC_AXI4Lite_Slave' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_AXI4Lite_Slave.vhd:7' bound to instance 'main_AXI4' of component 'FOC_AXI4Lite_Slave' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd:199]
+INFO: [Synth 8-3491] module 'FOC_AXI4Lite_Slave' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_AXI4Lite_Slave.vhd:7' bound to instance 'main_AXI4' of component 'FOC_AXI4Lite_Slave' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd:211]
 INFO: [Synth 8-638] synthesizing module 'FOC_AXI4Lite_Slave' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_AXI4Lite_Slave.vhd:91]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
@@ -69,19 +69,19 @@ INFO: [Synth 8-226] default block is never used [/mnt/d/Xilinx/Projects/Vivado/F
 INFO: [Synth 8-226] default block is never used [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_AXI4Lite_Slave.vhd:365]
 INFO: [Synth 8-256] done synthesizing module 'FOC_AXI4Lite_Slave' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_AXI4Lite_Slave.vhd:91]
 	Parameter addr bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'FOC_regXADC' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_regXADC.vhd:36' bound to instance 'main_regXADC' of component 'FOC_regXADC' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd:232]
+INFO: [Synth 8-3491] module 'FOC_regXADC' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_regXADC.vhd:36' bound to instance 'main_regXADC' of component 'FOC_regXADC' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd:244]
 INFO: [Synth 8-638] synthesizing module 'FOC_regXADC' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_regXADC.vhd:48]
 	Parameter addr bound to: 0 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'FOC_regXADC' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_regXADC.vhd:48]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
-	Parameter valuesInputAmount bound to: 10 - type: integer 
+	Parameter valuesInputAmount bound to: 32 - type: integer 
 	Parameter valuesOutputAmount bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'FOC_AXI4RegistersHandler' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_AXI4RegistersHandler.vhd:10' bound to instance 'main_AXI4RegistersHandler' of component 'FOC_AXI4RegistersHandler' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd:243]
+INFO: [Synth 8-3491] module 'FOC_AXI4RegistersHandler' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_AXI4RegistersHandler.vhd:10' bound to instance 'main_AXI4RegistersHandler' of component 'FOC_AXI4RegistersHandler' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd:255]
 INFO: [Synth 8-638] synthesizing module 'FOC_AXI4RegistersHandler' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_AXI4RegistersHandler.vhd:29]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
-	Parameter valuesInputAmount bound to: 10 - type: integer 
+	Parameter valuesInputAmount bound to: 32 - type: integer 
 	Parameter valuesOutputAmount bound to: 10 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'FOC_AXI4RegistersHandler' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_AXI4RegistersHandler.vhd:29]
 	Parameter sampling_time bound to: 0.000000 - type: double 
@@ -91,8 +91,8 @@ INFO: [Synth 8-256] done synthesizing module 'FOC_AXI4RegistersHandler' (0#1) [/
 	Parameter full_rotate_pulses bound to: 4095 - type: integer 
 	Parameter fracBits bound to: 17 - type: integer 
 	Parameter intBits bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'FOC_core' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:11' bound to instance 'FOC' of component 'FOC_core' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd:268]
-INFO: [Synth 8-638] synthesizing module 'FOC_core' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:64]
+INFO: [Synth 8-3491] module 'FOC_core' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:11' bound to instance 'FOC' of component 'FOC_core' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd:294]
+INFO: [Synth 8-638] synthesizing module 'FOC_core' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:70]
 	Parameter sampling_time bound to: 0.000000 - type: double 
 	Parameter step_scale bound to: 16 - type: integer 
 	Parameter position_histeresis bound to: 8 - type: integer 
@@ -100,11 +100,11 @@ INFO: [Synth 8-638] synthesizing module 'FOC_core' [/mnt/d/Xilinx/Projects/Vivad
 	Parameter full_rotate_pulses bound to: 4095 - type: integer 
 	Parameter fracBits bound to: 17 - type: integer 
 	Parameter intBits bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'ILA_FOC_core' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-28417-LAPTOP-PAWEL/realtime/ILA_FOC_core_stub.vhdl:5' bound to instance 'ILA_main' of component 'ILA_FOC_core' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:227]
-INFO: [Synth 8-638] synthesizing module 'ILA_FOC_core' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-28417-LAPTOP-PAWEL/realtime/ILA_FOC_core_stub.vhdl:28]
+INFO: [Synth 8-3491] module 'ILA_FOC_core' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-11414-LAPTOP-PAWEL/realtime/ILA_FOC_core_stub.vhdl:5' bound to instance 'ILA_main' of component 'ILA_FOC_core' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:233]
+INFO: [Synth 8-638] synthesizing module 'ILA_FOC_core' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-11414-LAPTOP-PAWEL/realtime/ILA_FOC_core_stub.vhdl:28]
 	Parameter capacity bound to: 10 - type: integer 
 	Parameter histeresis bound to: 4 - type: integer 
-INFO: [Synth 8-3491] module 'FOC_capacitiveFilter' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_capacitiveFilter.vhd:4' bound to instance 'filteringSTEPSignal' of component 'FOC_capacitiveFilter' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:253]
+INFO: [Synth 8-3491] module 'FOC_capacitiveFilter' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_capacitiveFilter.vhd:4' bound to instance 'filteringSTEPSignal' of component 'FOC_capacitiveFilter' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:259]
 INFO: [Synth 8-638] synthesizing module 'FOC_capacitiveFilter' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_capacitiveFilter.vhd:16]
 	Parameter capacity bound to: 10 - type: integer 
 	Parameter histeresis bound to: 4 - type: integer 
@@ -112,23 +112,23 @@ INFO: [Synth 8-226] default block is never used [/mnt/d/Xilinx/Projects/Vivado/F
 INFO: [Synth 8-256] done synthesizing module 'FOC_capacitiveFilter' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_capacitiveFilter.vhd:16]
 	Parameter capacity bound to: 10 - type: integer 
 	Parameter histeresis bound to: 4 - type: integer 
-INFO: [Synth 8-3491] module 'FOC_capacitiveFilter' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_capacitiveFilter.vhd:4' bound to instance 'filteringDIRSignal' of component 'FOC_capacitiveFilter' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:264]
+INFO: [Synth 8-3491] module 'FOC_capacitiveFilter' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_capacitiveFilter.vhd:4' bound to instance 'filteringDIRSignal' of component 'FOC_capacitiveFilter' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:270]
 	Parameter capacity bound to: 10 - type: integer 
 	Parameter histeresis bound to: 4 - type: integer 
-INFO: [Synth 8-3491] module 'FOC_capacitiveFilter' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_capacitiveFilter.vhd:4' bound to instance 'filteringEncoder0Signal' of component 'FOC_capacitiveFilter' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:275]
+INFO: [Synth 8-3491] module 'FOC_capacitiveFilter' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_capacitiveFilter.vhd:4' bound to instance 'filteringEncoder0Signal' of component 'FOC_capacitiveFilter' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:281]
 	Parameter capacity bound to: 10 - type: integer 
 	Parameter histeresis bound to: 4 - type: integer 
-INFO: [Synth 8-3491] module 'FOC_capacitiveFilter' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_capacitiveFilter.vhd:4' bound to instance 'filteringEncoder1PSignal' of component 'FOC_capacitiveFilter' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:286]
+INFO: [Synth 8-3491] module 'FOC_capacitiveFilter' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_capacitiveFilter.vhd:4' bound to instance 'filteringEncoder1PSignal' of component 'FOC_capacitiveFilter' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:292]
 	Parameter step_scale bound to: 16 - type: integer 
 	Parameter full_rotate_pulses bound to: 4095 - type: integer 
-INFO: [Synth 8-3491] module 'FOC_position_checker' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_position_checker.vhd:6' bound to instance 'position_checker' of component 'foc_position_checker' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:302]
+INFO: [Synth 8-3491] module 'FOC_position_checker' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_position_checker.vhd:6' bound to instance 'position_checker' of component 'foc_position_checker' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:308]
 INFO: [Synth 8-638] synthesizing module 'FOC_position_checker' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_position_checker.vhd:24]
 	Parameter STEP_scale bound to: 16 - type: integer 
 	Parameter full_rotate_pulses bound to: 4095 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'FOC_position_checker' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_position_checker.vhd:24]
 	Parameter amountScalingParameters bound to: 1 - type: integer 
 	Parameter positionScaler bound to: 18'b000000000010000000 
-INFO: [Synth 8-3491] module 'FOC_torqueVectorGenerator' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_torqueVectorGenerator.vhd:9' bound to instance 'torqueVectorGenerator' of component 'FOC_torqueVectorGenerator' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:325]
+INFO: [Synth 8-3491] module 'FOC_torqueVectorGenerator' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_torqueVectorGenerator.vhd:9' bound to instance 'torqueVectorGenerator' of component 'FOC_torqueVectorGenerator' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:331]
 INFO: [Synth 8-638] synthesizing module 'FOC_torqueVectorGenerator' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_torqueVectorGenerator.vhd:23]
 	Parameter amountScalingParameters bound to: 1 - type: integer 
 	Parameter positionScaler bound to: 18'b000000000010000000 
@@ -138,17 +138,13 @@ INFO: [Synth 8-3491] module 'mpDSP' declared at '/mnt/d/Xilinx/Projects/Vivado/F
 INFO: [Synth 8-638] synthesizing module 'mpDSP' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd:24]
 	Parameter amount bound to: 6 - type: integer 
 	Parameter waitCycles bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'mpDSP_DSP_macro' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-28417-LAPTOP-PAWEL/realtime/mpDSP_DSP_macro_stub.vhdl:5' bound to instance 'DSP' of component 'mpDSP_DSP_macro' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd:54]
-INFO: [Synth 8-638] synthesizing module 'mpDSP_DSP_macro' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-28417-LAPTOP-PAWEL/realtime/mpDSP_DSP_macro_stub.vhdl:20]
+INFO: [Synth 8-3491] module 'mpDSP_DSP_macro' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-11414-LAPTOP-PAWEL/realtime/mpDSP_DSP_macro_stub.vhdl:5' bound to instance 'DSP' of component 'mpDSP_DSP_macro' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd:54]
+INFO: [Synth 8-638] synthesizing module 'mpDSP_DSP_macro' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-11414-LAPTOP-PAWEL/realtime/mpDSP_DSP_macro_stub.vhdl:20]
 INFO: [Synth 8-256] done synthesizing module 'mpDSP' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd:24]
-INFO: [Synth 8-3491] module 'BRAM_SIN' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-28417-LAPTOP-PAWEL/realtime/BRAM_SIN_stub.vhdl:5' bound to instance 'sin_data' of component 'BRAM_SIN' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_torqueVectorGenerator.vhd:83]
-INFO: [Synth 8-638] synthesizing module 'BRAM_SIN' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-28417-LAPTOP-PAWEL/realtime/BRAM_SIN_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'BRAM_SIN' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-11414-LAPTOP-PAWEL/realtime/BRAM_SIN_stub.vhdl:5' bound to instance 'sin_data' of component 'BRAM_SIN' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_torqueVectorGenerator.vhd:83]
+INFO: [Synth 8-638] synthesizing module 'BRAM_SIN' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-11414-LAPTOP-PAWEL/realtime/BRAM_SIN_stub.vhdl:14]
 INFO: [Synth 8-256] done synthesizing module 'FOC_torqueVectorGenerator' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_torqueVectorGenerator.vhd:23]
-INFO: [Synth 8-3491] module 'FOC_3levelSwitching' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_3levelSwitching.vhd:9' bound to instance 'torqueVectorGenerator_3levelSwitching' of component 'FOC_3levelSwitching' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:338]
-INFO: [Synth 8-638] synthesizing module 'FOC_3levelSwitching' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_3levelSwitching.vhd:23]
-INFO: [Synth 8-226] default block is never used [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_3levelSwitching.vhd:31]
-INFO: [Synth 8-256] done synthesizing module 'FOC_3levelSwitching' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_3levelSwitching.vhd:23]
-INFO: [Synth 8-3491] module 'PID' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:8' bound to instance 'PID_current' of component 'PID' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:356]
+INFO: [Synth 8-3491] module 'PID' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:8' bound to instance 'PID_position' of component 'PID' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:357]
 INFO: [Synth 8-638] synthesizing module 'PID' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:35]
 	Parameter fracBits bound to: 17 - type: integer 
 	Parameter intBits bound to: 0 - type: integer 
@@ -158,31 +154,35 @@ INFO: [Synth 8-3491] module 'mpDSP' declared at '/mnt/d/Xilinx/Projects/Vivado/F
 INFO: [Synth 8-638] synthesizing module 'mpDSP__parameterized1' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd:24]
 	Parameter amount bound to: 10 - type: integer 
 	Parameter waitCycles bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'mpDSP_DSP_macro' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-28417-LAPTOP-PAWEL/realtime/mpDSP_DSP_macro_stub.vhdl:5' bound to instance 'DSP' of component 'mpDSP_DSP_macro' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd:54]
+INFO: [Synth 8-3491] module 'mpDSP_DSP_macro' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-11414-LAPTOP-PAWEL/realtime/mpDSP_DSP_macro_stub.vhdl:5' bound to instance 'DSP' of component 'mpDSP_DSP_macro' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd:54]
 INFO: [Synth 8-256] done synthesizing module 'mpDSP__parameterized1' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd:24]
 INFO: [Synth 8-226] default block is never used [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_types.vhd:125]
 INFO: [Synth 8-226] default block is never used [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:146]
 INFO: [Synth 8-226] default block is never used [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_types.vhd:152]
 INFO: [Synth 8-256] done synthesizing module 'PID' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:35]
-INFO: [Synth 8-3491] module 'FOC_3levelSwitching' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_3levelSwitching.vhd:9' bound to instance 'PID_3levelSwitching' of component 'FOC_3levelSwitching' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:384]
+INFO: [Synth 8-3491] module 'PID' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:8' bound to instance 'PID_currentSetpoint' of component 'PID' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:386]
+INFO: [Synth 8-3491] module 'PID' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:8' bound to instance 'PID_current' of component 'PID' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:410]
 	Parameter PWMPeriod bound to: 4095 - type: integer 
-INFO: [Synth 8-3491] module 'PWM' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_PWM.vhd:9' bound to instance 'PWM_FOC' of component 'PWM' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:403]
+INFO: [Synth 8-3491] module 'PWM' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_PWM.vhd:9' bound to instance 'PWM_FOC' of component 'PWM' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:457]
 INFO: [Synth 8-638] synthesizing module 'PWM' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_PWM.vhd:23]
 	Parameter PWMPeriod bound to: 4095 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'PWM' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_PWM.vhd:23]
-INFO: [Synth 8-3491] module 'FOC_3levelSwitching' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_3levelSwitching.vhd:9' bound to instance 'PWM_FOC_3levelSwitching' of component 'FOC_3levelSwitching' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:418]
+INFO: [Synth 8-3491] module 'FOC_3levelSwitching' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_3levelSwitching.vhd:9' bound to instance 'PWM_FOC_3levelSwitching' of component 'FOC_3levelSwitching' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:472]
+INFO: [Synth 8-638] synthesizing module 'FOC_3levelSwitching' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_3levelSwitching.vhd:23]
+INFO: [Synth 8-226] default block is never used [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_3levelSwitching.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'FOC_3levelSwitching' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_3levelSwitching.vhd:23]
 	Parameter deadTime bound to: 50 - type: integer 
-INFO: [Synth 8-3491] module 'FOC_deadTimeMOSFETsHandler' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_deadTimeMOSFETsHandler.vhd:4' bound to instance 'CH_U' of component 'FOC_deadTimeMOSFETsHandler' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:435]
+INFO: [Synth 8-3491] module 'FOC_deadTimeMOSFETsHandler' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_deadTimeMOSFETsHandler.vhd:4' bound to instance 'CH_U' of component 'FOC_deadTimeMOSFETsHandler' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:489]
 INFO: [Synth 8-638] synthesizing module 'FOC_deadTimeMOSFETsHandler' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_deadTimeMOSFETsHandler.vhd:17]
 	Parameter deadTime bound to: 50 - type: integer 
 INFO: [Synth 8-226] default block is never used [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_deadTimeMOSFETsHandler.vhd:25]
 INFO: [Synth 8-226] default block is never used [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_deadTimeMOSFETsHandler.vhd:35]
 INFO: [Synth 8-256] done synthesizing module 'FOC_deadTimeMOSFETsHandler' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_deadTimeMOSFETsHandler.vhd:17]
 	Parameter deadTime bound to: 50 - type: integer 
-INFO: [Synth 8-3491] module 'FOC_deadTimeMOSFETsHandler' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_deadTimeMOSFETsHandler.vhd:4' bound to instance 'CH_W' of component 'FOC_deadTimeMOSFETsHandler' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:447]
+INFO: [Synth 8-3491] module 'FOC_deadTimeMOSFETsHandler' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_deadTimeMOSFETsHandler.vhd:4' bound to instance 'CH_W' of component 'FOC_deadTimeMOSFETsHandler' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:501]
 	Parameter deadTime bound to: 50 - type: integer 
-INFO: [Synth 8-3491] module 'FOC_deadTimeMOSFETsHandler' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_deadTimeMOSFETsHandler.vhd:4' bound to instance 'CH_V' of component 'FOC_deadTimeMOSFETsHandler' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:459]
-INFO: [Synth 8-256] done synthesizing module 'FOC_core' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:64]
+INFO: [Synth 8-3491] module 'FOC_deadTimeMOSFETsHandler' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_deadTimeMOSFETsHandler.vhd:4' bound to instance 'CH_V' of component 'FOC_deadTimeMOSFETsHandler' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:513]
+INFO: [Synth 8-256] done synthesizing module 'FOC_core' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:70]
 INFO: [Synth 8-256] done synthesizing module 'FOC_top' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd:55]
 WARNING: [Synth 8-3848] Net ext_slv_reg3 in module/entity FOC_AXI4RegistersHandler does not have driver. [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_AXI4RegistersHandler.vhd:23]
 WARNING: [Synth 8-6014] Unused sequential element OUTPUT_reg was removed.  [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_capacitiveFilter.vhd:43]
@@ -190,21 +190,21 @@ WARNING: [Synth 8-6014] Unused sequential element B_reg_reg[3] was removed.  [/m
 WARNING: [Synth 8-6014] Unused sequential element B_reg_reg[2] was removed.  [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_torqueVectorGenerator.vhd:76]
 WARNING: [Synth 8-6014] Unused sequential element D_reg_reg[3] was removed.  [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_torqueVectorGenerator.vhd:77]
 WARNING: [Synth 8-6014] Unused sequential element D_reg_reg[2] was removed.  [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_torqueVectorGenerator.vhd:77]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'torqueVectorGenerator'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:325]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'FOC'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd:268]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PWM_FOC'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:403]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PID_3levelSwitching'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:384]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PID_current'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:356]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'torqueVectorGenerator_3levelSwitching'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:338]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PWM_FOC_3levelSwitching'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:418]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'filteringSTEPSignal'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:253]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'position_checker'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:302]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'filteringDIRSignal'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:264]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'CH_U'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:435]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'CH_V'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:459]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'CH_W'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:447]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'filteringEncoder1PSignal'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:286]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'filteringEncoder0Signal'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:275]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'torqueVectorGenerator'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:331]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'FOC'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd:294]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PWM_FOC'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:457]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PID_current'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:410]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PWM_FOC_3levelSwitching'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:472]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PID_currentSetpoint'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:386]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PID_position'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:357]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'filteringSTEPSignal'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:259]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'position_checker'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:308]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'filteringDIRSignal'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:270]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'CH_U'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:489]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'CH_V'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:513]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'CH_W'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:501]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'filteringEncoder1PSignal'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:292]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'filteringEncoder0Signal'. This will prevent further optimization [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd:281]
 WARNING: [Synth 8-7129] Port max_p_pid[0] in module PID is either unconnected or has no load
 WARNING: [Synth 8-7129] Port max_p_pid[-1] in module PID is either unconnected or has no load
 WARNING: [Synth 8-7129] Port max_p_pid[-2] in module PID is either unconnected or has no load
@@ -307,18 +307,18 @@ WARNING: [Synth 8-7129] Port min_d_pid[-8] in module PID is either unconnected o
 WARNING: [Synth 8-7129] Port min_d_pid[-9] in module PID is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2723.777 ; gain = 0.000 ; free physical = 1272 ; free virtual = 17649
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2723.777 ; gain = 0.000 ; free physical = 1379 ; free virtual = 19690
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2723.777 ; gain = 0.000 ; free physical = 1273 ; free virtual = 17651
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2723.777 ; gain = 0.000 ; free physical = 1378 ; free virtual = 19690
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2723.777 ; gain = 0.000 ; free physical = 1273 ; free virtual = 17651
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2723.777 ; gain = 0.000 ; free physical = 1378 ; free virtual = 19690
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2723.777 ; gain = 0.000 ; free physical = 1262 ; free virtual = 17641
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2723.777 ; gain = 0.000 ; free physical = 1369 ; free virtual = 19681
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -329,27 +329,31 @@ Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/i
 Finished Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/ILA_FOC_core/ILA_FOC_core/ILA_FOC_core_in_context.xdc] for cell 'FOC/ILA_main'
 Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro/mpDSP_DSP_macro_in_context.xdc] for cell 'FOC/torqueVectorGenerator/calcProcessing/DSP'
 Finished Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro/mpDSP_DSP_macro_in_context.xdc] for cell 'FOC/torqueVectorGenerator/calcProcessing/DSP'
+Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro/mpDSP_DSP_macro_in_context.xdc] for cell 'FOC/PID_position/DSP_instance/DSP'
+Finished Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro/mpDSP_DSP_macro_in_context.xdc] for cell 'FOC/PID_position/DSP_instance/DSP'
+Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro/mpDSP_DSP_macro_in_context.xdc] for cell 'FOC/PID_currentSetpoint/DSP_instance/DSP'
+Finished Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro/mpDSP_DSP_macro_in_context.xdc] for cell 'FOC/PID_currentSetpoint/DSP_instance/DSP'
 Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro/mpDSP_DSP_macro_in_context.xdc] for cell 'FOC/PID_current/DSP_instance/DSP'
 Finished Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro/mpDSP_DSP_macro_in_context.xdc] for cell 'FOC/PID_current/DSP_instance/DSP'
 Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/constrs_1/new/firstconstraints.xdc]
 Finished Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/constrs_1/new/firstconstraints.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2787.805 ; gain = 0.000 ; free physical = 1068 ; free virtual = 17463
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2787.805 ; gain = 0.000 ; free physical = 1189 ; free virtual = 19514
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2787.805 ; gain = 0.000 ; free physical = 1067 ; free virtual = 17462
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2787.805 ; gain = 0.000 ; free physical = 1190 ; free virtual = 19515
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'FOC/torqueVectorGenerator/sin_data' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1209 ; free virtual = 17605
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1340 ; free virtual = 19665
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1209 ; free virtual = 17605
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1340 ; free virtual = 19665
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -357,13 +361,17 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property KEEP_HIERARCHY = SOFT for FOC/torqueVectorGenerator/sin_data. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for FOC/ILA_main. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for FOC/torqueVectorGenerator/calcProcessing/DSP. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for FOC/PID_position/DSP_instance/DSP. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for FOC/PID_currentSetpoint/DSP_instance/DSP. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for FOC/PID_current/DSP_instance/DSP. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1208 ; free virtual = 17604
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1340 ; free virtual = 19666
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'operationSelector_reg' in module 'mpDSP'
 INFO: [Synth 8-802] inferred FSM for state register 'phaseSelectionHandler.poleIndex_reg' in module 'FOC_torqueVectorGenerator'
 INFO: [Synth 8-802] inferred FSM for state register 'phaseSelectionHandler.operationIndex_reg' in module 'FOC_torqueVectorGenerator'
+INFO: [Synth 8-802] inferred FSM for state register 'operationSelector_reg' in module 'mpDSP__parameterized1__xdcDup__1'
+INFO: [Synth 8-802] inferred FSM for state register 'operationSelector_reg' in module 'mpDSP__parameterized1__xdcDup__2'
 INFO: [Synth 8-802] inferred FSM for state register 'operationSelector_reg' in module 'mpDSP__parameterized1'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -396,72 +404,88 @@ INFO: [Synth 8-3354] encoded FSM with state register 'phaseSelectionHandler.oper
                  iSTATE0 |                              010 |                               01
                  iSTATE1 |                              100 |                               10
 ---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'operationSelector_reg' using encoding 'one-hot' in module 'mpDSP__parameterized1__xdcDup__1'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                               00
+                 iSTATE0 |                              010 |                               01
+                 iSTATE1 |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'operationSelector_reg' using encoding 'one-hot' in module 'mpDSP__parameterized1__xdcDup__2'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                               00
+                 iSTATE0 |                              010 |                               01
+                 iSTATE1 |                              100 |                               10
+---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'operationSelector_reg' using encoding 'one-hot' in module 'mpDSP__parameterized1'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1200 ; free virtual = 17598
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1325 ; free virtual = 19654
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   49 Bit       Adders := 1     
+	   2 Input   49 Bit       Adders := 3     
 	   3 Input   19 Bit       Adders := 4     
-	   2 Input   19 Bit       Adders := 2     
+	   2 Input   19 Bit       Adders := 6     
 	   2 Input   18 Bit       Adders := 4     
 	   2 Input   15 Bit       Adders := 4     
 	   2 Input   13 Bit       Adders := 4     
 	   2 Input   12 Bit       Adders := 1     
-	   2 Input    7 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 3     
 	   2 Input    6 Bit       Adders := 12    
-	   2 Input    4 Bit       Adders := 20    
+	   2 Input    4 Bit       Adders := 32    
 	   2 Input    3 Bit       Adders := 2     
 +---XORs : 
 	   2 Input      2 Bit         XORs := 1     
-	   2 Input      1 Bit         XORs := 3     
+	   2 Input      1 Bit         XORs := 5     
 +---Registers : 
-	               48 Bit    Registers := 26    
+	               48 Bit    Registers := 62    
 	               32 Bit    Registers := 5     
-	               18 Bit    Registers := 57    
+	               18 Bit    Registers := 119   
 	               16 Bit    Registers := 1     
 	               15 Bit    Registers := 2     
 	               13 Bit    Registers := 5     
 	               12 Bit    Registers := 2     
 	               11 Bit    Registers := 1     
-	                7 Bit    Registers := 1     
+	                7 Bit    Registers := 3     
 	                6 Bit    Registers := 6     
-	                4 Bit    Registers := 12    
+	                4 Bit    Registers := 20    
 	                3 Bit    Registers := 3     
 	                2 Bit    Registers := 6     
-	                1 Bit    Registers := 32    
+	                1 Bit    Registers := 40    
 +---Muxes : 
-	   3 Input   48 Bit        Muxes := 5     
-	   2 Input   48 Bit        Muxes := 1     
+	   3 Input   48 Bit        Muxes := 11    
+	   2 Input   48 Bit        Muxes := 3     
 	   2 Input   32 Bit        Muxes := 2     
 	   4 Input   32 Bit        Muxes := 3     
-	   3 Input   18 Bit        Muxes := 10    
-	   2 Input   18 Bit        Muxes := 30    
-	   7 Input   18 Bit        Muxes := 1     
+	   3 Input   18 Bit        Muxes := 20    
+	   2 Input   18 Bit        Muxes := 68    
+	   7 Input   18 Bit        Muxes := 3     
 	   2 Input   15 Bit        Muxes := 1     
 	   3 Input   15 Bit        Muxes := 1     
 	   5 Input   15 Bit        Muxes := 1     
 	   2 Input   13 Bit        Muxes := 6     
 	   2 Input   12 Bit        Muxes := 1     
 	   3 Input   12 Bit        Muxes := 1     
-	   2 Input    7 Bit        Muxes := 2     
-	   5 Input    7 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 6     
+	   5 Input    7 Bit        Muxes := 3     
 	   2 Input    6 Bit        Muxes := 12    
-	   2 Input    4 Bit        Muxes := 30    
-	   3 Input    4 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 38    
+	   3 Input    4 Bit        Muxes := 4     
 	   5 Input    3 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 3     
 	   3 Input    2 Bit        Muxes := 4     
-	   2 Input    1 Bit        Muxes := 108   
+	   2 Input    1 Bit        Muxes := 212   
 	   5 Input    1 Bit        Muxes := 2     
 	   7 Input    1 Bit        Muxes := 1     
 	   8 Input    1 Bit        Muxes := 1     
-	   3 Input    1 Bit        Muxes := 59    
-	   4 Input    1 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 121   
+	   4 Input    1 Bit        Muxes := 9     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -484,25 +508,25 @@ WARNING: [Synth 8-3936] Found unconnected internal register 'main_AXI4RegistersH
 WARNING: [Synth 8-3936] Found unconnected internal register 'main_AXI4RegistersHandler/inputValues_reg[3]' and it is trimmed from '18' to '17' bits. [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_AXI4RegistersHandler.vhd:38]
 WARNING: [Synth 8-3936] Found unconnected internal register 'main_AXI4RegistersHandler/inputValues_reg[1]' and it is trimmed from '18' to '17' bits. [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_AXI4RegistersHandler.vhd:38]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1169 ; free virtual = 17573
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1291 ; free virtual = 19624
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1042 ; free virtual = 17454
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1167 ; free virtual = 19508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1024 ; free virtual = 17436
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1152 ; free virtual = 19492
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1022 ; free virtual = 17434
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1148 ; free virtual = 19489
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -519,39 +543,100 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[17] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[16] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[15] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[14] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[13] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[12] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[11] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[10] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[9] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[8] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin scalingParameters[0]_inferred:in0[0] to constant 0
 WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_capacitiveFilter.vhd:38]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1020 ; free virtual = 17432
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1149 ; free virtual = 19490
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1020 ; free virtual = 17432
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1149 ; free virtual = 19490
 ---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[0] with 1st driver pin 'FOC/PID_position/pid_out_reg[0]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[0] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[0]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-1] with 1st driver pin 'FOC/PID_position/pid_out_reg[-1]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-1] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[-1]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-2] with 1st driver pin 'FOC/PID_position/pid_out_reg[-2]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-2] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[-2]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-3] with 1st driver pin 'FOC/PID_position/pid_out_reg[-3]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-3] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[-3]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-4] with 1st driver pin 'FOC/PID_position/pid_out_reg[-4]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-4] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[-4]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-5] with 1st driver pin 'FOC/PID_position/pid_out_reg[-5]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-5] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[-5]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-6] with 1st driver pin 'FOC/PID_position/pid_out_reg[-6]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-6] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[-6]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-7] with 1st driver pin 'FOC/PID_position/pid_out_reg[-7]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-7] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[-7]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-8] with 1st driver pin 'FOC/PID_position/pid_out_reg[-8]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-8] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[-8]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-9] with 1st driver pin 'FOC/PID_position/pid_out_reg[-9]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-9] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[-9]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-10] with 1st driver pin 'FOC/PID_position/pid_out_reg[-10]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-10] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[-10]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-11] with 1st driver pin 'FOC/PID_position/pid_out_reg[-11]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-11] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[-11]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-12] with 1st driver pin 'FOC/PID_position/pid_out_reg[-12]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-12] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[-12]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-13] with 1st driver pin 'FOC/PID_position/pid_out_reg[-13]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-13] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[-13]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-14] with 1st driver pin 'FOC/PID_position/pid_out_reg[-14]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-14] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[-14]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-15] with 1st driver pin 'FOC/PID_position/pid_out_reg[-15]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-15] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[-15]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-16] with 1st driver pin 'FOC/PID_position/pid_out_reg[-16]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-16] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[-16]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-17] with 1st driver pin 'FOC/PID_position/pid_out_reg[-17]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin vectorPosition[-17] with 2nd driver pin 'FOC/PID_currentSetpoint/pid_out_reg[-17]/Q' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/PID.vhd:126]
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|       18|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:31 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1020 ; free virtual = 17432
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:38 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1149 ; free virtual = 19490
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1020 ; free virtual = 17432
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:38 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1149 ; free virtual = 19490
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1019 ; free virtual = 17431
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:38 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1149 ; free virtual = 19490
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1019 ; free virtual = 17431
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:38 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1149 ; free virtual = 19490
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -562,51 +647,53 @@ Report BlackBoxes:
 |      |BlackBox name   |Instances |
 +------+----------------+----------+
 |1     |BRAM_SIN        |         1|
-|2     |mpDSP_DSP_macro |         2|
+|2     |mpDSP_DSP_macro |         4|
 |3     |ILA_FOC_core    |         1|
 +------+----------------+----------+
 
 Report Cell Usage: 
-+------+---------------------+------+
-|      |Cell                 |Count |
-+------+---------------------+------+
-|1     |BRAM_SIN_bbox        |     1|
-|2     |ILA_FOC_core_bbox    |     1|
-|3     |mpDSP_DSP_macro_bbox |     2|
-|5     |BUFG                 |     2|
-|6     |CARRY4               |   128|
-|7     |LUT1                 |   142|
-|8     |LUT2                 |   306|
-|9     |LUT3                 |   229|
-|10    |LUT4                 |   282|
-|11    |LUT5                 |   172|
-|12    |LUT6                 |   455|
-|13    |FDRE                 |  1938|
-|14    |FDSE                 |   117|
-|15    |IBUF                 |    75|
-|16    |OBUF                 |    47|
-+------+---------------------+------+
++------+-----------------------+------+
+|      |Cell                   |Count |
++------+-----------------------+------+
+|1     |BRAM_SIN_bbox          |     1|
+|2     |ILA_FOC_core_bbox      |     1|
+|3     |mpDSP_DSP_macro_bbox   |     2|
+|5     |mpDSP_DSP_macro_bbox_3 |     2|
+|7     |BUFG                   |     2|
+|8     |CARRY4                 |   186|
+|9     |LUT1                   |   194|
+|10    |LUT2                   |   382|
+|11    |LUT3                   |   403|
+|12    |LUT4                   |   505|
+|13    |LUT5                   |   295|
+|14    |LUT6                   |  1112|
+|15    |FDRE                   |  3928|
+|16    |FDSE                   |   185|
+|17    |IBUF                   |    75|
+|18    |OBUF                   |    47|
++------+-----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1019 ; free virtual = 17431
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:38 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1149 ; free virtual = 19490
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 139 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2787.805 ; gain = 0.000 ; free physical = 1070 ; free virtual = 17482
-Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1067 ; free virtual = 17483
+Synthesis finished with 0 errors, 36 critical warnings and 374 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 2787.805 ; gain = 0.000 ; free physical = 1194 ; free virtual = 19536
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:38 . Memory (MB): peak = 2787.805 ; gain = 64.027 ; free physical = 1194 ; free virtual = 19537
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2787.805 ; gain = 0.000 ; free physical = 1153 ; free virtual = 17573
-INFO: [Netlist 29-17] Analyzing 128 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2787.805 ; gain = 0.000 ; free physical = 1290 ; free virtual = 19634
+INFO: [Netlist 29-17] Analyzing 186 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2787.805 ; gain = 0.000 ; free physical = 1102 ; free virtual = 17523
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2787.805 ; gain = 0.000 ; free physical = 1231 ; free virtual = 19576
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 4b7be44a
+Synth Design complete, checksum: d3e68792
 INFO: [Common 17-83] Releasing license: Synthesis
-106 Infos, 141 Warnings, 0 Critical Warnings and 0 Errors encountered.
+110 Infos, 159 Warnings, 36 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:38 . Memory (MB): peak = 2787.805 ; gain = 64.031 ; free physical = 1222 ; free virtual = 17643
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 2787.805 ; gain = 64.031 ; free physical = 1330 ; free virtual = 19674
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/FOC_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file FOC_top_utilization_synth.rpt -pb FOC_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Jul  6 21:15:46 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 18 15:05:36 2024...

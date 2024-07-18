@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="FOC_fuzzyLogic_BRAM_synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1720815943">
+  <File Type="RDS-DCP" Name="FOC_fuzzyLogic_BRAM.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="FOC_fuzzyLogic_BRAM_utilization_synth.pb"/>
+  <File Type="PA-TCL" Name="FOC_fuzzyLogic_BRAM.tcl"/>
+  <File Type="RDS-UTIL" Name="FOC_fuzzyLogic_BRAM_utilization_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="FOC_fuzzyLogic_BRAM_reports.tcl"/>
+  <File Type="RDS-RDS" Name="FOC_fuzzyLogic_BRAM.vds"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/FOC_fuzzyLogic_BRAM">
+    <File Path="$PSRCDIR/sources_1/ip/FOC_fuzzyLogic_BRAM/FOC_fuzzyLogic_BRAM.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="FOC_fuzzyLogic_BRAM"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/FOC_fuzzyLogic_BRAM">
+    <File Path="$PSRCDIR/sources_1/ip/FOC_fuzzyLogic_BRAM/FOC_fuzzyLogic_BRAM.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="FOC_fuzzyLogic_BRAM"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

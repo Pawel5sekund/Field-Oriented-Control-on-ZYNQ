@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../FOC_BLDC.gen/sources_1/ip/FOC_fuzzyLogic_BRAM/FOC_fuzzyLogic_BRAM_sim_netlist.vhdl" \
+
+nosort

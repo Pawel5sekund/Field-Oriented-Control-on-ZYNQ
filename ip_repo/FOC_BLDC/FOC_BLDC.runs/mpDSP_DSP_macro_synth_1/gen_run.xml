@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="mpDSP_DSP_macro_synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1720269703">
-  <File Type="RDS-DCP" Name="mpDSP_DSP_macro.dcp"/>
   <File Type="PA-TCL" Name="mpDSP_DSP_macro.tcl"/>
   <File Type="REPORTS-TCL" Name="mpDSP_DSP_macro_reports.tcl"/>
   <File Type="RDS-RDS" Name="mpDSP_DSP_macro.vds"/>
+  <File Type="RDS-DCP" Name="mpDSP_DSP_macro.dcp"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/mpDSP_DSP_macro">
     <File Path="$PSRCDIR/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro.xci">
       <FileInfo>

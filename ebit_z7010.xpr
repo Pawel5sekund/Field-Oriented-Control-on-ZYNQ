@@ -101,47 +101,47 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_2/ebit_z7010_top_axi_gpio_0_2.xci">
-          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_2"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_1/ebit_z7010_top_axi_gpio_0_1.xci">
-          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_5/ebit_z7010_top_axi_gpio_0_5.xci">
-          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_5"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_3/ebit_z7010_top_axi_gpio_0_3.xci">
           <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_3"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_4/ebit_z7010_top_axi_gpio_0_4.xci">
           <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_4"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ip_1/bd_5d6e_bsip_0.xci">
-          <Proxy FileSetName="bd_5d6e_bsip_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ip_0/bd_5d6e_axi_jtag_0.xci">
-          <Proxy FileSetName="bd_5d6e_axi_jtag_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_processing_system7_0_0/ebit_z7010_top_processing_system7_0_0.xci">
-          <Proxy FileSetName="ebit_z7010_top_processing_system7_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_FOC_top_0_0/ebit_z7010_top_FOC_top_0_0.xci">
-          <Proxy FileSetName="ebit_z7010_top_FOC_top_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_debug_bridge_0_0/ebit_z7010_top_debug_bridge_0_0.xci">
-          <Proxy FileSetName="ebit_z7010_top_debug_bridge_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_8/ebit_z7010_top_axi_gpio_0_8.xci">
-          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_8"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_7/ebit_z7010_top_axi_gpio_0_7.xci">
-          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_7"/>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_5/ebit_z7010_top_axi_gpio_0_5.xci">
+          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_5"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_6/ebit_z7010_top_axi_gpio_0_6.xci">
           <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_6"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_7/ebit_z7010_top_axi_gpio_0_7.xci">
+          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_7"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_8/ebit_z7010_top_axi_gpio_0_8.xci">
+          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_8"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_debug_bridge_0_0/ebit_z7010_top_debug_bridge_0_0.xci">
+          <Proxy FileSetName="ebit_z7010_top_debug_bridge_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_FOC_top_0_0/ebit_z7010_top_FOC_top_0_0.xci">
+          <Proxy FileSetName="ebit_z7010_top_FOC_top_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ip_0/bd_5d6e_axi_jtag_0.xci">
+          <Proxy FileSetName="bd_5d6e_axi_jtag_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ip_1/bd_5d6e_bsip_0.xci">
+          <Proxy FileSetName="bd_5d6e_bsip_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_2/ebit_z7010_top_axi_gpio_0_2.xci">
+          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_2"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_axi_gpio_0_1/ebit_z7010_top_axi_gpio_0_1.xci">
+          <Proxy FileSetName="ebit_z7010_top_axi_gpio_0_1"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_xbar_0/ebit_z7010_top_xbar_0.xci">
           <Proxy FileSetName="ebit_z7010_top_xbar_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_processing_system7_0_0/ebit_z7010_top_processing_system7_0_0.xci">
+          <Proxy FileSetName="ebit_z7010_top_processing_system7_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_LED_controller_0_0/ebit_z7010_top_LED_controller_0_0.xci">
           <Proxy FileSetName="ebit_z7010_top_LED_controller_0_0"/>
