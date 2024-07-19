@@ -1,7 +1,7 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-// Date        : Tue Jan  2 15:59:02 2024
+// Date        : Thu Jul 18 20:51:43 2024
 // Host        : LAPTOP-PAWEL running 64-bit Ubuntu 18.04.2 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_debug_bridge_0_0/ebit_z7010_top_debug_bridge_0_0_stub.v

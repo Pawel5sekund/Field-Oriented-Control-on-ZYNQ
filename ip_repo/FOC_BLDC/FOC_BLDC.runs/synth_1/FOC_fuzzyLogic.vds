@@ -1,0 +1,319 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Fri Jul 19 23:51:47 2024
+# Process ID: 7390
+# Current directory: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1
+# Command line: vivado -log FOC_fuzzyLogic.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FOC_fuzzyLogic.tcl
+# Log file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/FOC_fuzzyLogic.vds
+# Journal file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/vivado.jou
+# Running On: LAPTOP-PAWEL, OS: Linux, CPU Frequency: 3193.919 MHz, CPU Physical cores: 16, Host memory: 8015 MB
+#-----------------------------------------------------------
+source FOC_fuzzyLogic.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC'.
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'digilentinc.com:interface:tmds:1.0' found within IP repository '/home/pawel'.
+File in use: /home/pawel/Xilinx/PYNQ/boards/ip/if/tmds_v1_0/tmds.xml
+File ignored: /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/if/tmds_v1_0/tmds.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'digilentinc.com:interface:tmds_rtl:1.0' found within IP repository '/home/pawel'.
+File in use: /home/pawel/Xilinx/PYNQ/boards/ip/if/tmds_v1_0/tmds_rtl.xml
+File ignored: /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/if/tmds_v1_0/tmds_rtl.xml
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/pawel'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2022.1/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:interface_switch:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/interface_switch_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/interface_switch_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:trace_generator_controller:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/trace_generator_controller_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/trace_generator_controller_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'digilentinc.com:ip:axi_dynclk:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/axi_dynclk_v1_0' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/axi_dynclk_v1_0
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:debouncer:1.1'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/debouncer_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/debouncer_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:interface_slice:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/interface_slice_1.0' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/interface_slice_1.0
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'digilentinc.com:ip:dvi2rgb:1.7'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/dvi2rgb_v1_7' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/dvi2rgb_v1_7
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:audio_direct:1.1'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/audio_direct_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/audio_direct_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'digilentinc.com:ip:rgb2dvi:1.2'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/rgb2dvi_v1_2' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/rgb2dvi_v1_2
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:boolean_generator:1.1'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/boolean_generator_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/boolean_generator_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:pattern_controller:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/pattern_controller_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/pattern_controller_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:io_switch:1.1'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/io_switch_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/io_switch_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:mux_vector:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/mux_vector_1.0' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/mux_vector_1.0
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:audio_codec_ctrl:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/audio_codec_ctrl_v1.0' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/audio_codec_ctrl_v1.0
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:color_swap:1.1'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/color_swap_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/color_swap_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'user.org:user:address_remap:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/address_remap_1.0' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/address_remap_1.0
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:fsm_io_switch:1.1'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/fsm_io_switch_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/fsm_io_switch_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:gclk_generator:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/gclk_generator_1.0' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/gclk_generator_1.0
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:wire_distributor:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/wire_distributor_1.0' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/wire_distributor_1.0
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:fsm_controller:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/fsm_controller_1.1' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/fsm_controller_1.1
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:dff_en_reset_vector:1.0'. The one found in IP location '/home/pawel/Xilinx/PYNQ/boards/ip/dff_en_reset_vector_1.0' will take precedence over the same IP in location /home/pawel/Xilinx/PYNQ/sdbuild/build/PYNQ/boards/ip/dff_en_reset_vector_1.0
+WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:interface:ps_pl_irq:1.0'. The one found in location '/home/pawel/Xilinx/petalinux/tools/xsct/data/versal/psxl/hiw/local_ip/psxl_v1_0/interfaces/ps_pl_irq/ps_pl_irq.xml' will take precedence over the same Interface in location '/tools/Xilinx/Vivado/2022.1/data/ip/xilinx/pspmc_v1_2/interfaces/ps_pl_irq/ps_pl_irq.xml'
+WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:user:acelite:1.0'. The one found in location '/home/pawel/Xilinx/petalinux/tools/xsct/data/versal/psxl/hiw/local_ip/psxl_v1_0/interfaces/acelite.xml' will take precedence over the same Interface in location '/tools/Xilinx/Vivado/2022.1/data/ip/xilinx/pspmc_v1_2/interfaces/acelite.xml'
+WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:interface:sem_emio:1.0'. The one found in location '/home/pawel/Xilinx/petalinux/tools/xsct/data/versal/psxl/hiw/local_ip/psxl_v1_0/interfaces/sem_emio_v1_0/sem_emio.xml' will take precedence over the same Interface in location '/tools/Xilinx/Vivado/2022.1/data/ip/xilinx/pspmc_v1_2/interfaces/sem_emio_v1_0/sem_emio.xml'
+WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:interface:adma:1.0'. The one found in location '/home/pawel/Xilinx/petalinux/tools/xsct/data/versal/psxl/hiw/local_ip/psxl_v1_0/interfaces/adma.xml' will take precedence over the same Interface in location '/tools/Xilinx/Vivado/2022.1/data/ip/xilinx/pspmc_v1_2/interfaces/adma.xml'
+WARNING: [IP_Flow 19-4830] Duplicate Interface found for 'xilinx.com:user:smmu:1.0'. The one found in location '/home/pawel/Xilinx/petalinux/tools/xsct/data/versal/psxl/hiw/local_ip/psxl_v1_0/interfaces/smmu.xml' will take precedence over the same Interface in location '/tools/Xilinx/Vivado/2022.1/data/ip/xilinx/pspmc_v1_2/interfaces/smmu.xml'
+update_ip_catalog: Time (s): cpu = 00:00:04 ; elapsed = 00:00:35 . Memory (MB): peak = 2723.777 ; gain = 0.000 ; free physical = 2424 ; free virtual = 20379
+Command: synth_design -top FOC_fuzzyLogic -part xc7z010clg400-1
+Starting synth_design
+WARNING: [Vivado_Tcl 4-393] The 'Synthesis' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.
+/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/ip/FOC_fuzzyLogic_BRAM/FOC_fuzzyLogic_BRAM.xci
+
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 7625
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2723.781 ; gain = 0.000 ; free physical = 533 ; free virtual = 18488
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'FOC_fuzzyLogic' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_fuzzyLogic.vhd:29]
+	Parameter amount bound to: 12 - type: integer 
+	Parameter waitCycles bound to: 3 - type: integer 
+INFO: [Synth 8-3491] module 'mpDSP' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd:8' bound to instance 'DSP_instance' of component 'mpDSP' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_fuzzyLogic.vhd:69]
+INFO: [Synth 8-638] synthesizing module 'mpDSP' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd:24]
+	Parameter amount bound to: 12 - type: integer 
+	Parameter waitCycles bound to: 3 - type: integer 
+INFO: [Synth 8-3491] module 'mpDSP_DSP_macro' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-7390-LAPTOP-PAWEL/realtime/mpDSP_DSP_macro_stub.vhdl:5' bound to instance 'DSP' of component 'mpDSP_DSP_macro' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd:54]
+INFO: [Synth 8-638] synthesizing module 'mpDSP_DSP_macro' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-7390-LAPTOP-PAWEL/realtime/mpDSP_DSP_macro_stub.vhdl:20]
+INFO: [Synth 8-256] done synthesizing module 'mpDSP' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd:24]
+INFO: [Synth 8-3491] module 'FOC_fuzzyLogic_BRAM' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-7390-LAPTOP-PAWEL/realtime/FOC_fuzzyLogic_BRAM_stub.vhdl:5' bound to instance 'BRAM_fuzzyLUT' of component 'FOC_fuzzyLogic_BRAM' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_fuzzyLogic.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'FOC_fuzzyLogic_BRAM' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/.Xil/Vivado-7390-LAPTOP-PAWEL/realtime/FOC_fuzzyLogic_BRAM_stub.vhdl:17]
+INFO: [Synth 8-256] done synthesizing module 'FOC_fuzzyLogic' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sources_1/new/FOC_fuzzyLogic.vhd:29]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2723.781 ; gain = 0.000 ; free physical = 1518 ; free virtual = 19473
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2723.781 ; gain = 0.000 ; free physical = 1517 ; free virtual = 19472
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2723.781 ; gain = 0.000 ; free physical = 1517 ; free virtual = 19472
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2723.781 ; gain = 0.000 ; free physical = 1516 ; free virtual = 19471
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro/mpDSP_DSP_macro_in_context.xdc] for cell 'DSP_instance/DSP'
+Finished Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro/mpDSP_DSP_macro_in_context.xdc] for cell 'DSP_instance/DSP'
+Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/FOC_fuzzyLogic_BRAM/FOC_fuzzyLogic_BRAM/FOC_fuzzyLogic_BRAM_in_context.xdc] for cell 'BRAM_fuzzyLUT'
+Finished Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/FOC_fuzzyLogic_BRAM/FOC_fuzzyLogic_BRAM/FOC_fuzzyLogic_BRAM_in_context.xdc] for cell 'BRAM_fuzzyLUT'
+Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/constrs_1/new/firstconstraints.xdc]
+WARNING: [Vivado 12-584] No ports matched 'S_AXI_ACLK'. [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/constrs_1/new/firstconstraints.xdc:1]
+Finished Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/constrs_1/new/firstconstraints.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/constrs_1/new/firstconstraints.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/FOC_fuzzyLogic_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2787.809 ; gain = 0.000 ; free physical = 1350 ; free virtual = 19305
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2787.809 ; gain = 0.000 ; free physical = 1350 ; free virtual = 19305
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'BRAM_fuzzyLUT' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 2787.809 ; gain = 64.027 ; free physical = 1495 ; free virtual = 19450
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 2787.809 ; gain = 64.027 ; free physical = 1495 ; free virtual = 19450
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for DSP_instance/DSP. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for BRAM_fuzzyLUT. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 2787.809 ; gain = 64.027 ; free physical = 1494 ; free virtual = 19450
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'operationSelector_reg' in module 'mpDSP'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                               00
+                 iSTATE0 |                              010 |                               01
+                 iSTATE1 |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'operationSelector_reg' using encoding 'one-hot' in module 'mpDSP'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 2787.809 ; gain = 64.027 ; free physical = 1489 ; free virtual = 19444
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   25 Bit       Adders := 2     
+	   2 Input   19 Bit       Adders := 8     
+	   3 Input   19 Bit       Adders := 2     
+	   2 Input    7 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 6     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               65 Bit    Registers := 3     
+	               48 Bit    Registers := 17    
+	               35 Bit    Registers := 1     
+	               24 Bit    Registers := 2     
+	               18 Bit    Registers := 36    
+	               12 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 4     
+	                4 Bit    Registers := 4     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   3 Input   48 Bit        Muxes := 2     
+	   2 Input   24 Bit        Muxes := 14    
+	   3 Input   24 Bit        Muxes := 2     
+	   2 Input   19 Bit        Muxes := 2     
+	   3 Input   18 Bit        Muxes := 7     
+	   2 Input   18 Bit        Muxes := 49    
+	   2 Input   12 Bit        Muxes := 2     
+	  10 Input   12 Bit        Muxes := 2     
+	   2 Input    7 Bit        Muxes := 2     
+	  11 Input    7 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 4     
+	   3 Input    4 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 61    
+	   3 Input    1 Bit        Muxes := 35    
+	  10 Input    1 Bit        Muxes := 9     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:25 . Memory (MB): peak = 2787.809 ; gain = 64.027 ; free physical = 1483 ; free virtual = 19438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 2787.809 ; gain = 64.027 ; free physical = 1360 ; free virtual = 19315
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 2787.809 ; gain = 64.027 ; free physical = 1313 ; free virtual = 19268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 2787.809 ; gain = 64.027 ; free physical = 1308 ; free virtual = 19263
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 2787.809 ; gain = 64.027 ; free physical = 1304 ; free virtual = 19260
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 2787.809 ; gain = 64.027 ; free physical = 1304 ; free virtual = 19260
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 2787.809 ; gain = 64.027 ; free physical = 1304 ; free virtual = 19260
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 2787.809 ; gain = 64.027 ; free physical = 1304 ; free virtual = 19260
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 2787.809 ; gain = 64.027 ; free physical = 1304 ; free virtual = 19260
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 2787.809 ; gain = 64.027 ; free physical = 1304 ; free virtual = 19260
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------+----------+
+|      |BlackBox name       |Instances |
++------+--------------------+----------+
+|1     |FOC_fuzzyLogic_BRAM |         1|
+|2     |mpDSP_DSP_macro     |         1|
++------+--------------------+----------+
+
+Report Cell Usage: 
++------+-------------------------+------+
+|      |Cell                     |Count |
++------+-------------------------+------+
+|1     |FOC_fuzzyLogic_BRAM_bbox |     1|
+|2     |mpDSP_DSP_macro_bbox     |     1|
+|3     |BUFG                     |     1|
+|4     |CARRY4                   |    70|
+|5     |LUT1                     |    40|
+|6     |LUT2                     |    92|
+|7     |LUT3                     |   151|
+|8     |LUT4                     |   314|
+|9     |LUT5                     |   228|
+|10    |LUT6                     |   470|
+|11    |FDRE                     |  1586|
+|12    |FDSE                     |    68|
+|13    |IBUF                     |   286|
+|14    |OBUF                     |    18|
++------+-------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 2787.809 ; gain = 64.027 ; free physical = 1304 ; free virtual = 19259
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 2787.809 ; gain = 0.000 ; free physical = 1358 ; free virtual = 19314
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:38 . Memory (MB): peak = 2787.809 ; gain = 64.027 ; free physical = 1364 ; free virtual = 19320
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2787.809 ; gain = 0.000 ; free physical = 1454 ; free virtual = 19409
+INFO: [Netlist 29-17] Analyzing 70 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2787.809 ; gain = 0.000 ; free physical = 1395 ; free virtual = 19350
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: f30f4564
+INFO: [Common 17-83] Releasing license: Synthesis
+29 Infos, 32 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 2787.809 ; gain = 64.031 ; free physical = 1521 ; free virtual = 19476
+INFO: [Common 17-1381] The checkpoint '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/synth_1/FOC_fuzzyLogic.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file FOC_fuzzyLogic_utilization_synth.rpt -pb FOC_fuzzyLogic_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Jul 19 23:53:22 2024...

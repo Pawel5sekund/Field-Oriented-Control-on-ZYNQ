@@ -1,10 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
--- Date        : Thu Dec 21 07:17:12 2023
+-- Date        : Sun Dec 10 19:06:50 2023
 -- Host        : LAPTOP-PAWEL running 64-bit Ubuntu 18.04.2 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_LED_controller_0_0/ebit_z7010_top_LED_controller_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top ebit_z7010_top_LED_controller_0_0 -prefix
+--               ebit_z7010_top_LED_controller_0_0_ ebit_z7010_top_LED_controller_0_0_sim_netlist.vhdl
 -- Design      : ebit_z7010_top_LED_controller_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -24,8 +24,6 @@ entity ebit_z7010_top_LED_controller_0_0_counter_ON_OFF is
     \counter1_inferred__0/i__carry__2_0\ : in STD_LOGIC_VECTOR ( 31 downto 0 );
     \bit_ON_OFF1_inferred__0/i__carry__2_0\ : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of ebit_z7010_top_LED_controller_0_0_counter_ON_OFF : entity is "counter_ON_OFF";
 end ebit_z7010_top_LED_controller_0_0_counter_ON_OFF;
 
 architecture STRUCTURE of ebit_z7010_top_LED_controller_0_0_counter_ON_OFF is
@@ -4095,8 +4093,6 @@ entity ebit_z7010_top_LED_controller_0_0_LED_controller_v1_0_S00_AXI is
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of ebit_z7010_top_LED_controller_0_0_LED_controller_v1_0_S00_AXI : entity is "LED_controller_v1_0_S00_AXI";
 end ebit_z7010_top_LED_controller_0_0_LED_controller_v1_0_S00_AXI;
 
 architecture STRUCTURE of ebit_z7010_top_LED_controller_0_0_LED_controller_v1_0_S00_AXI is
@@ -6285,8 +6281,6 @@ entity ebit_z7010_top_LED_controller_0_0_LED_controller_v1_0 is
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of ebit_z7010_top_LED_controller_0_0_LED_controller_v1_0 : entity is "LED_controller_v1_0";
 end ebit_z7010_top_LED_controller_0_0_LED_controller_v1_0;
 
 architecture STRUCTURE of ebit_z7010_top_LED_controller_0_0_LED_controller_v1_0 is
@@ -6363,7 +6357,7 @@ architecture STRUCTURE of ebit_z7010_top_LED_controller_0_0 is
   attribute x_interface_info : string;
   attribute x_interface_info of s00_axi_aclk : signal is "xilinx.com:signal:clock:1.0 s00_axi_aclk CLK";
   attribute x_interface_parameter : string;
-  attribute x_interface_parameter of s00_axi_aclk : signal is "XIL_INTERFACENAME s00_axi_aclk, ASSOCIATED_BUSIF s00_axi, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 1e+08, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN ebit_z7010_top_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  attribute x_interface_parameter of s00_axi_aclk : signal is "XIL_INTERFACENAME s00_axi_aclk, ASSOCIATED_BUSIF s00_axi, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN ebit_z7010_top_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   attribute x_interface_info of s00_axi_aresetn : signal is "xilinx.com:signal:reset:1.0 s00_axi_aresetn RST";
   attribute x_interface_parameter of s00_axi_aresetn : signal is "XIL_INTERFACENAME s00_axi_aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute x_interface_info of s00_axi_arready : signal is "xilinx.com:interface:aximm:1.0 s00_axi ARREADY";
@@ -6379,7 +6373,7 @@ architecture STRUCTURE of ebit_z7010_top_LED_controller_0_0 is
   attribute x_interface_info of s00_axi_araddr : signal is "xilinx.com:interface:aximm:1.0 s00_axi ARADDR";
   attribute x_interface_info of s00_axi_arprot : signal is "xilinx.com:interface:aximm:1.0 s00_axi ARPROT";
   attribute x_interface_info of s00_axi_awaddr : signal is "xilinx.com:interface:aximm:1.0 s00_axi AWADDR";
-  attribute x_interface_parameter of s00_axi_awaddr : signal is "XIL_INTERFACENAME s00_axi, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 1e+08, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN ebit_z7010_top_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute x_interface_parameter of s00_axi_awaddr : signal is "XIL_INTERFACENAME s00_axi, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN ebit_z7010_top_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute x_interface_info of s00_axi_awprot : signal is "xilinx.com:interface:aximm:1.0 s00_axi AWPROT";
   attribute x_interface_info of s00_axi_bresp : signal is "xilinx.com:interface:aximm:1.0 s00_axi BRESP";
   attribute x_interface_info of s00_axi_rdata : signal is "xilinx.com:interface:aximm:1.0 s00_axi RDATA";

@@ -269,7 +269,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>14507f6c</spirit:value>
+            <spirit:value>7ea5386c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -294,7 +294,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>4de549db</spirit:value>
+            <spirit:value>15651e38</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -918,7 +918,7 @@
       <spirit:file>
         <spirit:name>FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
-        <spirit:userFileType>CHECKSUM_8ed2d997</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_5fc38119</spirit:userFileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
@@ -1115,14 +1115,14 @@
         <xilinx:xpmLibrary>XPM_CDC</xilinx:xpmLibrary>
         <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>20</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-07-18T13:06:35Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>24</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2024-07-19T12:01:34Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2022.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="9fe658d8"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="0879c9e7"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="5a63bfdb"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="3388d2f0"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="3caf565b"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="138c4234"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="7142978d"/>

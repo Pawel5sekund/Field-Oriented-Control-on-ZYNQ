@@ -1,10 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
--- Date        : Sat Jun 29 22:01:55 2024
+-- Date        : Sat Jun 29 22:01:53 2024
 -- Host        : LAPTOP-PAWEL running 64-bit Ubuntu 18.04.2 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_xbar_0/ebit_z7010_top_xbar_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top ebit_z7010_top_xbar_0 -prefix
+--               ebit_z7010_top_xbar_0_ ebit_z7010_top_xbar_0_sim_netlist.vhdl
 -- Design      : ebit_z7010_top_xbar_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -79,8 +79,6 @@ entity ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_addr_arbiter_sasd is
     mi_wready : in STD_LOGIC_VECTOR ( 0 to 0 );
     mi_bvalid : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_addr_arbiter_sasd : entity is "axi_crossbar_v2_1_27_addr_arbiter_sasd";
 end ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_addr_arbiter_sasd;
 
 architecture STRUCTURE of ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_addr_arbiter_sasd is
@@ -2325,8 +2323,6 @@ entity ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_decerr_slave is
     \gen_no_arbiter.m_valid_i_i_4_0\ : in STD_LOGIC;
     aa_rready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_decerr_slave : entity is "axi_crossbar_v2_1_27_decerr_slave";
 end ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_decerr_slave;
 
 architecture STRUCTURE of ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_decerr_slave is
@@ -2624,8 +2620,6 @@ entity ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_splitter is
     \m_ready_d_reg[0]_2\ : in STD_LOGIC;
     aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_splitter : entity is "axi_crossbar_v2_1_27_splitter";
 end ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_splitter;
 
 architecture STRUCTURE of ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_splitter is
@@ -3231,8 +3225,6 @@ entity ebit_z7010_top_xbar_0_axi_register_slice_v2_1_26_axic_register_slice is
     reset : in STD_LOGIC;
     E : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of ebit_z7010_top_xbar_0_axi_register_slice_v2_1_26_axic_register_slice : entity is "axi_register_slice_v2_1_26_axic_register_slice";
 end ebit_z7010_top_xbar_0_axi_register_slice_v2_1_26_axic_register_slice;
 
 architecture STRUCTURE of ebit_z7010_top_xbar_0_axi_register_slice_v2_1_26_axic_register_slice is
@@ -8087,8 +8079,6 @@ entity ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_crossbar_sasd is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_crossbar_sasd : entity is "axi_crossbar_v2_1_27_crossbar_sasd";
 end ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_crossbar_sasd;
 
 architecture STRUCTURE of ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_crossbar_sasd is
@@ -8966,8 +8956,6 @@ entity ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_axi_crossbar is
   attribute C_S_AXI_WRITE_ACCEPTANCE of ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_axi_crossbar : entity is 4;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_axi_crossbar : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_axi_crossbar : entity is "axi_crossbar_v2_1_27_axi_crossbar";
   attribute P_ADDR_DECODE : integer;
   attribute P_ADDR_DECODE of ebit_z7010_top_xbar_0_axi_crossbar_v2_1_27_axi_crossbar : entity is 1;
   attribute P_AXI3 : integer;

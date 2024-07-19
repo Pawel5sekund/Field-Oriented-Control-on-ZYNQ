@@ -1,7 +1,7 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-// Date        : Thu Dec 21 19:06:49 2023
+// Date        : Sun Dec 10 19:07:32 2023
 // Host        : LAPTOP-PAWEL running 64-bit Ubuntu 18.04.2 LTS
 // Command     : write_verilog -force -mode synth_stub -rename_top ebit_z7010_top_axi_gpio_0_9 -prefix
 //               ebit_z7010_top_axi_gpio_0_9_ ebit_z7010_top_axi_gpio_0_4_stub.v

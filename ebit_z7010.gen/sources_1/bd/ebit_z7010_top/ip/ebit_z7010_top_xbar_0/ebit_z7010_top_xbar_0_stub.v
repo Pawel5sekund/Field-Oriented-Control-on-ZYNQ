@@ -1,10 +1,10 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-// Date        : Sat Jun 29 22:01:55 2024
+// Date        : Sat Jun 29 22:01:52 2024
 // Host        : LAPTOP-PAWEL running 64-bit Ubuntu 18.04.2 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_xbar_0/ebit_z7010_top_xbar_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top ebit_z7010_top_xbar_0 -prefix
+//               ebit_z7010_top_xbar_0_ ebit_z7010_top_xbar_0_stub.v
 // Design      : ebit_z7010_top_xbar_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1
