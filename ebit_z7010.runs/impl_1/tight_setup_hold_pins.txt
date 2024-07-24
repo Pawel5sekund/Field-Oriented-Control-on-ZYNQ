@@ -1,0 +1,26 @@
++====================+===================+============================================================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                                                                        |
++====================+===================+============================================================================+
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/output_reg[0]/D   |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/output_reg[-1]/D  |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/output_reg[-7]/D  |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/output_reg[-4]/D  |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/output_reg[-15]/D |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/output_reg[-2]/D  |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/output_reg[-6]/D  |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/output_reg[-16]/D |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/output_reg[-12]/D |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/output_reg[-3]/D  |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/output_reg[-11]/D |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/output_reg[0]/D   |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/output_reg[-15]/D |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/output_reg[-7]/D  |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/output_reg[-16]/D |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/output_reg[-4]/D  |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/output_reg[-10]/D |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/output_reg[-9]/D  |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/output_reg[-5]/D  |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/output_reg[-8]/D  |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/output_reg[-13]/D |
+| CLK                | S_AXI_ACLK        | ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/output_reg[-14]/D |
++--------------------+-------------------+----------------------------------------------------------------------------+

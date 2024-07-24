@@ -2,8 +2,8 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Fri Jul 19 14:56:32 2024
-# Process ID: 7165
+# Start of session at: Mon Jul 22 20:41:52 2024
+# Process ID: 4644
 # Current directory: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1
 # Command line: vivado -log ebit_z7010_top_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ebit_z7010_top_wrapper.tcl
 # Log file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/ebit_z7010_top_wrapper.vds
@@ -11,7 +11,6 @@
 # Running On: LAPTOP-PAWEL, OS: Linux, CPU Frequency: 3193.919 MHz, CPU Physical cores: 16, Host memory: 8015 MB
 #-----------------------------------------------------------
 source ebit_z7010_top_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 2720.809 ; gain = 2.016 ; free physical = 2080 ; free virtual = 19936
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/mnt/d/Xilinx/Projects/Vivado/ip_repo/myip_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/LED_controller'.
@@ -19,8 +18,8 @@ INFO: [IP_Flow 19-1700] Loaded user IP repository '/mnt/d/Xilinx/Projects/Vivado
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/project_1'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2022.1/data/ip'.
-update_ip_catalog: Time (s): cpu = 00:00:00.7 ; elapsed = 00:00:37 . Memory (MB): peak = 2720.809 ; gain = 0.000 ; free physical = 2077 ; free virtual = 19933
-add_files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:55 . Memory (MB): peak = 2720.809 ; gain = 0.000 ; free physical = 2033 ; free virtual = 19894
+update_ip_catalog: Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:13 . Memory (MB): peak = 2720.809 ; gain = 0.000 ; free physical = 4855 ; free virtual = 21074
+add_files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:17 . Memory (MB): peak = 2720.809 ; gain = 0.000 ; free physical = 4788 ; free virtual = 21021
 Command: synth_design -top ebit_z7010_top_wrapper -part xc7z010clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
@@ -28,39 +27,39 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 7747
+INFO: [Synth 8-7075] Helper process launched with PID 4864
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2720.812 ; gain = 0.000 ; free physical = 1197 ; free virtual = 19050
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2720.812 ; gain = 0.000 ; free physical = 2892 ; free virtual = 19128
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_wrapper' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/hdl/ebit_z7010_top_wrapper.vhd:50]
 INFO: [Synth 8-3491] module 'ebit_z7010_top' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:4121' bound to instance 'ebit_z7010_top_i' of component 'ebit_z7010_top' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/hdl/ebit_z7010_top_wrapper.vhd:100]
 INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:4163]
-INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_5' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_5_stub.vhdl:5' bound to instance 'DIR' of component 'ebit_z7010_top_axi_gpio_0_5' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:4955]
-INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_5' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_5_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_3' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_3_stub.vhdl:5' bound to instance 'Encoder' of component 'ebit_z7010_top_axi_gpio_0_3' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:4978]
-INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_3' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_3_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'ebit_z7010_top_FOC_top_0_0' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_FOC_top_0_0_stub.vhdl:5' bound to instance 'FOC_top_0' of component 'ebit_z7010_top_FOC_top_0_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5001]
-INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_FOC_top_0_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_FOC_top_0_0_stub.vhdl:41]
-INFO: [Synth 8-3491] module 'ebit_z7010_top_LED_controller_0_0' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_LED_controller_0_0_stub.vhdl:5' bound to instance 'LED_controller_0' of component 'ebit_z7010_top_LED_controller_0_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5034]
-INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_LED_controller_0_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_LED_controller_0_0_stub.vhdl:35]
-INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_6' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_6_stub.vhdl:5' bound to instance 'PWM_CH_U' of component 'ebit_z7010_top_axi_gpio_0_6' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5061]
-INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_6' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_6_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_8' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_8_stub.vhdl:5' bound to instance 'PWM_CH_V' of component 'ebit_z7010_top_axi_gpio_0_8' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5084]
-INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_8' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_8_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_7' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_7_stub.vhdl:5' bound to instance 'PWM_CH_W' of component 'ebit_z7010_top_axi_gpio_0_7' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5107]
-INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_7' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_7_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_9' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_9_stub.vhdl:5' bound to instance 'SIM_CLK_FOC' of component 'ebit_z7010_top_axi_gpio_0_9' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5130]
-INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_9' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_9_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_4' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_4_stub.vhdl:5' bound to instance 'STEP' of component 'ebit_z7010_top_axi_gpio_0_4' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5153]
-INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_4' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_4_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_1' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_1_stub.vhdl:5' bound to instance 'XADC_ADDR' of component 'ebit_z7010_top_axi_gpio_0_1' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5176]
-INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_1' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_1_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_2' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_2_stub.vhdl:5' bound to instance 'XADC_DATA' of component 'ebit_z7010_top_axi_gpio_0_2' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5199]
-INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_2' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_2_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'ebit_z7010_top_debug_bridge_0_0' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_debug_bridge_0_0_stub.vhdl:5' bound to instance 'debug_bridge' of component 'ebit_z7010_top_debug_bridge_0_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5222]
-INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_debug_bridge_0_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_debug_bridge_0_0_stub.vhdl:32]
-INFO: [Synth 8-3491] module 'ebit_z7010_top_processing_system7_0_0' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'ebit_z7010_top_processing_system7_0_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5246]
-INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_processing_system7_0_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_processing_system7_0_0_stub.vhdl:91]
+INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_5' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_5_stub.vhdl:5' bound to instance 'DIR' of component 'ebit_z7010_top_axi_gpio_0_5' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:4955]
+INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_5' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_5_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_3' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_3_stub.vhdl:5' bound to instance 'Encoder' of component 'ebit_z7010_top_axi_gpio_0_3' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:4978]
+INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_3' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_3_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'ebit_z7010_top_FOC_top_0_0' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_FOC_top_0_0_stub.vhdl:5' bound to instance 'FOC_top_0' of component 'ebit_z7010_top_FOC_top_0_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5001]
+INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_FOC_top_0_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_FOC_top_0_0_stub.vhdl:41]
+INFO: [Synth 8-3491] module 'ebit_z7010_top_LED_controller_0_0' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_LED_controller_0_0_stub.vhdl:5' bound to instance 'LED_controller_0' of component 'ebit_z7010_top_LED_controller_0_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5034]
+INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_LED_controller_0_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_LED_controller_0_0_stub.vhdl:35]
+INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_6' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_6_stub.vhdl:5' bound to instance 'PWM_CH_U' of component 'ebit_z7010_top_axi_gpio_0_6' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5061]
+INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_6' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_6_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_8' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_8_stub.vhdl:5' bound to instance 'PWM_CH_V' of component 'ebit_z7010_top_axi_gpio_0_8' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5084]
+INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_8' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_8_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_7' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_7_stub.vhdl:5' bound to instance 'PWM_CH_W' of component 'ebit_z7010_top_axi_gpio_0_7' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5107]
+INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_7' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_7_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_9' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_9_stub.vhdl:5' bound to instance 'SIM_CLK_FOC' of component 'ebit_z7010_top_axi_gpio_0_9' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5130]
+INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_9' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_9_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_4' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_4_stub.vhdl:5' bound to instance 'STEP' of component 'ebit_z7010_top_axi_gpio_0_4' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5153]
+INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_4' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_4_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_1' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_1_stub.vhdl:5' bound to instance 'XADC_ADDR' of component 'ebit_z7010_top_axi_gpio_0_1' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5176]
+INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_1' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_1_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'ebit_z7010_top_axi_gpio_0_2' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_2_stub.vhdl:5' bound to instance 'XADC_DATA' of component 'ebit_z7010_top_axi_gpio_0_2' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5199]
+INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_axi_gpio_0_2' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_axi_gpio_0_2_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'ebit_z7010_top_debug_bridge_0_0' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_debug_bridge_0_0_stub.vhdl:5' bound to instance 'debug_bridge' of component 'ebit_z7010_top_debug_bridge_0_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5222]
+INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_debug_bridge_0_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_debug_bridge_0_0_stub.vhdl:32]
+INFO: [Synth 8-3491] module 'ebit_z7010_top_processing_system7_0_0' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'ebit_z7010_top_processing_system7_0_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5246]
+INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_processing_system7_0_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_processing_system7_0_0_stub.vhdl:91]
 INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_ps7_0_axi_periph_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:2227]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_SS2KLP' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:61]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_SS2KLP' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:61]
@@ -91,16 +90,16 @@ INFO: [Synth 8-256] done synthesizing module 'm12_couplers_imp_7I20GC' (0#1) [/m
 INFO: [Synth 8-638] synthesizing module 'm13_couplers_imp_16RZROR' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:1414]
 INFO: [Synth 8-256] done synthesizing module 'm13_couplers_imp_16RZROR' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:1414]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_1AD8N20' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:1544]
-INFO: [Synth 8-3491] module 'ebit_z7010_top_auto_pc_0' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'ebit_z7010_top_auto_pc_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:1794]
-INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_auto_pc_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_auto_pc_0_stub.vhdl:70]
-INFO: [Synth 8-3491] module 'ebit_z7010_top_s00_data_fifo_0' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_s00_data_fifo_0_stub.vhdl:5' bound to instance 's00_data_fifo' of component 'ebit_z7010_top_s00_data_fifo_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:1856]
-INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_s00_data_fifo_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_s00_data_fifo_0_stub.vhdl:51]
+INFO: [Synth 8-3491] module 'ebit_z7010_top_auto_pc_0' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'ebit_z7010_top_auto_pc_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:1794]
+INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_auto_pc_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_auto_pc_0_stub.vhdl:70]
+INFO: [Synth 8-3491] module 'ebit_z7010_top_s00_data_fifo_0' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_s00_data_fifo_0_stub.vhdl:5' bound to instance 's00_data_fifo' of component 'ebit_z7010_top_s00_data_fifo_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:1856]
+INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_s00_data_fifo_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_s00_data_fifo_0_stub.vhdl:51]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1AD8N20' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:1544]
-INFO: [Synth 8-3491] module 'ebit_z7010_top_xbar_0' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'ebit_z7010_top_xbar_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:3776]
-INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_xbar_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_xbar_0_stub.vhdl:51]
+INFO: [Synth 8-3491] module 'ebit_z7010_top_xbar_0' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'ebit_z7010_top_xbar_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:3776]
+INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_xbar_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_xbar_0_stub.vhdl:51]
 INFO: [Synth 8-256] done synthesizing module 'ebit_z7010_top_ps7_0_axi_periph_0' (0#1) [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:2227]
-INFO: [Synth 8-3491] module 'ebit_z7010_top_rst_ps7_0_50M_0' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_rst_ps7_0_50M_0_stub.vhdl:5' bound to instance 'rst_ps7_0_50M' of component 'ebit_z7010_top_rst_ps7_0_50M_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5650]
-INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_rst_ps7_0_50M_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-7165-LAPTOP-PAWEL/realtime/ebit_z7010_top_rst_ps7_0_50M_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'ebit_z7010_top_rst_ps7_0_50M_0' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_rst_ps7_0_50M_0_stub.vhdl:5' bound to instance 'rst_ps7_0_50M' of component 'ebit_z7010_top_rst_ps7_0_50M_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5650]
+INFO: [Synth 8-638] synthesizing module 'ebit_z7010_top_rst_ps7_0_50M_0' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/.Xil/Vivado-4644-LAPTOP-PAWEL/realtime/ebit_z7010_top_rst_ps7_0_50M_0_stub.vhdl:21]
 INFO: [Synth 8-3491] module 'ebit_z7010_top_xlconcat_0_2' declared at '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_xlconcat_0_2/synth/ebit_z7010_top_xlconcat_0_2.v:53' bound to instance 'xlconcat_mii_rx' of component 'ebit_z7010_top_xlconcat_0_2' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/synth/ebit_z7010_top.vhd:5663]
 INFO: [Synth 8-6157] synthesizing module 'ebit_z7010_top_xlconcat_0_2' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_xlconcat_0_2/synth/ebit_z7010_top_xlconcat_0_2.v:53]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_4_xlconcat' [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
@@ -223,18 +222,18 @@ WARNING: [Synth 8-7129] Port In96[0] in module xlconcat_v2_1_4_xlconcat is eithe
 WARNING: [Synth 8-7129] Port In97[0] in module xlconcat_v2_1_4_xlconcat is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 2720.812 ; gain = 0.000 ; free physical = 1145 ; free virtual = 19000
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2720.812 ; gain = 0.000 ; free physical = 3873 ; free virtual = 20111
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 2720.812 ; gain = 0.000 ; free physical = 1145 ; free virtual = 19000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2720.812 ; gain = 0.000 ; free physical = 3873 ; free virtual = 20111
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 2720.812 ; gain = 0.000 ; free physical = 1145 ; free virtual = 19000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2720.812 ; gain = 0.000 ; free physical = 3873 ; free virtual = 20111
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2720.812 ; gain = 0.000 ; free physical = 1142 ; free virtual = 18997
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2720.812 ; gain = 0.000 ; free physical = 3872 ; free virtual = 20110
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -283,21 +282,21 @@ Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/e
 Finished Parsing XDC File [/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2784.840 ; gain = 0.000 ; free physical = 1052 ; free virtual = 18908
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2784.840 ; gain = 0.000 ; free physical = 3780 ; free virtual = 20020
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2784.840 ; gain = 0.000 ; free physical = 1057 ; free virtual = 18913
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2784.840 ; gain = 0.000 ; free physical = 3780 ; free virtual = 20020
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:51 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 1133 ; free virtual = 18989
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 3856 ; free virtual = 20096
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:51 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 1133 ; free virtual = 18989
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 3855 ; free virtual = 20095
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -585,10 +584,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for ebit_z7010_top_i/SIM_CLK_FOC. (co
 Applied set_property KEEP_HIERARCHY = SOFT for ebit_z7010_top_i/debug_bridge. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for ebit_z7010_top_i/FOC_top_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:53 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 1132 ; free virtual = 18988
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 3856 ; free virtual = 20096
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:54 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 1135 ; free virtual = 18991
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:20 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 3858 ; free virtual = 20098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -611,25 +610,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:57 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 1135 ; free virtual = 18991
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:21 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 3856 ; free virtual = 20097
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:01:09 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 1013 ; free virtual = 18869
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 3739 ; free virtual = 19979
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:01:09 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 1012 ; free virtual = 18868
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 3739 ; free virtual = 19979
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:01:09 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 1011 ; free virtual = 18867
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:26 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 3736 ; free virtual = 19977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -647,37 +646,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:01:15 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 1011 ; free virtual = 18866
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 3736 ; free virtual = 19976
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:01:15 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 1011 ; free virtual = 18866
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 3736 ; free virtual = 19976
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:01:15 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 1011 ; free virtual = 18866
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 3736 ; free virtual = 19976
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:01:15 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 1011 ; free virtual = 18866
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 3736 ; free virtual = 19976
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:01:15 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 1011 ; free virtual = 18866
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:29 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 3736 ; free virtual = 19976
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:01:15 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 1011 ; free virtual = 18866
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:29 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 3736 ; free virtual = 19976
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -732,18 +731,18 @@ Report Cell Usage:
 |20    |OBUF                                       |     8|
 +------+-------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:01:15 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 1010 ; free virtual = 18866
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:29 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 3736 ; free virtual = 19976
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 35 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:50 . Memory (MB): peak = 2784.840 ; gain = 0.000 ; free physical = 1066 ; free virtual = 18922
-Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:01:15 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 1066 ; free virtual = 18922
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 2784.840 ; gain = 0.000 ; free physical = 3786 ; free virtual = 20026
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:29 . Memory (MB): peak = 2784.840 ; gain = 64.027 ; free physical = 3786 ; free virtual = 20026
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2784.840 ; gain = 0.000 ; free physical = 1159 ; free virtual = 19015
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2784.840 ; gain = 0.000 ; free physical = 3890 ; free virtual = 20131
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2784.840 ; gain = 0.000 ; free physical = 1091 ; free virtual = 18948
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2784.840 ; gain = 0.000 ; free physical = 3827 ; free virtual = 20068
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
@@ -752,8 +751,7 @@ Synth Design complete, checksum: b76a2e90
 INFO: [Common 17-83] Releasing license: Synthesis
 114 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:01:56 . Memory (MB): peak = 2784.840 ; gain = 64.031 ; free physical = 1166 ; free virtual = 19023
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:41 . Memory (MB): peak = 2784.840 ; gain = 64.031 ; free physical = 3904 ; free virtual = 20145
 INFO: [Common 17-1381] The checkpoint '/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.runs/synth_1/ebit_z7010_top_wrapper.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:00.48 ; elapsed = 00:00:07 . Memory (MB): peak = 2816.855 ; gain = 32.016 ; free physical = 1166 ; free virtual = 19024
 INFO: [runtcl-4] Executing : report_utilization -file ebit_z7010_top_wrapper_utilization_synth.rpt -pb ebit_z7010_top_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jul 19 15:00:33 2024...
+INFO: [Common 17-206] Exiting Vivado at Mon Jul 22 20:43:17 2024...

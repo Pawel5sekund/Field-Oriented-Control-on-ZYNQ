@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date         : Fri Jul 19 15:08:10 2024
+| Date         : Mon Jul 22 20:47:33 2024
 | Host         : LAPTOP-PAWEL running 64-bit Ubuntu 18.04.2 LTS
 | Command      : report_methodology -file ebit_z7010_top_wrapper_methodology_drc_routed.rpt -pb ebit_z7010_top_wrapper_methodology_drc_routed.pb -rpx ebit_z7010_top_wrapper_methodology_drc_routed.rpx
 | Design       : ebit_z7010_top_wrapper
@@ -23,7 +23,7 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 45
+             Violations found: 212
 +-----------+------------------+------------------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                                      | Violations |
 +-----------+------------------+------------------------------------------------------------------+------------+
@@ -37,7 +37,9 @@ Table of Contents
 | LUTAR-1   | Warning          | LUT drives async reset alert                                     | 4          |
 | PDRC-190  | Warning          | Suboptimally placed synchronized register chain                  | 10         |
 | TIMING-9  | Warning          | Unknown CDC Logic                                                | 1          |
+| TIMING-16 | Warning          | Large setup violation                                            | 166        |
 | TIMING-18 | Warning          | Missing input or output delay                                    | 2          |
+| ULMTCS-1  | Warning          | Control Sets use limits recommend reduction                      | 1          |
 +-----------+------------------+------------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -212,17 +214,17 @@ Related violations: <none>
 
 PDRC-190#1 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[0] in site SLICE_X22Y3 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[0] in site SLICE_X27Y2 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#2 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[1] in site SLICE_X23Y2 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[1] in site SLICE_X28Y1 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#3 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[2] in site SLICE_X24Y3 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[2] in site SLICE_X27Y0 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#4 Warning
@@ -232,37 +234,867 @@ Related violations: <none>
 
 PDRC-190#5 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[0] in site SLICE_X27Y4 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[0] in site SLICE_X26Y0 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#6 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[1] in site SLICE_X26Y4 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[1] in site SLICE_X25Y0 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#7 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[2] in site SLICE_X27Y2 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[2] in site SLICE_X24Y0 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#8 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[0] in site SLICE_X30Y4 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[0] in site SLICE_X30Y1 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#9 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[1] in site SLICE_X32Y3 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[1] in site SLICE_X31Y2 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#10 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[2] in site SLICE_X31Y4 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[2] in site SLICE_X31Y0 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 TIMING-9#1 Warning
 Unknown CDC Logic  
 One or more asynchronous Clock Domain Crossing has been detected between 2 clock domains through a set_false_path or a set_clock_groups or set_max_delay -datapath_only constraint but no double-registers logic synchronizer has been found on the side of the capture clock. It is recommended to run report_cdc for a complete and detailed CDC coverage. Please consider using XPM_CDC to avoid Critical severities
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -1.003 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin2_input2_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error2Result_reg[-16]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -1.028 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-13]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -1.028 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-5]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -1.028 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-8]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -1.050 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin2_input2_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error2Result_reg[-11]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -1.073 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin2_input2_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error2Result_reg[-10]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -1.073 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin2_input2_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error2Result_reg[-9]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -1.076 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-13]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#9 Warning
+Large setup violation  
+There is a large setup violation of -1.076 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-5]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#10 Warning
+Large setup violation  
+There is a large setup violation of -1.080 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-11]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#11 Warning
+Large setup violation  
+There is a large setup violation of -1.080 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-3]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#12 Warning
+Large setup violation  
+There is a large setup violation of -1.080 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-4]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#13 Warning
+Large setup violation  
+There is a large setup violation of -1.080 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-7]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#14 Warning
+Large setup violation  
+There is a large setup violation of -1.084 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kout_result_reg[63]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/output_reg[-12]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#15 Warning
+Large setup violation  
+There is a large setup violation of -1.084 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kout_result_reg[63]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/output_reg[-13]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#16 Warning
+Large setup violation  
+There is a large setup violation of -1.084 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kout_result_reg[63]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/output_reg[-16]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#17 Warning
+Large setup violation  
+There is a large setup violation of -1.121 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin2_input2_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error2Result_reg[-2]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#18 Warning
+Large setup violation  
+There is a large setup violation of -1.121 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin2_input2_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error2Result_reg[-6]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#19 Warning
+Large setup violation  
+There is a large setup violation of -1.129 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-16]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#20 Warning
+Large setup violation  
+There is a large setup violation of -1.129 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-8]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#21 Warning
+Large setup violation  
+There is a large setup violation of -1.153 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-17]/D (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#22 Warning
+Large setup violation  
+There is a large setup violation of -1.166 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-12]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#23 Warning
+Large setup violation  
+There is a large setup violation of -1.166 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-2]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#24 Warning
+Large setup violation  
+There is a large setup violation of -1.166 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-3]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#25 Warning
+Large setup violation  
+There is a large setup violation of -1.166 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-6]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#26 Warning
+Large setup violation  
+There is a large setup violation of -1.174 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-17]/D (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#27 Warning
+Large setup violation  
+There is a large setup violation of -1.175 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-1]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#28 Warning
+Large setup violation  
+There is a large setup violation of -1.175 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-4]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#29 Warning
+Large setup violation  
+There is a large setup violation of -1.179 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-10]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#30 Warning
+Large setup violation  
+There is a large setup violation of -1.179 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-11]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#31 Warning
+Large setup violation  
+There is a large setup violation of -1.179 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-16]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#32 Warning
+Large setup violation  
+There is a large setup violation of -1.179 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-9]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#33 Warning
+Large setup violation  
+There is a large setup violation of -1.199 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin2_input2_reg[39]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error2Result_reg[-19]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#34 Warning
+Large setup violation  
+There is a large setup violation of -1.199 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin2_input2_reg[39]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error2Result_reg[-21]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#35 Warning
+Large setup violation  
+There is a large setup violation of -1.199 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin2_input2_reg[39]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error2Result_reg[-22]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#36 Warning
+Large setup violation  
+There is a large setup violation of -1.201 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-16]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#37 Warning
+Large setup violation  
+There is a large setup violation of -1.201 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-7]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#38 Warning
+Large setup violation  
+There is a large setup violation of -1.208 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-18]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#39 Warning
+Large setup violation  
+There is a large setup violation of -1.208 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-20]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#40 Warning
+Large setup violation  
+There is a large setup violation of -1.208 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-22]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#41 Warning
+Large setup violation  
+There is a large setup violation of -1.209 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-1]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#42 Warning
+Large setup violation  
+There is a large setup violation of -1.209 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-9]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#43 Warning
+Large setup violation  
+There is a large setup violation of -1.211 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-18]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#44 Warning
+Large setup violation  
+There is a large setup violation of -1.212 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-10]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#45 Warning
+Large setup violation  
+There is a large setup violation of -1.212 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-16]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#46 Warning
+Large setup violation  
+There is a large setup violation of -1.212 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-6]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#47 Warning
+Large setup violation  
+There is a large setup violation of -1.212 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-8]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#48 Warning
+Large setup violation  
+There is a large setup violation of -1.216 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kout_result_reg[63]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/output_reg[-11]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#49 Warning
+Large setup violation  
+There is a large setup violation of -1.216 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kout_result_reg[63]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/output_reg[-2]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#50 Warning
+Large setup violation  
+There is a large setup violation of -1.216 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kout_result_reg[63]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/output_reg[-4]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#51 Warning
+Large setup violation  
+There is a large setup violation of -1.216 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kout_result_reg[63]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/output_reg[-5]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#52 Warning
+Large setup violation  
+There is a large setup violation of -1.219 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-9]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#53 Warning
+Large setup violation  
+There is a large setup violation of -1.220 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kout_result_reg[63]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/output_reg[-17]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#54 Warning
+Large setup violation  
+There is a large setup violation of -1.226 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-13]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#55 Warning
+Large setup violation  
+There is a large setup violation of -1.226 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-5]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#56 Warning
+Large setup violation  
+There is a large setup violation of -1.230 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-10]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#57 Warning
+Large setup violation  
+There is a large setup violation of -1.230 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-12]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#58 Warning
+Large setup violation  
+There is a large setup violation of -1.230 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-6]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#59 Warning
+Large setup violation  
+There is a large setup violation of -1.230 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-9]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#60 Warning
+Large setup violation  
+There is a large setup violation of -1.246 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-12]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#61 Warning
+Large setup violation  
+There is a large setup violation of -1.246 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-2]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#62 Warning
+Large setup violation  
+There is a large setup violation of -1.251 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-4]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#63 Warning
+Large setup violation  
+There is a large setup violation of -1.251 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-6]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#64 Warning
+Large setup violation  
+There is a large setup violation of -1.263 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-7]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#65 Warning
+Large setup violation  
+There is a large setup violation of -1.277 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-10]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#66 Warning
+Large setup violation  
+There is a large setup violation of -1.277 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-11]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#67 Warning
+Large setup violation  
+There is a large setup violation of -1.279 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-12]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#68 Warning
+Large setup violation  
+There is a large setup violation of -1.279 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-3]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#69 Warning
+Large setup violation  
+There is a large setup violation of -1.279 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-5]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#70 Warning
+Large setup violation  
+There is a large setup violation of -1.279 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-6]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#71 Warning
+Large setup violation  
+There is a large setup violation of -1.304 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-2]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#72 Warning
+Large setup violation  
+There is a large setup violation of -1.304 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-3]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#73 Warning
+Large setup violation  
+There is a large setup violation of -1.308 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-1]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#74 Warning
+Large setup violation  
+There is a large setup violation of -1.313 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-19]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#75 Warning
+Large setup violation  
+There is a large setup violation of -1.313 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin2_input2_reg[55]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error2Result_reg[-21]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#76 Warning
+Large setup violation  
+There is a large setup violation of -1.339 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-18]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#77 Warning
+Large setup violation  
+There is a large setup violation of -1.339 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-19]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#78 Warning
+Large setup violation  
+There is a large setup violation of -1.339 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-20]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#79 Warning
+Large setup violation  
+There is a large setup violation of -1.343 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-11]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#80 Warning
+Large setup violation  
+There is a large setup violation of -1.343 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-13]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#81 Warning
+Large setup violation  
+There is a large setup violation of -1.343 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-5]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#82 Warning
+Large setup violation  
+There is a large setup violation of -1.346 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-10]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#83 Warning
+Large setup violation  
+There is a large setup violation of -1.346 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-12]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#84 Warning
+Large setup violation  
+There is a large setup violation of -1.346 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-8]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#85 Warning
+Large setup violation  
+There is a large setup violation of -1.350 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-18]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#86 Warning
+Large setup violation  
+There is a large setup violation of -1.355 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-21]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#87 Warning
+Large setup violation  
+There is a large setup violation of -1.356 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-16]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#88 Warning
+Large setup violation  
+There is a large setup violation of -1.356 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-2]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#89 Warning
+Large setup violation  
+There is a large setup violation of -1.356 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-3]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#90 Warning
+Large setup violation  
+There is a large setup violation of -1.356 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-4]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#91 Warning
+Large setup violation  
+There is a large setup violation of -1.360 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-11]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#92 Warning
+Large setup violation  
+There is a large setup violation of -1.360 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-1]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#93 Warning
+Large setup violation  
+There is a large setup violation of -1.360 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-7]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#94 Warning
+Large setup violation  
+There is a large setup violation of -1.360 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-8]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#95 Warning
+Large setup violation  
+There is a large setup violation of -1.362 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-22]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#96 Warning
+Large setup violation  
+There is a large setup violation of -1.372 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-7]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#97 Warning
+Large setup violation  
+There is a large setup violation of -1.374 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-13]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#98 Warning
+Large setup violation  
+There is a large setup violation of -1.374 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-1]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#99 Warning
+Large setup violation  
+There is a large setup violation of -1.374 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-2]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#100 Warning
+Large setup violation  
+There is a large setup violation of -1.374 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-4]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#101 Warning
+Large setup violation  
+There is a large setup violation of -1.374 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-9]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#102 Warning
+Large setup violation  
+There is a large setup violation of -1.390 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-21]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#103 Warning
+Large setup violation  
+There is a large setup violation of -1.390 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error2Result_reg[-22]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#104 Warning
+Large setup violation  
+There is a large setup violation of -1.390 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kout_result_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/output_reg[-12]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#105 Warning
+Large setup violation  
+There is a large setup violation of -1.390 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kout_result_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/output_reg[-17]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#106 Warning
+Large setup violation  
+There is a large setup violation of -1.390 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kout_result_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/output_reg[-2]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#107 Warning
+Large setup violation  
+There is a large setup violation of -1.390 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kout_result_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/output_reg[-3]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#108 Warning
+Large setup violation  
+There is a large setup violation of -1.443 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-19]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#109 Warning
+Large setup violation  
+There is a large setup violation of -1.443 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-20]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#110 Warning
+Large setup violation  
+There is a large setup violation of -1.443 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-21]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#111 Warning
+Large setup violation  
+There is a large setup violation of -1.443 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-22]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#112 Warning
+Large setup violation  
+There is a large setup violation of -1.454 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-19]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#113 Warning
+Large setup violation  
+There is a large setup violation of -1.454 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-20]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#114 Warning
+Large setup violation  
+There is a large setup violation of -1.454 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin2_input2_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error2Result_reg[-22]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#115 Warning
+Large setup violation  
+There is a large setup violation of -1.487 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kout_result_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/output_reg[-5]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#116 Warning
+Large setup violation  
+There is a large setup violation of -1.487 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kout_result_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/output_reg[-6]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#117 Warning
+Large setup violation  
+There is a large setup violation of -1.487 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kout_result_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/output_reg[-7]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#118 Warning
+Large setup violation  
+There is a large setup violation of -1.487 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kout_result_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/output_reg[-8]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#119 Warning
+Large setup violation  
+There is a large setup violation of -1.492 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-19]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#120 Warning
+Large setup violation  
+There is a large setup violation of -1.492 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-20]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#121 Warning
+Large setup violation  
+There is a large setup violation of -1.492 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PD/error1Result_reg[-21]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#122 Warning
+Large setup violation  
+There is a large setup violation of -1.518 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kout_result_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/output_reg[-16]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#123 Warning
+Large setup violation  
+There is a large setup violation of -1.518 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kout_result_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/output_reg[-9]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#124 Warning
+Large setup violation  
+There is a large setup violation of -1.519 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[57]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-18]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#125 Warning
+Large setup violation  
+There is a large setup violation of -1.519 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[57]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-19]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#126 Warning
+Large setup violation  
+There is a large setup violation of -1.519 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[57]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-20]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#127 Warning
+Large setup violation  
+There is a large setup violation of -1.529 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kout_result_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/output_reg[-10]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#128 Warning
+Large setup violation  
+There is a large setup violation of -1.529 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kout_result_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/output_reg[-11]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#129 Warning
+Large setup violation  
+There is a large setup violation of -1.529 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kout_result_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/output_reg[-13]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#130 Warning
+Large setup violation  
+There is a large setup violation of -1.529 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kout_result_reg[52]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/output_reg[-4]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#131 Warning
+Large setup violation  
+There is a large setup violation of -1.531 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[57]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-10]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#132 Warning
+Large setup violation  
+There is a large setup violation of -1.531 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[57]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-12]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#133 Warning
+Large setup violation  
+There is a large setup violation of -1.531 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[57]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-13]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#134 Warning
+Large setup violation  
+There is a large setup violation of -1.531 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[57]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-7]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#135 Warning
+Large setup violation  
+There is a large setup violation of -1.544 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-19]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#136 Warning
+Large setup violation  
+There is a large setup violation of -1.544 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-20]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#137 Warning
+Large setup violation  
+There is a large setup violation of -1.582 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-10]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#138 Warning
+Large setup violation  
+There is a large setup violation of -1.582 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-16]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#139 Warning
+Large setup violation  
+There is a large setup violation of -1.582 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-18]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#140 Warning
+Large setup violation  
+There is a large setup violation of -1.582 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-21]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#141 Warning
+Large setup violation  
+There is a large setup violation of -1.582 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-22]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#142 Warning
+Large setup violation  
+There is a large setup violation of -1.582 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-7]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#143 Warning
+Large setup violation  
+There is a large setup violation of -1.650 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-13]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#144 Warning
+Large setup violation  
+There is a large setup violation of -1.650 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-5]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#145 Warning
+Large setup violation  
+There is a large setup violation of -1.650 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-9]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#146 Warning
+Large setup violation  
+There is a large setup violation of -1.655 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[57]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-1]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#147 Warning
+Large setup violation  
+There is a large setup violation of -1.655 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[57]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-3]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#148 Warning
+Large setup violation  
+There is a large setup violation of -1.655 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[57]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-4]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#149 Warning
+Large setup violation  
+There is a large setup violation of -1.655 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[57]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-9]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#150 Warning
+Large setup violation  
+There is a large setup violation of -1.675 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[57]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-11]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#151 Warning
+Large setup violation  
+There is a large setup violation of -1.675 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[57]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-2]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#152 Warning
+Large setup violation  
+There is a large setup violation of -1.677 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-11]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#153 Warning
+Large setup violation  
+There is a large setup violation of -1.677 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-12]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#154 Warning
+Large setup violation  
+There is a large setup violation of -1.677 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-3]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#155 Warning
+Large setup violation  
+There is a large setup violation of -1.677 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-6]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#156 Warning
+Large setup violation  
+There is a large setup violation of -1.706 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/vec_Kin1_input1_reg[56]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_currentSetpoint/PI/error1Result_reg[-18]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#157 Warning
+Large setup violation  
+There is a large setup violation of -1.726 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[57]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-21]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#158 Warning
+Large setup violation  
+There is a large setup violation of -1.726 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[57]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-22]/R (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#159 Warning
+Large setup violation  
+There is a large setup violation of -1.729 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-1]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#160 Warning
+Large setup violation  
+There is a large setup violation of -1.729 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-2]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#161 Warning
+Large setup violation  
+There is a large setup violation of -1.729 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-4]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#162 Warning
+Large setup violation  
+There is a large setup violation of -1.729 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/vec_Kin1_input1_reg[49]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PD/error1Result_reg[-8]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#163 Warning
+Large setup violation  
+There is a large setup violation of -1.785 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-16]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#164 Warning
+Large setup violation  
+There is a large setup violation of -1.785 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-5]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#165 Warning
+Large setup violation  
+There is a large setup violation of -1.785 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-6]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#166 Warning
+Large setup violation  
+There is a large setup violation of -1.785 ns between ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/vec_Kin1_input1_reg[46]/C (clocked by CLK) and ebit_z7010_top_i/FOC_top_0/U0/FOC/PID_current/PI/error1Result_reg[-8]/S (clocked by CLK). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning
@@ -273,6 +1105,11 @@ Related violations: <none>
 TIMING-18#2 Warning
 Missing input or output delay  
 An output delay is missing on LED_RED_OUT_0 relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+ULMTCS-1#1 Warning
+Control Sets use limits recommend reduction  
+This design uses 407 control sets (vs. available limit of 4400, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
 Related violations: <none>
 
 

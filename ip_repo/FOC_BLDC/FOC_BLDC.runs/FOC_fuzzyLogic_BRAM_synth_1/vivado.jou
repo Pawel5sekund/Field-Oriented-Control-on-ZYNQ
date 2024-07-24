@@ -2,12 +2,12 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Fri Jul 12 22:25:47 2024
-# Process ID: 21264
+# Start of session at: Sun Jul 21 12:10:42 2024
+# Process ID: 10594
 # Current directory: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/FOC_fuzzyLogic_BRAM_synth_1
 # Command line: vivado -log FOC_fuzzyLogic_BRAM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FOC_fuzzyLogic_BRAM.tcl
 # Log file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/FOC_fuzzyLogic_BRAM_synth_1/FOC_fuzzyLogic_BRAM.vds
 # Journal file: /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.runs/FOC_fuzzyLogic_BRAM_synth_1/vivado.jou
-# Running On: LAPTOP-PAWEL, OS: Linux, CPU Frequency: 3193.930 MHz, CPU Physical cores: 16, Host memory: 8015 MB
+# Running On: LAPTOP-PAWEL, OS: Linux, CPU Frequency: 3193.919 MHz, CPU Physical cores: 16, Host memory: 8015 MB
 #-----------------------------------------------------------
 source FOC_fuzzyLogic_BRAM.tcl -notrace

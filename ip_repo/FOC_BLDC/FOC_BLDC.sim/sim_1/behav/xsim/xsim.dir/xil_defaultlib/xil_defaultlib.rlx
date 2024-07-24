@@ -2,4 +2,7 @@
 2020.2
 Apr 18 2022
 15:53:03
+/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/FOC_fuzzyLogic_BRAM/FOC_fuzzyLogic_BRAM_sim_netlist.vhdl,1721556734,vhdl,,,,\FOC_fuzzyLogic_BRAM_blk_mem_gen_prim_width__parameterized0\;\FOC_fuzzyLogic_BRAM_blk_mem_gen_prim_wrapper_init__parameterized0\;foc_fuzzylogic_bram;foc_fuzzylogic_bram_blk_mem_gen_generic_cstr;foc_fuzzylogic_bram_blk_mem_gen_prim_width;foc_fuzzylogic_bram_blk_mem_gen_prim_wrapper_init;foc_fuzzylogic_bram_blk_mem_gen_top;foc_fuzzylogic_bram_blk_mem_gen_v8_4_5;foc_fuzzylogic_bram_blk_mem_gen_v8_4_5_synth,,,,,,,,
 /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.gen/sources_1/ip/mpDSP_DSP_macro/sim/mpDSP_DSP_macro.vhd,1720269672,vhdl,,,,mpdsp_dsp_macro,,,,,,,,
+/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.sim/sim_1/behav/xsim/glbl.v,1649976174,verilog,,,,glbl,,,,,,,,
+/mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ip_repo/FOC_BLDC/FOC_BLDC.srcs/sim_1/new/testbench_Fuzzylogic.vhd,1721556798,vhdl2008,,,,testbench_fuzzylogic,,,,,,,,
