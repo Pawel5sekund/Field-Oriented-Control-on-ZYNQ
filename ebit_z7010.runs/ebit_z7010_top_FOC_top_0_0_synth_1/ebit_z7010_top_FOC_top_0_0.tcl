@@ -103,9 +103,6 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_ip -quiet /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.srcs/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/ebit_z7010_top_FOC_top_0_0.xci
 set_property used_in_implementation false [get_files -all /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/FOC_BLDC.srcs/BRAM_SIN/ip/BRAM_SIN/BRAM_SIN_ooc.xdc]
-set_property used_in_implementation false [get_files -all /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/FOC_BLDC.srcs/sources_1/ip/ILA_FOC_core/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/FOC_BLDC.srcs/sources_1/ip/ILA_FOC_core/ILA_FOC_core_ooc.xdc]
-set_property used_in_implementation false [get_files -all /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/FOC_BLDC.srcs/sources_1/ip/FOC_fuzzyLogic_BRAM/FOC_fuzzyLogic_BRAM_ooc.xdc]
 set_property used_in_implementation false [get_files -all /mnt/d/Xilinx/Projects/Vivado/Field-Oriented-Control-on-ZYNQ/ebit_z7010.gen/sources_1/bd/ebit_z7010_top/ip/ebit_z7010_top_FOC_top_0_0/FOC_BLDC.srcs/constrs_1/new/firstconstraints.xdc]
 
 OPTRACE "Adding files" END { }

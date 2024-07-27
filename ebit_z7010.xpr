@@ -101,20 +101,20 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ip_1/bd_5d6e_bsip_0.xci">
-          <Proxy FileSetName="bd_5d6e_bsip_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ip_0/bd_5d6e_axi_jtag_0.xci">
-          <Proxy FileSetName="bd_5d6e_axi_jtag_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_processing_system7_0_0/ebit_z7010_top_processing_system7_0_0.xci">
-          <Proxy FileSetName="ebit_z7010_top_processing_system7_0_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_debug_bridge_0_0/ebit_z7010_top_debug_bridge_0_0.xci">
           <Proxy FileSetName="ebit_z7010_top_debug_bridge_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_FOC_top_0_0/ebit_z7010_top_FOC_top_0_0.xci">
           <Proxy FileSetName="ebit_z7010_top_FOC_top_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ebit_z7010_top_processing_system7_0_0/ebit_z7010_top_processing_system7_0_0.xci">
+          <Proxy FileSetName="ebit_z7010_top_processing_system7_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ip_1/bd_5d6e_bsip_0.xci">
+          <Proxy FileSetName="bd_5d6e_bsip_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="ebit_z7010_top.bd" FileRelPathName="ip/ip_0/bd_5d6e_axi_jtag_0.xci">
+          <Proxy FileSetName="bd_5d6e_axi_jtag_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PGENDIR/sources_1/bd/ebit_z7010_top/hdl/ebit_z7010_top_wrapper.vhd">

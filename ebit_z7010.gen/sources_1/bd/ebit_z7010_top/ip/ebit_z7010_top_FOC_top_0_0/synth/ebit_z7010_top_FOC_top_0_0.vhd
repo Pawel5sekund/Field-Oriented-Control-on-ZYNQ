@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:FOC_top:1.0
--- IP Revision: 26
+-- IP Revision: 29
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -138,7 +138,7 @@ ARCHITECTURE ebit_z7010_top_FOC_top_0_0_arch OF ebit_z7010_top_FOC_top_0_0 IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF ebit_z7010_top_FOC_top_0_0_arch : ARCHITECTURE IS "ebit_z7010_top_FOC_top_0_0,FOC_top,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF ebit_z7010_top_FOC_top_0_0_arch: ARCHITECTURE IS "ebit_z7010_top_FOC_top_0_0,FOC_top,{x_ipProduct=Vivado 2022.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=FOC_top,x_ipVersion=1.0,x_ipCoreRevision=26,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S_AXI_DATA_WIDTH=32,C_S_AXI_ADDR_WIDTH=4,addrXADC=0}";
+  ATTRIBUTE CORE_GENERATION_INFO OF ebit_z7010_top_FOC_top_0_0_arch: ARCHITECTURE IS "ebit_z7010_top_FOC_top_0_0,FOC_top,{x_ipProduct=Vivado 2022.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=FOC_top,x_ipVersion=1.0,x_ipCoreRevision=29,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S_AXI_DATA_WIDTH=32,C_S_AXI_ADDR_WIDTH=4,addrXADC=0}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF ebit_z7010_top_FOC_top_0_0_arch: ARCHITECTURE IS "package_project";
   ATTRIBUTE X_INTERFACE_INFO : STRING;

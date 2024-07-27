@@ -677,11 +677,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jul 22 18:36:48 UTC 2024</spirit:value>
+            <spirit:value>Sat Jul 27 12:56:21 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f1b198c3</spirit:value>
+            <spirit:value>9:5b0150cf</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -692,7 +692,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f1b198c3</spirit:value>
+            <spirit:value>9:5b0150cf</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -708,11 +708,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jul 22 18:36:48 UTC 2024</spirit:value>
+            <spirit:value>Sat Jul 27 12:56:21 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f1b198c3</spirit:value>
+            <spirit:value>9:5b0150cf</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -727,11 +727,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jul 22 18:36:48 UTC 2024</spirit:value>
+            <spirit:value>Sat Jul 27 12:56:21 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:ab0d21bf</spirit:value>
+            <spirit:value>9:01bde9b3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -747,11 +747,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jul 22 18:36:49 UTC 2024</spirit:value>
+            <spirit:value>Sat Jul 27 12:56:21 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:ab0d21bf</spirit:value>
+            <spirit:value>9:01bde9b3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -765,11 +765,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jul 22 18:41:39 UTC 2024</spirit:value>
+            <spirit:value>Sat Jul 27 12:58:23 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f1b198c3</spirit:value>
+            <spirit:value>9:5b0150cf</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1298,10 +1298,6 @@
         <spirit:userFileType>coe</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>fuzzySimmetric18bit.coe</spirit:name>
-        <spirit:userFileType>coe</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>FOC_BLDC.srcs/constrs_1/new/firstconstraints.xdc</spirit:name>
         <spirit:userFileType>xdc</spirit:userFileType>
       </spirit:file>
@@ -1310,88 +1306,74 @@
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>FOC_BLDC.srcs/sources_1/ip/ILA_FOC_core/ILA_FOC_core.xci</spirit:name>
-        <spirit:userFileType>xci</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>FOC_BLDC.srcs/sources_1/ip/mpDSP_DSP_macro/mpDSP_DSP_macro.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>FOC_BLDC.srcs/sources_1/ip/FOC_fuzzyLogic_BRAM/FOC_fuzzyLogic_BRAM.xci</spirit:name>
-        <spirit:userFileType>xci</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_types.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_types.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_3levelSwitching.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_3levelSwitching.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_AXI4RegistersHandler.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_AXI4RegistersHandler.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_PWM.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_PWM.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_capacitiveFilter.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_capacitiveFilter.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_deadTimeMOSFETsHandler.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_deadTimeMOSFETsHandler.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_fuzzyPID.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>FOC_lib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_AXI4Lite_Slave.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_AXI4Lite_Slave.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_fuzzyLogic.vhd</spirit:name>
-        <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
-        <spirit:logicalName>FOC_lib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_position_checker.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_position_checker.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_regXADC.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_regXADC.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_torqueVectorGenerator.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_torqueVectorGenerator.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/PID.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/PID.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd</spirit:name>
+        <spirit:name>fuzzySimmetric18bit.coe</spirit:name>
+        <spirit:userFileType>coe</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
@@ -1411,15 +1393,7 @@
         <spirit:userFileType>coe</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>fuzzySimmetric18bit.coe</spirit:name>
-        <spirit:userFileType>coe</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>FOC_BLDC.srcs/BRAM_SIN/ip/BRAM_SIN/BRAM_SIN.xci</spirit:name>
-        <spirit:userFileType>xci</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>FOC_BLDC.srcs/sources_1/ip/ILA_FOC_core/ILA_FOC_core.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
@@ -1427,80 +1401,70 @@
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>FOC_BLDC.srcs/sources_1/ip/FOC_fuzzyLogic_BRAM/FOC_fuzzyLogic_BRAM.xci</spirit:name>
-        <spirit:userFileType>xci</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_types.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_types.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_3levelSwitching.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_3levelSwitching.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_AXI4RegistersHandler.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_AXI4RegistersHandler.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_PWM.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_PWM.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_capacitiveFilter.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_capacitiveFilter.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_deadTimeMOSFETsHandler.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_deadTimeMOSFETsHandler.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_fuzzyPID.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>FOC_lib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_AXI4Lite_Slave.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_AXI4Lite_Slave.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_core.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_fuzzyLogic.vhd</spirit:name>
-        <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
-        <spirit:logicalName>FOC_lib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_position_checker.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_position_checker.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_regXADC.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_regXADC.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_torqueVectorGenerator.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_torqueVectorGenerator.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/PID.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/PID.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd</spirit:name>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/mpDSP.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/3ee8/FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd</spirit:name>
+        <spirit:name>fuzzySimmetric18bit.coe</spirit:name>
+        <spirit:userFileType>coe</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/9318/FOC_BLDC.srcs/sources_1/new/FOC_TOP.vhd</spirit:name>
         <spirit:userFileType>vhdlSource-2008</spirit:userFileType>
         <spirit:logicalName>FOC_lib</spirit:logicalName>
       </spirit:file>
@@ -1577,10 +1541,9 @@
       <xilinx:displayName>FOC_top_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:xpmLibraries>
-        <xilinx:xpmLibrary>XPM_CDC</xilinx:xpmLibrary>
         <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>26</xilinx:coreRevision>
+      <xilinx:coreRevision>29</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.ASSOCIATED_BUSIF" xilinx:valuePermission="bd_and_user"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.ASSOCIATED_PORT" xilinx:valuePermission="bd_and_user"/>
@@ -1633,7 +1596,7 @@
       <xilinx:xilinxVersion>2022.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="9fe658d8"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="0879c9e7"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="200aba45"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="5e4fd663"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="3caf565b"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="138c4234"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="7142978d"/>
